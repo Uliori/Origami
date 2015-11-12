@@ -6,8 +6,8 @@ Currently work on iOS, OS X, and Win32.
 
 Features : 
   - uses c++11.
-  - uses opengl core profile.
-  - OpenGL 3.3 on Desktop, OpenGL ES 2.0 on mobile.
+  - uses OpenGL Core profile.
+  - OpenGL 3.3 on Desktop, OpenGL ES 2.0 on Mobile.
   
 Dependencies :
  - GLFW (Desktop).
