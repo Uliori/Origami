@@ -1,0 +1,73 @@
+﻿Build started 11/2/2015 10:21:20 PM.
+     1>Project "C:\Users\REGULUS\Desktop\REGULUS\proj.win32\Origami-core\Origami-core.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Ob2 /Oi /Ot /Oy- /GL /D GLEW_STATIC /D FT2_BUILD_LIBRARY /D O_TARGET_DESKTOP /D O_TARGET_DESKTOP_WIN32 /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\\" /Fd"C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Origami\Core\Utils\ResourcesUtils.cpp
+         ResourcesUtils.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\Origami-core.exe" /NOLOGO glfw3.lib glew32s.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\Origami-core.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\Origami-core.lib" /MACHINE:X86 /SAFESEH C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OGame.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OApplication.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OCamera2D.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OSprite.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OFont.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OFontManager.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OLabel.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OLayer2D.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OLayer3D.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OWindow.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ORendererFactory.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ORendererSpriteBatch.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OScene.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OScenesManager.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OShader.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OSimple2DShader.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OInputsManager.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OMaths.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OApplicationDesktop.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OWindowDesktop.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OEException.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OResourceManager.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\OTextureCache.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ResourcesUtils.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ShaderUtils.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\TextureUtils.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\platform.obj
+         "C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\texture-atlas.obj"
+         "C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\texture-font.obj"
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\vector.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\autofit.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftbase.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftbbox.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftbitmap.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftfstype.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftgasp.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftglyph.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftinit.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftlcdfil.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftstroke.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftsystem.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\fttype1.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftxf86.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\cff.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\pshinter.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\psnames.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftraster.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\ftrend1.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\sfnt.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\smooth.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\truetype.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\etc1_utils.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\image_DXT.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\image_helper.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\SOIL2.obj
+         C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\intermediates\main.obj
+         Generating code
+         11 of 2662 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+           2 functions were new in current compilation
+           14 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         Origami-core.vcxproj -> C:\Users\REGULUS\Desktop\REGULUS\proj.win32\bin\Release\Origami-core.exe
+     1>Done Building Project "C:\Users\REGULUS\Desktop\REGULUS\proj.win32\Origami-core\Origami-core.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.69

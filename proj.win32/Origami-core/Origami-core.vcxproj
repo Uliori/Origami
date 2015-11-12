@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E83345C6-C439-4236-92F1-D90EA444749F}</ProjectGuid>
+    <RootNamespace>Origamicore</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)../Origami/;$(SolutionDir)../Game/;$(SolutionDir)../Origami/Dependencies/GLEW/include/;$(SolutionDir)../Origami/Dependencies/GLFW/include/;$(SolutionDir)../Origami/Dependencies/FreeType/include/;$(SolutionDir)../Origami/Dependencies/FreeType-gl/;$(SolutionDir)../Origami/Dependencies/SOIL2/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)../Origami/Dependencies/GLEW/lib/vs/Win32;$(SolutionDir)../Origami/Dependencies/GLFW/lib/vs/Win32;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)../Origami/;$(SolutionDir)../Game/;$(SolutionDir)../Origami/Dependencies/GLEW/include/;$(SolutionDir)../Origami/Dependencies/GLFW/include/;$(SolutionDir)../Origami/Dependencies/FreeType/include/;$(SolutionDir)../Origami/Dependencies/FreeType-gl/;$(SolutionDir)../Origami/Dependencies/SOIL2/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)../Origami/Dependencies/GLEW/lib/vs/Win32;$(SolutionDir)../Origami/Dependencies/GLFW/lib/vs/Win32;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)../Origami/;$(SolutionDir)../Origami/Dependencies/GLFW/include/;$(SolutionDir)../Origami/Dependencies/GLEW/include/;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)../Origami/;$(SolutionDir)../Origami/Dependencies/GLFW/include/;$(SolutionDir)../Origami/Dependencies/GLEW/include/;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;FT2_BUILD_LIBRARY;O_TARGET_DESKTOP;O_TARGET_DESKTOP_WIN32;O_MODE_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;FT2_BUILD_LIBRARY;O_TARGET_DESKTOP;O_TARGET_DESKTOP_WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Game\OGame.cpp" />
+    <ClCompile Include="..\..\Origami\Core\App\OApplication.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OCamera2D.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OSprite.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OFont.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OFontManager.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OLabel.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\OWindow.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScene.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Inputs\OInputsManager.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Maths\OMaths.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OApplicationDesktop.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OWindowDesktop.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\OEException.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\OResourceManager.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\OTextureCache.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\ResourcesUtils.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\ShaderUtils.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Utils\TextureUtils.cpp" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\platform.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\vector.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\autofit\autofit.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbase.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbbox.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbitmap.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftfstype.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftgasp.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftglyph.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftinit.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftlcdfil.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftstroke.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftsystem.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\fttype1.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftxf86.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\cff\cff.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\pshinter\pshinter.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\psnames\psnames.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\raster\ftraster.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\raster\ftrend1.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\sfnt\sfnt.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\smooth\smooth.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\truetype\truetype.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\etc1_utils.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\image_DXT.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\image_helper.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\SOIL2.c" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Game\OGame.hpp" />
+    <ClInclude Include="..\..\Origami\Core\App\OApplication.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OCamera2D.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OSprite.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\Vertex2D.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFont.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFontManager.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OLabel.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\OTexture.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\OWindow.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORenderer2D.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.h" />
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\program.h" />
+    <ClInclude Include="..\..\Origami\Core\Inputs\OInputsManager.h" />
+    <ClInclude Include="..\..\Origami\Core\Maths\OMaths.h" />
+    <ClInclude Include="..\..\Origami\Core\OGL.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OEException.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OGLUtils.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OLog.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OResourceManager.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OTextureCache.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\OTime.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\ResourcesUtils.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\ShaderUtils.h" />
+    <ClInclude Include="..\..\Origami\Core\Utils\TextureUtils.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\freetype-gl.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\opengl.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\platform.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\vec234.h" />
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\vector.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

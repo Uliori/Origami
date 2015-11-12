@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Origami">
+      <UniqueIdentifier>{b99f2c9c-e438-4ec3-a91b-3d373cf197a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core">
+      <UniqueIdentifier>{e1de4f2c-b11c-4f4f-bbf3-88f0af7f0f64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics">
+      <UniqueIdentifier>{f2102c53-b41e-44d4-a720-f4c780b92174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Maths">
+      <UniqueIdentifier>{54474bf6-8f7a-4b4a-9d5f-e010a4f73dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Utils">
+      <UniqueIdentifier>{a3ef1881-a778-45d9-8af0-83a313a76e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Inputs">
+      <UniqueIdentifier>{e3e39d37-5772-4b85-9c1b-01f1ab4a1c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\App">
+      <UniqueIdentifier>{2c846b81-9871-451e-ae4f-e364f9115ed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Platform">
+      <UniqueIdentifier>{ef04523b-ed4e-4d34-a034-961599c4671d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami">
+      <UniqueIdentifier>{3363f2b4-38dd-4550-b937-93a3f5bb9b3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core">
+      <UniqueIdentifier>{4375dff6-ca59-4bdc-8f6d-6d3e2832d0b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics">
+      <UniqueIdentifier>{9025d746-847b-4ee5-8424-f0106a869a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Maths">
+      <UniqueIdentifier>{ed4ffde8-1c4b-4f86-9f12-39464a5ab96c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Utils">
+      <UniqueIdentifier>{32acf29f-9791-4e27-8664-6ea538f29502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Inputs">
+      <UniqueIdentifier>{cf8003ff-c37f-4eda-9b8c-e41d6758e5da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies">
+      <UniqueIdentifier>{6024a315-f42c-47e6-a113-ba621b6d0a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\SOIL2">
+      <UniqueIdentifier>{e351ab89-1580-4be3-b4cf-51ed89447ada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{bb89309a-1598-45a4-968a-5d491d5c5012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{c62b1eb4-0ba7-4320-b684-0b4b330982a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\2D">
+      <UniqueIdentifier>{165e2a3f-d889-4e34-9fcb-0a6275a735a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\3D">
+      <UniqueIdentifier>{c1925983-367c-4d35-b597-2e052f22a014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\GUI">
+      <UniqueIdentifier>{c4de1851-28a3-43a9-974e-73f80a12de07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\Layers">
+      <UniqueIdentifier>{63df8f6c-ef27-4396-ac46-a2f85e48d8af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\Shaders">
+      <UniqueIdentifier>{f7a62947-cc90-4fad-a201-caf2a80e457e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\Renderers">
+      <UniqueIdentifier>{aea30850-05f1-48d1-aafe-14bdf92c8d65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Graphics\Scenes">
+      <UniqueIdentifier>{8693d4cb-641e-4230-8698-a991f4d7ccc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Platform">
+      <UniqueIdentifier>{0cf769ab-332c-4fb8-8a08-fe5a78e306f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Platform\Desktop">
+      <UniqueIdentifier>{05412a37-3413-4d96-bda6-6ee9cd031ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\App">
+      <UniqueIdentifier>{34d5b564-fa04-4d6c-970d-2180ee065b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\2D">
+      <UniqueIdentifier>{ecfc850f-6d10-438e-9d8f-2b763c4d0cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\3D">
+      <UniqueIdentifier>{b1cbbf81-0fba-4f0a-a749-18d15b1c9551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\GUI">
+      <UniqueIdentifier>{2db46c68-af8f-4bf8-89d9-3b3cbb552c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\Layers">
+      <UniqueIdentifier>{ec4e08cd-a533-423e-9fd5-5053478aa038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\Shaders">
+      <UniqueIdentifier>{c950447e-f361-475c-84d0-3fdf4ff8d4ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\Scenes">
+      <UniqueIdentifier>{b4daa429-0c50-427e-a873-fe8552cc312f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Graphics\Renderers">
+      <UniqueIdentifier>{7070f23e-b389-42a5-9ee3-8903119c590a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Dependencies">
+      <UniqueIdentifier>{8ab8ddc5-30d1-43cf-a918-a77fc310f17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\FreeType-gl">
+      <UniqueIdentifier>{6c94fc8a-dcf6-41e8-b4bc-63818a6a2317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\FreeType">
+      <UniqueIdentifier>{6d52aa41-9450-4c14-9252-b77929e82953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Dependencies\FreeType-gl">
+      <UniqueIdentifier>{4099bfc5-b85c-462a-a338-ad1d6d740120}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\OWindow.cpp">
+      <Filter>Source Files\Origami\Core\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Maths\OMaths.cpp">
+      <Filter>Source Files\Origami\Core\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\ResourcesUtils.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\ShaderUtils.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\TextureUtils.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\etc1_utils.c">
+      <Filter>Source Files\Origami\Dependencies\SOIL2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\image_DXT.c">
+      <Filter>Source Files\Origami\Dependencies\SOIL2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\image_helper.c">
+      <Filter>Source Files\Origami\Dependencies\SOIL2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\SOIL2\SOIL2\SOIL2.c">
+      <Filter>Source Files\Origami\Dependencies\SOIL2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\OTextureCache.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\OResourceManager.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Utils\OEException.cpp">
+      <Filter>Source Files\Origami\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OWindowDesktop.cpp">
+      <Filter>Source Files\Origami\Core\Platform\Desktop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OApplicationDesktop.cpp">
+      <Filter>Source Files\Origami\Core\Platform\Desktop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\OGame.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\App\OApplication.cpp">
+      <Filter>Source Files\Origami\Core\App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Inputs\OInputsManager.cpp">
+      <Filter>Source Files\Origami\Core\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OCamera2D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OSprite.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OFont.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OFontManager.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\GUI\OLabel.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScene.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\vector.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\platform.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftfstype.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftgasp.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftglyph.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftinit.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftlcdfil.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftstroke.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftsystem.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\fttype1.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftxf86.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbase.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbbox.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbitmap.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\raster\ftraster.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\raster\ftrend1.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\pshinter\pshinter.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\psnames\psnames.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\cff\cff.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\truetype\truetype.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\autofit\autofit.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\smooth\smooth.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\sfnt\sfnt.c">
+      <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Origami\Core\Graphics\OWindow.h">
+      <Filter>Header Files\Origami\Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Maths\OMaths.h">
+      <Filter>Header Files\Origami\Core\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\OGL.h">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OLog.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OGLUtils.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OTime.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\ResourcesUtils.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\ShaderUtils.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\TextureUtils.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OTextureCache.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OResourceManager.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OEException.h">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\App\OApplication.h">
+      <Filter>Header Files\Origami\Core\App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\OGame.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Inputs\OInputsManager.h">
+      <Filter>Header Files\Origami\Core\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\OTexture.h">
+      <Filter>Header Files\Origami\Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OCamera2D.h">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OSprite.h">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\Vertex2D.h">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFont.h">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFontManager.h">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OLabel.h">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.h">
+      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.h">
+      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORenderer2D.h">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.h">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.h">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.h">
+      <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.h">
+      <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.h">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.h">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\program.h">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\vector.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\vec234.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\platform.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\opengl.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\freetype-gl.h">
+      <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
