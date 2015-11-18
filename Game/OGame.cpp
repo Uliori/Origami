@@ -36,6 +36,7 @@ void OGame::Init()
 
 void OGame::Tick()
 {
+    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //
@@ -48,29 +49,30 @@ void OGame::Render()
     OApplication::Render();
 }
 
-void OGame::Update()
+void OGame::Update(float deltaTime)
 {
-    OApplication::Update();
+    OApplication::Update(deltaTime);
     
 #ifdef O_TARGET_DESKTOP
     OLayer2D* sc1_mainLayer = sc1->getMainLayer2D();
     if (OInputsManager::Manager()->isKeyDown(GLFW_KEY_W)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + maths::vec2(0.0f, sc1->CAM_SPEED));
+        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, sc1->CAM_SPEED) * deltaTime));
     }
     
     if (OInputsManager::Manager()->isKeyDown(GLFW_KEY_S)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + maths::vec2(0.0f, -sc1->CAM_SPEED));
+        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, -sc1->CAM_SPEED) * deltaTime));
     }
     
     
     if (OInputsManager::Manager()->isKeyDown(GLFW_KEY_A)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + maths::vec2(-sc1->CAM_SPEED, 0.0f));
+        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(-sc1->CAM_SPEED, 0.0f) * deltaTime));
     }
     
     if (OInputsManager::Manager()->isKeyDown(GLFW_KEY_D)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + maths::vec2(sc1->CAM_SPEED, 0.0f));
+        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(sc1->CAM_SPEED, 0.0f) * deltaTime));
     }
     
+//    OLog(deltaTime);
 //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_Q)) {
 //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() - sc1->CAM_ZOOM);
 //    }

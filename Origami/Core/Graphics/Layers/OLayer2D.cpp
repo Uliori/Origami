@@ -47,9 +47,9 @@ namespace Origami {
             
         }
         
-        void OLayer2D::update()
+        void OLayer2D::update(float deltaTime)
         {
-            m_Camera->update();
+            m_Camera->update(deltaTime);
             
 
         }

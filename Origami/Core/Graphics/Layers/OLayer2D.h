@@ -39,7 +39,7 @@ namespace Origami {
             inline OCamera2D * getCamera() const { return m_Camera; }
             
             virtual void create();
-            virtual void update();
+            virtual void update(float deltaTime);
             virtual void render();
             
         private:

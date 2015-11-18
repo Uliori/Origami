@@ -48,9 +48,9 @@ namespace Origami {
         OLog("Game loading ...");
     }
 
-    void OScenesManager::updateCurrentScene()
+    void OScenesManager::updateCurrentScene(float deltaTime)
     {
-        updateScene(m_CurrentScene);
+        updateScene(m_CurrentScene, deltaTime);
     }
 
     void OScenesManager::renderCurrentScene()
@@ -58,10 +58,10 @@ namespace Origami {
         renderScene(m_CurrentScene);
     }
 
-    void OScenesManager::updateScene(OScene *scene)
+    void OScenesManager::updateScene(OScene *scene, float deltaTime)
     {
         if (scene) {
-            m_CurrentScene->update();
+            m_CurrentScene->update(deltaTime);
         }
     }
 

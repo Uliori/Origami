@@ -13,7 +13,7 @@ namespace Origami
         
 //		std::chrono::time_point<HighResolutionClock> m_Start;
         
-        float m_delta;
+//        float m_delta;
 
 	public:
         
@@ -37,15 +37,15 @@ namespace Origami
 //            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
 //        }
         
-        float getDelta()
-        {
-            return m_delta;
-        }
-        
-        void setDelta(float delta)
-        {
-            m_delta = delta;
-        }
+//        float getDelta()
+//        {
+//            return m_delta;
+//        }
+//        
+//        void setDelta(float delta)
+//        {
+//            m_delta = delta;
+//        }
 
 
         void sleep(int milliseconds)

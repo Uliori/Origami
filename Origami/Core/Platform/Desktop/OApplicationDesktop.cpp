@@ -15,49 +15,54 @@ namespace Origami {
 
 	void OApplication::Run()
 	{
-        double          processTime        = 0;
         double          tickCounter        = 0;
-        float           updateTick         = 1.0f/m_PreferredFramesPerSecond;
+        
+        const float     MS_IN_SECONDS      = 1000.0f;
+        const float     DESIRED_FRAMETIME  = 1.0f / m_PreferredFramesPerSecond;
+        const int       MAX_PHYSICS_STEPS  = 10;
+        
         unsigned int    frames             = 0;
         unsigned int    updates            = 0;
         
-        float MS_IN_SECONDS = 1000.0f;
         
-        //TODO : this is not perfect, you should check it later
-        m_Timer->setDelta(updateTick);
+        float previousTicks = m_Timer->getTime();
+        //TODO : this is not optimal, check for optimizations !!
+        
 		while (m_Running)
 		{
             if (m_window->iscloseRequested() || OInputsManager::Manager()->isKeyPressed(GLFW_KEY_ESCAPE))
                 m_Running = false;
             
-            float beginRenderingTime = m_Timer->getTime();
-            Update();
-            updates++;
+            float newTicks = m_Timer->getTime();
+            int i = 0;
+            while (newTicks > previousTicks && i < MAX_PHYSICS_STEPS) {
+                Update(DESIRED_FRAMETIME);
+                previousTicks += DESIRED_FRAMETIME;
+                updates ++;
+                i++;
+            }
+            
             Refresh();
 
+            //TODO : Add interpolation for rendering. http://www.koonsolo.com/news/dewitters-gameloop/
             Render();
             frames++;
             
-            processTime = m_Timer->getTime() - beginRenderingTime;
-            
-            int sleepTime = (int)((updateTick - processTime) * MS_IN_SECONDS);
-            if (sleepTime > 0) {
-                m_Timer->sleep(sleepTime);
+            while (((DESIRED_FRAMETIME - (m_Timer->getTime() - newTicks)) * MS_IN_SECONDS) > 0.0f) {
+                m_Timer->sleep(1);
             }
-
-
-            m_Timer->setDelta(m_Timer->getTime() - beginRenderingTime);
-#ifdef O_MODE_DEBUG
-            tickCounter += m_Timer->getDelta();
             
+#ifdef O_MODE_DEBUG
+            tickCounter += m_Timer->getTime() - newTicks;
+
             if (tickCounter >= 1.0f) {
                 m_FramesPerSecond = frames;
                 m_UpdatesPerSecond = updates;
-                
+
                 frames = 0;
                 updates = 0;
-                tickCounter = 0;
-                
+                tickCounter -= 1.0f;
+
                 Tick();
             }
 #endif

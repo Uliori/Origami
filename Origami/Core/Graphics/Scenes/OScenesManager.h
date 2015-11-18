@@ -36,10 +36,10 @@ namespace Origami {
         
         void loadGame();
         
-        void updateCurrentScene();
+        void updateCurrentScene(float deltaTime);
         void renderCurrentScene();
         
-        void updateScene(OScene *scene);
+        void updateScene(OScene *scene, float deltaTime);
         void renderScene(OScene *scene);
         
         void addScene(const std::string& scene_name, OScene *scene, bool setCurrent = false);

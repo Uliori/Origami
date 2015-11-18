@@ -31,7 +31,7 @@ namespace Origami {
     }
     
     
-    void OCamera2D::update()
+    void OCamera2D::update(float deltaTime)
     {
         if (m_needsMatrixUpdate) {
             

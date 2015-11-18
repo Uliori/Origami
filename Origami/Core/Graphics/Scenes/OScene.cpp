@@ -27,11 +27,11 @@ namespace Origami {
         OLog("Scene created.");
     }
 
-    void OScene::update()
+    void OScene::update(float deltaTime)
     {
-        m_MainLayer3D->update();
-        m_MainLayer2D->update();
-        m_GUIView->update();
+        m_MainLayer3D->update(deltaTime);
+        m_MainLayer2D->update(deltaTime);
+        m_GUIView->update(deltaTime);
     }
 
     void OScene::render()

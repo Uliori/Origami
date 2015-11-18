@@ -34,7 +34,7 @@ namespace Origami {
 		void Stop();
 
 		virtual void Tick();
-		virtual void Update();
+		virtual void Update(float deltaTime);
         virtual void Refresh();
 		virtual void Render();
 
