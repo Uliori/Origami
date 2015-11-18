@@ -27,7 +27,7 @@ class scene1 : public OScene {
 public:
     OLabel *fps;
     
-    const float CAM_SPEED = 2.0f;
+    const float CAM_SPEED = 150.0f;
     const float CAM_ZOOM = 0.01f;
     
     scene1()
@@ -56,7 +56,7 @@ public:
     void Init() override;
     void Tick() override;
     
-    void Update() override;
+    void Update(float deltaTime) override;
     void Render() override;
     
 };

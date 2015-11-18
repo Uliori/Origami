@@ -60,9 +60,9 @@ namespace Origami {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
-		void OWindow::update()
+		void OWindow::update(float deltaTime)
 		{
-            OScenesManager::Manager()->updateCurrentScene();
+            OScenesManager::Manager()->updateCurrentScene(deltaTime);
 		}
         
         void OWindow::render()

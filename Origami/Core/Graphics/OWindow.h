@@ -29,7 +29,7 @@ namespace Origami {
             void refreshInput();
             
             
-			void update();
+			void update(float deltaTime);
             void render();
             void swapBuffers();
             

@@ -26,7 +26,7 @@ namespace Origami {
             
         }
         
-        void OLayer3D::update()
+        void OLayer3D::update(float deltaTime)
         {
             
         }

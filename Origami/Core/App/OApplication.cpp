@@ -47,9 +47,9 @@ namespace Origami {
         
     }
     
-    void OApplication::Update()
+    void OApplication::Update(float deltaTime)
     {
-        m_window->update();
+        m_window->update(deltaTime);
     }
     
     void OApplication::Refresh()

@@ -42,6 +42,11 @@ static TouchPoint __touchPoints[TOUCH_POINTS_MAX];
     int updates;
     double lastTime;
     double tickCounter;
+    
+    float currentTicks;
+    float previousTicks;
+    
+    float     DESIRED_FRAMETIME;
 }
 
 @end

@@ -17,7 +17,7 @@ namespace Origami {
             virtual ~OLayer3D();
             
             virtual void create();
-            virtual void update();
+            virtual void update(float deltaTime);
             virtual void render();
         };
 }

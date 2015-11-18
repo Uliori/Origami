@@ -54,7 +54,12 @@
     [self setupGL];
     
     self.preferredFramesPerSecond = game->GetPreferredFPS();
+    
+    DESIRED_FRAMETIME  = 1.0f / game->GetPreferredFPS();
+    
     [((GLKView *)self.view) bindDrawable];
+    
+    
 }
 
 - (void)dealloc
@@ -100,6 +105,8 @@
     lastTime      = game->getTimer()->getTime();
     tickCounter = 0;
     updates = 0;
+    currentTicks = 0;
+    previousTicks = 0;
 }
 
 - (void)tearDownGL
@@ -125,16 +132,19 @@
         game->setUPS(updates);
         
         updates = 0;
-        tickCounter = 0;
+        tickCounter -= 1.0f;
         
         game->Tick();
     }
     
 #endif
-    
-    game->getTimer()->setDelta(self.timeSinceLastUpdate);
-    game->Update();
-    updates++;
+
+    currentTicks += self.timeSinceLastUpdate;
+    while (currentTicks - previousTicks > DESIRED_FRAMETIME) {
+        game->Update(DESIRED_FRAMETIME);
+        previousTicks += DESIRED_FRAMETIME;
+        updates ++;
+    }
     game->Refresh();
 }
 
