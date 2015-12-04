@@ -53,9 +53,9 @@ namespace Origami {
         updateScene(m_CurrentScene, deltaTime);
     }
 
-    void OScenesManager::renderCurrentScene()
+    void OScenesManager::renderCurrentScene(float interpolation)
     {
-        renderScene(m_CurrentScene);
+        renderScene(m_CurrentScene, interpolation);
     }
 
     void OScenesManager::updateScene(OScene *scene, float deltaTime)
@@ -65,10 +65,10 @@ namespace Origami {
         }
     }
 
-    void OScenesManager::renderScene(OScene *scene)
+    void OScenesManager::renderScene(OScene *scene, float interpolation)
     {
         if (scene) {
-            m_CurrentScene->render();
+            m_CurrentScene->render(interpolation);
         }
     }
 

@@ -31,7 +31,7 @@ namespace Origami {
             
         }
         
-        void OLayer3D::render()
+        void OLayer3D::render(float interpolation)
         {
             
         }

@@ -18,6 +18,6 @@ namespace Origami {
             
             virtual void create();
             virtual void update(float deltaTime);
-            virtual void render();
+            virtual void render(float interpolation);
         };
 }

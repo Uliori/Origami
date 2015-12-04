@@ -36,7 +36,7 @@ namespace Origami {
 		virtual void Tick();
 		virtual void Update(float deltaTime);
         virtual void Refresh();
-		virtual void Render();
+		virtual void Render(float interpolation);
 
         OTimer* getTimer(){ return m_Timer;}
         

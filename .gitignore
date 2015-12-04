@@ -1,0 +1,4 @@
+proj.android/bin/*
+proj.android/gen/*
+proj.android/libs/*
+proj.android/obj/*

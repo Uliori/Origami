@@ -57,10 +57,10 @@ namespace Origami {
         m_window->refreshInput();
     }
     
-    void OApplication::Render()
+    void OApplication::Render(float interpolation)
     {
         m_window->clear();
-        m_window->render();
+        m_window->render(interpolation);
         m_window->swapBuffers();
     }
     

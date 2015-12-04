@@ -34,11 +34,11 @@ namespace Origami {
         m_GUIView->update(deltaTime);
     }
 
-    void OScene::render()
+    void OScene::render(float interpolation)
     {
-        m_MainLayer3D->render();
-        m_MainLayer2D->render();
-        m_GUIView->render();
+        m_MainLayer3D->render(interpolation);
+        m_MainLayer2D->render(interpolation);
+        m_GUIView->render(interpolation);
     }
     
     void OScene::addSprite(OSprite *sprite)

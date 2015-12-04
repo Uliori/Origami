@@ -54,11 +54,8 @@ namespace Origami {
 
         }
         
-        void OLayer2D::render()
+        void OLayer2D::render(float interpolation)
         {
-            
-        
-
             if (m_CurrentRenderer) {
                 m_CurrentRenderer->Begin();
                 

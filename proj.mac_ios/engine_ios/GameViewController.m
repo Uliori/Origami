@@ -102,11 +102,11 @@
     game->Start();
     
 
-    lastTime      = game->getTimer()->getTime();
-    tickCounter = 0;
-    updates = 0;
-    currentTicks = 0;
-    previousTicks = 0;
+    lastTime        = game->getTimer()->getTime();
+    tickCounter     = 0;
+    updates         = 0;
+    currentTicks    = 0;
+    previousTicks   = lastTime;
 }
 
 - (void)tearDownGL
@@ -127,30 +127,33 @@
     
     tickCounter += passedTime;
     
-    if (tickCounter >= 1.0f) {
-        game->setFPS(self.framesPerSecond);
+    if (tickCounter >= 1000.0f) {
+        game->setFPS((uint)self.framesPerSecond);
         game->setUPS(updates);
         
         updates = 0;
-        tickCounter -= 1.0f;
+        tickCounter -= 1000.0f;
         
         game->Tick();
     }
     
 #endif
-
-    currentTicks += self.timeSinceLastUpdate;
-    while (currentTicks - previousTicks > DESIRED_FRAMETIME) {
-        game->Update(DESIRED_FRAMETIME);
-        previousTicks += DESIRED_FRAMETIME;
+//
+//    currentTicks += self.timeSinceLastUpdate;
+//    while (game->getTimer()->getTime() > previousTicks) {
+        game->Update(self.timeSinceLastUpdate);
+//        previousTicks += DESIRED_FRAMETIME;
         updates ++;
-    }
+//    }
     game->Refresh();
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    game->Render();
+//    OLog("time : " << game->getTimer()->getTime() << ", previous : " << previousTicks);
+//    float interpolation = float( game->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+    float interpolation = 1;
+    game->Render(interpolation);
 }
 
 

@@ -11,6 +11,7 @@
 
 #ifdef O_MODE_DEBUG
 	#ifdef __ANDROID__
+		#include <android/log.h>
 		#include <string>
 		#include <sstream>
 		#include <iostream>
@@ -18,14 +19,14 @@
 		{\
 		std::stringstream ss;\
 		ss << msg;\
-		__android_log_write(ANDROID_LOG_VERBOSE, "ORES", ss.str().c_str()); \
+		__android_log_write(ANDROID_LOG_VERBOSE, "Origami", ss.str().c_str()); \
 		}
 
 		#define OErrLog(msg)\
 		{\
 		std::stringstream ss;\
 		ss << msg;\
-		__android_log_write(ANDROID_LOG_ERROR, "ORES", ss.str().c_str()); \
+		__android_log_write(ANDROID_LOG_ERROR, "Origami", ss.str().c_str()); \
 		}
 	#else
 		#include <iostream>

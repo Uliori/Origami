@@ -50,7 +50,7 @@
 
         #define GL_DEPTH24_STENCIL8 GL_DEPTH24_STENCIL8_OES
         #define glClearDepth glClearDepthf
-        #define GL_RED GL_RED_EXT
+        #define GL_RED 0x1903
     #endif
 
 #endif

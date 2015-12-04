@@ -65,9 +65,9 @@ namespace Origami {
             OScenesManager::Manager()->updateCurrentScene(deltaTime);
 		}
         
-        void OWindow::render()
+        void OWindow::render(float interpolation)
         {
-            OScenesManager::Manager()->renderCurrentScene();
+            OScenesManager::Manager()->renderCurrentScene(interpolation);
         }
         
         void OWindow::swapBuffers()

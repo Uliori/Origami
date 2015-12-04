@@ -10,8 +10,7 @@ namespace Origami {
 			static std::string s_ExternalStorage;
 
 			static const char* getResourcePathforFile(const char * file);
-			static FILE * openFile(const char * file);
-			static int fileLength(FILE* f, unsigned char *& buffer, size_t &buffer_length);
+			static int fileLength(const char * filePath, unsigned char *& buffer, size_t &buffer_length);
 		};
 }
 

@@ -32,8 +32,8 @@ public:
     
     scene1()
     {
-        for (uint i = 0; i < OScenesManager::Manager()->getWidth(); i += 50) {
-            for (uint j = 0; j < OScenesManager::Manager()->getHeight(); j += 50) {
+        for (uint i = 0; i < OScenesManager::Manager()->getWidth()/2; i += 50) {
+            for (uint j = 0; j < OScenesManager::Manager()->getHeight()/2; j += 50) {
                 addSprite(new OSprite((float)i, (float)j, 50, 50, "sprite.png"));
             }
         }
@@ -57,7 +57,7 @@ public:
     void Tick() override;
     
     void Update(float deltaTime) override;
-    void Render() override;
+    void Render(float interpolation) override;
     
 };
 

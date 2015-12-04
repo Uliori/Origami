@@ -29,7 +29,7 @@ void OGame::Init()
     OScenesManager::Manager()->addScene("1", sc1);
     
     
-    glClearColor(0, 0, 0, 1);
+    glClearColor(0, 1, 0, 1);
     
 
 }
@@ -43,15 +43,15 @@ void OGame::Tick()
 //   sc1->fps->setText(stream.str());
 }
 
-void OGame::Render()
+void OGame::Render(float interpolation)
 {
-    
-    OApplication::Render();
+    OApplication::Render(interpolation);
 }
 
 void OGame::Update(float deltaTime)
 {
     OApplication::Update(deltaTime);
+//    OLog(deltaTime);
     
 #ifdef O_TARGET_DESKTOP
     OLayer2D* sc1_mainLayer = sc1->getMainLayer2D();

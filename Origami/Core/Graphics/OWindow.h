@@ -30,7 +30,7 @@ namespace Origami {
             
             
 			void update(float deltaTime);
-            void render();
+            void render(float interpolation);
             void swapBuffers();
             
             bool iscloseRequested();

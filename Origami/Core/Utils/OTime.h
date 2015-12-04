@@ -1,5 +1,6 @@
 #pragma once
 
+#ifdef O_TARGET_DESKTOP
 #include <chrono>
 #include <thread>
 
@@ -8,49 +9,52 @@ namespace Origami
 	class OTimer
 	{
 	private:
-		typedef std::chrono::high_resolution_clock  HighResolutionClock;
-		typedef std::chrono::milliseconds           milliseconds_type;
-        
-//		std::chrono::time_point<HighResolutionClock> m_Start;
-        
-//        float m_delta;
+		typedef std::chrono::high_resolution_clock		   clock; //
+		typedef std::chrono::milliseconds          milliseconds_type;
 
 	public:
         
 		OTimer()
 		{
-//			Reset();
 		}
-
-//		void Reset()
-//		{
-//			m_Start = HighResolutionClock::now();
-//		}
         
-        float getTime()
+        double getTime()
         {
-            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now().time_since_epoch()).count() / 1000.0f;
+            return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
         }
         
-//        float getRunningTime()
-//        {
-//            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
-//        }
-        
-//        float getDelta()
-//        {
-//            return m_delta;
-//        }
-//        
-//        void setDelta(float delta)
-//        {
-//            m_delta = delta;
-//        }
-
-
         void sleep(int milliseconds)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
         }
 	};
 }
+#else
+#include <sys/time.h>
+#include <unistd.h>
+
+namespace Origami
+{
+    class OTimer
+    {
+        
+    public:
+        
+        OTimer()
+        {
+        }
+        
+        double getTime()
+        {
+            struct timeval tv;
+            gettimeofday(&tv, 0);
+            return unsigned((tv.tv_sec * 1000.0f) + (tv.tv_usec / 1000.0f));
+        }
+        
+        void sleep(int milliseconds)
+        {
+            usleep(milliseconds * 1000);
+        }
+    };
+}
+#endif

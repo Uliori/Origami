@@ -23,7 +23,14 @@ namespace Origami {
             int height;
             int channels;
             
-            unsigned char *img = SOIL_load_image(ResourcesUtils::getResourcePathforFile(texname), &width, &height, &channels, SOIL_LOAD_RGBA);
+            
+            //Image data
+            unsigned char* buffer;
+            size_t buffer_length;
+            ResourcesUtils::fileLength(texname, buffer, buffer_length);
+            
+            unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
+//            unsigned char *img = SOIL_load_image(ResourcesUtils::getResourcePathforFile(texname), &width, &height, &channels, SOIL_LOAD_RGBA);
             
             if(img == NULL)
             {

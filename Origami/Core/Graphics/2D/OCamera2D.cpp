@@ -16,6 +16,7 @@ namespace Origami {
     m_needsMatrixUpdate(true)
     {
         setProjection(screenWidth, screenHeight);
+        update(1);
     }
     
     OCamera2D::~OCamera2D()
@@ -77,9 +78,10 @@ namespace Origami {
         // Vector from the input to the camera
         maths::vec2 distVec = centerPos - centerCameraPos;
         
+        float offset = 0.01f;
         // Get the depth of the collision
-        float xDepth = MIN_DISTANCE_X - fabs(distVec.x);
-        float yDepth = MIN_DISTANCE_Y - fabs(distVec.y);
+        float xDepth = MIN_DISTANCE_X - fabs(distVec.x - (distVec.x * offset));
+        float yDepth = MIN_DISTANCE_Y - fabs(distVec.y - (distVec.y * offset));
         
         // If both the depths are > 0, then we collided
         if (xDepth > 0 && yDepth > 0) {
