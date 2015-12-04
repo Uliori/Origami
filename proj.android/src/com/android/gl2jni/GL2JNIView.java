@@ -31,12 +31,14 @@ package com.android.gl2jni;
  * limitations under the License.
  */
 
-
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.PixelFormat;
+import android.graphics.Point;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -326,6 +328,7 @@ class GL2JNIView extends GLSurfaceView {
     private class Renderer implements GLSurfaceView.Renderer {
     	private Context m_context;
     	private AssetManager mgr;
+    	private int m_width, m_height;
     	public AssetManager getAssetsManager()
     	{
     		if (mgr == null) {
@@ -342,12 +345,21 @@ class GL2JNIView extends GLSurfaceView {
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            GL2JNILib.init(width, height);
-            GL2JNILib.setAssetManager(getAssetsManager());
+        	
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        	GL2JNILib.setAssetManager(getAssetsManager());
+         	GL2JNILib.setAssetManager(getAssetsManager());
+        	WindowManager wm = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
+        	Display display = wm.getDefaultDisplay();
+        	
+        	Point size = new Point();
+        	display.getSize(size);
+        	m_width = size.x;
+        	m_height = size.y;
+        	
+        	GL2JNILib.init(m_width, m_height);
+       
         }
     }
 }

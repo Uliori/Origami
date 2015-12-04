@@ -4,7 +4,7 @@
 #include <android/asset_manager_jni.h>
 
 #include "OGame.hpp"
-
+#include <Core/Utils/OResourceManager.h>
 
 extern "C" {
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
@@ -13,7 +13,7 @@ JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv 
 AAssetManager *mgr;
 };
 
-OGame *s_game;
+OGame *s_game = nullptr;
 uint g_width;
 uint g_height;
 const float 	MS_IN_SECOND	   = 1000.0f;
@@ -42,7 +42,8 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 	DESIRED_FRAMETIME = 1.0f / game()->GetPreferredFPS();
 	previousTicks = game()->getTimer()->getTime();
 
-	OLog("width : " << g_width << ", height: " << g_height)
+	OResourceManager::checkResources();
+
 }
 
 JNIEXPORT void JNICALL

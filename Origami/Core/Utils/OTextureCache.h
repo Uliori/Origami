@@ -11,7 +11,7 @@ namespace Origami {
 			~OTextureCache();
 
 			OTexture getTexture(const std::string& texturePath);
-
+            void checkTextures();
 		private:
 			std::map<std::string, OTexture> m_TextureMap;
 		};

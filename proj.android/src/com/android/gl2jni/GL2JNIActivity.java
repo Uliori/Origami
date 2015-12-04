@@ -18,6 +18,7 @@ package com.android.gl2jni;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 
 public class GL2JNIActivity extends Activity {
@@ -34,10 +35,12 @@ public class GL2JNIActivity extends Activity {
     @Override protected void onPause() {
         super.onPause();
         mView.onPause();
+        mView.setVisibility(View.GONE);
     }
 
     @Override protected void onResume() {
         super.onResume();
         mView.onResume();
+        mView.setVisibility(View.VISIBLE);
     }
 }
