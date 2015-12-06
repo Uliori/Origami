@@ -36,7 +36,7 @@ void OGame::Init()
 
 void OGame::Tick()
 {
-    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
+//    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //
@@ -46,6 +46,7 @@ void OGame::Tick()
 void OGame::Render(float interpolation)
 {
     OApplication::Render(interpolation);
+//    OLog(interpolation);
 }
 
 void OGame::Update(float deltaTime)

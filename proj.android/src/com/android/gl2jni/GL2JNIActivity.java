@@ -19,6 +19,7 @@ package com.android.gl2jni;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 
 public class GL2JNIActivity extends Activity {
@@ -27,6 +28,7 @@ public class GL2JNIActivity extends Activity {
 
     @Override protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mView = new GL2JNIView(getApplication());
         mView.setPreserveEGLContextOnPause(true);
 	    setContentView(mView);
@@ -43,4 +45,9 @@ public class GL2JNIActivity extends Activity {
         mView.onResume();
         mView.setVisibility(View.VISIBLE);
     }
+    
+//    @Override protected void onDestroy() {
+//    	GL2JNILib.cleanUp();
+//    	super.onDestroy();
+//    }
 }

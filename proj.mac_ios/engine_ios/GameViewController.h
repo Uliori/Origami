@@ -40,11 +40,11 @@ static TouchPoint __touchPoints[TOUCH_POINTS_MAX];
     OGame *game;
     
     int updates;
-    double lastTime;
     double tickCounter;
     
     double currentTicks;
     double previousTicks;
+    double accumulator;
     
     float  DESIRED_FRAMETIME;
 }

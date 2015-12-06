@@ -23,7 +23,7 @@ namespace Origami {
         
         unsigned int    frames             = 0;
         unsigned int    updates            = 0;
-        
+        double          accumulator        = 0;
         
         double previousTicks = m_Timer->getTime();
         
@@ -32,13 +32,18 @@ namespace Origami {
             if (m_window->iscloseRequested() || OInputsManager::Manager()->isKeyPressed(GLFW_KEY_ESCAPE))
                 m_Running = false;
             
-            double newTicks = m_Timer->getTime();
+            double startTicks =  m_Timer->getTime();
+            double passedTime = startTicks - previousTicks;
+            previousTicks = startTicks;
+            
+            accumulator += passedTime;
+            
             int   loops = 0;
             float interpolation = 1;
             
-            while (m_Timer->getTime() > previousTicks && loops < MAX_PHYSICS_STEPS) {
+            while (accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS) {
                 Update(DESIRED_FRAMETIME / MS_IN_SECONDS);
-                previousTicks += DESIRED_FRAMETIME;
+                accumulator -= DESIRED_FRAMETIME;
                 updates ++;
                 loops++;
             }
@@ -51,7 +56,7 @@ namespace Origami {
             
         
 #ifdef O_MODE_DEBUG
-            tickCounter += m_Timer->getTime() - newTicks;
+            tickCounter += passedTime;
             if (tickCounter >= MS_IN_SECONDS) {
                 m_FramesPerSecond = frames;
                 m_UpdatesPerSecond = updates;

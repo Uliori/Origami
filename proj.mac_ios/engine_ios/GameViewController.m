@@ -55,7 +55,7 @@
     
     self.preferredFramesPerSecond = game->GetPreferredFPS();
     
-    DESIRED_FRAMETIME  = 1.0f / game->GetPreferredFPS();
+    DESIRED_FRAMETIME  = 1000.0f / game->GetPreferredFPS();
     
     [((GLKView *)self.view) bindDrawable];
     
@@ -102,11 +102,11 @@
     game->Start();
     
 
-    lastTime        = game->getTimer()->getTime();
+    previousTicks   = game->getTimer()->getTime();
     tickCounter     = 0;
     updates         = 0;
     currentTicks    = 0;
-    previousTicks   = lastTime;
+    accumulator     = 0;
 }
 
 - (void)tearDownGL
@@ -120,10 +120,26 @@
 
 - (void)update
 {
+    double startTicks = game->getTimer()->getTime();
+    double passedTime = startTicks - previousTicks;
+    previousTicks = startTicks;
+    
+    accumulator += passedTime;
+    
+    int   loops = 0;
+    
+    while(accumulator >= DESIRED_FRAMETIME && loops < 10)
+    {
+        game->Update(DESIRED_FRAMETIME / 1000.0f);
+        accumulator -= DESIRED_FRAMETIME;
+        updates ++;
+        loops++;
+    }
+    
+    game->Refresh();
+    
 #ifdef O_MODE_DEBUG
-    double startTime = game->getTimer()->getTime();
-    double passedTime = startTime - lastTime;
-    lastTime = startTime;
+    
     
     tickCounter += passedTime;
     
@@ -138,21 +154,12 @@
     }
     
 #endif
-//
-//    currentTicks += self.timeSinceLastUpdate;
-//    while (game->getTimer()->getTime() > previousTicks) {
-        game->Update(self.timeSinceLastUpdate);
-//        previousTicks += DESIRED_FRAMETIME;
-        updates ++;
-//    }
-    game->Refresh();
+
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-//    OLog("time : " << game->getTimer()->getTime() << ", previous : " << previousTicks);
-//    float interpolation = float( game->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
-    float interpolation = 1;
+    float interpolation = float( game->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
     game->Render(interpolation);
 }
 

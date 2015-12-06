@@ -36,6 +36,7 @@ public class GL2JNILib {
 
     public static native void init(int width, int height);
     public static native void step();
+    public static native void cleanUp();
     public static native void setAssetManager(AssetManager mgr);
      
  	

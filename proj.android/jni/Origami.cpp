@@ -9,6 +9,7 @@
 extern "C" {
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type);
+JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type);
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager);
 AAssetManager *mgr;
 };
@@ -22,7 +23,10 @@ float     		DESIRED_FRAMETIME  = 0;
 const int       MAX_PHYSICS_STEPS  = 10;
 unsigned int    frames             = 0;
 unsigned int    updates            = 0;
-float 			previousTicks = 0;
+double 			previousTicks	   = 0;
+
+
+double accumulator  = 0;
 
 OGame *game()
 {
@@ -37,52 +41,60 @@ JNIEXPORT void JNICALL
 Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height) {
 	g_width = width;
 	g_height = height;
-
-	game()->Start();
-	DESIRED_FRAMETIME = 1.0f / game()->GetPreferredFPS();
-	previousTicks = game()->getTimer()->getTime();
-
+	if (!s_game) {
+		game()->Start();
+	}
 	OResourceManager::checkResources();
 
+
+	DESIRED_FRAMETIME = MS_IN_SECOND / game()->GetPreferredFPS();//
+	previousTicks = game()->getTimer()->getTime();
 }
 
 JNIEXPORT void JNICALL
 Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 
-	float newTicks = game()->getTimer()->getTime();
-	int   loops = 0;
-	float interpolation = 1;
 
-	while (game()->getTimer()->getTime() > previousTicks && loops < MAX_PHYSICS_STEPS) {
-		game()->Update(DESIRED_FRAMETIME);
-		previousTicks += DESIRED_FRAMETIME;
-		updates ++;
-		loops++;
-	}
 
-	game()->Refresh();
+	 double startTicks =  game()->getTimer()->getTime();
+	 double passedTime = startTicks - previousTicks;
+	 previousTicks = startTicks;
 
-	interpolation = float( game()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
-	game()->Render(interpolation);
-	frames++;
+	 accumulator += passedTime;
+
+
+	 int   loops = 0;
+
+	 while(accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS)
+	 {
+		 game()->Update(DESIRED_FRAMETIME / MS_IN_SECOND);
+		 accumulator -= DESIRED_FRAMETIME;
+		 updates ++;
+		 loops++;
+	 }
+
+	 game()->Refresh();
+
+	 float interpolation = float( game()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+	 game()->Render(interpolation);
+	 frames++;
+
 
 
 #ifdef O_MODE_DEBUG
-	tickCounter += game()->getTimer()->getTime() - newTicks;
-//	OLog(game()->getTimer()->getTime() - newTicks);
-	if (tickCounter >= MS_IN_SECOND) {
+	    tickCounter += passedTime;
+	    if (tickCounter >= MS_IN_SECOND) {
 
-		game()->setFPS(frames);
-		game()->setUPS(updates);
+			game()->setFPS(frames);
+			game()->setUPS(updates);
 
-		frames = 0;
-		updates = 0;
-		tickCounter -= MS_IN_SECOND;
+			frames = 0;
+			updates = 0;
+			tickCounter -= MS_IN_SECOND;
 
-		game()->Tick();
-	}
+			game()->Tick();
+	    }
 #endif
-
 }
 
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager)
@@ -90,3 +102,10 @@ JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv 
 	mgr = AAssetManager_fromJava(env, assetManager);
 }
 
+JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type)
+{
+	if (s_game) {
+		delete s_game;
+		s_game = nullptr;
+	}
+}
