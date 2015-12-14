@@ -8,9 +8,7 @@
 
 #pragma once
 
-#include <Core/Utils/OGLUtils.h>
 #include <Core/Maths/OMaths.h>
-#include <Core/Graphics/2D/Vertex2D.h>
 
 namespace Origami {
     

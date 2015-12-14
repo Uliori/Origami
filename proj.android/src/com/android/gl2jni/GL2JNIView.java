@@ -396,5 +396,6 @@ class GL2JNIView extends GLSurfaceView {
         	GL2JNILib.init(m_width, m_height);
        
         }
+        
     }
 }

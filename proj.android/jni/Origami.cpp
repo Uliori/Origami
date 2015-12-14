@@ -46,7 +46,6 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 	}
 	OResourceManager::checkResources();
 
-
 	DESIRED_FRAMETIME = MS_IN_SECOND / game()->GetPreferredFPS();//
 	previousTicks = game()->getTimer()->getTime();
 }
@@ -78,8 +77,6 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 	 float interpolation = float( game()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
 	 game()->Render(interpolation);
 	 frames++;
-
-
 
 #ifdef O_MODE_DEBUG
 	    tickCounter += passedTime;

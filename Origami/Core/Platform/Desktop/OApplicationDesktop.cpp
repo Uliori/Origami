@@ -8,9 +8,9 @@ namespace Origami {
         
         SAFE_DELETE(m_window);
         SAFE_DELETE(m_Timer);
-        glfwTerminate();
         
         ORendererFactory::deleteRenderers();
+        glfwTerminate();
     }
 
 	void OApplication::Run()

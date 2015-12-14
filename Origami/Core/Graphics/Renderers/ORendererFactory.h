@@ -22,6 +22,7 @@ namespace Origami {
     class ORendererFactory
     {
     public:
+        static void createRenderers();
         static void initRenderers();
         static void deleteRenderers();
         static void addRenderer(ORenderer2D * renderer);

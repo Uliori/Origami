@@ -55,15 +55,19 @@ namespace Origami {
     
     OSimple2DShader::OSimple2DShader()
     {
+
+        
+    }
+    
+    void OSimple2DShader::Init()
+    {
         m_Name = "Simple2Dshader";
         
         std::string vs = GLSLHEADER + vertsimple2d;
         std::string fs = GLSLHEADER + PRECISION_H + fragsimple2d;
         
         this->Load(vs, fs);
-        
     }
-    
     
     void OSimple2DShader::BindLocations()
     {

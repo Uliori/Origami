@@ -18,8 +18,11 @@ namespace Origami {
     public:
         OSimple2DShader();
         
+        void Init() override;
+        
     private:
         void BindLocations() override;
+        
     };
     
 }

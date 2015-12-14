@@ -1,5 +1,5 @@
 #include "OResourceManager.h"
-
+#include <Core/Graphics/Renderers/ORendererFactory.h>
 #include <string>
 
 namespace Origami {
@@ -12,6 +12,7 @@ namespace Origami {
 
     void OResourceManager::checkResources()
     {
+        ORendererFactory::initRenderers();
         m_TextureCache.checkTextures();
     }
 

@@ -16,7 +16,7 @@ namespace Origami {
         m_Timer = new OTimer();
         m_window = new OWindow(m_Name, m_Width, m_Height, m_Scale);
         
-        ORendererFactory::initRenderers();
+        ORendererFactory::createRenderers();
     }
     
     void OApplication::Start()

@@ -19,6 +19,8 @@ namespace Origami {
 	public:
 //        OShader(const char* name, const char* vertSrc, const char* fragSrc);
 		virtual ~OShader();
+        
+        
 
 		void SetUniform1f(const GLchar* name, float value);
 		void SetUniform1fv(const GLchar* name, float* value, int count);
@@ -36,6 +38,7 @@ namespace Origami {
 		void Unbind() const;
         
         virtual void BindLocations() = 0;
+        virtual void Init() = 0;
 	protected:
 		GLuint Load(const std::string &vertSrc, const std::string &fragSrc);
 		

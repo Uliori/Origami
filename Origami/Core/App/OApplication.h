@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Core/Utils/OTime.h>
-#include <Core/Utils/OGLUtils.h>
 #include <Core/Graphics/OWindow.h>
 
 #include <Core/Graphics/Renderers/ORendererFactory.h>
