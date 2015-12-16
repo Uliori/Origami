@@ -25,16 +25,19 @@ namespace Origami {
             ORenderer2D *m_CurrentRenderer;
             
             OCamera2D *m_Camera;
+            
+            
         public:
             OLayer2D();
             OLayer2D(ORenderer2D *renderer);
             
+            GlyphSortType sortType;
             
             virtual ~OLayer2D();
             
             inline void addsprite(OSprite * sprite) {m_Renderables.push_back(sprite);}
             
-            inline void setRenderer(ORenderer2D * renderer){m_CurrentRenderer = renderer;}
+            inline void setRenderer(ORenderer2D * renderer) { m_CurrentRenderer = renderer; }
             
             inline OCamera2D * getCamera() const { return m_Camera; }
             

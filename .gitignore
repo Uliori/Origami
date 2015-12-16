@@ -1,4 +1,6 @@
 Game/*
+Game/OGame.hpp
+Game/OGame.cpp
 proj.android/bin/*
 proj.android/gen/*
 proj.android/libs/*

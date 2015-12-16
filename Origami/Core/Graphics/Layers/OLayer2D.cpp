@@ -14,12 +14,12 @@
 
 namespace Origami {
         
-        OLayer2D::OLayer2D() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatch)
+    OLayer2D::OLayer2D() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatch), sortType(GlyphSortType::NONE)
         {
             init();
         }
         
-        OLayer2D::OLayer2D(ORenderer2D *renderer) : m_CurrentRenderer(renderer)
+        OLayer2D::OLayer2D(ORenderer2D *renderer) : m_CurrentRenderer(renderer), sortType(GlyphSortType::NONE)
         {
             init();
         }
@@ -41,7 +41,7 @@ namespace Origami {
             
             //ORenderer2D is deleted in ORendererFactory ;)
         }
-        
+    
         void OLayer2D::create()
         {
             
@@ -51,13 +51,13 @@ namespace Origami {
         {
             m_Camera->update(deltaTime);
             
-
         }
         
         void OLayer2D::render(float interpolation)
         {
+            
             if (m_CurrentRenderer) {
-                m_CurrentRenderer->Begin();
+                m_CurrentRenderer->Begin(sortType);
                 
                 for (const OSprite* renderable : m_Renderables)
                     if(m_Camera->isBoxInView(renderable->GetPosition(), renderable->GetSize())){
