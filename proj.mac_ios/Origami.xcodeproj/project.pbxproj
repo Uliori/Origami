@@ -131,6 +131,8 @@
 		9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
 		916E36C01BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
 		916E36C11BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
+		917155341C34038400161AE5 /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917155321C34038400161AE5 /* BeachScene.cpp */; };
+		917155351C34038400161AE5 /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917155321C34038400161AE5 /* BeachScene.cpp */; };
 		9175749F1BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
 		917574A01BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
 		917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; };
@@ -180,7 +182,11 @@
 		91B0FF291BC71F820051529B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF281BC71F820051529B /* Cocoa.framework */; };
 		91B0FF2E1BC71FC60051529B /* glew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2D1BC71FC60051529B /* glew.a */; };
 		91B0FF301BC728280051529B /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2F1BC728280051529B /* libglfw3.a */; };
+		91CC3E011C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
+		91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
 		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; };
+		91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
+		91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
 		91F5F3901BC6F8F70030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F38F1BC6F8F70030DA6A /* main.m */; };
 		91F5F3921BC6F8F80030DA6A /* MacAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */; };
 		91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F3BC1BC6FCF40030DA6A /* main.m */; };
@@ -192,8 +198,6 @@
 		91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90101BCB0B4C00526B2D /* OApplication.cpp */; };
 		91FB901A1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; };
 		91FB901B1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; };
-		91FB901C1BCB1DD900526B2D /* OScenesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90181BCB1DD900526B2D /* OScenesManager.cpp */; };
-		91FB901D1BCB1DD900526B2D /* OScenesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90181BCB1DD900526B2D /* OScenesManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -277,6 +281,8 @@
 		9147DF521BDBAEA0006DBC72 /* OCamera2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCamera2D.h; sourceTree = "<group>"; };
 		916E36BE1BD92DE3005EE626 /* OTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTexture.h; sourceTree = "<group>"; };
 		916E36BF1BD96E3F005EE626 /* AppData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppData; sourceTree = "<group>"; };
+		917155321C34038400161AE5 /* BeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachScene.cpp; sourceTree = "<group>"; };
+		917155331C34038400161AE5 /* BeachScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachScene.hpp; sourceTree = "<group>"; };
 		9175749B1BD691C000EE8547 /* OShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OShader.cpp; sourceTree = "<group>"; };
 		9175749C1BD691C000EE8547 /* OShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OShader.h; sourceTree = "<group>"; };
 		917574A31BD6972E00EE8547 /* program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program.h; sourceTree = "<group>"; };
@@ -329,7 +335,12 @@
 		91B0FF281BC71F820051529B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91B0FF2D1BC71FC60051529B /* glew.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = glew.a; path = ../../Origami/Dependencies/GLEW/lib/osx/glew.a; sourceTree = "<group>"; };
 		91B0FF2F1BC728280051529B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Origami/Dependencies/GLFW/lib/osx/libglfw3.a; sourceTree = "<group>"; };
+		91CC3DFE1C34947100F923C1 /* OMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMacros.h; sourceTree = "<group>"; };
+		91CC3DFF1C357E0700F923C1 /* ODirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ODirector.cpp; sourceTree = "<group>"; };
+		91CC3E001C357E0700F923C1 /* ODirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODirector.h; sourceTree = "<group>"; };
 		91D0521E1BC861DC00F4F246 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		91D3CEC31C39610300C3B1A3 /* OGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGeometry.h; sourceTree = "<group>"; };
+		91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGeometry.cpp; sourceTree = "<group>"; };
 		91F5F3881BC6F8F70030DA6A /* engine_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = engine_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F5F38F1BC6F8F70030DA6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MacAssets.xcassets; sourceTree = "<group>"; };
@@ -346,8 +357,6 @@
 		91FB90101BCB0B4C00526B2D /* OApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OApplication.cpp; sourceTree = "<group>"; };
 		91FB90161BCB1DD900526B2D /* OScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OScene.cpp; sourceTree = "<group>"; };
 		91FB90171BCB1DD900526B2D /* OScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OScene.h; sourceTree = "<group>"; };
-		91FB90181BCB1DD900526B2D /* OScenesManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OScenesManager.cpp; sourceTree = "<group>"; };
-		91FB90191BCB1DD900526B2D /* OScenesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OScenesManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +542,8 @@
 			children = (
 				919AA4F61BC82006004C7052 /* OGame.hpp */,
 				919AA4F51BC82006004C7052 /* OGame.cpp */,
+				917155331C34038400161AE5 /* BeachScene.hpp */,
+				917155321C34038400161AE5 /* BeachScene.cpp */,
 				916E36BF1BD96E3F005EE626 /* AppData */,
 			);
 			name = Game;
@@ -571,10 +582,13 @@
 			isa = PBXGroup;
 			children = (
 				91B0FEDA1BC71C3C0051529B /* OGL.h */,
+				91CC3DFE1C34947100F923C1 /* OMacros.h */,
+				91CC3E001C357E0700F923C1 /* ODirector.h */,
+				91CC3DFF1C357E0700F923C1 /* ODirector.cpp */,
 				91B0FECD1BC71C3C0051529B /* App */,
 				91B0FECF1BC71C3C0051529B /* Graphics */,
-				91B0FED61BC71C3C0051529B /* Inputs */,
 				91B0FED71BC71C3C0051529B /* Maths */,
+				91B0FED61BC71C3C0051529B /* Inputs */,
 				91B0FEDC1BC71C3C0051529B /* Platform */,
 				91B0FEE01BC71C3C0051529B /* Utils */,
 			);
@@ -622,6 +636,8 @@
 			children = (
 				91B0FED81BC71C3C0051529B /* OMaths.cpp */,
 				91B0FED91BC71C3C0051529B /* OMaths.h */,
+				91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */,
+				91D3CEC31C39610300C3B1A3 /* OGeometry.h */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -775,8 +791,6 @@
 			children = (
 				91FB90171BCB1DD900526B2D /* OScene.h */,
 				91FB90161BCB1DD900526B2D /* OScene.cpp */,
-				91FB90191BCB1DD900526B2D /* OScenesManager.h */,
-				91FB90181BCB1DD900526B2D /* OScenesManager.cpp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -825,6 +839,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					91F5F3871BC6F8F70030DA6A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -895,6 +910,7 @@
 				913BC95D1BE0030C0013209D /* cff.c in Sources */,
 				911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */,
 				913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */,
+				91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */,
 				91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */,
 				913BC6D61BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */,
 				911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
@@ -903,6 +919,7 @@
 				913BC95A1BE002FE0013209D /* psnames.c in Sources */,
 				917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */,
 				913BC7311BDFF1020013209D /* platform.c in Sources */,
+				91CC3E011C357E0700F923C1 /* ODirector.cpp in Sources */,
 				913BC6561BDF8A210013209D /* hb-common.cc in Sources */,
 				913BC6D21BDF8A210013209D /* hb-ot-layout.cc in Sources */,
 				913BC92D1BE0026D0013209D /* ftrend1.c in Sources */,
@@ -926,6 +943,7 @@
 				913BC9571BE002F30013209D /* pshinter.c in Sources */,
 				9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
 				913BC9491BE002C90013209D /* ftlcdfil.c in Sources */,
+				917155341C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC6F21BDF8A210013209D /* hb-set.cc in Sources */,
 				91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */,
 				91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */,
@@ -934,7 +952,6 @@
 				913BC65C1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6E81BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */,
 				913BC9431BE002C90013209D /* ftgasp.c in Sources */,
-				91FB901C1BCB1DD900526B2D /* OScenesManager.cpp in Sources */,
 				91B0FEFC1BC71C3C0051529B /* OTextureCache.cpp in Sources */,
 				911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */,
 				913BC6EE1BDF8A210013209D /* hb-ot-shape.cc in Sources */,
@@ -995,6 +1012,7 @@
 				913BC9481BE002C90013209D /* ftinit.c in Sources */,
 				91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */,
 				919AA4F81BC82006004C7052 /* OGame.cpp in Sources */,
+				91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */,
 				917574A01BD691C000EE8547 /* OShader.cpp in Sources */,
 				911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
 				913BC72C1BDFF03B0013209D /* vector.c in Sources */,
@@ -1017,7 +1035,6 @@
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
 				91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */,
-				91FB901D1BCB1DD900526B2D /* OScenesManager.cpp in Sources */,
 				913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */,
 				913BC65B1BDF8A210013209D /* hb-fallback-shape.cc in Sources */,
 				913BC95B1BE002FE0013209D /* psnames.c in Sources */,
@@ -1038,6 +1055,7 @@
 				913BC65D1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6571BDF8A210013209D /* hb-common.cc in Sources */,
 				913BC6F31BDF8A210013209D /* hb-set.cc in Sources */,
+				917155351C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC9551BE002E50013209D /* ftraster.c in Sources */,
 				913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
 				913BC9611BE0031D0013209D /* truetype.c in Sources */,
@@ -1046,6 +1064,7 @@
 				913BC6D31BDF8A210013209D /* hb-ot-layout.cc in Sources */,
 				913BC9671BE0033A0013209D /* smooth.c in Sources */,
 				9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */,
+				91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */,
 				913BC6E71BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */,
 				913BC9421BE002C90013209D /* ftfstype.c in Sources */,
 				913BC6ED1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,

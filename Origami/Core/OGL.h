@@ -98,24 +98,4 @@
 
 
 
-// Object deletion macro
-#define SAFE_DELETE(x) \
-{ \
-delete x; \
-x = NULL; \
-}
 
-// Array deletion macro
-#define SAFE_DELETE_ARRAY(x) \
-{ \
-delete[] x; \
-x = NULL; \
-}
-
-// Ref cleanup macro
-#define SAFE_RELEASE(x) \
-if (x) \
-{ \
-(x)->release(); \
-x = NULL; \
-}

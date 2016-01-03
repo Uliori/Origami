@@ -1,9 +1,9 @@
 #include <Core/Graphics/OWindow.h>
 
-namespace Origami {
+NS_O_BEGIN
         bool OWindow::PlatformInit()
         {
-            OScenesManager::Manager()->m_screen_fbo = 0;
+            ODirector::director()->m_screen_fbo = 0;
             
             OGLUtils::printGLInfo();
             return true;
@@ -28,4 +28,4 @@ namespace Origami {
             //EGL swap interval
         }
 
-}
+NS_O_END

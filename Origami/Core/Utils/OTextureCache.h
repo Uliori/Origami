@@ -3,17 +3,19 @@
 #include "TextureUtils.h"
 #include <map>
 
-namespace Origami {
+#include <Core/OMacros.h>
 
-		class OTextureCache {
-		public:
-			OTextureCache();
-			~OTextureCache();
+NS_O_BEGIN
 
-			OTexture getTexture(const std::string& texturePath);
-            void checkTextures();
-		private:
-			std::map<std::string, OTexture> m_TextureMap;
-		};
+class OTextureCache {
+public:
+    OTextureCache();
+    ~OTextureCache();
 
-}
+    OTexture getTexture(const std::string& texturePath);
+    void checkTextures();
+private:
+    std::map<std::string, OTexture> m_TextureMap;
+};
+
+NS_O_END

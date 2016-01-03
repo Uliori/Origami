@@ -8,16 +8,19 @@
 
 #pragma once
 
-namespace Origami {
-        class OLayer3D {
-            
-            
-        public:
-            OLayer3D();
-            virtual ~OLayer3D();
-            
-            virtual void create();
-            virtual void update(float deltaTime);
-            virtual void render(float interpolation);
-        };
-}
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
+class OLayer3D {
+    
+    
+public:
+    OLayer3D();
+    virtual ~OLayer3D();
+    
+    virtual void create();
+    virtual void updateResoltion();
+    virtual void update(float deltaTime);
+    virtual void render(float interpolation);
+};
+NS_O_END

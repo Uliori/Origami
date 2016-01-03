@@ -8,50 +8,17 @@
 
 #pragma once
 
-#include <Core/Utils/OGLUtils.h>
 #include <Core/App/OApplication.h>
+#include "BeachScene.hpp"
 
-#include <Core/Graphics/Scenes/OScene.h>
-
-#include <Core/Graphics/GUI/OFontManager.h>
-#include <Core/Graphics/GUI/OFont.h>
-#include <Core/Graphics/GUI/OLabel.h>
-
-using namespace Origami;
-
-#include <string>
-
-class scene1 : public OScene {
-    
-    
-public:
-    OLabel *fps;
-    
-    const float CAM_SPEED = 150.0f;
-    const float CAM_ZOOM = 0.01f;
-    
-    scene1()
-    {
-        for (uint i = 0; i < OScenesManager::Manager()->getWidth()/2; i += 50) {
-            for (uint j = 0; j < OScenesManager::Manager()->getHeight()/2; j += 50) {
-                addSprite(new OSprite((float)i, (float)j, 50, 50, "sprite.png"));
-            }
-        }
-        
-
-    }
-    ~scene1 ()
-    {
-
-    }
-};
-
+#include <Core/OMacros.h>
+USING_NS_O
 
 class OGame : public OApplication
 {
-    scene1 *sc1;
+    BeachScene *sc1;
 public:
-    OGame(const char* name, uint width, uint height, uint scale = 1);
+    OGame(const char* name, uint width, uint height);
     
     void Init() override;
     void Tick() override;
@@ -61,6 +28,3 @@ public:
     
 };
 
-
-
-//        SAFE_DELETE(fnt);

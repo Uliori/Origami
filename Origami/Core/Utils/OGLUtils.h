@@ -3,7 +3,9 @@
 #include <Core/OGL.h>
 #include <Core/Utils/OLog.h>
 
-namespace Origami {
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
 
 #ifdef O_MODE_DEBUG
 	#define OGLCall(x)	glGetError();\
@@ -41,4 +43,4 @@ public:
 	}
 };
 
-}
+NS_O_END

@@ -8,32 +8,37 @@
 
 #include "OLayer3D.h"
 
-namespace Origami {
+NS_O_BEGIN
         
-        
-        OLayer3D::OLayer3D()
-        {
-            
-        }
-        
-        OLayer3D::~OLayer3D()
-        {
-            
-        }
-        
-        void OLayer3D::create()
-        {
-            
-        }
-        
-        void OLayer3D::update(float deltaTime)
-        {
-            
-        }
-        
-        void OLayer3D::render(float interpolation)
-        {
-            
-        }
 
+OLayer3D::OLayer3D()
+{
+    
 }
+
+OLayer3D::~OLayer3D()
+{
+    
+}
+
+void OLayer3D::create()
+{
+    
+}
+
+void OLayer3D::update(float deltaTime)
+{
+    
+}
+
+void OLayer3D::render(float interpolation)
+{
+    
+}
+
+void OLayer3D::updateResoltion()
+{
+    
+}
+
+NS_O_END

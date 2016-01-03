@@ -45,4 +45,11 @@ public class GL2JNIActivity extends Activity {
         mView.onResume();
         mView.setVisibility(View.VISIBLE);
     }
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	GL2JNILib.cleanUp();
+    	super.onDestroy();
+    }
 }

@@ -4,31 +4,32 @@
 #include <chrono>
 #include <thread>
 
-namespace Origami
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
+class OTimer
 {
-	class OTimer
-	{
-	private:
-		typedef std::chrono::system_clock		clock;
-		typedef std::chrono::milliseconds  		milliseconds_type;
+private:
+    typedef std::chrono::system_clock		clock;
+    typedef std::chrono::milliseconds  		milliseconds_type;
 
-	public:
+public:
 
-		OTimer()
-		{
-		}
+    OTimer()
+    {
+    }
 
-        double getTime()
-        {
-            return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
-        }
+    double getTime()
+    {
+        return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
+    }
 
-        void sleep(int milliseconds)
-        {
-            std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-        }
-	};
-}
+    void sleep(int milliseconds)
+    {
+        std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+    }
+};
+NS_O_END
 //#else
 //#include <unistd.h>
 //#include <time.h>

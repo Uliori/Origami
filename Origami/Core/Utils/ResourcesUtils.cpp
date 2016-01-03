@@ -10,7 +10,7 @@
 extern AAssetManager *mgr;
 #endif
 
-namespace Origami {
+NS_O_BEGIN
 
 const std::string RESOURCES_FOLDER = "AppData";
 
@@ -92,4 +92,4 @@ int ResourcesUtils::fileLength(const char * filePath, unsigned char *& buffer,
 	return 1;
 }
 
-}
+NS_O_END

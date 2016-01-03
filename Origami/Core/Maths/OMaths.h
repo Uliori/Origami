@@ -2,9 +2,12 @@
 
 #include <math.h>
 #include <iostream>
+#include <cstdlib>
 
+#include <Core/OMacros.h>
 
-namespace Origami { namespace maths {
+NS_O_BEGIN
+namespace maths {
 
 #define EPSILON 1e-6f
 #define PI 3.14159265358979323846f
@@ -29,6 +32,15 @@ namespace Origami { namespace maths {
 
 #define ZERO_MEM(a) memset(a, 0, sizeof(a))
 
+#define percent(A,B)((A * (B/100.0)))
+#define addPercent(A,B)(A + (A * (B/100.0)))
+        
+    inline double fRand(double fMin, double fMax)
+    {
+        double f = (double)rand() / RAND_MAX;
+        return fMin + f * (fMax - fMin);
+    }
+    
 	struct vec2;
 	struct vec3;
 	struct vec4;
@@ -1289,4 +1301,5 @@ namespace Origami { namespace maths {
 
 		return matOutput;
 	}*/
-}}
+}
+NS_O_END

@@ -9,7 +9,7 @@
 #include "OGame.hpp"
 
 int main() {
-    OGame game("Blaze", 480, 800, 1);
+    OGame game("Blaze", 480, 800);
     game.Start();
     return 0;
 }

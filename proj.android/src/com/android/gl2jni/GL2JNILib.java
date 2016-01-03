@@ -24,8 +24,8 @@ public class GL2JNILib {
 
 	static {
 		System.loadLibrary("soil2");
-		System.loadLibrary("freetype2");
-		System.loadLibrary("harfbuzz");
+//		System.loadLibrary("freetype2");
+//		System.loadLibrary("harfbuzz");
         System.loadLibrary("origami");
     }
 
@@ -35,6 +35,7 @@ public class GL2JNILib {
      */
 
     public static native void init(int width, int height);
+    public static native void resize(int width, int height);
     public static native void step();
     public static native void cleanUp();
     public static native void setAssetManager(AssetManager mgr);

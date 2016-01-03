@@ -10,19 +10,21 @@
 
 #include "OShader.h"
 
-namespace Origami {
+#include <Core/OMacros.h>
 
-    class OSimple2DShader : public OShader
-    {
-        
-    public:
-        OSimple2DShader();
-        
-        void Init() override;
-        
-    private:
-        void BindLocations() override;
-        
-    };
+NS_O_BEGIN
+
+class OSimple2DShader : public OShader
+{
     
-}
+public:
+    OSimple2DShader();
+    
+    void init() override;
+    
+private:
+    void bindLocations() override;
+    
+};
+    
+NS_O_END

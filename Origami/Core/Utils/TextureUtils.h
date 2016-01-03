@@ -11,25 +11,23 @@
 #include <Core/Utils/OGLUtils.h>
 #include <Core/Graphics/OTexture.h>
 
-namespace Origami {
+#include <Core/OMacros.h>
 
-		class TextureUtils {
-		public:
+NS_O_BEGIN
+class TextureUtils {
+public:
 //			static GLuint loadTexture(const char * imagepath);
-            static OTexture loadTexture(const char * imagepath, bool invert_y = true);
-            
-            
-			static GLuint loadTextureCube(const char* PosXFilename,
-				const char* NegXFilename,
-				const char* PosYFilename,
-				const char* NegYFilename,
-				const char* PosZFilename,
-				const char* NegZFilename);
+    static OTexture loadTexture(const char * imagepath, bool invert_y = true);
+    
+    
+    static GLuint loadTextureCube(const char* PosXFilename,
+        const char* NegXFilename,
+        const char* PosYFilename,
+        const char* NegYFilename,
+        const char* PosZFilename,
+        const char* NegZFilename);
 
-			static GLuint makeTexture(GLsizei width, GLsizei height, GLint internalformat, GLenum format, GLenum type, GLint param_MAG, GLint param_MIN, GLint param_W_S, GLint param_W_T);
-		};
+    static GLuint makeTexture(GLsizei width, GLsizei height, GLint internalformat, GLenum format, GLenum type, GLint param_MAG, GLint param_MIN, GLint param_W_S, GLint param_W_T);
+};
 
-}
-
-
-
+NS_O_END

@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 
+#include <Core/ODirector.h>
 
 
 
@@ -25,13 +26,13 @@
 
 @implementation GameViewController
 
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscape;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
-}
+//- (NSUInteger)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscape;
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationLandscapeLeft;
+//}
 
 - (BOOL)shouldAutorotate{
     return YES;
@@ -98,7 +99,7 @@
     [EAGLContext setCurrentContext:self.context];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    game = new OGame("",screenRect.size.width, screenRect.size.height, [[UIScreen mainScreen] scale]);
+    game = new OGame("",screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
     game->Start();
     
 
@@ -114,6 +115,43 @@
     [EAGLContext setCurrentContext:self.context];
      SAFE_DELETE(game);
 
+}
+#pragma mark - Orientation detection
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)orientationChanged:(NSNotification *)notification{
+    [self adjustViewsForOrientation:[[UIDevice currentDevice] orientation]];
+}
+
+- (void) adjustViewsForOrientation:(UIDeviceOrientation) orientation {
+    
+    if (ODirector::director()->getCurrentScene()) {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        ODirector::director()->setFrameSize(screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
+    
+        OSize designResolutionSize = ODirector::director()->getDesignResolutionSize();
+        
+        if (screenRect.size.width > screenRect.size.height) { //Landscape
+            ODirector::director()->setDesignResolutionSize(MAX(designResolutionSize.width, designResolutionSize.height), MIN(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_HEIGHT);
+        }
+        else
+        {
+            ODirector::director()->setDesignResolutionSize(MIN(designResolutionSize.width, designResolutionSize.height), MAX(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_WIDTH);
+        }
+
+        
+        OSize fS = ODirector::director()->getFrameSize();
+        glViewport(0, 0, fS.width, fS.height);
+    }
 }
 
 #pragma mark - GLKView and GLKViewController delegate methods
@@ -164,6 +202,10 @@
 }
 
 
+
+
+
+#pragma mark - Touch Handling
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     unsigned int touchID = 0;

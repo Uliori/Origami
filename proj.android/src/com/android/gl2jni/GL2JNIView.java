@@ -379,8 +379,8 @@ class GL2JNIView extends GLSurfaceView {
         }
         @Override
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-//        	GL2JNILib.setAssetManager(getAssetsManager());
-//        	GL2JNILib.init(width, height);
+        	GL2JNILib.setAssetManager(getAssetsManager());
+        	GL2JNILib.resize(width, height);
         }
         @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {

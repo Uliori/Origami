@@ -6,8 +6,17 @@
 #include "OGame.hpp"
 #include <Core/Utils/OResourceManager.h>
 
+#if !defined(MIN)
+    #define MIN(A,B)	((A) < (B) ? (A) : (B))
+#endif
+
+#if !defined(MAX)
+    #define MAX(A,B)	((A) > (B) ? (A) : (B))
+#endif
+
 extern "C" {
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
+JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height);
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type);
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type);
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager);
@@ -41,6 +50,7 @@ JNIEXPORT void JNICALL
 Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height) {
 	g_width = width;
 	g_height = height;
+
 	if (!s_game) {
 		game()->Start();
 	}
@@ -48,6 +58,30 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 
 	DESIRED_FRAMETIME = MS_IN_SECOND / game()->GetPreferredFPS();//
 	previousTicks = game()->getTimer()->getTime();
+}
+
+JNIEXPORT void JNICALL
+Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height) {
+	g_width = width;
+	g_height = height;
+
+    if (ODirector::director()->getCurrentScene()) {
+        ODirector::director()->setFrameSize(g_width, g_height);
+
+        OSize designResolutionSize = ODirector::director()->getDesignResolutionSize();
+
+        if (g_width > g_height) { //Landscape
+            ODirector::director()->setDesignResolutionSize(MAX(designResolutionSize.width, designResolutionSize.height), MIN(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_HEIGHT);
+        }
+        else
+        {
+            ODirector::director()->setDesignResolutionSize(MIN(designResolutionSize.width, designResolutionSize.height), MAX(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_WIDTH);
+        }
+
+
+        OSize fS = ODirector::director()->getFrameSize();
+        glViewport(0, 0, fS.width, fS.height);
+    }
 }
 
 JNIEXPORT void JNICALL
@@ -102,7 +136,6 @@ JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv 
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type)
 {
 	if (s_game) {
-		delete s_game;
-		s_game = nullptr;
+		SAFE_DELETE(s_game);
 	}
 }
