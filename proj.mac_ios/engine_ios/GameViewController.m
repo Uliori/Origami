@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 
+#include <Core/ODirector.h>
 
 
 
@@ -25,13 +26,13 @@
 
 @implementation GameViewController
 
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscape;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
-}
+//- (NSUInteger)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscape;
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationLandscapeLeft;
+//}
 
 - (BOOL)shouldAutorotate{
     return YES;
@@ -55,7 +56,7 @@
     
     self.preferredFramesPerSecond = game->GetPreferredFPS();
     
-    DESIRED_FRAMETIME  = 1.0f / game->GetPreferredFPS();
+    DESIRED_FRAMETIME  = 1000.0f / game->GetPreferredFPS();
     
     [((GLKView *)self.view) bindDrawable];
     
@@ -98,15 +99,15 @@
     [EAGLContext setCurrentContext:self.context];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    game = new OGame("",screenRect.size.width, screenRect.size.height, [[UIScreen mainScreen] scale]);
+    game = new OGame("",screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
     game->Start();
     
 
-    lastTime      = game->getTimer()->getTime();
-    tickCounter = 0;
-    updates = 0;
-    currentTicks = 0;
-    previousTicks = 0;
+    previousTicks   = game->getTimer()->getTime();
+    tickCounter     = 0;
+    updates         = 0;
+    currentTicks    = 0;
+    accumulator     = 0;
 }
 
 - (void)tearDownGL
@@ -115,45 +116,96 @@
      SAFE_DELETE(game);
 
 }
+#pragma mark - Orientation detection
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)orientationChanged:(NSNotification *)notification{
+    [self adjustViewsForOrientation:[[UIDevice currentDevice] orientation]];
+}
+
+- (void) adjustViewsForOrientation:(UIDeviceOrientation) orientation {
+    
+    if (ODirector::director()->getCurrentScene()) {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        ODirector::director()->setFrameSize(screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
+    
+        OSize designResolutionSize = ODirector::director()->getDesignResolutionSize();
+        
+        if (screenRect.size.width > screenRect.size.height) { //Landscape
+            ODirector::director()->setDesignResolutionSize(MAX(designResolutionSize.width, designResolutionSize.height), MIN(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_HEIGHT);
+        }
+        else
+        {
+            ODirector::director()->setDesignResolutionSize(MIN(designResolutionSize.width, designResolutionSize.height), MAX(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_WIDTH);
+        }
+
+        
+        OSize fS = ODirector::director()->getFrameSize();
+        glViewport(0, 0, fS.width, fS.height);
+    }
+}
 
 #pragma mark - GLKView and GLKViewController delegate methods
 
 - (void)update
 {
+    double startTicks = game->getTimer()->getTime();
+    double passedTime = startTicks - previousTicks;
+    previousTicks = startTicks;
+    
+    accumulator += passedTime;
+    
+    int   loops = 0;
+    
+    while(accumulator >= DESIRED_FRAMETIME && loops < 10)
+    {
+        game->Update(DESIRED_FRAMETIME / 1000.0f);
+        accumulator -= DESIRED_FRAMETIME;
+        updates ++;
+        loops++;
+    }
+    
+    game->Refresh();
+    
 #ifdef O_MODE_DEBUG
-    double startTime = game->getTimer()->getTime();
-    double passedTime = startTime - lastTime;
-    lastTime = startTime;
+    
     
     tickCounter += passedTime;
     
-    if (tickCounter >= 1.0f) {
-        game->setFPS(self.framesPerSecond);
+    if (tickCounter >= 1000.0f) {
+        game->setFPS((uint)self.framesPerSecond);
         game->setUPS(updates);
         
         updates = 0;
-        tickCounter -= 1.0f;
+        tickCounter -= 1000.0f;
         
         game->Tick();
     }
     
 #endif
 
-    currentTicks += self.timeSinceLastUpdate;
-    while (currentTicks - previousTicks > DESIRED_FRAMETIME) {
-        game->Update(DESIRED_FRAMETIME);
-        previousTicks += DESIRED_FRAMETIME;
-        updates ++;
-    }
-    game->Refresh();
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    game->Render();
+    float interpolation = float( game->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+    game->Render(interpolation);
 }
 
 
+
+
+
+#pragma mark - Touch Handling
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     unsigned int touchID = 0;

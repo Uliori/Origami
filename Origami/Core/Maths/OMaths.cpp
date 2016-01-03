@@ -1,6 +1,7 @@
 #include "OMaths.h"
 
-namespace Origami {namespace maths {
+NS_O_BEGIN
+namespace maths {
 
 	/*****************************************************************************/
 	/*                                                                           */
@@ -667,4 +668,5 @@ namespace Origami {namespace maths {
 	//	}
 	//}
 
-}}
+}
+NS_O_END

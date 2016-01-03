@@ -1,56 +1,61 @@
 #pragma once
 
+//#ifdef O_TARGET_DESKTOP
 #include <chrono>
 #include <thread>
 
-namespace Origami
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
+class OTimer
 {
-	class OTimer
-	{
-	private:
-		typedef std::chrono::high_resolution_clock  HighResolutionClock;
-		typedef std::chrono::milliseconds           milliseconds_type;
-        
-//		std::chrono::time_point<HighResolutionClock> m_Start;
-        
-//        float m_delta;
+private:
+    typedef std::chrono::system_clock		clock;
+    typedef std::chrono::milliseconds  		milliseconds_type;
 
-	public:
-        
-		OTimer()
-		{
-//			Reset();
-		}
+public:
 
-//		void Reset()
-//		{
-//			m_Start = HighResolutionClock::now();
-//		}
-        
-        float getTime()
-        {
-            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now().time_since_epoch()).count() / 1000.0f;
-        }
-        
-//        float getRunningTime()
+    OTimer()
+    {
+    }
+
+    double getTime()
+    {
+        return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
+    }
+
+    void sleep(int milliseconds)
+    {
+        std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+    }
+};
+NS_O_END
+//#else
+//#include <unistd.h>
+//#include <time.h>
+//
+//namespace Origami
+//{
+//    class OTimer
+//    {
+//
+//    public:
+//
+//        OTimer()
 //        {
-//            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
 //        }
-        
-//        float getDelta()
+//
+//        double getTime()
 //        {
-//            return m_delta;
+//        	struct timespec res;
+//        	clock_gettime(CLOCK_MONOTONIC, &res);
+//        	return 1000.0 * res.tv_sec + (double) res.tv_nsec / 1e6;
 //        }
-//        
-//        void setDelta(float delta)
+//
+//        void sleep(int milliseconds)
 //        {
-//            m_delta = delta;
+//            usleep(milliseconds * 1000);
 //        }
-
-
-        void sleep(int milliseconds)
-        {
-            std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-        }
-	};
-}
+//    };
+//}
+//#endif

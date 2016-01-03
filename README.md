@@ -1,5 +1,5 @@
 # Origami
-a small 2D/3D game engine for iOS, OS X, and Windows
+a small 2D/3D game engine for iOS, Android, OS X, and Windows
 
 This engine is just for tests purposes.
 Currently work on iOS, OS X, and Win32.

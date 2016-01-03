@@ -1,18 +1,19 @@
 #include <Core/App/OApplication.h>
 
-namespace Origami {
+NS_O_BEGIN
 
-    OApplication::~OApplication()
-    {
-        SAFE_DELETE(m_window);
-        SAFE_DELETE(m_Timer);
-        
-        ORendererFactory::deleteRenderers();
-    }
+OApplication::~OApplication()
+{
+    SAFE_DELETE(m_window);
+    SAFE_DELETE(m_Timer);
     
-    void OApplication::Run()
-    {
-
-    }
-    
+    OResourceManager::cleanUp();
+    ORendererFactory::deleteRenderers();
 }
+
+void OApplication::Run()
+{
+
+}
+
+NS_O_END
