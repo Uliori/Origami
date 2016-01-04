@@ -9,31 +9,42 @@
 #pragma once
 
 #include <Core/Maths/OMaths.h>
-#include <Core/Utils/OGLUtils.h>
+
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
-    
+
 struct VertexData2D
 {
-    maths::vec3  m_vertex;
+    maths::vec2  m_vertex;
     maths::vec2  m_uv;
-    maths::vec4  m_color;
+    unsigned int m_color;
     unsigned int m_tid;
+    float        m_zOrder;
     
-    
-    void setColor(maths::vec4 color) { m_color = color; }
-    void setColor(float r, float g, float b, float a)
+    void setColor(unsigned int color) { m_color = color; }
+    void setColor(const maths::vec4& color)
     {
-        m_color = maths::vec4(r, g, b, a);
+        uint r = (uint)(color.x * 255.0f);
+        uint g = (uint)(color.y * 255.0f);
+        uint b = (uint)(color.z * 255.0f);
+        uint a = (uint)(color.w * 255.0f);
+        
+        m_color = a << 24 | b << 16 | g << 8 | r;
+    }
+    
+    void setPosition(float x, float y)
+    {
+        m_vertex = maths::vec2(x, y);
     }
     
     void setPosition(float x, float y, float z)
     {
-        m_vertex = maths::vec3(x, y, z);
+        m_vertex = maths::vec2(x, y);
+        m_zOrder = z;
     }
     
-    void setPosition(const maths::vec3& position)
+    void setPosition(const maths::vec2& position)
     {
         m_vertex = position;
     }
@@ -53,7 +64,6 @@ struct VertexData2D
     {
         m_uv = uv;
     }
-
+    
 };
 NS_O_END
-

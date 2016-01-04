@@ -33,8 +33,6 @@ public:
     OLayer2D();
     OLayer2D(ORenderer2D *renderer);
     
-    GlyphSortType sortType;
-    
     virtual ~OLayer2D();
     
     inline void addsprite(OSprite * sprite) {m_Renderables.push_back(sprite);}

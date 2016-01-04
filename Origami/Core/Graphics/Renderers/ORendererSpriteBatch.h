@@ -6,7 +6,7 @@
 //
 //
 
-#pragma once 
+#pragma once
 
 #include <Core/OGL.h>
 
@@ -23,7 +23,7 @@ NS_O_BEGIN
 class Glyph {
 public:
     Glyph() {};
-    Glyph(const maths::vec3 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, const maths::vec4 &color);
+    Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder);
     
     GLuint textureID;
     
@@ -31,6 +31,8 @@ public:
     VertexData2D bottomLeft;
     VertexData2D topRight;
     VertexData2D bottomRight;
+    
+    float a_zOrder;
     
 };
 
@@ -53,8 +55,8 @@ public:
     virtual ~ORendererSpriteBatch();
     
     void Init() override;
-    void Begin(GlyphSortType sortType = GlyphSortType::TEXTURE) override;
-    void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, const maths::vec4 &color) override;
+    void Begin() override;
+    void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
     void Submit(const OSprite* renderable) override;
     void End() override;
     void Flush(OLayer2D *layer) override;
@@ -69,19 +71,16 @@ private:
     // Sorts glyphs according to _sortType
     void sortGlyphs();
     
-    // Comparators used by sortGlyphs()
-    static bool compareFrontToBack(Glyph* a, Glyph* b);
-    static bool compareBackToFront(Glyph* a, Glyph* b);
-    static bool compareTexture(Glyph* a, Glyph* b);
+    // Comparator used by sortGlyphs()
+    static bool compareFunction(Glyph* a, Glyph* b);
+
     
     GLuint m_vboID;
     GLuint m_vaoID;
     
-    GlyphSortType m_sortType;
-    
     std::vector<Glyph*> m_glyphPointers; ///< This is for sorting
     std::vector<Glyph> m_glyphs; ///< These are the actual glyphs
     std::vector<RenderBatch> m_renderBatches;
-
+    
 };
 NS_O_END
