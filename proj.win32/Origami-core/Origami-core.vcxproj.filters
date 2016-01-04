@@ -216,9 +216,6 @@
     <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScene.cpp">
       <Filter>Source Files\Origami\Core\Graphics\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.cpp">
-      <Filter>Source Files\Origami\Core\Graphics\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp">
       <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
     </ClCompile>
@@ -226,9 +223,6 @@
       <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\vector.c">
-      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.c">
       <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.c">
@@ -299,6 +293,18 @@
     </ClCompile>
     <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\sfnt\sfnt.c">
       <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\BeachScene.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\ODirector.cpp">
+      <Filter>Source Files\Origami\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Maths\OGeometry.cpp">
+      <Filter>Source Files\Origami\Core\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.cpp">
+      <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -386,9 +392,6 @@
     <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.h">
       <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.h">
-      <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.h">
       <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
     </ClInclude>
@@ -418,6 +421,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\freetype-gl.h">
       <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\BeachScene.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\ODirector.h">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\OMacros.h">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Maths\OGeometry.h">
+      <Filter>Header Files\Origami\Core\Maths</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

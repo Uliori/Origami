@@ -36,7 +36,7 @@ OLabel::OLabel(const std::string& text, float x, float y, const std::string& fon
 
 void OLabel::Submit(ORenderer2D* renderer) const
 {
-    renderer->DrawString(m_text, m_Position, *m_Font, m_Color);
+//    renderer->DrawString(m_text, m_Position, *m_Font, m_Color);
 }
 
 void OLabel::ValidateFont(const std::string& name, int size)

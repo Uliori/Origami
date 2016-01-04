@@ -37,7 +37,7 @@ public:
     virtual void Init() {}
     virtual void Begin(GlyphSortType sortType = GlyphSortType::TEXTURE) {}
     virtual void Submit(const OSprite* renderable) = 0;
-    virtual void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) { }
+    virtual void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, const maths::vec4 &color) { }
     virtual void End() {}
     virtual void Flush(OLayer2D *layer) = 0;
 };

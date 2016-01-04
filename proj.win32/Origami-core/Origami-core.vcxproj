@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Game\BeachScene.cpp" />
     <ClCompile Include="..\..\Game\OGame.cpp" />
     <ClCompile Include="..\..\Origami\Core\App\OApplication.cpp" />
     <ClCompile Include="..\..\Origami\Core\Graphics\2D\OCamera2D.cpp" />
@@ -161,11 +162,12 @@
     <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.cpp" />
     <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.cpp" />
     <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScene.cpp" />
-    <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.cpp" />
     <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp" />
     <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.cpp" />
     <ClCompile Include="..\..\Origami\Core\Inputs\OInputsManager.cpp" />
+    <ClCompile Include="..\..\Origami\Core\Maths\OGeometry.cpp" />
     <ClCompile Include="..\..\Origami\Core\Maths\OMaths.cpp" />
+    <ClCompile Include="..\..\Origami\Core\ODirector.cpp" />
     <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OApplicationDesktop.cpp" />
     <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OWindowDesktop.cpp" />
     <ClCompile Include="..\..\Origami\Core\Utils\OEException.cpp" />
@@ -176,7 +178,7 @@
     <ClCompile Include="..\..\Origami\Core\Utils\TextureUtils.cpp" />
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\platform.c" />
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-atlas.c" />
-    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.c" />
+    <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.cpp" />
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\vector.c" />
     <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\autofit\autofit.c" />
     <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\base\ftbase.c" />
@@ -206,6 +208,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Game\BeachScene.hpp" />
     <ClInclude Include="..\..\Game\OGame.hpp" />
     <ClInclude Include="..\..\Origami\Core\App\OApplication.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\2D\OCamera2D.h" />
@@ -222,13 +225,15 @@
     <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.h" />
-    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScenesManager.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.h" />
     <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\program.h" />
     <ClInclude Include="..\..\Origami\Core\Inputs\OInputsManager.h" />
+    <ClInclude Include="..\..\Origami\Core\Maths\OGeometry.h" />
     <ClInclude Include="..\..\Origami\Core\Maths\OMaths.h" />
+    <ClInclude Include="..\..\Origami\Core\ODirector.h" />
     <ClInclude Include="..\..\Origami\Core\OGL.h" />
+    <ClInclude Include="..\..\Origami\Core\OMacros.h" />
     <ClInclude Include="..\..\Origami\Core\Utils\OEException.h" />
     <ClInclude Include="..\..\Origami\Core\Utils\OGLUtils.h" />
     <ClInclude Include="..\..\Origami\Core\Utils\OLog.h" />

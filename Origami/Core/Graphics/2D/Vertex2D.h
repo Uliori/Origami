@@ -9,7 +9,7 @@
 #pragma once
 
 #include <Core/Maths/OMaths.h>
-
+#include <Core/Utils/OGLUtils.h>
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
@@ -18,19 +18,14 @@ struct VertexData2D
 {
     maths::vec3  m_vertex;
     maths::vec2  m_uv;
-    unsigned int m_color;
+    maths::vec4  m_color;
     unsigned int m_tid;
     
     
-    void setColor(unsigned int color) { m_color = color; }
-    void setColor(const maths::vec4& color)
+    void setColor(maths::vec4 color) { m_color = color; }
+    void setColor(float r, float g, float b, float a)
     {
-        uint r = (uint)(color.x * 255.0f);
-        uint g = (uint)(color.y * 255.0f);
-        uint b = (uint)(color.z * 255.0f);
-        uint a = (uint)(color.w * 255.0f);
-        
-        m_color = a << 24 | b << 16 | g << 8 | r;
+        m_color = maths::vec4(r, g, b, a);
     }
     
     void setPosition(float x, float y, float z)

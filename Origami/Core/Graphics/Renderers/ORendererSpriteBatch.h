@@ -23,7 +23,7 @@ NS_O_BEGIN
 class Glyph {
 public:
     Glyph() {};
-    Glyph(const maths::vec3 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color);
+    Glyph(const maths::vec3 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, const maths::vec4 &color);
     
     GLuint textureID;
     
@@ -54,7 +54,7 @@ public:
     
     void Init() override;
     void Begin(GlyphSortType sortType = GlyphSortType::TEXTURE) override;
-    void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
+    void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, const maths::vec4 &color) override;
     void Submit(const OSprite* renderable) override;
     void End() override;
     void Flush(OLayer2D *layer) override;
