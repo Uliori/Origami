@@ -37,8 +37,8 @@ GLuint OShader::load(const std::string & vertSrc, const std::string & fragSrc)
 GLint OShader::GetUniformLocation(const GLchar* name)
 {
     GLint result = m_program->GetUniform(name);
-//		if (result == -1)
-//			OErrLog(m_Name << ": could not find uniform "<< name << " in Shader!");
+		if (result == -1)
+			OErrLog(m_Name << ": could not find uniform "<< name << " in Shader!");
 
     return result;
 }
