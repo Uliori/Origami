@@ -79,7 +79,7 @@ LOCAL_SHARED_LIBRARIES 	:= \
 							#libharfbuzz
 	
 	
-LOCAL_LDLIBS    		:= -landroid -lGLESv2 -lEGL -llog -latomic
+LOCAL_LDLIBS    		:= -landroid -lGLESv2 -lEGL -llog
 # -ldl  -lz 
 include $(BUILD_SHARED_LIBRARY)
 

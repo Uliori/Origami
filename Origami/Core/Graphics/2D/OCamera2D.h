@@ -43,7 +43,7 @@ public:
     
     
     //Camera culling
-    virtual bool isBoxInView(const maths::vec3& position, const maths::vec2& dimensions);
+    virtual bool isBoxInView(const maths::vec2& position, const maths::vec2& dimensions);
     virtual maths::vec2 convertScreenToWorld(maths::vec2 screenCoords);
     
     virtual void update(float deltaTime);

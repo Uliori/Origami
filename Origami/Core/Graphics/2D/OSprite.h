@@ -17,7 +17,7 @@
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
-    
+
 class ORenderer2D;
 class OSprite {
 private:
@@ -30,11 +30,12 @@ private:
     GLuint m_Texture;
     std::string m_texturePath;
 protected:
-    maths::vec3 m_Position;
+    maths::vec2  m_Position;
     unsigned int m_Color;
+    float        m_zOrder;
     OSprite(){}
 public:
-    OSprite(float x, float y, float width, float height, std::string texturePath);
+    OSprite(float x, float y, float width, float height, std::string texturePath, float zOrder);
     ~OSprite();
     
     float tag;
@@ -42,7 +43,7 @@ public:
     void create();
     void draw();
     
-//        OTexture _texture;
+    //        OTexture _texture;
     
     //setters
     inline void SetColor(unsigned int color) { m_Color = color; }
@@ -56,7 +57,7 @@ public:
         m_Color = a << 24 | b << 16 | g << 8 | r;
     }
     
-    inline void setPosition(const maths::vec3& position)
+    inline void setPosition(const maths::vec2& position)
     {
         m_Position = position;
     }
@@ -77,11 +78,12 @@ public:
     }
     
     //getters
-    inline const maths::vec3& GetPosition() const { return m_Position; }
+    inline const maths::vec2& GetPosition() const { return m_Position; }
     inline const maths::vec2& GetSize() const { return m_Size; }
     inline const unsigned int GetColor() const { return m_Color; }
     inline const maths::vec4& GetUV() const { return m_UV; }
     inline const GLuint GetTID() const { return m_Texture; }
+    inline const GLuint GetZOrder() const { return m_zOrder; }
     
     virtual void Submit(ORenderer2D* renderer) const
     {
@@ -93,8 +95,7 @@ private:
     {
         m_UV = maths::vec4(0.0f, 0.0f, 1.0f, 1.0f);
     }
-
+    
     
 };
 NS_O_END
-

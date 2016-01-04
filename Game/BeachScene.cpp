@@ -32,43 +32,41 @@ BeachScene::BeachScene() : OScene()
     float p = addPercent(frameSize.width, 50);
     
     //boat
-    boat = new OSprite(frameSize.width * 0.75f, 45, boatTexture.width, boatTexture.height, boatimg);
+    boat = new OSprite(frameSize.width * 0.75f, 45, boatTexture.width, boatTexture.height, boatimg, 3);
     
     //mountains
-    mountains1 = new OSprite(0, 10, p, mountsTexture.height, mountsimg);
+    mountains1 = new OSprite(0, 10, p, mountsTexture.height, mountsimg, 1);
     mountains1->SetUV(maths::vec4(0.0f, 0.0f, p / mountsTexture.width, 1.0f));
     
     //w3
-    wave3 = new OSprite(0, 30, p, waveTexture.height, wave1img);
+    wave3 = new OSprite(0, 30, p, waveTexture.height, wave1img, 5);
     wave3->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
     
     //w2
-    wave2 = new OSprite(0, 00, p, waveTexture.height, wave1img);
+    wave2 = new OSprite(0, 00, p, waveTexture.height, wave1img, 4);
     wave2->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
     
     //w1
-    wave1 = new OSprite(0, -30, p, waveTexture.height, wave1img);
+    wave1 = new OSprite(0, -30, p, waveTexture.height, wave1img, 2);
     wave1->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));//
     
     //sun
-    sun =  new OSprite(frameSize.width * 0.75f, frameSize.height * 0.75f, sunTexture.width, sunTexture.height, sunimg);
+    sun =  new OSprite(frameSize.width * 0.75f, frameSize.height * 0.75f, sunTexture.width, sunTexture.height, sunimg, 1);
+    
     
     addSprite(mountains1);
     addSprite(wave1);
-    addSprite(boat);
     addSprite(wave2);
     addSprite(wave3);
     addSprite(sun);
+    addSprite(boat);
     
     
     for (int i = 0; i < CLOUDS_COUNT; i++) {
-        clouds.push_back(new OSprite(maths::fRand(0, frameSize.width), maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80)), cloudTexture.width, cloudTexture.height, cloudimg));
+        clouds.push_back(new OSprite(maths::fRand(0, frameSize.width), maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80)), cloudTexture.width, cloudTexture.height, cloudimg, 2));
         clouds.back()->tag = maths::fRand(10, 20);
         addSprite(clouds.back());
     }
-    
-    
-    getMainLayer2D()->sortType = GlyphSortType::NONE;
 }
 
 void BeachScene::update(float deltaTime)
@@ -81,26 +79,26 @@ void BeachScene::update(float deltaTime)
     float st = sin(time);
     
     
-    maths::vec3 position = wave1->GetPosition();
-    wave1->setPosition(maths::vec3(-p/2.0f - st * WAVE_SPEED, 30 + st * WAVE_SPEED ,1.0f));
+    maths::vec2 position = wave1->GetPosition();
+    wave1->setPosition(maths::vec2(-p/2.0f - st * WAVE_SPEED, 30 + st * WAVE_SPEED));
     
     position = wave2->GetPosition();
-    wave2->setPosition(maths::vec3(-p/2.0f + st * WAVE_SPEED, st * WAVE_SPEED  ,1.0f));
+    wave2->setPosition(maths::vec2(-p/2.0f + st * WAVE_SPEED, st * WAVE_SPEED));
     
     position = wave3->GetPosition();
-    wave3->setPosition(maths::vec3(-p/2.0f - st * WAVE_SPEED,  -30 + st * WAVE_SPEED ,1.0f));
+    wave3->setPosition(maths::vec2(-p/2.0f - st * WAVE_SPEED,  -30 + st * WAVE_SPEED));
     
     
     position = boat->GetPosition();
-    boat->setPosition(maths::vec3(p + st * 60,  30 + sin(time * 2.5f) * WAVE_SPEED ,1.0f));
+    boat->setPosition(maths::vec2(p + st * 60,  30 + sin(time * 2.5f) * WAVE_SPEED));
     
     for (OSprite *cloud : clouds)
     {
         position = cloud->GetPosition();
-        cloud->setPosition(maths::vec3(position.x + cloud->tag * deltaTime, position.y, 0));
+        cloud->setPosition(maths::vec2(position.x + cloud->tag * deltaTime, position.y));
         if (cloud->GetPosition().x > frameSize.width)
         {
-            cloud->setPosition(maths::vec3(- cloud->GetSize().x, position.y, 0));
+            cloud->setPosition(maths::vec2(- cloud->GetSize().x, position.y));
         }
         
     }
@@ -155,7 +153,7 @@ void BeachScene::onResize()
     float p = addPercent(frameSize.width, 50);
     
     //boat
-    boat->setPosition(vec3(frameSize.width * 0.75f, 45.0f, 1.0f));
+    boat->setPosition(vec2(frameSize.width * 0.75f, 45.0f));
     
     
     //mountains
@@ -176,11 +174,11 @@ void BeachScene::onResize()
     
     //sun
     sun->setSize(vec2(sunTexture.width, sunTexture.height));
-    sun->setPosition(vec3(frameSize.width * 0.75f, frameSize.height * 0.75f, 1.0f));
+    sun->setPosition(vec2(frameSize.width * 0.75f, frameSize.height * 0.75f));
     
     for (int i = 0; i < CLOUDS_COUNT; i++) {
         OSprite *cloud = clouds.at(i);
-        cloud->setPosition(vec3(maths::fRand(0, frameSize.width), maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80)), 1.0f));
+        cloud->setPosition(vec2(maths::fRand(0, frameSize.width), maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80))));
     }
 }
 

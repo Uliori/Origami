@@ -14,12 +14,12 @@
 
 NS_O_BEGIN
         
-OLayer2D::OLayer2D() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatch), sortType(GlyphSortType::NONE)
+OLayer2D::OLayer2D() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatch)
 {
     init();
 }
 
-OLayer2D::OLayer2D(ORenderer2D *renderer) : m_CurrentRenderer(renderer), sortType(GlyphSortType::NONE)
+OLayer2D::OLayer2D(ORenderer2D *renderer) : m_CurrentRenderer(renderer)
 {
     init();
 }
@@ -63,7 +63,7 @@ void OLayer2D::render(float interpolation)
 {
     
     if (m_CurrentRenderer) {
-        m_CurrentRenderer->Begin(sortType);
+        m_CurrentRenderer->Begin();
         
         for (const OSprite* renderable : m_Renderables)
             if(m_Camera->isBoxInView(renderable->GetPosition(), renderable->GetSize())){

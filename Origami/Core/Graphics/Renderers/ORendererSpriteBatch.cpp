@@ -18,25 +18,27 @@
 
 
 NS_O_BEGIN
-    
+
 //Glyph
-Glyph::Glyph(const maths::vec3 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color) :
+Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) :
 textureID(texture) {
     
+    a_zOrder = zOrder;
+    
     topLeft.m_color = color;
-    topLeft.setPosition(position.x, position.y + dimensions.y, position.z);
+    topLeft.setPosition(position.x, position.y + dimensions.y);
     topLeft.setUV(uvRect.x, uvRect.y + uvRect.w);
     
     bottomLeft.m_color = color;
-    bottomLeft.setPosition(position.x, position.y, position.z);
+    bottomLeft.setPosition(position.x, position.y);
     bottomLeft.setUV(uvRect.x, uvRect.y);
     
     bottomRight.m_color = color;
-    bottomRight.setPosition(position.x + dimensions.x, position.y, position.z);
+    bottomRight.setPosition(position.x + dimensions.x, position.y);
     bottomRight.setUV(uvRect.x + uvRect.z, uvRect.y);
     
     topRight.m_color = color;
-    topRight.setPosition(position.x + dimensions.x, position.y + dimensions.y, position.z);
+    topRight.setPosition(position.x + dimensions.x, position.y + dimensions.y);
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
@@ -63,9 +65,8 @@ void ORendererSpriteBatch::Init()
     createVertexArray();
 }
 
-void ORendererSpriteBatch::Begin(GlyphSortType sortType /*= GlyphSortType::TEXTURE */)
+void ORendererSpriteBatch::Begin()
 {
-    m_sortType = sortType;
     m_renderBatches.clear();
     
     // Makes _glpyhs.size() == 0, however it does not free internal memory.
@@ -75,62 +76,62 @@ void ORendererSpriteBatch::Begin(GlyphSortType sortType /*= GlyphSortType::TEXTU
 
 void ORendererSpriteBatch::Submit(const OSprite* renderable)
 {
-    m_glyphs.emplace_back(renderable->GetPosition(), renderable->GetSize(), renderable->GetUV(), renderable->GetTID(), renderable->GetColor());
+    m_glyphs.emplace_back(renderable->GetPosition(), renderable->GetSize(), renderable->GetUV(), renderable->GetTID(), renderable->GetColor(), renderable->GetZOrder());
 }
 
 void ORendererSpriteBatch::DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)
 {
-//        using namespace ftgl;
-//        
-//        uint ts = font.GetID();
-//        
-//        
-//        const maths::vec2& scale = font.GetScale();
-//        
-//        float x = position.x;
-//        float y = position.y;
-//        
-//        texture_font_t* ftFont = font.GetFTFont();
-//        
-//        for (uint i = 0; i < text.length(); i++)
-//        {
-//            char c = text[i];
-//            texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
-//            if (glyph != NULL)
-//            {
-//                if (i > 0)
-//                {
-//                    float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-//                    x += kerning / scale.x;
-//                }
-//                
-//                float x0 = x + glyph->offset_x / scale.x;
-//                float y0 = y + glyph->offset_y / scale.y;
-//                float x1 = x0 + glyph->width / scale.x;
-//                float y1 = y0 - glyph->height / scale.y;
-//                
-//                float u0 = glyph->s0;
-//                float v0 = glyph->t0;
-//                float u1 = glyph->s1;
-//                float v1 = glyph->t1;
-//            
-//                m_glyphs.emplace_back(maths::vec3(x0, y0, 0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color);
-//                
-//                x += glyph->advance_x / scale.x ;
-//                
-////                if (y < position.y - 100) {
-////                    DrawString("...", maths::vec3(x, y, position.z), font, color);
-////                    break;
-////                }
-//                if (x >= position.x + 300) {
-//                    x = position.x;
-//                    y -= ftFont->height;
-//                }
-//                
-//
-//            }
-//        }
-//        
+    //        using namespace ftgl;
+    //
+    //        uint ts = font.GetID();
+    //
+    //
+    //        const maths::vec2& scale = font.GetScale();
+    //
+    //        float x = position.x;
+    //        float y = position.y;
+    //
+    //        texture_font_t* ftFont = font.GetFTFont();
+    //
+    //        for (uint i = 0; i < text.length(); i++)
+    //        {
+    //            char c = text[i];
+    //            texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
+    //            if (glyph != NULL)
+    //            {
+    //                if (i > 0)
+    //                {
+    //                    float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+    //                    x += kerning / scale.x;
+    //                }
+    //
+    //                float x0 = x + glyph->offset_x / scale.x;
+    //                float y0 = y + glyph->offset_y / scale.y;
+    //                float x1 = x0 + glyph->width / scale.x;
+    //                float y1 = y0 - glyph->height / scale.y;
+    //
+    //                float u0 = glyph->s0;
+    //                float v0 = glyph->t0;
+    //                float u1 = glyph->s1;
+    //                float v1 = glyph->t1;
+    //
+    //                m_glyphs.emplace_back(maths::vec3(x0, y0, 0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color);
+    //
+    //                x += glyph->advance_x / scale.x ;
+    //
+    ////                if (y < position.y - 100) {
+    ////                    DrawString("...", maths::vec3(x, y, position.z), font, color);
+    ////                    break;
+    ////                }
+    //                if (x >= position.x + 300) {
+    //                    x = position.x;
+    //                    y -= ftFont->height;
+    //                }
+    //
+    //
+    //            }
+    //        }
+    //
 }
 
 void ORendererSpriteBatch::End()
@@ -222,7 +223,7 @@ void ORendererSpriteBatch::createRenderBatches() {
     
     glBindVertexArray(0);
     // Unbind the VBO
-//        glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //        glBindBuffer(GL_ARRAY_BUFFER, 0);
     
 }
 
@@ -247,7 +248,7 @@ void ORendererSpriteBatch::createVertexArray() {
     glEnableVertexAttribArray(1);
     glEnableVertexAttribArray(2);
     
-    glVertexAttribPointer(0, 3, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_vertex));
+    glVertexAttribPointer(0, 2, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_vertex));
     glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE , sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_color));
     glVertexAttribPointer(2, 2, GL_FLOAT        , GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_uv));
     
@@ -257,30 +258,15 @@ void ORendererSpriteBatch::createVertexArray() {
 
 void ORendererSpriteBatch::sortGlyphs() {
     
-    switch (m_sortType) {
-        case GlyphSortType::BACK_TO_FRONT:
-            std::stable_sort(m_glyphPointers.begin(), m_glyphPointers.end(), compareBackToFront);
-            break;
-        case GlyphSortType::FRONT_TO_BACK:
-            std::stable_sort(m_glyphPointers.begin(), m_glyphPointers.end(), compareFrontToBack);
-            break;
-        case GlyphSortType::TEXTURE:
-            std::stable_sort(m_glyphPointers.begin(), m_glyphPointers.end(), compareTexture);
-            break;
-        case GlyphSortType::NONE:
-            break;
+    std::stable_sort(m_glyphPointers.begin(), m_glyphPointers.end(), compareFunction);
+    
+}
+
+bool ORendererSpriteBatch::compareFunction(Glyph* a, Glyph* b) {
+    if (a->a_zOrder == b->a_zOrder) {
+        return (a->textureID < b->textureID);
     }
+    return (a->a_zOrder < b->a_zOrder);
 }
 
-bool ORendererSpriteBatch::compareFrontToBack(Glyph* a, Glyph* b) {
-    return (a->topLeft.m_vertex.z < b->topLeft.m_vertex.z);
-}
-
-bool ORendererSpriteBatch::compareBackToFront(Glyph* a, Glyph* b) {
-    return (a->topLeft.m_vertex.z > b->topLeft.m_vertex.z);
-}
-
-bool ORendererSpriteBatch::compareTexture(Glyph* a, Glyph* b) {
-    return (a->textureID < b->textureID);
-}
 NS_O_END

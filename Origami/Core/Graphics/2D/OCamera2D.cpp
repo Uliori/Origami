@@ -64,7 +64,7 @@ maths::vec2 OCamera2D::convertScreenToWorld(maths::vec2 screenCoords) {
 
 
 //TODO : correct a bug when scaling camera
-bool OCamera2D::isBoxInView(const maths::vec3& position, const maths::vec2& dimensions)
+bool OCamera2D::isBoxInView(const maths::vec2& position, const maths::vec2& dimensions)
 {
     maths::vec2 scaledScreenDimensions = maths::vec2((float)m_screenWidth, (float)m_screenHeight);// / (_scale);
     

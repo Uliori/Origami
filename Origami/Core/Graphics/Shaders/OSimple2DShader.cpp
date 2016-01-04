@@ -9,11 +9,16 @@
 #include "OSimple2DShader.h"
 
 NS_O_BEGIN
-    
+
 const std::string PRECISION_H =
                                 "#ifdef GL_ES\n"
-                                "     precision highp float;\n"
-                                "     precision highp int;\n"
+                                "     #ifndef GL_FRAGMENT_PRECISION_HIGH\n"
+                                "       precision mediump float;\n"
+                                "       precision mediump int;\n"
+                                "     #else\n"
+                                "       precision highp float;\n"
+                                "       precision highp int;\n"
+                                "     #endif\n"
                                 "#endif\n";
 
 const std::string vertsimple2d =
@@ -41,7 +46,7 @@ OGL_FragColorDec
 " vec4 finalColor = v_fragColor * " OGL_TEXTURE "(u_diffuse, v_UV);\n"
 //    " if(finalColor.a < 0.5) discard;\n"
 OGL_FragColor " =  finalColor;\n"
-//    OGL_FragColor " =  vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
+//    OGL_FragColor " =  vec4(1.0, 0.0, 0.0, 1.0);\n"
 "}\n";
 
 //Text Rendering
@@ -58,16 +63,16 @@ OGL_FragColor " =  finalColor;\n"
 OSimple2DShader::OSimple2DShader()
 {
 
-    
+
 }
 
 void OSimple2DShader::init()
 {
     m_Name = "Simple2Dshader";
-    
+
     std::string vs = GLSLHEADER + vertsimple2d;
     std::string fs = GLSLHEADER + PRECISION_H + fragsimple2d;
-    
+
     this->load(vs, fs);
 }
 
@@ -78,5 +83,5 @@ void OSimple2DShader::bindLocations()
     m_program->BindLocation(2, "a_UV");
 
 }
-    
+
 NS_O_END

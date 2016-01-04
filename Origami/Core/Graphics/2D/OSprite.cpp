@@ -13,8 +13,8 @@
 
 NS_O_BEGIN
     
-OSprite::OSprite(float x, float y, float width, float height, std::string texturePath)
-:  m_Position(x, y, 0), m_Size(width, height), m_vboID(0), m_vaoID(0), m_Color(0xffffffff), m_texturePath(texturePath)
+OSprite::OSprite(float x, float y, float width, float height, std::string texturePath, float zOrder)
+:  m_Position(x, y),m_zOrder(zOrder), m_Size(width, height), m_vboID(0), m_vaoID(0), m_Color(0xffffffff), m_texturePath(texturePath)
 {
     SetUVDefaults();
     m_Texture = OResourceManager::loadTexture(m_texturePath).textureID;
@@ -45,23 +45,23 @@ void OSprite::create()
     
     
     // first triangle
-    data[0].m_vertex =  maths::vec3(m_Position.x + m_Size.x, m_Position.y + m_Size.y, 0.0f);
+    data[0].m_vertex =  maths::vec2(m_Position.x + m_Size.x, m_Position.y + m_Size.y);
     data[0].m_uv     =  maths::vec2(1, 1);
     
-    data[1].m_vertex =  maths::vec3(m_Position.x         , m_Position.y + m_Size.y, 0.0f);
+    data[1].m_vertex =  maths::vec2(m_Position.x         , m_Position.y + m_Size.y);
     data[1].m_uv     =  maths::vec2(0, 1);
     
-    data[2].m_vertex =  maths::vec3(m_Position.x         , m_Position.y          , 0.0f);
+    data[2].m_vertex =  maths::vec2(m_Position.x         , m_Position.y);
     data[2].m_uv     =  maths::vec2(0, 0);
     
     // second triangle
-    data[3].m_vertex =  maths::vec3(m_Position.x         , m_Position.y          , 0.0f);
+    data[3].m_vertex =  maths::vec2(m_Position.x         , m_Position.y);
     data[3].m_uv     =  maths::vec2(0, 0);
     
-    data[4].m_vertex =  maths::vec3(m_Position.x + m_Size.x, m_Position.y          , 0.0f);
+    data[4].m_vertex =  maths::vec2(m_Position.x + m_Size.x, m_Position.y);
     data[4].m_uv     =  maths::vec2(1, 0);
     
-    data[5].m_vertex =  maths::vec3(m_Position.x + m_Size.x, m_Position.y + m_Size.y, 0.0f);
+    data[5].m_vertex =  maths::vec2(m_Position.x + m_Size.x, m_Position.y + m_Size.y);
     data[5].m_uv     =  maths::vec2(1, 1);
     
     for (int i = 0; i < 6; i++) {
@@ -75,7 +75,7 @@ void OSprite::create()
     glEnableVertexAttribArray(1);
     glEnableVertexAttribArray(2);
     
-    glVertexAttribPointer(0, 3, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_vertex));
+    glVertexAttribPointer(0, 2, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_vertex));
     glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE , sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_color));
     glVertexAttribPointer(2, 2, GL_FLOAT        , GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_uv));
     

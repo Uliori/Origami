@@ -13,14 +13,14 @@
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
-    
+
 struct VertexData2D
 {
-    maths::vec3  m_vertex;
+    maths::vec2  m_vertex;
     maths::vec2  m_uv;
     unsigned int m_color;
     unsigned int m_tid;
-    
+    float        m_zOrder;
     
     void setColor(unsigned int color) { m_color = color; }
     void setColor(const maths::vec4& color)
@@ -33,12 +33,18 @@ struct VertexData2D
         m_color = a << 24 | b << 16 | g << 8 | r;
     }
     
-    void setPosition(float x, float y, float z)
+    void setPosition(float x, float y)
     {
-        m_vertex = maths::vec3(x, y, z);
+        m_vertex = maths::vec2(x, y);
     }
     
-    void setPosition(const maths::vec3& position)
+    void setPosition(float x, float y, float z)
+    {
+        m_vertex = maths::vec2(x, y);
+        m_zOrder = z;
+    }
+    
+    void setPosition(const maths::vec2& position)
     {
         m_vertex = position;
     }
@@ -58,7 +64,6 @@ struct VertexData2D
     {
         m_uv = uv;
     }
-
+    
 };
 NS_O_END
-
