@@ -18,14 +18,17 @@ OTextureCache::~OTextureCache() {
     OLog("Textures deleted !");
 }
 
-OTexture OTextureCache::getTexture(const std::string& texturePath) {
+OTexture OTextureCache::getTexture(const std::string& texturePath,
+                                   bool invert_y /* = true */,
+                                   GLint param_W_S /* = GL_CLAMP_TO_BORDER */,
+                                   GLint param_W_T /* = GL_CLAMP_TO_BORDER */) {
     //lookup the texture and see if its in the map
     auto mit = m_TextureMap.find(texturePath);
 
     //check if its not in the map
     if (mit == m_TextureMap.end()) {
         //Load the texture
-        OTexture newTexture = TextureUtils::loadTexture(texturePath.c_str());
+        OTexture newTexture = TextureUtils::loadTexture(texturePath.c_str(), invert_y, param_W_S, param_W_T);
 
         //Insert it into the map
         m_TextureMap.insert(make_pair(texturePath, newTexture));

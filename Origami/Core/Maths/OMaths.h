@@ -48,25 +48,10 @@ namespace maths {
 	struct mat4;
 	struct quat;
 
-	/*****************************************************************************/
-	/*                                                                           */
-	/* SIMD optimizations                                                        */
-	/*                                                                           */
-	/*****************************************************************************/
-
-	enum {
-		MATHLIB_FPU = 0,
-		MATHLIB_SSE,
-		MATHLIB_SSE3,
-		MATHLIB_3DNOW,
-	};
-
-	//void mathlib_set_codepath(int codepath);
-
-	extern void(*dot_vec4_vec4)(const vec4 &v0, const void *v1, int v1_stride, void *result, int result_stride, int count);
-	extern void(*mul_mat4_vec3)(const mat4 &m, const void *v, int v_stride, void *result, int result_stride, int count);
-	extern void(*mul_mat4_vec4)(const mat4 &m, const void *v, int v_stride, void *result, int result_stride, int count);
-	extern void(*mul_mat4_mat4)(const mat4 &m0, const mat4 &m1, mat4 &res);
+	void dot_vec4_vec4(const vec4 &v0, const void *v1, int v1_stride, void *result, int result_stride, int count);
+	void mul_mat4_vec3(const mat4 &m, const void *v, int v_stride, void *result, int result_stride, int count);
+	void mul_mat4_vec4(const mat4 &m, const void *v, int v_stride, void *result, int result_stride, int count);
+	void mul_mat4_mat4(const mat4 &m0, const mat4 &m1, mat4 &res);
 
 	/*****************************************************************************/
 	/*                                                                           */
@@ -75,13 +60,6 @@ namespace maths {
 	/*****************************************************************************/
 
 	inline float rsqrt(const float &x) {
-		/*float x2 = x * 0.5f;
-		float y = x;
-		int i  = *(int *)&y;
-		i  = 0x5f3759df - (i >> 1);
-		y  = *(float*)&i;
-		y  = y * (1.5f - (x2 * y * y));
-		return y;*/
 		float length = sqrt(x);
 		if (length < EPSILON) return 1.0f;
 		return 1.0f / length;
@@ -158,8 +136,6 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline float length(const vec2 &v) {
 		return v.length();
 	}
@@ -268,8 +244,6 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline float length(const vec3 &v) {
 		return v.length();
 	}
@@ -385,12 +359,8 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline vec3::vec3(const vec4 &v) : x(v.x), y(v.y), z(v.z) { }
 
-	/*
-	*/
 	inline float vec3::operator*(const vec4 &v) const {
 		return x * v.x + y * v.y + z * v.z + v.w;
 	}
@@ -661,8 +631,6 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline mat3 transpose(const mat3 &m) {
 		return m.transpose();
 	}
@@ -999,16 +967,12 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline mat3::mat3(const mat4 &m) {
 		mat[0] = m[0]; mat[3] = m[4]; mat[6] = m[8];
 		mat[1] = m[1]; mat[4] = m[5]; mat[7] = m[9];
 		mat[2] = m[2]; mat[5] = m[6]; mat[8] = m[10];
 	}
 
-	/*
-	*/
 	inline mat4 rotation(const mat4 &m) {
 		return m.rotation();
 	}
@@ -1253,8 +1217,6 @@ namespace maths {
 		};
 	};
 
-	/*
-	*/
 	inline mat3::mat3(const quat &q) {
 		mat3 m = q.toMatrix();
 		mat[0] = m[0]; mat[3] = m[3]; mat[6] = m[6];
@@ -1262,8 +1224,6 @@ namespace maths {
 		mat[2] = m[2]; mat[5] = m[5]; mat[8] = m[8];
 	}
 
-	/*
-	*/
 	inline mat4::mat4(const quat &q) {
 		mat3 m = q.toMatrix();
 		mat[0] = m[0]; mat[4] = m[3]; mat[8] = m[6]; mat[12] = 0.0;

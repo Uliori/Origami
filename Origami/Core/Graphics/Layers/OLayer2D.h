@@ -42,7 +42,7 @@ public:
     inline OCamera2D * getCamera() const { return m_Camera; }
     
     virtual void create();
-    virtual void updateResoltion();
+    virtual void updateResolution();
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
     

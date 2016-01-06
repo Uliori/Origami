@@ -3,6 +3,7 @@
 
 #include "ODirector.h"
 #include <Core/Utils/OGLUtils.h>
+#include <Core/Utils/ResourcesUtils.h>
 
 NS_O_BEGIN
 
@@ -44,6 +45,29 @@ ODirector::~ODirector()
     
 }
 
+void ODirector::setFilesSuffixOrder()
+{
+    fileExtensions.clear();
+    
+    OSize screenSize = getFrameSize();
+    float minR = MIN(screenSize.width, screenSize.height);
+    if (minR > 768) { //iPad retina like
+        fileExtensions.push_back(FileSuffix("-x4", 4));
+        fileExtensions.push_back(FileSuffix("-x2", 2));
+        fileExtensions.push_back(FileSuffix("-x1", 1));
+        fileExtensions.push_back(FileSuffix("", 1));
+    }
+    else if (minR > 320) { //iPhone Retina & iPad like
+        fileExtensions.push_back(FileSuffix("-x2", 2));
+        fileExtensions.push_back(FileSuffix("-x1", 1));
+        fileExtensions.push_back(FileSuffix("", 1));
+    }
+    else { //iPhone like
+        fileExtensions.push_back(FileSuffix("-x1", 1));
+        fileExtensions.push_back(FileSuffix("", 1));
+    }
+}
+
 void ODirector::setDesignResolutionSize(uint width, uint height, ResolutionPolicy resolutionPolicy)
 {
     m_DesignResolutionSize = OSize(width, height);
@@ -51,9 +75,9 @@ void ODirector::setDesignResolutionSize(uint width, uint height, ResolutionPolic
     
     updateDesignResolutionSize();
     if (m_CurrentScene) {
-        m_CurrentScene->getMainLayer2D()->updateResoltion();
-        m_CurrentScene->getMainLayer3D()->updateResoltion();
-        m_CurrentScene->getGUIView()->updateResoltion();
+        m_CurrentScene->getMainLayer2D()->updateResolution();
+        m_CurrentScene->getMainLayer3D()->updateResolution();
+        m_CurrentScene->getGUIView()->updateResolution();
         m_CurrentScene->onResize();
     }
 }

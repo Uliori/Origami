@@ -8,7 +8,7 @@ NS_O_BEGIN
 
 class OResourceManager {
 public:
-    static OTexture loadTexture(const std::string& texturePath);
+    static OTexture loadTexture(const std::string& texturePath, bool invert_y = true, GLint param_W_S = GL_CLAMP_TO_EDGE, GLint param_W_T = GL_CLAMP_TO_EDGE);
     
     
     static void checkResources();

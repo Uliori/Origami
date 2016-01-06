@@ -10,14 +10,15 @@
 
 #include <Core/Utils/OGLUtils.h>
 #include <Core/Graphics/OTexture.h>
-
+#include <Core/ODirector.h>
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
 class TextureUtils {
 public:
 //			static GLuint loadTexture(const char * imagepath);
-    static OTexture loadTexture(const char * imagepath, bool invert_y = true);
+    static OTexture loadTexture(const char * imagepath, bool invert_y = true, GLint param_W_S = GL_CLAMP_TO_EDGE, GLint param_W_T = GL_CLAMP_TO_EDGE);
+    static void getFileName(const char * imagepath, std::string &fileName, int &scale);
     
     
     static GLuint loadTextureCube(const char* PosXFilename,

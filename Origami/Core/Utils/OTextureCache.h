@@ -12,7 +12,7 @@ public:
     OTextureCache();
     ~OTextureCache();
 
-    OTexture getTexture(const std::string& texturePath);
+    OTexture getTexture(const std::string& texturePath, bool invert_y = true, GLint param_W_S = GL_CLAMP_TO_EDGE, GLint param_W_T = GL_CLAMP_TO_EDGE);
     void checkTextures();
 private:
     std::map<std::string, OTexture> m_TextureMap;

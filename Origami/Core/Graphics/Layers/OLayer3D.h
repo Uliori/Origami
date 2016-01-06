@@ -19,7 +19,7 @@ public:
     virtual ~OLayer3D();
     
     virtual void create();
-    virtual void updateResoltion();
+    virtual void updateResolution();
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
 };

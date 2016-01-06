@@ -217,7 +217,7 @@ void ORendererSpriteBatch::createRenderBatches() {
     // Bind our VBO
     glBindBuffer(GL_ARRAY_BUFFER, m_vboID);
     // Orphan the buffer (for speed)
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(VertexData2D), nullptr, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(VertexData2D), NULL, GL_DYNAMIC_DRAW);
     // Upload the data
     glBufferSubData(GL_ARRAY_BUFFER, 0, vertices.size() * sizeof(VertexData2D), vertices.data());
     

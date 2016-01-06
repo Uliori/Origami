@@ -20,6 +20,7 @@ OGame::OGame(const char* name, uint width, uint height) : OApplication(name, wid
 void OGame::Init()
 {
     OApplication::Init();
+    ODirector::director()->setFilesSuffixOrder();
     ODirector::director()->setDesignResolutionSize(480, 800, ResolutionPolicy::FIXED);
     
     
