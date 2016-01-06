@@ -1,6 +1,8 @@
 #include "ResourcesUtils.h"
 #include <Core/Utils/OLog.h>
+
 #include <sstream>
+#include <fstream>
 
 #ifdef __APPLE__
 #import <Foundation/Foundation.h>
@@ -24,20 +26,33 @@ const char* ResourcesUtils::getResourcePathforFile(const char * file) {
 		NSString *fullPathS = [NSString stringWithFormat : @"%@/%@",resourcesFolder, [NSString stringWithUTF8String : file]];
 
 		const char* fullPath = [[mainBundle pathForResource : fullPathS ofType : nil] UTF8String];
-//                OLog(fullPath);
 		return fullPath;
 	}
 	return NULL;
 #elif __ANDROID__
-//			std::stringstream ss;
-//			std::string fol = RESOURCES_FOLDER;
-//			ss << ResourcesUtils::s_ExternalStorage << "/REGULUS/" << ResourcesUtils::s_PackageName << "/" << fol << "/" << file;
-//			std::string s = ss.str();
-//			return fol.c_str();
 	return file;
 #else
 	std::string outp = RESOURCES_FOLDER + '\\' + file;
-	return file;
+	return outp.c_str();
+#endif
+}
+
+bool ResourcesUtils::doesFileExists(const char * file)
+{
+#ifdef __ANDROID__
+    AAsset* aa = AAssetManager_open(mgr, file, AASSET_MODE_UNKNOWN);
+    bool fileExists = false;
+    if (aa)
+    {
+        fileExists = true;
+        AAsset_close(aa);
+    }
+    return fileExists;
+#else
+    if (std::ifstream(ResourcesUtils::getResourcePathforFile(file))) {
+        return true;
+    }
+    return false;
 #endif
 }
 

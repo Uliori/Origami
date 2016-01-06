@@ -15,43 +15,43 @@ BeachScene::BeachScene() : OScene()
 {
     timer = new OTimer();
     
-    std::string wave1img = "wave2.png";
-    std::string boatimg = "boat.png";
-    std::string cloudimg = "cloud.png";
-    std::string sunimg = "sun.png";
+    std::string wave1img  = "wave2.png";
+    std::string boatimg   = "boat.png";
+    std::string cloudimg  = "cloud.png";
+    std::string sunimg    = "sun.png";
     std::string mountsimg = "mountains.png";
     
-    OTexture waveTexture = OResourceManager::loadTexture(wave1img);
-    OTexture boatTexture = OResourceManager::loadTexture(boatimg);
-    OTexture cloudTexture = OResourceManager::loadTexture(cloudimg);
-    OTexture sunTexture = OResourceManager::loadTexture(sunimg);
-    OTexture mountsTexture = OResourceManager::loadTexture(mountsimg);
+    OTexture waveTexture   = OResourceManager::loadTexture(wave1img, true, GL_REPEAT, GL_CLAMP_TO_EDGE);
+    OTexture boatTexture   = OResourceManager::loadTexture(boatimg);
+    OTexture cloudTexture  = OResourceManager::loadTexture(cloudimg);
+    OTexture sunTexture    = OResourceManager::loadTexture(sunimg);
+    OTexture mountsTexture = OResourceManager::loadTexture(mountsimg, true, GL_REPEAT, GL_CLAMP_TO_EDGE);
     
     OSize frameSize = ODirector::director()->getVirtualSize();
     
     float p = addPercent(frameSize.width, 50);
     
     //boat
-    boat = new OSprite(frameSize.width * 0.75f, 45, boatTexture.width, boatTexture.height, boatimg, 3);
+    boat = new OSprite(frameSize.width * 0.75f, 45, boatTexture.getWidth(), boatTexture.getHeight(), boatimg, 3);
     
     //mountains
-    mountains1 = new OSprite(0, 10, p, mountsTexture.height, mountsimg, 1);
-    mountains1->SetUV(maths::vec4(0.0f, 0.0f, p / mountsTexture.width, 1.0f));
+    mountains1 = new OSprite(0, 10, p, mountsTexture.getHeight(), mountsimg, 1);
+    mountains1->SetUV(maths::vec4(0.0f, 0.0f, p / mountsTexture.getWidth(), 1.0f));
     
     //w3
-    wave3 = new OSprite(0, 30, p, waveTexture.height, wave1img, 5);
-    wave3->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
+    wave3 = new OSprite(0, 30, p, waveTexture.getHeight(), wave1img, 5);
+    wave3->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));
     
     //w2
-    wave2 = new OSprite(0, 00, p, waveTexture.height, wave1img, 4);
-    wave2->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
+    wave2 = new OSprite(0, 00, p, waveTexture.getHeight(), wave1img, 4);
+    wave2->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));
     
     //w1
-    wave1 = new OSprite(0, -30, p, waveTexture.height, wave1img, 2);
-    wave1->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));//
+    wave1 = new OSprite(0, -30, p, waveTexture.getHeight(), wave1img, 2);
+    wave1->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));//
     
     //sun
-    sun =  new OSprite(frameSize.width * 0.75f, frameSize.height * 0.75f, sunTexture.width, sunTexture.height, sunimg, 1);
+    sun =  new OSprite(frameSize.width * 0.75f, frameSize.height * 0.75f, sunTexture.getWidth(), sunTexture.getHeight(), sunimg, 1);
     
     
     addSprite(mountains1);
@@ -63,7 +63,13 @@ BeachScene::BeachScene() : OScene()
     
     
     for (int i = 0; i < CLOUDS_COUNT; i++) {
-        clouds.push_back(new OSprite(maths::fRand(0, frameSize.width), maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80)), cloudTexture.width, cloudTexture.height, cloudimg, 2));
+        clouds.push_back(new OSprite(maths::fRand(0, frameSize.width),
+                                     maths::fRand(percent(frameSize.height, 60), percent(frameSize.height, 80)),
+                                     cloudTexture.getWidth(),
+                                     cloudTexture.getHeight(),
+                                     cloudimg,
+                                     2));
+        
         clouds.back()->tag = maths::fRand(10, 20);
         addSprite(clouds.back());
     }
@@ -157,23 +163,23 @@ void BeachScene::onResize()
     
     
     //mountains
-    mountains1->setSize(vec2(p, mountsTexture.height));
-    mountains1->SetUV(maths::vec4(0.0f, 0.0f, p / mountsTexture.width, 1.0f));
+    mountains1->setSize(vec2(p, mountsTexture.getHeight()));
+    mountains1->SetUV(maths::vec4(0.0f, 0.0f, p / mountsTexture.getWidth(), 1.0f));
     
     //w3
-    wave3->setSize(vec2(p, waveTexture.height));
-    wave3->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
+    wave3->setSize(vec2(p, waveTexture.getHeight()));
+    wave3->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));
     
     //w2
-    wave2->setSize(vec2(p, waveTexture.height));
-    wave2->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));
+    wave2->setSize(vec2(p, waveTexture.getHeight()));
+    wave2->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));
     
     //w1
-    wave1->setSize(vec2(p, waveTexture.height));
-    wave1->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.width, 1.0f));//
+    wave1->setSize(vec2(p, waveTexture.getHeight()));
+    wave1->SetUV(maths::vec4(0.0f, 0.0f, p / waveTexture.getWidth(), 1.0f));//
     
     //sun
-    sun->setSize(vec2(sunTexture.width, sunTexture.height));
+    sun->setSize(vec2(sunTexture.getWidth(), sunTexture.getHeight()));
     sun->setPosition(vec2(frameSize.width * 0.75f, frameSize.height * 0.75f));
     
     for (int i = 0; i < CLOUDS_COUNT; i++) {

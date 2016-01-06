@@ -73,7 +73,7 @@ bool OCamera2D::isBoxInView(const maths::vec2& position, const maths::vec2& dime
     const float MIN_DISTANCE_Y = dimensions.y / 2.0f + scaledScreenDimensions.y / 2.0f;
     
     // Center position of the parameters
-    maths::vec2 centerPos = maths::vec2(position.x, position.y) + dimensions / 2.0f;
+    maths::vec2 centerPos = position + dimensions / 2.0f;
     // Center position of the camera
     maths::vec2 centerCameraPos = m_position + maths::vec2(m_screenWidth / 2.0f, m_screenHeight / 2.0f);
     // Vector from the input to the camera

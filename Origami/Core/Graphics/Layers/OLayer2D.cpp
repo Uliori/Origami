@@ -30,7 +30,7 @@ void OLayer2D::init()
     m_Camera = new OCamera2D(frameSize.width, frameSize.height);
 }
 
-void OLayer2D::updateResoltion()
+void OLayer2D::updateResolution()
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
     m_Camera->setProjection(frameSize.width, frameSize.height);

@@ -36,7 +36,7 @@ void OLayer3D::render(float interpolation)
     
 }
 
-void OLayer3D::updateResoltion()
+void OLayer3D::updateResolution()
 {
     
 }

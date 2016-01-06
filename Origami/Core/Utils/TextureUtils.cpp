@@ -12,8 +12,39 @@
 #include <SOIL2/SOIL2.h>
 
 NS_O_BEGIN
-        
-OTexture TextureUtils::loadTexture(const char* texname, bool invert_y)
+
+
+void TextureUtils::getFileName(const char * imagepath, std::string &fileName, int &scale)
+{
+    std::string name = std::string(imagepath);
+    size_t lastindex = name.find_last_of(".");
+    std::string rawname = "";
+    std::string extname = "";
+    if (lastindex != std::string::npos) {
+        rawname = name.substr(0, lastindex);
+        extname = name.substr(lastindex, name.length());
+    }
+    
+    for (FileSuffix fs : ODirector::director()->fileExtensions) {
+        std::string fileNameVerif = rawname + fs.suffix + extname;
+        if (ResourcesUtils::doesFileExists(fileNameVerif.c_str())) {
+            fileName = fileNameVerif;
+            scale = fs.scale;
+            return;
+        }
+        else
+        {
+            OErrLog("Resource \"" << fileNameVerif << "\" was not found.");
+        }
+    }
+    
+    fileName = std::string(imagepath);
+    scale = 1;
+}
+
+OTexture TextureUtils::loadTexture(const char* texname, bool invert_y /* = true */,
+                                   GLint param_W_S /* = GL_CLAMP_TO_BORDER */,
+                                   GLint param_W_T /* = GL_CLAMP_TO_BORDER */)
 {
     
     OTexture texture = {};
@@ -22,18 +53,20 @@ OTexture TextureUtils::loadTexture(const char* texname, bool invert_y)
     int height;
     int channels;
     
+    int scaleFactor;
+    std::string fileName;
+    getFileName(texname, fileName, scaleFactor);
     
     //Load file into buffer
     unsigned char* buffer;
     size_t buffer_length;
-    ResourcesUtils::fileLength(texname, buffer, buffer_length);
+    ResourcesUtils::fileLength(fileName.c_str(), buffer, buffer_length);
     
     unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
-//            unsigned char *img = SOIL_load_image(ResourcesUtils::getResourcePathforFile(texname), &width, &height, &channels, SOIL_LOAD_RGBA);
     
     if(img == NULL)
     {
-        OErrLog("Could not load texture : " << texname);
+        OErrLog("Could not load texture : " << fileName);
     }
     
     
@@ -65,8 +98,8 @@ OTexture TextureUtils::loadTexture(const char* texname, bool invert_y)
     }
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, param_W_S);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, param_W_T);
     
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
     
@@ -75,8 +108,9 @@ OTexture TextureUtils::loadTexture(const char* texname, bool invert_y)
     
     SOIL_free_image_data(img);
     
-    texture.height = (float)height;
-    texture.width = (float)width;
+    texture.setHeight(height);
+    texture.setWidth(width);
+    texture.setScale(scaleFactor);
 
     glBindTexture(GL_TEXTURE_2D, 0);
     

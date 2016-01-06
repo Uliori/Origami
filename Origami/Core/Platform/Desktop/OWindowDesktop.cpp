@@ -2,14 +2,6 @@
 #include <Core/Inputs/OInputsManager.h>
 NS_O_BEGIN
 
-#if !defined(MIN)
-#define MIN(A,B)	((A) < (B) ? (A) : (B))
-#endif
-
-#if !defined(MAX)
-#define MAX(A,B)	((A) > (B) ? (A) : (B))
-#endif
-
 void window_resize(GLFWwindow* window, int width, int height)
 {
     OWindow *win = (OWindow*)glfwGetWindowUserPointer(window);
