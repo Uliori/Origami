@@ -133,6 +133,7 @@ void ODirector::renderCurrentScene(float interpolation)
 void ODirector::updateScene(OScene *scene, float deltaTime)
 {
     if (scene) {
+        m_CurrentScene->onInput(deltaTime);
         m_CurrentScene->update(deltaTime);
     }
 }

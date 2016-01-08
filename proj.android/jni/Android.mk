@@ -7,7 +7,7 @@ Game_SRC_PATH			:= ../../Game
 SOIL_SRC_PATH			:= ../../Origami/Dependencies/SOIL2
 #FREETYPE_HEA_PATH	 	:= ../../Origami/Dependencies/FreeType/include
 #FREETYPE_SRC_PATH	 	:= ../../Origami/Dependencies/FreeType/
-#FREETYPEGL_SRC_PATH	 	:= ../../Origami/Dependencies/FreeType-gl
+#FREETYPEGL_SRC_PATH	:= ../../Origami/Dependencies/FreeType-gl
 #HARFBUZZ_HEA_PATH	 	:= ../../Origami/Dependencies/harfbuzz-ng/src
 #HARFBUZZ_SRC_PATH	 	:= ../../Origami/Dependencies/harfbuzz-ng/
 

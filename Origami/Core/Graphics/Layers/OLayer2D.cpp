@@ -64,7 +64,9 @@ void OLayer2D::render(float interpolation)
     
     if (m_CurrentRenderer) {
         m_CurrentRenderer->Begin();
+        //Send particles
         
+        //Send sprites
         for (const OSprite* renderable : m_Renderables)
             if(m_Camera->isBoxInView(renderable->GetPosition(), renderable->GetSize())){
                 renderable->Submit(m_CurrentRenderer);

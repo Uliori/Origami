@@ -8,8 +8,9 @@
 
 #pragma once
 
-#include <Core/Maths/OMaths.h>
+#include <string>
 
+#include <Core/Maths/OMaths.h>
 #include <Core/OMacros.h>
 
 NS_O_BEGIN

@@ -9,6 +9,7 @@
 #pragma once
 
 #include <Core/Maths/OMaths.h>
+#include <Core/Utils/OGLUtils.h>
 
 #include <Core/OMacros.h>
 
