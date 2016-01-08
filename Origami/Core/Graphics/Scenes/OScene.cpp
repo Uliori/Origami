@@ -41,11 +41,6 @@ void OScene::render(float interpolation)
     m_GUIView->render(interpolation);
 }
 
-void OScene::onResize()
-{
-    
-}
-
 void OScene::addSprite(OSprite *sprite)
 {
     m_MainLayer2D->addsprite(sprite);

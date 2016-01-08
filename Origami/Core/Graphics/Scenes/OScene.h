@@ -30,7 +30,8 @@ public:
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
 
-    virtual void onResize();
+    virtual void onResize() {}
+    virtual void onInput(float deltaTime) {}
 };
 
 NS_O_END

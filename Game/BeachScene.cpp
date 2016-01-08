@@ -110,6 +110,13 @@ void BeachScene::update(float deltaTime)
     }
     glClearColor(135.0/255, 206.0/255, 235.0/255, 1.0f);
     
+
+    
+    OScene::update(deltaTime);
+}
+
+void BeachScene::onInput(float deltaTime)
+{
 #ifdef O_TARGET_DESKTOP
     OLayer2D* sc1_mainLayer = getMainLayer2D();
     if (OInputsManager::Manager()->isKeyDown(GLFW_KEY_W)) {
@@ -138,8 +145,6 @@ void BeachScene::update(float deltaTime)
     //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() + sc1->CAM_ZOOM);
     //    }
 #endif
-    
-    OScene::update(deltaTime);
 }
 
 void BeachScene::onResize()

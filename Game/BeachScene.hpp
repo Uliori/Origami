@@ -49,6 +49,7 @@ public:
     
     void update(float deltaTime) override;
     void onResize() override;
+    void onInput(float deltaTime) override;
     
 };
 
