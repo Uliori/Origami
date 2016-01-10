@@ -2,8 +2,8 @@
 #include <Core/Inputs/OInputsManager.h>
 NS_O_BEGIN
 
-OWindow::OWindow(const char* title, uint width, uint height)
-    :m_Title(title), m_Width(width), m_Height(height), m_Closed(false)
+OWindow::OWindow(const char* title, uint width, uint height, OApplication *app)
+    :m_Title(title), m_Width(width), m_Height(height), m_Closed(false), m_Application(app)
 {
     
     if (!init()) {
@@ -59,15 +59,6 @@ void OWindow::clear() const
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void OWindow::update(float deltaTime)
-{
-    ODirector::director()->updateCurrentScene(deltaTime);
-}
-
-void OWindow::render(float interpolation)
-{
-    ODirector::director()->renderCurrentScene(interpolation);
-}
 
 void OWindow::swapBuffers()
 {

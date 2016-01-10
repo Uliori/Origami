@@ -4,15 +4,8 @@
 #include <android/asset_manager_jni.h>
 
 #include "OGame.hpp"
+#include <Core/ODirector.h>
 #include <Core/Utils/OResourceManager.h>
-
-#if !defined(MIN)
-    #define MIN(A,B)	((A) < (B) ? (A) : (B))
-#endif
-
-#if !defined(MAX)
-    #define MAX(A,B)	((A) > (B) ? (A) : (B))
-#endif
 
 extern "C" {
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
@@ -57,7 +50,7 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 	OResourceManager::checkResources();
 
 	DESIRED_FRAMETIME = MS_IN_SECOND / game()->GetPreferredFPS();//
-	previousTicks = game()->getTimer()->getTime();
+	previousTicks = ODirector::director()->getTimer()->getTime();
 }
 
 JNIEXPORT void JNICALL
@@ -89,7 +82,7 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 
 
 
-	 double startTicks =  game()->getTimer()->getTime();
+	 double startTicks =  ODirector::director()->getTimer()->getTime();
 	 double passedTime = startTicks - previousTicks;
 	 previousTicks = startTicks;
 
@@ -108,7 +101,7 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 
 	 game()->Refresh();
 
-	 float interpolation = float( game()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+	 float interpolation = float(ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
 	 game()->Render(interpolation);
 	 frames++;
 

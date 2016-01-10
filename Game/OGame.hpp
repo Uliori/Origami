@@ -9,7 +9,9 @@
 #pragma once
 
 #include <Core/App/OApplication.h>
+
 #include "BeachScene.hpp"
+#include "CloudsScene.hpp"
 
 #include <Core/OMacros.h>
 USING_NS_O
@@ -17,6 +19,8 @@ USING_NS_O
 class OGame : public OApplication
 {
     BeachScene *sc1;
+    CloudsScene *sc2;
+    
 public:
     OGame(const char* name, uint width, uint height);
     

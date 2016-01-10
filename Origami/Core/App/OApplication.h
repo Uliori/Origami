@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Core/Utils/OTime.h>
 #include <Core/Graphics/OWindow.h>
 
 #include <Core/Graphics/Renderers/ORendererFactory.h>
@@ -13,12 +12,11 @@ NS_O_BEGIN
 class OApplication {
 protected:
     OWindow* m_window;
-    OTimer* m_Timer;
 
     uint m_Width, m_Height;
     
 private:
-    bool m_Running, m_Suspended;
+    bool m_Running, m_Suspended = false, m_SuspendOnFocusLost = true;
 
     const char* m_Name;
     uint m_UpdatesPerSecond, m_FramesPerSecond;
@@ -39,8 +37,6 @@ public:
     virtual void Update(float deltaTime);
     virtual void Refresh();
     virtual void Render(float interpolation);
-
-    OTimer* getTimer(){ return m_Timer;}
     
     const uint GetPreferredFPS() const { return m_PreferredFramesPerSecond; }
     const uint GetFPS() const { return m_FramesPerSecond; }
@@ -50,6 +46,8 @@ public:
     inline void setFPS(uint fps){m_FramesPerSecond = fps;}
     inline void setUPS(uint ups){m_UpdatesPerSecond = ups;}
     
+    inline bool isSupended() { return m_Suspended; }
+    inline void setShouldSuspendWhenFocusIsLost(bool v) { m_SuspendOnFocusLost = v; }
 private:
     void Run();
 };

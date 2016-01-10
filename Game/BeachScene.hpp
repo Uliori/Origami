@@ -47,6 +47,7 @@ public:
     BeachScene();
     virtual ~BeachScene();
     
+    void create() override;
     void update(float deltaTime) override;
     void onResize() override;
     void onInput(float deltaTime) override;

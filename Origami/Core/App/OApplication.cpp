@@ -10,9 +10,7 @@ OApplication::OApplication(const char* name, uint width, uint height)
     
 void OApplication::Init()
 {
-    
-    m_Timer = new OTimer();
-    m_window = new OWindow(m_Name, m_Width, m_Height);
+    m_window = new OWindow(m_Name, m_Width, m_Height, this);
     
     ORendererFactory::createRenderers();
 }
@@ -27,12 +25,19 @@ void OApplication::Start()
 
 void OApplication::Suspend()
 {
-    m_Suspended = true;
+    if (m_SuspendOnFocusLost) {
+        ODirector::director()->pause();
+        m_Suspended = true;
+        OLog("Application suspended.");
+    }
 }
 
 void OApplication::Resume()
 {
-    m_Suspended = false;
+    if (m_SuspendOnFocusLost) {
+        m_Suspended = false;
+        OLog("Application resumed.");
+    }
 }
 
 void OApplication::Stop()
@@ -47,7 +52,9 @@ void OApplication::Tick()
 
 void OApplication::Update(float deltaTime)
 {
-    m_window->update(deltaTime);
+    if (!m_Suspended) {
+        ODirector::director()->update(deltaTime);
+    }
 }
 
 void OApplication::Refresh()
@@ -58,7 +65,7 @@ void OApplication::Refresh()
 void OApplication::Render(float interpolation)
 {
     m_window->clear();
-    m_window->render(interpolation);
+    ODirector::director()->render(interpolation);
     m_window->swapBuffers();
 }
     

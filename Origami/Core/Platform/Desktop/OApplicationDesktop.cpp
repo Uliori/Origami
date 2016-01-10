@@ -7,7 +7,6 @@ OApplication::~OApplication()
 {
     
     SAFE_DELETE(m_window);
-    SAFE_DELETE(m_Timer);
     
     OResourceManager::cleanUp();
     ORendererFactory::deleteRenderers();
@@ -26,34 +25,40 @@ void OApplication::Run()
     unsigned int    updates            = 0;
     double          accumulator        = 0;
     
-    double previousTicks = m_Timer->getTime();
+    double previousTicks = ODirector::director()->getTimer()->getTime();
     
     while (m_Running)
     {
         if (m_window->iscloseRequested() || OInputsManager::Manager()->isKeyPressed(GLFW_KEY_ESCAPE))
             m_Running = false;
         
-        double startTicks =  m_Timer->getTime();
+        double startTicks =  ODirector::director()->getTimer()->getTime();
         double passedTime = startTicks - previousTicks;
         previousTicks = startTicks;
         
-        accumulator += passedTime;
         
-        int   loops = 0;
-        float interpolation = 1;
-        
-        while (accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS) {
-            Update(DESIRED_FRAMETIME / MS_IN_SECONDS);
-            accumulator -= DESIRED_FRAMETIME;
-            updates ++;
-            loops++;
+        if(!isSupended())
+        {
+            accumulator += passedTime;
+            
+            int   loops = 0;
+            
+            while (accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS) {
+                accumulator -= DESIRED_FRAMETIME;
+                loops++;
+                    Update(DESIRED_FRAMETIME / MS_IN_SECONDS);
+                    updates ++;
+            }
         }
         
         Refresh();
 
-        interpolation = float( m_Timer->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+        
+        float interpolation = float( ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
         Render(interpolation);
-        frames++;
+        if(!isSupended()) {
+            frames++;
+        }
         
     
 #ifdef O_MODE_DEBUG
@@ -66,7 +71,8 @@ void OApplication::Run()
             updates = 0;
             tickCounter -= MS_IN_SECONDS;
 
-            Tick();
+            if(!isSupended())
+                Tick();
         }
 #endif
 

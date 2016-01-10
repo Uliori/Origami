@@ -15,6 +15,9 @@ private:
     OLayer2D *m_MainLayer2D;
     OLayer2D *m_GUIView;
     
+    bool m_created = false;
+    bool m_paused  = false;
+    
 public:
     
     OScene();
@@ -32,6 +35,13 @@ public:
 
     virtual void onResize() {}
     virtual void onInput(float deltaTime) {}
+    
+    inline bool isCreated() { return m_created; }
+    
+    inline void pause() { m_paused = true; }
+    inline void resume() { m_paused = false; }
+    inline bool isPaused() { return m_paused; }
+
 };
 
 NS_O_END

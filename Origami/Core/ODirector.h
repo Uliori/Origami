@@ -5,6 +5,7 @@
 #include <vector>
 
 #include <Core/OMacros.h>
+#include <Core/Utils/OTime.h>
 #include <Core/Maths/OGeometry.h>
 #include <Core/Graphics/Scenes/OScene.h>
 
@@ -61,11 +62,13 @@ private:
     std::map<std::string, OScene*> m_Scenes;
     std::string m_CurrentSceneID;
     
+    //General Timer
+    OTimer* m_Timer;
+    
     //Screen resolution, desired resolution, and calculated resolution depending on the screen ratio
     OSize m_FrameSize;
     OSize m_DesignResolutionSize;
     OSize m_VirtualSize;
-    
     
     float m_ScaleX;
     float m_ScaleY;
@@ -78,7 +81,11 @@ public:
     virtual ~ODirector();
     
     //that method will load the game file configuration in the future
-    void loadGame();
+    virtual void loadGame();
+    virtual void update(float deltaTime);
+    virtual void render(float interpolation);
+    
+    OTimer* getTimer(){ return m_Timer;}
     
     void updateCurrentScene(float deltaTime);
     void renderCurrentScene(float interpolation);
@@ -93,6 +100,8 @@ public:
     // load the scene and call it's create method
     void loadScene(const std::string& scene_name);
     
+    void pause();
+    void resume();
     
     inline OSize& getFrameSize() {return m_FrameSize;}
     inline OSize& getDesignResolutionSize() {return m_DesignResolutionSize;}
@@ -103,6 +112,8 @@ public:
     void setDesignResolutionSize(uint width, uint height, ResolutionPolicy resolutionPolicy);
     
     void setFilesSuffixOrder();
+    
+
 };
         
 NS_O_END

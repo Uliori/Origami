@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "AppDelegate.h"
 
 #include <Core/ODirector.h>
 
@@ -54,9 +55,9 @@
     
     [self setupGL];
     
-    self.preferredFramesPerSecond = game->GetPreferredFPS();
+    self.preferredFramesPerSecond = [AppDelegate appDelegate].game->GetPreferredFPS();
     
-    DESIRED_FRAMETIME  = 1000.0f / game->GetPreferredFPS();
+    DESIRED_FRAMETIME  = 1000.0f / [AppDelegate appDelegate].game->GetPreferredFPS();
     
     [((GLKView *)self.view) bindDrawable];
     
@@ -99,11 +100,11 @@
     [EAGLContext setCurrentContext:self.context];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    game = new OGame("",screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
-    game->Start();
+    [AppDelegate appDelegate].game = new OGame("",screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
+    [AppDelegate appDelegate].game->Start();
     
 
-    previousTicks   = game->getTimer()->getTime();
+    previousTicks   = ODirector::director()->getTimer()->getTime();
     tickCounter     = 0;
     updates         = 0;
     currentTicks    = 0;
@@ -113,7 +114,7 @@
 - (void)tearDownGL
 {
     [EAGLContext setCurrentContext:self.context];
-     SAFE_DELETE(game);
+     SAFE_DELETE([AppDelegate appDelegate].game);
 
 }
 #pragma mark - Orientation detection
@@ -158,23 +159,25 @@
 
 - (void)update
 {
-    double startTicks = game->getTimer()->getTime();
+    double startTicks = ODirector::director()->getTimer()->getTime();
     double passedTime = startTicks - previousTicks;
     previousTicks = startTicks;
     
-    accumulator += passedTime;
-    
-    int   loops = 0;
-    
-    while(accumulator >= DESIRED_FRAMETIME && loops < 10)
-    {
-        game->Update(DESIRED_FRAMETIME / 1000.0f);
-        accumulator -= DESIRED_FRAMETIME;
-        updates ++;
-        loops++;
+    if (![AppDelegate appDelegate].game->isSupended()) {
+        accumulator += passedTime;
+        int   loops = 0;
+        
+        while(accumulator >= DESIRED_FRAMETIME && loops < 10)
+        {
+            [AppDelegate appDelegate].game->Update(DESIRED_FRAMETIME / 1000.0f);
+            accumulator -= DESIRED_FRAMETIME;
+            updates ++;
+            loops++;
+        }
     }
+
     
-    game->Refresh();
+    [AppDelegate appDelegate].game->Refresh();
     
 #ifdef O_MODE_DEBUG
     
@@ -182,13 +185,13 @@
     tickCounter += passedTime;
     
     if (tickCounter >= 1000.0f) {
-        game->setFPS((uint)self.framesPerSecond);
-        game->setUPS(updates);
+        [AppDelegate appDelegate].game->setFPS((uint)self.framesPerSecond);
+        [AppDelegate appDelegate].game->setUPS(updates);
         
         updates = 0;
         tickCounter -= 1000.0f;
         
-        game->Tick();
+        if (![AppDelegate appDelegate].game->isSupended()) [AppDelegate appDelegate].game->Tick();
     }
     
 #endif
@@ -197,12 +200,9 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    float interpolation = float( game->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
-    game->Render(interpolation);
+    float interpolation = float(ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
+    [AppDelegate appDelegate].game->Render(interpolation);
 }
-
-
-
 
 
 #pragma mark - Touch Handling

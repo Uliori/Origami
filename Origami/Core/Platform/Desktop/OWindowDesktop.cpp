@@ -1,5 +1,7 @@
 #include <Core/Graphics/OWindow.h>
 #include <Core/Inputs/OInputsManager.h>
+#include <Core/App/OApplication.h>
+
 NS_O_BEGIN
 
 void window_resize(GLFWwindow* window, int width, int height)
@@ -51,15 +53,15 @@ void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
 
 void window_focus_callback(GLFWwindow* window, int focused)
 {
-//            OWindow *win = (OWindow*)glfwGetWindowUserPointer(window);
-//            if (focused)
-//            {
-//                OLog("Focused");
-//            }
-//            else
-//            {
-//                OLog("Focus Lost");
-//            }
+    OWindow *win = (OWindow*)glfwGetWindowUserPointer(window);
+    if (focused)
+    {
+        win->m_Application->Resume();
+    }
+    else
+    {
+        win->m_Application->Suspend();
+    }
 }
 
 bool OWindow::PlatformInit()
