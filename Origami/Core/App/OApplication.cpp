@@ -35,6 +35,7 @@ void OApplication::Suspend()
 void OApplication::Resume()
 {
     if (m_SuspendOnFocusLost) {
+        ODirector::director()->getTimer()->reset();
         m_Suspended = false;
         OLog("Application resumed.");
     }
