@@ -25,6 +25,8 @@ void OScene::create()
     m_MainLayer2D->create();
     m_GUIView->create();
     OLog("Scene created.");
+    
+    m_created = true;
 }
 
 void OScene::update(float deltaTime)

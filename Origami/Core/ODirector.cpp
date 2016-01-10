@@ -24,13 +24,12 @@ void ODirector::DeleteManager()
         
 ODirector::ODirector() : m_CurrentScene(nullptr)
 {
-    
+    m_Timer = new OTimer();
 }
 
 
 ODirector::~ODirector()
 {
-    
     //delete all scenes
     for(auto iterator : m_Scenes)
     {
@@ -43,6 +42,7 @@ ODirector::~ODirector()
     m_Scenes.clear();
     //
     
+    SAFE_DELETE(m_Timer);
 }
 
 void ODirector::setFilesSuffixOrder()
@@ -120,6 +120,16 @@ void ODirector::loadGame()
     OLog("Game loading ...");
 }
 
+void ODirector::update(float deltaTime)
+{
+    updateCurrentScene(deltaTime);
+}
+
+void ODirector::render(float interpolation)
+{
+    renderCurrentScene(interpolation);
+}
+
 void ODirector::updateCurrentScene(float deltaTime)
 {
     updateScene(m_CurrentScene, deltaTime);
@@ -132,7 +142,7 @@ void ODirector::renderCurrentScene(float interpolation)
 
 void ODirector::updateScene(OScene *scene, float deltaTime)
 {
-    if (scene) {
+    if (scene && scene->isCreated()) {
         m_CurrentScene->onInput(deltaTime);
         m_CurrentScene->update(deltaTime);
     }
@@ -140,8 +150,22 @@ void ODirector::updateScene(OScene *scene, float deltaTime)
 
 void ODirector::renderScene(OScene *scene, float interpolation)
 {
-    if (scene) {
+    if (scene && scene->isCreated()) {
         m_CurrentScene->render(interpolation);
+    }
+}
+
+void ODirector::pause()
+{
+    if (m_CurrentScene) {
+        m_CurrentScene->pause();
+    }
+}
+
+void ODirector::resume()
+{
+    if (m_CurrentScene) {
+        m_CurrentScene->resume();
     }
 }
 
@@ -183,7 +207,10 @@ void ODirector::loadScene(const std::string& scene_name)
         m_CurrentSceneID = scene_name;
         OLog("Current Scene is : " << scene_name);
         
-        m_CurrentScene->create();
+        if (m_CurrentScene && !m_CurrentScene->isCreated()) {
+            m_CurrentScene->create();
+        }
+        
     }
     else
     {

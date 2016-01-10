@@ -10,6 +10,7 @@ NS_O_BEGIN
 #define MAX_KEYS 512
 #define MAX_BUTTONS 5
 
+class OApplication;
 class OWindow {
 private:
     const char* m_Title;
@@ -22,17 +23,15 @@ private:
 #endif
     
     int m_Width, m_Height;
+    
 public:
-    OWindow(const char* title, uint width, uint height);
+    OWindow(const char* title, uint width, uint height, OApplication *app);
     ~OWindow();
 
     
     void clear() const;
     void refreshInput();
     
-    
-    void update(float deltaTime);
-    void render(float interpolation);
     void swapBuffers();
     
     bool iscloseRequested();
@@ -45,6 +44,7 @@ public:
     void SetVsync(bool enabled);
     inline bool IsVsync() const { return m_Vsync; }
     
+    OApplication * m_Application;
 private:
     bool init();
 

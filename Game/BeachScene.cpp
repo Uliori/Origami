@@ -13,6 +13,11 @@
 
 BeachScene::BeachScene() : OScene()
 {
+
+}
+
+void BeachScene::create()
+{
     timer = new OTimer();
     
     std::string wave1img  = "wave2.png";
@@ -73,6 +78,8 @@ BeachScene::BeachScene() : OScene()
         clouds.back()->tag = maths::fRand(10, 20);
         addSprite(clouds.back());
     }
+    
+    OScene::create();
 }
 
 void BeachScene::update(float deltaTime)
@@ -109,9 +116,7 @@ void BeachScene::update(float deltaTime)
         
     }
     glClearColor(135.0/255, 206.0/255, 235.0/255, 1.0f);
-    
 
-    
     OScene::update(deltaTime);
 }
 
@@ -144,6 +149,7 @@ void BeachScene::onInput(float deltaTime)
     //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_E)) {
     //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() + sc1->CAM_ZOOM);
     //    }
+    
 #endif
 }
 

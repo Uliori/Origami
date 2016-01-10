@@ -187,6 +187,8 @@
 		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; };
 		91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
 		91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
+		91DC9D031C4180B60001F7B4 /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */; };
+		91DC9D041C4180B60001F7B4 /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */; };
 		91F5F3901BC6F8F70030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F38F1BC6F8F70030DA6A /* main.m */; };
 		91F5F3921BC6F8F80030DA6A /* MacAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */; };
 		91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F3BC1BC6FCF40030DA6A /* main.m */; };
@@ -341,6 +343,8 @@
 		91D0521E1BC861DC00F4F246 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91D3CEC31C39610300C3B1A3 /* OGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGeometry.h; sourceTree = "<group>"; };
 		91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGeometry.cpp; sourceTree = "<group>"; };
+		91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CloudsScene.cpp; sourceTree = "<group>"; };
+		91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CloudsScene.hpp; sourceTree = "<group>"; };
 		91F5F3881BC6F8F70030DA6A /* engine_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = engine_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F5F38F1BC6F8F70030DA6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MacAssets.xcassets; sourceTree = "<group>"; };
@@ -544,6 +548,8 @@
 				919AA4F51BC82006004C7052 /* OGame.cpp */,
 				917155331C34038400161AE5 /* BeachScene.hpp */,
 				917155321C34038400161AE5 /* BeachScene.cpp */,
+				91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */,
+				91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */,
 				916E36BF1BD96E3F005EE626 /* AppData */,
 			);
 			name = Game;
@@ -973,6 +979,7 @@
 				913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
 				91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */,
+				91DC9D031C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
 				913BC93B1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */,
 				913BC9451BE002C90013209D /* ftglyph.c in Sources */,
@@ -1033,6 +1040,7 @@
 				913BC93C1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
+				91DC9D041C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
 				91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */,
 				913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */,

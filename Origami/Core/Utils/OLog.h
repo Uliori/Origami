@@ -30,8 +30,8 @@
 		}
 	#else
 		#include <iostream>
-		#define OLog(...) std::cout << __VA_ARGS__ << std::endl
-		#define OErrLog(...) std::cerr << "WARNING : " << __VA_ARGS__ << std::endl
+		#define OLog(...) std::cout << "Origami - LOG : " << __VA_ARGS__ << std::endl
+		#define OErrLog(...) std::cerr << "Origami - WARNING : " << __VA_ARGS__ << std::endl
 	#endif
 #else
 	#define OLog(...)

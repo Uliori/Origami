@@ -69,6 +69,7 @@ LOCAL_SRC_FILES 		:= 	Origami.cpp \
 							$(CORE_LIST)/Graphics/Shaders/OSimple2DShader.cpp \
 							$(Game_SRC_PATH)/OGame.cpp \
 							$(Game_SRC_PATH)/BeachScene.cpp \
+							$(Game_SRC_PATH)/CloudsScene.cpp \
 							#$(FREETYPEGL_SRC_PATH)/texture-font.cpp $(FREETYPEGL_SRC_PATH)/platform.c \
 							$(FREETYPEGL_SRC_PATH)/texture-atlas.c $(FREETYPEGL_SRC_PATH)/vector.c \
 

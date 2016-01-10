@@ -8,13 +8,14 @@
 
 #include "OGame.hpp"
 #include <Core/ODirector.h>
+#include <Core/Inputs/OInputsManager.h>
 
 //#include <sstream>
 
 OGame::OGame(const char* name, uint width, uint height) : OApplication(name, width, height)
 {
-    OLog("App Width  : " << width);
-    OLog("App Height : " << height);
+    OLog("Application Width  : " << width);
+    OLog("Application Height : " << height);
 }
  
 void OGame::Init()
@@ -25,12 +26,15 @@ void OGame::Init()
     
     
     sc1 = new BeachScene();
+    sc2 = new CloudsScene();
+    
     ODirector::director()->addScene("1", sc1);
+    ODirector::director()->addScene("2", sc2);
 }
 
 void OGame::Tick()
 {
-//    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
+    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //
@@ -44,5 +48,14 @@ void OGame::Render(float interpolation)
 
 void OGame::Update(float deltaTime)
 {
+#ifdef O_TARGET_DESKTOP
+    if (OInputsManager::Manager()->isKeyPressed(GLFW_KEY_1)) {
+        ODirector::director()->loadScene("1");
+    }
+    if (OInputsManager::Manager()->isKeyPressed(GLFW_KEY_2)) {
+        ODirector::director()->loadScene("2");
+    }
+#endif
+    
     OApplication::Update(deltaTime);  
 }
