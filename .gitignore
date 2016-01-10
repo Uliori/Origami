@@ -2,4 +2,8 @@ proj.android/bin/*
 proj.android/gen/*
 proj.android/libs/*
 proj.android/obj/*
+proj.android_wallpaper/bin/*
+proj.android_wallpaper/gen/*
+proj.android_wallpaper/libs/*
+proj.android_wallpaper/obj/*
 proj.win32/bin/*

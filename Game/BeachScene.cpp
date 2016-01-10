@@ -18,8 +18,6 @@ BeachScene::BeachScene() : OScene()
 
 void BeachScene::create()
 {
-    timer = new OTimer();
-    
     std::string wave1img  = "wave2.png";
     std::string boatimg   = "boat.png";
     std::string cloudimg  = "cloud.png";
@@ -86,7 +84,7 @@ void BeachScene::update(float deltaTime)
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
     
-    float time = sin(timer->getTime() / 1000.0);
+    float time = sin(ODirector::director()->getTimer()->getTime() / 1000.0);
     float p = percent(frameSize.width, 50);
     //        float ct = cos(time);
     float st = sin(time);
@@ -201,5 +199,5 @@ void BeachScene::onResize()
 
 BeachScene::~BeachScene ()
 {
-    SAFE_DELETE(timer);
+
 }

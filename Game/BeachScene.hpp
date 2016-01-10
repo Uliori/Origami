@@ -25,7 +25,6 @@ USING_NS_O
 class BeachScene : public OScene {
     
 private:
-    OTimer *timer;
     
     OSprite *sun;
     OSprite *boat;

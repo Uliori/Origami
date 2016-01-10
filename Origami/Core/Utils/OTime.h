@@ -13,49 +13,51 @@ private:
     typedef std::chrono::system_clock		clock;
     typedef std::chrono::milliseconds  		milliseconds_type;
 
+    std::chrono::time_point<clock>          m_Passed;
+    
+    std::chrono::time_point<clock>          m_PausedTime;
+    
+    double m_time;
 public:
 
     OTimer()
     {
+        m_time = 0;
+        reset();
     }
 
+    void reset()
+    {
+        m_Passed = clock::now();
+    }
+    
+    double elapsed()
+    {
+        auto dif = std::chrono::duration_cast<milliseconds_type>(clock::now() - m_Passed);
+        m_Passed = clock::now();
+        
+        m_time += dif.count();
+        
+        return m_time;
+    }
+    
     double getTime()
+    {
+        elapsed();
+        return m_time;
+    }
+
+    double getMachineTime()
     {
         return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
     }
 
-    void sleep(int milliseconds)
+    static void sleep(int milliseconds)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
     }
+    
+    
 };
 NS_O_END
-//#else
-//#include <unistd.h>
-//#include <time.h>
-//
-//namespace Origami
-//{
-//    class OTimer
-//    {
-//
-//    public:
-//
-//        OTimer()
-//        {
-//        }
-//
-//        double getTime()
-//        {
-//        	struct timespec res;
-//        	clock_gettime(CLOCK_MONOTONIC, &res);
-//        	return 1000.0 * res.tv_sec + (double) res.tv_nsec / 1e6;
-//        }
-//
-//        void sleep(int milliseconds)
-//        {
-//            usleep(milliseconds * 1000);
-//        }
-//    };
-//}
-//#endif
+
