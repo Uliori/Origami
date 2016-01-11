@@ -1,5 +1,6 @@
 <resources>
 
     <string name="app_name">Origami</string>
+    <string name="description">Origami</string>
 
 </resources>

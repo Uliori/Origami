@@ -8,12 +8,12 @@
 #include <Core/Utils/OResourceManager.h>
 
 extern "C" {
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height);
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean paused);
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type);
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type);
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean paused);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_step(JNIEnv *env, jclass type);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_cleanUp(JNIEnv *env, jclass type);
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager);
 AAssetManager *mgr;
 };
 
@@ -41,9 +41,13 @@ OGame *game()
 
 
 JNIEXPORT void JNICALL
-Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height) {
+Java_com_android_wallpaper_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jint height) {
 	g_width = width;
 	g_height = height;
+//
+//	if (g_height == 0 || g_width==0) {
+//		return;
+//	}
 
 	if (!s_game) {
 		game()->Start();
@@ -55,7 +59,7 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 }
 
 JNIEXPORT void JNICALL
-Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height) {
+Java_com_android_wallpaper_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, jint height) {
 	g_width = width;
 	g_height = height;
 
@@ -79,7 +83,7 @@ Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, j
 }
 
 JNIEXPORT void JNICALL
-Java_com_android_gl2jni_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean paused)
+Java_com_android_wallpaper_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean paused)
 {
 	if (paused) {
 		game()->Suspend();
@@ -91,7 +95,7 @@ Java_com_android_gl2jni_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean p
 }
 
 JNIEXPORT void JNICALL
-Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
+Java_com_android_wallpaper_GL2JNILib_step(JNIEnv *env, jclass type) {
 
 
 
@@ -139,12 +143,12 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 #endif
 }
 
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager)
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_setAssetManager(JNIEnv *env, jobject obj, jobject assetManager)
 {
 	mgr = AAssetManager_fromJava(env, assetManager);
 }
 
-JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type)
+JNIEXPORT void JNICALL Java_com_android_wallpaper_GL2JNILib_cleanUp(JNIEnv *env, jclass type)
 {
 	if (s_game) {
 		SAFE_DELETE(s_game);
