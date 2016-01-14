@@ -13,6 +13,8 @@ OScene::OScene()
 
 OScene::~OScene()
 {
+    clear();
+
     SAFE_DELETE(m_GUIView)
     SAFE_DELETE(m_MainLayer2D)
     SAFE_DELETE(m_MainLayer3D)
@@ -25,8 +27,20 @@ void OScene::create()
     m_MainLayer2D->create();
     m_GUIView->create();
     OLog("Scene created.");
-    
-    m_created = true;
+
+    m_Created = true;
+}
+
+void OScene::clear()
+{
+    if (m_Created) {
+        m_MainLayer3D->clear();
+        m_MainLayer2D->clear();
+        m_GUIView->clear();
+        OLog("Scene cleared.");
+
+        m_Created = false;
+    }
 }
 
 void OScene::update(float deltaTime)

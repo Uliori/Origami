@@ -26,7 +26,7 @@ public class GL2JNILib {
 		System.loadLibrary("soil2");
 //		System.loadLibrary("freetype2");
 //		System.loadLibrary("harfbuzz");
-        System.loadLibrary("origami");
+        System.loadLibrary("origamiwallpaper");
     }
 
     /**
@@ -40,9 +40,9 @@ public class GL2JNILib {
     public static native void setPaused(boolean paused);
     public static native void cleanUp();
     public static native void setAssetManager(AssetManager mgr);
-    
-     
- 	
+
+
+
 // 	public static native void touchB(float x, float y);
 // 	public static native void touchM(float x, float y, int dx, int dy);
 // 	public static native void touchE(float x, float y);

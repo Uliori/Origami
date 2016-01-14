@@ -17,7 +17,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    		:= libsoil2
 LOCAL_SRC_FILES			:= \
    							$(SOIL_SRC_PATH)/SOIL2/etc1_utils.c $(SOIL_SRC_PATH)/SOIL2/image_DXT.c \
-							$(SOIL_SRC_PATH)/SOIL2/image_helper.c $(SOIL_SRC_PATH)/SOIL2/SOIL2.c 
+							$(SOIL_SRC_PATH)/SOIL2/image_helper.c $(SOIL_SRC_PATH)/SOIL2/SOIL2.c
 
 LOCAL_LDLIBS    		:= -lGLESv2 -lEGL
 
@@ -25,9 +25,9 @@ include $(BUILD_SHARED_LIBRARY)
 
 ############################################ libOrigami ############################################
 include $(CLEAR_VARS)
-LOCAL_MODULE   			:= origami
+LOCAL_MODULE   			:= origamiwallpaper
 LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_MODE_DEBUG
-#-g 
+#-g
 CORE_LIST 				:= $(OrigamiCore_SRC_PATH)
 PROJECT_LIST 			:= $(Game_SRC_PATH)
 
@@ -38,10 +38,11 @@ LOCAL_C_INCLUDES  		:=  \
 							#$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPE_HEA_PATH) \
 							$(NDK_APP_PROJECT_PATH)/jni/$(HARFBUZZ_HEA_PATH) \
 							$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPEGL_SRC_PATH) \
-							
-							
+
+
 LOCAL_SRC_FILES 		:= 	Origami.cpp \
 							$(CORE_LIST)/ODirector.cpp \
+							$(CORE_LIST)/ORef.cpp \
 							$(CORE_LIST)/App/OApplication.cpp \
 							$(CORE_LIST)/Inputs/OInputsManager.cpp \
 							$(CORE_LIST)/Maths/OMaths.cpp \
@@ -78,10 +79,10 @@ LOCAL_SHARED_LIBRARIES 	:= \
 							libsoil2
 							#libfreetype2\
 							#libharfbuzz
-	
-	
+
+
 LOCAL_LDLIBS    		:= -landroid -lGLESv2 -lEGL -llog
-# -ldl  -lz 
+# -ldl  -lz
 include $(BUILD_SHARED_LIBRARY)
 
 ############################################ libFreeType2 ############################################

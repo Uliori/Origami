@@ -21,19 +21,19 @@ private:
 #ifdef O_TARGET_DESKTOP
     GLFWwindow *m_Window;
 #endif
-    
+
     int m_Width, m_Height;
-    
+
 public:
     OWindow(const char* title, uint width, uint height, OApplication *app);
     ~OWindow();
 
-    
+
     void clear() const;
     void refreshInput();
-    
+
     void swapBuffers();
-    
+
     bool iscloseRequested();
     bool closed() const;
 
@@ -41,16 +41,16 @@ public:
     inline uint getWidth() const { return m_Width; }
     inline uint getHeight() const { return m_Height; }
 
-    void SetVsync(bool enabled);
-    inline bool IsVsync() const { return m_Vsync; }
-    
+    void setVsync(bool enabled);
+    inline bool isVsync() const { return m_Vsync; }
+
     OApplication * m_Application;
 private:
     bool init();
 
-    bool PlatformInit();
-    void PlatformUpdate();
-    void PlatformClean();
-    void PlatformVsync(bool vsync);
+    bool platformInit();
+    void platformUpdate();
+    void platformClean();
+    void platformVsync(bool vsync);
 };
 NS_O_END

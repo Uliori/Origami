@@ -95,7 +95,3 @@
         #define GLSLHEADER "#version 100\n"
     #endif
 #endif
-
-
-
-

@@ -3,27 +3,27 @@
 NS_O_BEGIN
 
 OApplication::OApplication(const char* name, uint width, uint height)
-: m_Name(name), m_Width(width), m_Height(height), m_PreferredFramesPerSecond(30)
+:ORef(), m_Name(name), m_Width(width), m_Height(height), m_PreferredFramesPerSecond(30)
 {
 
 }
-    
-void OApplication::Init()
+
+void OApplication::init()
 {
-    m_window = new OWindow(m_Name, m_Width, m_Height, this);
-    
+    m_Window = new OWindow(m_Name, m_Width, m_Height, this);
+
     ORendererFactory::createRenderers();
 }
 
-void OApplication::Start()
+void OApplication::start()
 {
-    Init();
+    init();
     m_Running = true;
     m_Suspended = false;
-    Run();
+    run();
 }
 
-void OApplication::Suspend()
+void OApplication::suspend()
 {
     if (m_SuspendOnFocusLost) {
         ODirector::director()->pause();
@@ -32,7 +32,7 @@ void OApplication::Suspend()
     }
 }
 
-void OApplication::Resume()
+void OApplication::resume()
 {
     if (m_SuspendOnFocusLost) {
         ODirector::director()->getTimer()->reset();
@@ -41,34 +41,34 @@ void OApplication::Resume()
     }
 }
 
-void OApplication::Stop()
+void OApplication::stop()
 {
     m_Running = false;
 }
 
-void OApplication::Tick()
+void OApplication::tick()
 {
-    
+
 }
 
-void OApplication::Update(float deltaTime)
+void OApplication::update(float deltaTime)
 {
     if (!m_Suspended) {
         ODirector::director()->update(deltaTime);
     }
 }
 
-void OApplication::Refresh()
+void OApplication::refresh()
 {
-    m_window->refreshInput();
+    m_Window->refreshInput();
 }
 
-void OApplication::Render(float interpolation)
+void OApplication::render(float interpolation)
 {
-    m_window->clear();
+    m_Window->clear();
     ODirector::director()->render(interpolation);
-    m_window->swapBuffers();
+    m_Window->swapBuffers();
 }
-    
-    
+
+
 NS_O_END

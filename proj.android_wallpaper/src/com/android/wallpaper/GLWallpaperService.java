@@ -3,47 +3,44 @@ package com.android.wallpaper;
 //import java.util.Timer;
 //import java.util.TimerTask;
 //import android.os.Handler;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Point;
-import android.opengl.GLSurfaceView;
-import android.opengl.GLSurfaceView.Renderer;
-
-import android.preference.PreferenceManager;
-import android.service.wallpaper.WallpaperService;
-import android.view.Display;
-import android.view.SurfaceHolder;
-import android.view.WindowManager;
-
+//import android.preference.PreferenceManager;
+//import android.content.SharedPreferences;
 //import com.google.android.gms.ads.AdListener;
 //import com.google.android.gms.ads.AdRequest;
 //import com.google.android.gms.ads.InterstitialAd;
 
+import android.content.Context;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLSurfaceView.Renderer;
+import android.service.wallpaper.WallpaperService;
+import android.view.SurfaceHolder;
+
+
+
 public abstract class GLWallpaperService extends WallpaperService {
 	
-	public static int width;
-	public static int height;
+//	public static int width;
+//	public static int height;
 //	private static InterstitialAd interstitial;
 //	private static Timer timer;
 //	Handler handler;
-	
-	//Preferences Stuffs
-
-	public static GLWallpaperService sharedS;
-	public static SharedPreferences getPreferences()
-	{
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(sharedS);
-		
-		// Créez la demande d'annonce.
+//	
+//	//Preferences Stuffs
+//
+//	public static GLWallpaperService sharedS;
+//	public static SharedPreferences getPreferences()
+//	{
+//		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(sharedS);
+//		
+//		 //Créez la demande d'annonce.
 //		if (showads) {
 //		    AdRequest adRequest = new AdRequest.Builder().addTestDevice("46050842480CEB09AE1819558FF42F79").build();
 //		    interstitial.setAdListener(new AdListener() {});
 //		    interstitial.loadAd(adRequest);			
 //		}
-		return prefs;
-	}
-	
+//		return prefs;
+//	}
+//	
 //	public void displayInterstitial() {
 //		Log.e("Ads", "Display Method");
 //	    if (interstitial.isLoaded() && showads) {
@@ -59,7 +56,7 @@ public abstract class GLWallpaperService extends WallpaperService {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		sharedS = this;
+//		sharedS = this;
 //		handler = new Handler();
 //		// Créez l'interstitiel.
 //	    interstitial = new InterstitialAd(this);
@@ -120,7 +117,7 @@ public abstract class GLWallpaperService extends WallpaperService {
 		    if (rendererHasBeenSet) {
 		        if (visible) {
 		            glSurfaceView.onResume();
-		            GLWallpaperService.getPreferences();
+//		            GLWallpaperService.getPreferences();
 		        } else {
 		            glSurfaceView.onPause();            
 		        }
@@ -132,12 +129,12 @@ public abstract class GLWallpaperService extends WallpaperService {
 		 
 		    WallpaperGLSurfaceView(Context context) {
 		        super(context);
-		    	WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-		    	Display display = wm.getDefaultDisplay();
-			    Point size = new Point();
-			    display.getSize(size);
-			    GLWallpaperService.width = size.x;
-			    GLWallpaperService.height = size.y;
+//		    	WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+//		    	Display display = wm.getDefaultDisplay();
+//			    Point size = new Point();
+//			    display.getSize(size);
+//			    GLWallpaperService.width = size.x;
+//			    GLWallpaperService.height = size.y;
 		    }
 		 
 		    @Override

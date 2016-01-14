@@ -21,17 +21,16 @@
     #define NS_O
 #endif
 
-
 #define SAFE_DELETE(x)          { if (x) { delete (x); x = nullptr; } }
 #define SAFE_DELETE_ARRAY(x)    { if (x) { delete[] x; x = nullptr; } }
 #define SAFE_RELEASE(x)         { if (x) { (x)->release(); } }
 
 #if !defined(MIN)
-#define MIN(A,B)	((A) < (B) ? (A) : (B))
+  #define MIN(A,B)	((A) < (B) ? (A) : (B))
 #endif
 
 #if !defined(MAX)
-#define MAX(A,B)	((A) > (B) ? (A) : (B))
+  #define MAX(A,B)	((A) > (B) ? (A) : (B))
 #endif
 
 #endif /* OMacros_h */

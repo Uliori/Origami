@@ -20,21 +20,35 @@ AAssetManager *mgr;
 OGame *s_game = nullptr;
 uint g_width;
 uint g_height;
-const float 	MS_IN_SECOND	   = 1000.0f;
-double          tickCounter        = 0;
-float     		DESIRED_FRAMETIME  = 0;
-const int       MAX_PHYSICS_STEPS  = 10;
-unsigned int    frames             = 0;
-unsigned int    updates            = 0;
-double 			previousTicks	   = 0;
+
+const float  MS_IN_SECOND	      = 1000.0f;
+double       tickCounter        = 0;
+float     	 DESIRED_FRAMETIME  = 0;
+const int    MAX_PHYSICS_STEPS  = 10;
+unsigned int frames             = 0;
+unsigned int updates            = 0;
+double 			 previousTicks	    = 0;
 
 
 double accumulator  = 0;
 
+void createGame()
+{
+	if (s_game != nullptr) {
+		// retain
+		s_game->retain();
+	}
+	else
+	{
+		// initialize
+		s_game = new OGame("", g_width, g_height);
+	}
+}
+
 OGame *game()
 {
 	if (s_game == nullptr) {
-		s_game = new OGame("", g_width, g_height);
+		createGame();
 	}
 	return s_game;
 }
@@ -45,12 +59,16 @@ Java_com_android_gl2jni_GL2JNILib_init(JNIEnv *env, jclass type, jint width, jin
 	g_width = width;
 	g_height = height;
 
-	if (!s_game) {
-		game()->Start();
+	createGame();
+	if (s_game->getReferenceCount() == 1) {
+		s_game->start();
 	}
-	OResourceManager::checkResources();
+	else
+	{
+		 OResourceManager::reloadResources();
+	}
 
-	DESIRED_FRAMETIME = MS_IN_SECOND / game()->GetPreferredFPS();//
+	DESIRED_FRAMETIME = MS_IN_SECOND / game()->getPreferredFPS();//
 	previousTicks = ODirector::director()->getTimer()->getTime();
 }
 
@@ -81,19 +99,20 @@ Java_com_android_gl2jni_GL2JNILib_resize(JNIEnv *env, jclass type, jint width, j
 JNIEXPORT void JNICALL
 Java_com_android_gl2jni_GL2JNILib_setPaused(JNIEnv *env, jclass type, jboolean paused)
 {
+	if (!s_game)
+		return;
+
 	if (paused) {
-		game()->Suspend();
+		s_game->suspend();
 	}
 	else
 	{
-		game()->Resume();
+		s_game->resume();
 	}
 }
 
 JNIEXPORT void JNICALL
 Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
-
-
 
 	 double startTicks =  ODirector::director()->getTimer()->getTime();
 	 double passedTime = startTicks - previousTicks;
@@ -108,7 +127,7 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 
 		 while(accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS)
 		 {
-			 game()->Update(DESIRED_FRAMETIME / MS_IN_SECOND);
+			 s_game->update(DESIRED_FRAMETIME / MS_IN_SECOND);
 			 accumulator -= DESIRED_FRAMETIME;
 			 updates ++;
 			 loops++;
@@ -116,25 +135,25 @@ Java_com_android_gl2jni_GL2JNILib_step(JNIEnv *env, jclass type) {
 	 }
 
 
-	 game()->Refresh();
+	 s_game->refresh();
 
 	 float interpolation = float(ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
-	 game()->Render(interpolation);
-	 if(!game()->isSupended()) { frames++; }
+	 s_game->render(interpolation);
+	 if(!s_game->isSupended()) { frames++; }
 
 #ifdef O_MODE_DEBUG
 	    tickCounter += passedTime;
 	    if (tickCounter >= MS_IN_SECOND) {
 
-			game()->setFPS(frames);
-			game()->setUPS(updates);
+				s_game->setFPS(frames);
+				s_game->setUPS(updates);
 
-			frames = 0;
-			updates = 0;
-			tickCounter -= MS_IN_SECOND;
-			if(!game()->isSupended()) {
-				game()->Tick();
-			}
+				frames = 0;
+				updates = 0;
+				tickCounter -= MS_IN_SECOND;
+				if(!s_game->isSupended()) {
+					s_game->tick();
+				}
 	    }
 #endif
 }
@@ -147,6 +166,10 @@ JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_setAssetManager(JNIEnv 
 JNIEXPORT void JNICALL Java_com_android_gl2jni_GL2JNILib_cleanUp(JNIEnv *env, jclass type)
 {
 	if (s_game) {
-		SAFE_DELETE(s_game);
+		int rc = s_game->getReferenceCount();
+		s_game->release();
+		if (rc == 1) {
+			s_game = nullptr;
+		}
 	}
 }

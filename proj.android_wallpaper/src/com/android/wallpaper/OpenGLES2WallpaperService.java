@@ -7,13 +7,14 @@ import android.opengl.GLSurfaceView.Renderer;
 import android.view.SurfaceHolder;
 
 public abstract class OpenGLES2WallpaperService extends GLWallpaperService {
+		
     @Override
     public Engine onCreateEngine() {
         return new OpenGLES2Engine();
     }
  
     class OpenGLES2Engine extends GLWallpaperService.GLEngine {
- 
+    	
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
@@ -44,6 +45,29 @@ public abstract class OpenGLES2WallpaperService extends GLWallpaperService {
                 // renderer if you wanted to support both ES 1 and ES 2.
                 return;
             }
+        }
+        
+        @Override
+        public void onSurfaceDestroyed(SurfaceHolder holder) {
+        	// TODO Auto-generated method stub
+        	super.onSurfaceDestroyed(holder);
+        	GL2JNILib.cleanUp();
+        }
+        
+        @Override
+        public void onDestroy() {
+        	// TODO Auto-generated method stub
+        	super.onDestroy();
+        }
+        
+        @Override
+        public void onVisibilityChanged(boolean visible) {
+        	// TODO Auto-generated method stub
+        	super.onVisibilityChanged(visible);
+        	
+        	if (WallpaperRenderer.m_height != 0 && WallpaperRenderer.m_width != 0) {
+        		GL2JNILib.setPaused(!visible);
+			}
         }
     }
  

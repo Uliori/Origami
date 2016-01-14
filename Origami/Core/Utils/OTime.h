@@ -11,18 +11,18 @@ class OTimer
 {
 private:
     typedef std::chrono::system_clock		clock;
-    typedef std::chrono::milliseconds  		milliseconds_type;
+    typedef std::chrono::milliseconds  	milliseconds_type;
 
-    std::chrono::time_point<clock>          m_Passed;
-    
-    std::chrono::time_point<clock>          m_PausedTime;
-    
-    double m_time;
+    std::chrono::time_point<clock>      m_Passed;
+
+    std::chrono::time_point<clock>      m_PausedTime;
+
+    double m_Time;
 public:
 
     OTimer()
     {
-        m_time = 0;
+        m_Time = 0;
         reset();
     }
 
@@ -30,21 +30,21 @@ public:
     {
         m_Passed = clock::now();
     }
-    
+
     double elapsed()
     {
         auto dif = std::chrono::duration_cast<milliseconds_type>(clock::now() - m_Passed);
         m_Passed = clock::now();
-        
-        m_time += dif.count();
-        
-        return m_time;
+
+        m_Time += dif.count();
+
+        return m_Time;
     }
-    
+
     double getTime()
     {
         elapsed();
-        return m_time;
+        return m_Time;
     }
 
     double getMachineTime()
@@ -56,8 +56,6 @@ public:
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
     }
-    
-    
+
 };
 NS_O_END
-

@@ -32,20 +32,16 @@ package com.android.gl2jni;
  */
 
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.PixelFormat;
-import android.graphics.Point;
-import android.opengl.GLSurfaceView;
-import android.util.Log;
-import android.view.Display;
-import android.view.WindowManager;
-
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.opengles.GL10;
+
+import android.content.Context;
+import android.graphics.PixelFormat;
+import android.opengl.GLSurfaceView;
+import android.util.Log;
+import android.view.View;
 
 /**
  * A simple GLSurfaceView sub-class that demonstrate how to perform
@@ -81,16 +77,17 @@ class GL2JNIView extends GLSurfaceView {
 		init(translucent, depth, stencil);
 	}
 
-//	@Override
-//	protected void onVisibilityChanged(View changedView, int visibility) {
-//		// TODO Auto-generated method stub
-//		super.onVisibilityChanged(changedView, visibility);
-//		
-//		GL2JNILib.setPaused(visibility != View.VISIBLE);
-//	}
+	@Override
+	protected void onVisibilityChanged(View changedView, int visibility) {
+		// TODO Auto-generated method stub
+		super.onVisibilityChanged(changedView, visibility);
+
+		if (RendererWrapper.m_height != 0 && RendererWrapper.m_width != 0)
+			GL2JNILib.setPaused(visibility != View.VISIBLE);
+	}
 //	float lastX;
 //	float lastY;
-//	
+//
 //	@Override
 //	public boolean onTouchEvent(MotionEvent event) {
 //
@@ -121,7 +118,7 @@ class GL2JNIView extends GLSurfaceView {
 	private void init(boolean translucent, int depth, int stencil) {
 
 		setEGLContextClientVersion(2);
-		
+
 		/* By default, GLSurfaceView() creates a RGB_565 opaque surface.
 		 * If we want a translucent one, we should change the surface's
 		 * format here, using PixelFormat.TRANSLUCENT for GL Surfaces
@@ -366,45 +363,5 @@ class GL2JNIView extends GLSurfaceView {
 	}
 
 
-    private class RendererWrapper implements GLSurfaceView.Renderer {
-    	private Context m_context;
-    	private AssetManager mgr;
-    	private int m_width, m_height;
-    	public AssetManager getAssetsManager()
-    	{
-    		if (mgr == null) {
-				mgr = m_context.getResources().getAssets();
-			}
-    		return mgr;
-    	}
-    	public RendererWrapper(Context context)
-    	{
-    		m_context = context;
-    	}
-    	
-    	@Override
-        public void onDrawFrame(GL10 gl) {
-            GL2JNILib.step();
-        }
-        @Override
-        public void onSurfaceChanged(GL10 gl, int width, int height) {
-        	GL2JNILib.setAssetManager(getAssetsManager());
-        	GL2JNILib.resize(width, height);
-        }
-        @Override
-        public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-         	GL2JNILib.setAssetManager(getAssetsManager());
-        	WindowManager wm = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
-        	Display display = wm.getDefaultDisplay();
-        	
-        	Point size = new Point();
-        	display.getSize(size);
-        	m_width = size.x;
-        	m_height = size.y;
-        	
-        	GL2JNILib.init(m_width, m_height);
-       
-        }
-        
-    }
+    
 }

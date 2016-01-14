@@ -15,7 +15,6 @@
 
 NS_O_BEGIN
 
-
 const GLchar* ShaderUtils::loadTextFromFile(const GLchar * path) {
     std::ifstream fin;
     fin.open(path);

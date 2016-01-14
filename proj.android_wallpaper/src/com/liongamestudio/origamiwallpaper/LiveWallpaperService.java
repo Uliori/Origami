@@ -1,4 +1,4 @@
-package com.liongamestudio.origami;
+package com.liongamestudio.origamiwallpaper;
 
 import com.android.wallpaper.OpenGLES2WallpaperService;
 import com.android.wallpaper.WallpaperRenderer;

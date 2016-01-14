@@ -8,39 +8,44 @@
 
 #pragma once
 
+#include <Core/ORef.hpp>
 #include <Core/OGL.h>
 
-struct OTexture
+class OTexture : public ORef
 {
+public:
     GLuint textureID;
-    
+    GLint param_W_S;
+    GLint param_W_T;
+
+    OTexture():ORef() {}
+
     float getScaledWidth()
     {
-        return width;
+        return m_Width;
     }
-    
+
     float getWidth()
     {
-        return width / scale;
+        return m_Width / m_Scale;
     }
-    
+
     float getScaledHeight()
     {
-        return height;
+        return m_Height;
     }
-    
+
     float getHeight()
     {
-        return height / scale;
+        return m_Height / m_Scale;
     }
-    
-    
-    void setWidth (float w) { width = w; }
-    void setHeight(float h) { height = h; }
-    void setScale (float s) { scale = s; if(scale == 0) scale = 1;}
-    
+
+    void setWidth (float w) { m_Width = w; }
+    void setHeight(float h) { m_Height = h; }
+    void setScale (float s) { m_Scale = s; if(m_Scale == 0) m_Scale = 1;}
+
 private:
-    float width;
-    float height;
-    float scale;
+    float m_Width;
+    float m_Height;
+    float m_Scale;
 };

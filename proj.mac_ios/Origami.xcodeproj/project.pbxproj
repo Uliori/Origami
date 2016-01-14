@@ -17,6 +17,8 @@
 		911EED501BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; };
 		911EED511BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; };
 		911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; };
+		912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
+		912DAAA31C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
 		913BC5491BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
 		913BC54A1BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
 		913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; };
@@ -214,6 +216,8 @@
 		911EED4A1BE7CD6000A3FCB1 /* OFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFontManager.h; sourceTree = "<group>"; };
 		911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OLabel.cpp; sourceTree = "<group>"; };
 		911EED4C1BE7CD6000A3FCB1 /* OLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLabel.h; sourceTree = "<group>"; };
+		912DAAA01C447AA6003F8339 /* ORef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORef.cpp; sourceTree = "<group>"; };
+		912DAAA11C447AA6003F8339 /* ORef.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ORef.hpp; sourceTree = "<group>"; };
 		913BC5471BDD7E100013209D /* OInputsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OInputsManager.cpp; sourceTree = "<group>"; };
 		913BC5481BDD7E100013209D /* OInputsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OInputsManager.h; sourceTree = "<group>"; };
 		913BC5901BDF8A200013209D /* hb-blob.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "hb-blob.cc"; sourceTree = "<group>"; };
@@ -591,6 +595,8 @@
 				91CC3DFE1C34947100F923C1 /* OMacros.h */,
 				91CC3E001C357E0700F923C1 /* ODirector.h */,
 				91CC3DFF1C357E0700F923C1 /* ODirector.cpp */,
+				912DAAA11C447AA6003F8339 /* ORef.hpp */,
+				912DAAA01C447AA6003F8339 /* ORef.cpp */,
 				91B0FECD1BC71C3C0051529B /* App */,
 				91B0FECF1BC71C3C0051529B /* Graphics */,
 				91B0FED71BC71C3C0051529B /* Maths */,
@@ -937,6 +943,7 @@
 				911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */,
 				919AA4F71BC82006004C7052 /* OGame.cpp in Sources */,
 				913BC65E1BDF8A210013209D /* hb-ft.cc in Sources */,
+				912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */,
 				913BC9471BE002C90013209D /* ftinit.c in Sources */,
 				913BC9601BE0031D0013209D /* truetype.c in Sources */,
 				91B0FEF81BC71C3C0051529B /* OEException.cpp in Sources */,
@@ -1067,6 +1074,7 @@
 				913BC9551BE002E50013209D /* ftraster.c in Sources */,
 				913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
 				913BC9611BE0031D0013209D /* truetype.c in Sources */,
+				912DAAA31C447AA6003F8339 /* ORef.cpp in Sources */,
 				919AA4FE1BC85435004C7052 /* OWindowiOS.cpp in Sources */,
 				91B0FF1B1BC71E1C0051529B /* etc1_utils.c in Sources */,
 				913BC6D31BDF8A210013209D /* hb-ot-layout.cc in Sources */,

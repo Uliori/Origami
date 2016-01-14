@@ -18,13 +18,13 @@ void TextureUtils::getFileName(const char * imagepath, std::string &fileName, in
 {
     std::string name = std::string(imagepath);
     size_t lastindex = name.find_last_of(".");
-    std::string rawname = "";
+    std::string rawname = name;
     std::string extname = "";
     if (lastindex != std::string::npos) {
         rawname = name.substr(0, lastindex);
         extname = name.substr(lastindex, name.length());
     }
-    
+
     for (FileSuffix fs : ODirector::director()->fileExtensions) {
         std::string fileNameVerif = rawname + fs.suffix + extname;
         if (ResourcesUtils::doesFileExists(fileNameVerif.c_str())) {
@@ -37,39 +37,38 @@ void TextureUtils::getFileName(const char * imagepath, std::string &fileName, in
             OErrLog("Resource \"" << fileNameVerif << "\" was not found.");
         }
     }
-    
+
     fileName = std::string(imagepath);
     scale = 1;
 }
 
-OTexture TextureUtils::loadTexture(const char* texname, bool invert_y /* = true */,
+OTexture* TextureUtils::loadTexture(const char* texname, bool invert_y /* = true */,
                                    GLint param_W_S /* = GL_CLAMP_TO_BORDER */,
                                    GLint param_W_T /* = GL_CLAMP_TO_BORDER */)
 {
-    
-    OTexture texture = {};
-    
+
     int width;
     int height;
     int channels;
-    
+
     int scaleFactor;
     std::string fileName;
     getFileName(texname, fileName, scaleFactor);
-    
+
     //Load file into buffer
     unsigned char* buffer;
     size_t buffer_length;
     ResourcesUtils::fileLength(fileName.c_str(), buffer, buffer_length);
-    
+
     unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
-    
+
     if(img == NULL)
     {
         OErrLog("Could not load texture : " << fileName);
+        return nullptr;
     }
-    
-    
+
+
     if (invert_y) {
         int i, j;
         for( j = 0; j*2 < height; ++j )
@@ -86,13 +85,16 @@ OTexture TextureUtils::loadTexture(const char* texname, bool invert_y /* = true 
             }
         }
     }
-    
-    
+
+    OTexture *texture = new OTexture();
+    texture->param_W_S = param_W_S;
+    texture->param_W_T = param_W_T;
+
     // Créer la texture
-    glGenTextures(1, &(texture.textureID));
-    glBindTexture(GL_TEXTURE_2D, texture.textureID);
-    
-    if(glIsTexture(texture.textureID) == false)
+    glGenTextures(1, &(texture->textureID));
+    glBindTexture(GL_TEXTURE_2D, texture->textureID);
+
+    if(glIsTexture(texture->textureID) == false)
     {
         OErrLog("Could not create ogl texture for : " << texname);
     }
@@ -100,28 +102,86 @@ OTexture TextureUtils::loadTexture(const char* texname, bool invert_y /* = true 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, param_W_S);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, param_W_T);
-    
+
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
-    
+
 //    glGenerateMipmap(GL_TEXTURE_2D);
-    
-    
+
+
     SOIL_free_image_data(img);
-    
-    texture.setHeight(height);
-    texture.setWidth(width);
-    texture.setScale(scaleFactor);
+
+    texture->setHeight(height);
+    texture->setWidth(width);
+    texture->setScale(scaleFactor);
 
     glBindTexture(GL_TEXTURE_2D, 0);
-    
+
     return texture;
 }
 
+void TextureUtils::reloadTexture(OTexture* texture, const char * imagepath, bool invert_y)
+{
+  int width;
+  int height;
+  int channels;
+
+  int scaleFactor;
+  std::string fileName;
+  getFileName(imagepath, fileName, scaleFactor);
+
+  //Load file into buffer
+  unsigned char* buffer;
+  size_t buffer_length;
+  ResourcesUtils::fileLength(fileName.c_str(), buffer, buffer_length);
+
+  unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
+
+  if(img == NULL)
+  {
+      OErrLog("Could not load texture : " << fileName);
+      return ;
+  }
+
+  if (invert_y) {
+      int i, j;
+      for( j = 0; j*2 < height; ++j )
+      {
+          int index1 = j * width * channels;
+          int index2 = (height - 1 - j) * width * channels;
+          for( i = width * channels; i > 0; --i )
+          {
+              unsigned char temp = img[index1];
+              img[index1] = img[index2];
+              img[index2] = temp;
+              ++index1;
+              ++index2;
+          }
+      }
+  }
+
+//
+// Créer la texture
+  glGenTextures(1, &(texture->textureID));
+  glBindTexture(GL_TEXTURE_2D, texture->textureID);
+
+  if(glIsTexture(texture->textureID) == false)
+  {
+      OErrLog("Could not create ogl texture for : " << imagepath);
+  }
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, texture->param_W_S);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, texture->param_W_T);
+
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
+
+  //    glGenerateMipmap(GL_TEXTURE_2D);
 
 
+  SOIL_free_image_data(img);
 
-
-
+  glBindTexture(GL_TEXTURE_2D, 0);
+}
 
 GLuint TextureUtils::makeTexture(GLsizei width, GLsizei height, GLint internalformat, GLenum format, GLenum type, GLint param_MAG, GLint param_MIN, GLint param_W_S, GLint param_W_T)
 {
@@ -171,4 +231,3 @@ GLuint TextureUtils::loadTextureCube(const char* PosXFilename,
     return texture;
 }
 NS_O_END
-

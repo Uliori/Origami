@@ -12,13 +12,14 @@
 
 NS_O_BEGIN
 class OLayer3D {
-    
-    
+
+
 public:
     OLayer3D();
     virtual ~OLayer3D();
-    
+
     virtual void create();
+    virtual void clear();
     virtual void updateResolution();
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
