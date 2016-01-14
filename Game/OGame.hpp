@@ -20,15 +20,13 @@ class OGame : public OApplication
 {
     BeachScene *sc1;
     CloudsScene *sc2;
-    
+
 public:
     OGame(const char* name, uint width, uint height);
-    
-    void Init() override;
-    void Tick() override;
-    
-    void Update(float deltaTime) override;
-    void Render(float interpolation) override;
-    
-};
 
+    void init() override;
+    void tick() override;
+
+    void update(float deltaTime) override;
+
+};

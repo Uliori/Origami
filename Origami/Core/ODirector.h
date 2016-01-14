@@ -45,15 +45,15 @@ struct FileSuffix {
 class ODirector {
 private:
     //singleton
-    static ODirector* m_instance;
+    static ODirector* m_Instance;
 public:
     //singleton
     static ODirector* director();
-    static void DeleteManager();
-    
+    static void deleteManager();
+
     // that uint will store the screen fbo
     uint m_screen_fbo;
-    
+
     //Search path list, depending on the screen resolution
     std::vector<FileSuffix> fileExtensions;
 private:
@@ -61,59 +61,62 @@ private:
     OScene *m_CurrentScene = nullptr;
     std::map<std::string, OScene*> m_Scenes;
     std::string m_CurrentSceneID;
-    
+
     //General Timer
     OTimer* m_Timer;
-    
+
     //Screen resolution, desired resolution, and calculated resolution depending on the screen ratio
     OSize m_FrameSize;
     OSize m_DesignResolutionSize;
     OSize m_VirtualSize;
-    
+
     float m_ScaleX;
     float m_ScaleY;
-    ResolutionPolicy m_resolutionPolicy;
-    
+    ResolutionPolicy m_ResolutionPolicy;
+
     void updateDesignResolutionSize();
 public:
-    
+
     ODirector();
     virtual ~ODirector();
-    
+
     //that method will load the game file configuration in the future
     virtual void loadGame();
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
-    
+
     OTimer* getTimer(){ return m_Timer;}
-    
+
     void updateCurrentScene(float deltaTime);
     void renderCurrentScene(float interpolation);
-    
+
     void updateScene(OScene *scene, float deltaTime);
     void renderScene(OScene *scene, float interpolation);
     inline OScene * getCurrentScene() {return m_CurrentScene;}
-    
+
+    void reloadScene(OScene *scene);
+    void reloadCurrentScene();
+
     void addScene(const std::string& scene_name, OScene *scene, bool setCurrent = false);
     void deleteScene(const std::string& scene_name);
-    
+
     // load the scene and call it's create method
     void loadScene(const std::string& scene_name);
-    
+
     void pause();
     void resume();
-    
+
     inline OSize& getFrameSize() {return m_FrameSize;}
     inline OSize& getDesignResolutionSize() {return m_DesignResolutionSize;}
     inline OSize& getVirtualSize() {return m_VirtualSize;}
-    inline ResolutionPolicy &getResolutionPolicy() {return m_resolutionPolicy;}
-    
+    inline ResolutionPolicy &getResolutionPolicy() {return m_ResolutionPolicy;}
+
     void setFrameSize(uint width, uint height) { m_FrameSize = OSize(width, height);}
     void setDesignResolutionSize(uint width, uint height, ResolutionPolicy resolutionPolicy);
-    
+
     void setFilesSuffixOrder();
-    
+
 
 };
-        
+
 NS_O_END

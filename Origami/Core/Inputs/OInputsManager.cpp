@@ -11,37 +11,36 @@
 NS_O_BEGIN
 
 //Singleton
-OInputsManager OInputsManager::m_instance;
-OInputsManager* OInputsManager::Manager()
+OInputsManager OInputsManager::m_Instance;
+OInputsManager* OInputsManager::manager()
 {
-    return &m_instance;
+    return &m_Instance;
 }
 
-
 OInputsManager::OInputsManager(){
-    
+
 }
 
 OInputsManager::~OInputsManager()
 {
-    
+
 }
 
 void OInputsManager::update(){
-    for (auto it : m_keyMap)
+    for (auto it : m_KeyMap)
     {
-        m_previouskeyMap[it.first] = it.second;
+        m_PreviouskeyMap[it.first] = it.second;
     }
 }
 
 void OInputsManager::pressKey(unsigned int keyID)
 {
-    m_keyMap[keyID] = true;
+    m_KeyMap[keyID] = true;
 }
 
 void OInputsManager::releaseKey(unsigned int keyID)
 {
-    m_keyMap[keyID] = false;
+    m_KeyMap[keyID] = false;
 }
 
 bool OInputsManager::isKeyPressed(unsigned int keyID)
@@ -54,8 +53,8 @@ bool OInputsManager::isKeyPressed(unsigned int keyID)
 
 bool OInputsManager::isKeyDown(unsigned int keyID)
 {
-    auto it = m_keyMap.find(keyID);
-    if (it != m_keyMap.end()) {
+    auto it = m_KeyMap.find(keyID);
+    if (it != m_KeyMap.end()) {
         return it->second;
     }
     return false;
@@ -63,8 +62,8 @@ bool OInputsManager::isKeyDown(unsigned int keyID)
 
 bool OInputsManager::wasKeyDown(unsigned int keyID)
 {
-    auto it = m_previouskeyMap.find(keyID);
-    if (it != m_previouskeyMap.end()) {
+    auto it = m_PreviouskeyMap.find(keyID);
+    if (it != m_PreviouskeyMap.end()) {
         return it->second;
     }
     return false;

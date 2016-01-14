@@ -17,10 +17,10 @@ NS_O_BEGIN
 class TextureUtils {
 public:
 //			static GLuint loadTexture(const char * imagepath);
-    static OTexture loadTexture(const char * imagepath, bool invert_y = true, GLint param_W_S = GL_CLAMP_TO_EDGE, GLint param_W_T = GL_CLAMP_TO_EDGE);
+    static OTexture* loadTexture(const char * imagepath, bool invert_y = true, GLint param_W_S = GL_CLAMP_TO_EDGE, GLint param_W_T = GL_CLAMP_TO_EDGE);
+    static void reloadTexture(OTexture* texture, const char * imagepath, bool invert_y = true);
     static void getFileName(const char * imagepath, std::string &fileName, int &scale);
-    
-    
+
     static GLuint loadTextureCube(const char* PosXFilename,
         const char* NegXFilename,
         const char* PosYFilename,

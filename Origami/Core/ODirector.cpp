@@ -8,25 +8,24 @@
 NS_O_BEGIN
 
 //Singleton
-ODirector* ODirector::m_instance;
+ODirector* ODirector::m_Instance;
 ODirector* ODirector::director()
 {
-    if (!m_instance) {
-        m_instance = new ODirector();
+    if (!m_Instance) {
+        m_Instance = new ODirector();
     }
-    return m_instance;
+    return m_Instance;
 }
-void ODirector::DeleteManager()
+void ODirector::deleteManager()
 {
-    SAFE_DELETE(m_instance);
+    SAFE_DELETE(m_Instance);
 }
-     
-        
+
+
 ODirector::ODirector() : m_CurrentScene(nullptr)
 {
     m_Timer = new OTimer();
 }
-
 
 ODirector::~ODirector()
 {
@@ -41,14 +40,14 @@ ODirector::~ODirector()
     }
     m_Scenes.clear();
     //
-    
+
     SAFE_DELETE(m_Timer);
 }
 
 void ODirector::setFilesSuffixOrder()
 {
     fileExtensions.clear();
-    
+
     OSize screenSize = getFrameSize();
     float minR = MIN(screenSize.width, screenSize.height);
     if (minR > 768) { //iPad retina like
@@ -71,9 +70,15 @@ void ODirector::setFilesSuffixOrder()
 void ODirector::setDesignResolutionSize(uint width, uint height, ResolutionPolicy resolutionPolicy)
 {
     m_DesignResolutionSize = OSize(width, height);
-    m_resolutionPolicy = resolutionPolicy;
-    
+    m_ResolutionPolicy = resolutionPolicy;
+
+    OSize OvirtualS = getVirtualSize();
     updateDesignResolutionSize();
+    OSize NvirtualS = getVirtualSize();
+
+    if (OvirtualS.width == NvirtualS.width && OvirtualS.height == NvirtualS.height)
+        return;
+
     if (m_CurrentScene) {
         m_CurrentScene->getMainLayer2D()->updateResolution();
         m_CurrentScene->getMainLayer3D()->updateResolution();
@@ -89,23 +94,23 @@ void ODirector::updateDesignResolutionSize()
     {
         m_ScaleX = (float)m_FrameSize.width / m_DesignResolutionSize.width;
         m_ScaleY = (float)m_FrameSize.height / m_DesignResolutionSize.height;
-        
-        if ( m_resolutionPolicy == ResolutionPolicy::FIXED_HEIGHT
-            || (m_resolutionPolicy == ResolutionPolicy::FIXED && m_FrameSize.width > m_FrameSize.height))
+
+        if ( m_ResolutionPolicy == ResolutionPolicy::FIXED_HEIGHT
+            || (m_ResolutionPolicy == ResolutionPolicy::FIXED && m_FrameSize.width > m_FrameSize.height))
         {
             m_ScaleX = m_ScaleY;
             m_VirtualSize.height = m_DesignResolutionSize.height;
             m_VirtualSize.width  = ceilf(m_FrameSize.width/m_ScaleX);
         }
-        
-        else if ( m_resolutionPolicy == ResolutionPolicy::FIXED_WIDTH
-                 || (m_resolutionPolicy == ResolutionPolicy::FIXED && m_FrameSize.height > m_FrameSize.width))
+
+        else if ( m_ResolutionPolicy == ResolutionPolicy::FIXED_WIDTH
+                 || (m_ResolutionPolicy == ResolutionPolicy::FIXED && m_FrameSize.height > m_FrameSize.width))
         {
             m_ScaleY = m_ScaleX;
             m_VirtualSize.width  = m_DesignResolutionSize.width;
             m_VirtualSize.height = ceilf(m_FrameSize.height/m_ScaleY);
         }
-        
+
         // calculate the rect of viewport
 //        float viewPortW = m_VirtualSize.width * m_ScaleX;
 //        float viewPortH = m_VirtualSize.height * m_ScaleY;
@@ -140,18 +145,31 @@ void ODirector::renderCurrentScene(float interpolation)
     renderScene(m_CurrentScene, interpolation);
 }
 
+void ODirector::reloadScene(OScene *scene)
+{
+    if (scene && scene->isCreated()) {
+        scene->clear();
+        scene->create();
+    }
+}
+
+void ODirector::reloadCurrentScene()
+{
+    reloadScene(m_CurrentScene);
+}
+
 void ODirector::updateScene(OScene *scene, float deltaTime)
 {
     if (scene && scene->isCreated()) {
-        m_CurrentScene->onInput(deltaTime);
-        m_CurrentScene->update(deltaTime);
+        scene->onInput(deltaTime);
+        scene->update(deltaTime);
     }
 }
 
 void ODirector::renderScene(OScene *scene, float interpolation)
 {
     if (scene && scene->isCreated()) {
-        m_CurrentScene->render(interpolation);
+        scene->render(interpolation);
     }
 }
 
@@ -177,7 +195,7 @@ void ODirector::addScene(const std::string& scene_name, OScene *scene, bool setC
         OLog("Scene \"" << scene_name << "\" already exists !");
         return;
     }
-    
+
     m_Scenes.insert(std::make_pair(scene_name, scene));
     if (setCurrent || m_CurrentScene == nullptr) {
         loadScene(scene_name);
@@ -192,7 +210,7 @@ void ODirector::deleteScene(const std::string& scene_name)
         if (m_CurrentSceneID == scene_name) {
             m_CurrentScene = nullptr;
         }
-        
+
         SAFE_DELETE(s_scene->second)
         m_Scenes.erase(s_scene);
     }
@@ -203,14 +221,17 @@ void ODirector::loadScene(const std::string& scene_name)
     auto s_scene = m_Scenes.find(scene_name);
     if(s_scene != m_Scenes.end())
     {
+        if (m_CurrentScene) {
+          m_CurrentScene->clear();
+        }
         m_CurrentScene = s_scene->second;
         m_CurrentSceneID = scene_name;
         OLog("Current Scene is : " << scene_name);
-        
+
         if (m_CurrentScene && !m_CurrentScene->isCreated()) {
             m_CurrentScene->create();
         }
-        
+
     }
     else
     {

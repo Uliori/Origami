@@ -10,19 +10,19 @@
 #include <Core/OMacros.h>
 
 NS_O_BEGIN
-    
+
 class OShader
 {
 protected:
     const char* m_Name;
-    
-    Program *m_program;
-    
+
+    Program* m_Program;
+
 public:
 //        OShader(const char* name, const char* vertSrc, const char* fragSrc);
     virtual ~OShader();
-    
-    
+
+
 
     void setUniform1f(const GLchar* name, float value);
     void setUniform1fv(const GLchar* name, float* value, int count);
@@ -34,16 +34,16 @@ public:
     void setUniformMat3(const GLchar* name, const maths::mat3& matrix);
     void setUniformMat4(const GLchar* name, const maths::mat4& matrix);
 
-    GLint GetUniformLocation(const GLchar* name);
-    
+    GLint getUniformLocation(const GLchar* name);
+
     void bind() const;
     void unbind() const;
-    
+
     virtual void bindLocations() = 0;
     virtual void init() = 0;
 protected:
     GLuint load(const std::string &vertSrc, const std::string &fragSrc);
-    
+
 };
 
 NS_O_END

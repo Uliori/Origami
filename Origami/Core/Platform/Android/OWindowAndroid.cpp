@@ -1,29 +1,29 @@
 #include <Core/Graphics/OWindow.h>
 
 NS_O_BEGIN
-        bool OWindow::PlatformInit()
+        bool OWindow::platformInit()
         {
             ODirector::director()->m_screen_fbo = 0;
-            
+
             OGLUtils::printGLInfo();
             return true;
         }
-        
-        void OWindow::PlatformUpdate()
+
+        void OWindow::platformUpdate()
         {
             //EGL swap buffers
         }
-        
-        void OWindow::PlatformClean()
+
+        void OWindow::platformClean()
         {
-            
+
         }
-        
+
         bool OWindow::iscloseRequested() {
             return false;
         }
-        
-        void OWindow::PlatformVsync(bool vsync)
+
+        void OWindow::platformVsync(bool vsync)
         {
             //EGL swap interval
         }

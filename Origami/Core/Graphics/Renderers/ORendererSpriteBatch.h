@@ -24,16 +24,16 @@ class Glyph {
 public:
     Glyph() {};
     Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder);
-    
+
     GLuint textureID;
-    
+
     VertexData2D topLeft;
     VertexData2D bottomLeft;
     VertexData2D topRight;
     VertexData2D bottomRight;
-    
+
     float a_zOrder;
-    
+
 };
 
 // Each render batch is used for a single draw call
@@ -53,34 +53,34 @@ class ORendererSpriteBatch : public ORenderer2D
 public:
     ORendererSpriteBatch();
     virtual ~ORendererSpriteBatch();
-    
-    void Init() override;
-    void Begin() override;
-    void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
-    void Submit(const OSprite* renderable) override;
-    void End() override;
-    void Flush(OLayer2D *layer) override;
-    
+
+    void init() override;
+    void begin() override;
+    void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
+    void submit(const OSprite* renderable) override;
+    void end() override;
+    void flush(OLayer2D *layer) override;
+
 private:
     // Creates all the needed RenderBatches
     void createRenderBatches();
-    
+
     // Generates our VAO and VBO
     void createVertexArray();
-    
+
     // Sorts glyphs according to _sortType
     void sortGlyphs();
-    
+
     // Comparator used by sortGlyphs()
     static bool compareFunction(Glyph* a, Glyph* b);
 
-    
-    GLuint m_vboID;
-    GLuint m_vaoID;
-    
-    std::vector<Glyph*> m_glyphPointers; ///< This is for sorting
-    std::vector<Glyph> m_glyphs; ///< These are the actual glyphs
-    std::vector<RenderBatch> m_renderBatches;
-    
+
+    GLuint m_VboID;
+    GLuint m_VaoID;
+
+    std::vector<Glyph*> m_GlyphPointers; ///< This is for sorting
+    std::vector<Glyph> m_Glyphs; ///< These are the actual glyphs
+    std::vector<RenderBatch> m_RenderBatches;
+
 };
 NS_O_END

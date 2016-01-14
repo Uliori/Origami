@@ -22,64 +22,64 @@ NS_O_BEGIN
 //Glyph
 Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) :
 textureID(texture) {
-    
+
     a_zOrder = zOrder;
-    
-    topLeft.m_color = color;
+
+    topLeft.setColor(color);
     topLeft.setPosition(position.x, position.y + dimensions.y);
     topLeft.setUV(uvRect.x, uvRect.y + uvRect.w);
-    
-    bottomLeft.m_color = color;
+
+    bottomLeft.setColor(color);
     bottomLeft.setPosition(position.x, position.y);
     bottomLeft.setUV(uvRect.x, uvRect.y);
-    
-    bottomRight.m_color = color;
+
+    bottomRight.setColor(color);
     bottomRight.setPosition(position.x + dimensions.x, position.y);
     bottomRight.setUV(uvRect.x + uvRect.z, uvRect.y);
-    
-    topRight.m_color = color;
+
+    topRight.setColor(color);
     topRight.setPosition(position.x + dimensions.x, position.y + dimensions.y);
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
 
 //SpriteBatch
-ORendererSpriteBatch::ORendererSpriteBatch(): m_vboID(0), m_vaoID(0)
+ORendererSpriteBatch::ORendererSpriteBatch(): m_VboID(0), m_VaoID(0)
 {
-    Init();
+    init();
 }
 
 ORendererSpriteBatch::~ORendererSpriteBatch()
 {
-    if (m_vboID != 0) {
-        glDeleteBuffers(1, &m_vboID);
+    if (m_VboID != 0) {
+        glDeleteBuffers(1, &m_VboID);
     }
-    
-    if (m_vaoID != 0) {
-        glDeleteVertexArrays(1, &m_vaoID);
+
+    if (m_VaoID != 0) {
+        glDeleteVertexArrays(1, &m_VaoID);
     }
 }
 
-void ORendererSpriteBatch::Init()
+void ORendererSpriteBatch::init()
 {
     createVertexArray();
 }
 
-void ORendererSpriteBatch::Begin()
+void ORendererSpriteBatch::begin()
 {
-    m_renderBatches.clear();
-    
+    m_RenderBatches.clear();
+
     // Makes _glpyhs.size() == 0, however it does not free internal memory.
     // So when we later call emplace_back it doesn't need to internally call new.
-    m_glyphs.clear();
+    m_Glyphs.clear();
 }
 
-void ORendererSpriteBatch::Submit(const OSprite* renderable)
+void ORendererSpriteBatch::submit(const OSprite* renderable)
 {
-    m_glyphs.emplace_back(renderable->GetPosition(), renderable->GetSize(), renderable->GetUV(), renderable->GetTID(), renderable->GetColor(), renderable->GetZOrder());
+    m_Glyphs.emplace_back(renderable->getPosition(), renderable->getSize(), renderable->getUV(), renderable->getTID(), renderable->getColor(), renderable->getZOrder());
 }
 
-void ORendererSpriteBatch::DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)
+void ORendererSpriteBatch::drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)
 {
     //        using namespace ftgl;
     //
@@ -134,35 +134,35 @@ void ORendererSpriteBatch::DrawString(const std::string& text, const maths::vec3
     //
 }
 
-void ORendererSpriteBatch::End()
+void ORendererSpriteBatch::end()
 {
     // Set up all pointers for fast sorting
-    m_glyphPointers.resize(m_glyphs.size());
-    for (size_t i = 0; i < m_glyphs.size(); i++) {
-        m_glyphPointers[i] = &m_glyphs[i];
+    m_GlyphPointers.resize(m_Glyphs.size());
+    for (size_t i = 0; i < m_Glyphs.size(); i++) {
+        m_GlyphPointers[i] = &m_Glyphs[i];
     }
-    
+
     sortGlyphs();
     createRenderBatches();
 }
 
-void ORendererSpriteBatch::Flush(OLayer2D *layer)
+void ORendererSpriteBatch::flush(OLayer2D *layer)
 {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
+
     ORendererFactory::OShader_Simple2D->bind();
     glActiveTexture(GL_TEXTURE0);
     ORendererFactory::OShader_Simple2D->setUniform1i("u_diffuse", 0);
     ORendererFactory::OShader_Simple2D->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
-    glBindVertexArray(m_vaoID);
-    
-    for (size_t i = 0; i < m_renderBatches.size(); i++) {
-        glBindTexture(GL_TEXTURE_2D, m_renderBatches[i].texture);
-        
-        glDrawArrays(GL_TRIANGLES, m_renderBatches[i].offset, m_renderBatches[i].numVertices);
+    glBindVertexArray(m_VaoID);
+
+    for (size_t i = 0; i < m_RenderBatches.size(); i++) {
+        glBindTexture(GL_TEXTURE_2D, m_RenderBatches[i].texture);
+
+        glDrawArrays(GL_TRIANGLES, m_RenderBatches[i].offset, m_RenderBatches[i].numVertices);
     }
-    
+
     ORendererFactory::OShader_Simple2D->unbind();
     glBindVertexArray(0);
 }
@@ -173,93 +173,91 @@ void ORendererSpriteBatch::createRenderBatches() {
     std::vector <VertexData2D> vertices;
     // Resize the buffer to the exact size we need so we can treat
     // it like an array
-    vertices.resize(m_glyphPointers.size() * 6);
-    
-    if (m_glyphPointers.empty()) {
+    vertices.resize(m_GlyphPointers.size() * 6);
+
+    if (m_GlyphPointers.empty()) {
         return;
     }
-    
+
     int offset = 0; // current offset
     int cv = 0; // current vertex
-    
+
     //Add the first batch
-    m_renderBatches.emplace_back(offset, 6, m_glyphPointers[0]->textureID);
-    vertices[cv++] = m_glyphPointers[0]->topLeft;
-    vertices[cv++] = m_glyphPointers[0]->bottomLeft;
-    vertices[cv++] = m_glyphPointers[0]->bottomRight;
-    vertices[cv++] = m_glyphPointers[0]->bottomRight;
-    vertices[cv++] = m_glyphPointers[0]->topRight;
-    vertices[cv++] = m_glyphPointers[0]->topLeft;
+    m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[0]->textureID);
+    vertices[cv++] = m_GlyphPointers[0]->topLeft;
+    vertices[cv++] = m_GlyphPointers[0]->bottomLeft;
+    vertices[cv++] = m_GlyphPointers[0]->bottomRight;
+    vertices[cv++] = m_GlyphPointers[0]->bottomRight;
+    vertices[cv++] = m_GlyphPointers[0]->topRight;
+    vertices[cv++] = m_GlyphPointers[0]->topLeft;
     offset += 6;
-    
+
     //Add all the rest of the glyphs
-    for (size_t cg = 1; cg < m_glyphPointers.size(); cg++) {
-        
+    for (size_t cg = 1; cg < m_GlyphPointers.size(); cg++) {
+
         // Check if this glyph can be part of the current batch
-        if (m_glyphPointers[cg]->textureID != m_glyphPointers[cg - 1]->textureID) {
+        if (m_GlyphPointers[cg]->textureID != m_GlyphPointers[cg - 1]->textureID) {
             // Make a new batch
-            m_renderBatches.emplace_back(offset, 6, m_glyphPointers[cg]->textureID);
+            m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[cg]->textureID);
         } else {
             // If its part of the current batch, just increase numVertices
-            m_renderBatches.back().numVertices += 6;
+            m_RenderBatches.back().numVertices += 6;
         }
-        vertices[cv++] = m_glyphPointers[cg]->topLeft;
-        vertices[cv++] = m_glyphPointers[cg]->bottomLeft;
-        vertices[cv++] = m_glyphPointers[cg]->bottomRight;
-        vertices[cv++] = m_glyphPointers[cg]->bottomRight;
-        vertices[cv++] = m_glyphPointers[cg]->topRight;
-        vertices[cv++] = m_glyphPointers[cg]->topLeft;
+        vertices[cv++] = m_GlyphPointers[cg]->topLeft;
+        vertices[cv++] = m_GlyphPointers[cg]->bottomLeft;
+        vertices[cv++] = m_GlyphPointers[cg]->bottomRight;
+        vertices[cv++] = m_GlyphPointers[cg]->bottomRight;
+        vertices[cv++] = m_GlyphPointers[cg]->topRight;
+        vertices[cv++] = m_GlyphPointers[cg]->topLeft;
         offset += 6;
     }
-    
-    glBindVertexArray(m_vaoID);
-    
+
+    glBindVertexArray(m_VaoID);
+
     // Bind our VBO
-    glBindBuffer(GL_ARRAY_BUFFER, m_vboID);
+    glBindBuffer(GL_ARRAY_BUFFER, m_VboID);
     // Orphan the buffer (for speed)
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(VertexData2D), NULL, GL_DYNAMIC_DRAW);
     // Upload the data
     glBufferSubData(GL_ARRAY_BUFFER, 0, vertices.size() * sizeof(VertexData2D), vertices.data());
-    
+
     glBindVertexArray(0);
-    // Unbind the VBO
-    //        glBindBuffer(GL_ARRAY_BUFFER, 0);
-    
+
 }
 
 void ORendererSpriteBatch::createVertexArray() {
-    
+
     // Generate the VAO if it isn't already generated
-    if (m_vaoID == 0) {
-        glGenVertexArrays(1, &m_vaoID);
+    if (m_VaoID == 0) {
+        glGenVertexArrays(1, &m_VaoID);
     }
-    
+
     // Bind the VAO. All subsequent opengl calls will modify it's state.
-    glBindVertexArray(m_vaoID);
-    
+    glBindVertexArray(m_VaoID);
+
     //G enerate the VBO if it isn't already generated
-    if (m_vboID == 0) {
-        glGenBuffers(1, &m_vboID);
+    if (m_VboID == 0) {
+        glGenBuffers(1, &m_VboID);
     }
-    glBindBuffer(GL_ARRAY_BUFFER, m_vboID);
-    
+    glBindBuffer(GL_ARRAY_BUFFER, m_VboID);
+
     //Tell opengl what attribute arrays we need
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     glEnableVertexAttribArray(2);
-    
-    glVertexAttribPointer(0, 2, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_vertex));
-    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE , sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_color));
-    glVertexAttribPointer(2, 2, GL_FLOAT        , GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_uv));
-    
+
+    glVertexAttribPointer(0, 2, GL_FLOAT,         GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_Vertex));
+    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE , sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_Color));
+    glVertexAttribPointer(2, 2, GL_FLOAT        , GL_FALSE, sizeof(VertexData2D), (void *)offsetof(VertexData2D, m_UV));
+
     glBindVertexArray(0);
-    
+
 }
 
 void ORendererSpriteBatch::sortGlyphs() {
-    
-    std::stable_sort(m_glyphPointers.begin(), m_glyphPointers.end(), compareFunction);
-    
+
+    std::stable_sort(m_GlyphPointers.begin(), m_GlyphPointers.end(), compareFunction);
+
 }
 
 bool ORendererSpriteBatch::compareFunction(Glyph* a, Glyph* b) {

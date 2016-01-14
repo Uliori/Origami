@@ -22,7 +22,7 @@ public:
     OFont(const std::string& name, const std::string& filename, float size);
 //		OFont(const std::string& name, const unsigned char* data, unsigned int datasize, float size);
 
-    void SetScale(float x, float y);
+    void setScale(float x, float y);
 
 //		inline ftgl::texture_font_t* GetFTFont() const { return m_FTFont; }
 

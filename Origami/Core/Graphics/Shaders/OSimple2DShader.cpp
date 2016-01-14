@@ -22,32 +22,29 @@ const std::string PRECISION_H =
                                 "#endif\n";
 
 const std::string vertsimple2d =
-OGL_LAYOUT(0)  OGL_ATTR " vec2 a_position;\n"
-OGL_LAYOUT(1)  OGL_ATTR " vec4 a_color;\n"
-OGL_LAYOUT(2)  OGL_ATTR " vec2 a_UV;\n"
+                                OGL_LAYOUT(0)  OGL_ATTR " vec2 a_position;\n"
+                                OGL_LAYOUT(1)  OGL_ATTR " vec4 a_color;\n"
+                                OGL_LAYOUT(2)  OGL_ATTR " vec2 a_UV;\n"
 
-OGL_VARYO               " vec4 v_fragColor;\n"
-OGL_VARYO               " vec2 v_UV;\n"
-"uniform mat4 u_MVP;\n"
-"void main()\n"
-"{\n"
-"	gl_Position = u_MVP * vec4(a_position, 0.0, 1.0);\n"
-"	v_fragColor = a_color;\n"
-"	v_UV = a_UV;\n"
-"}\n";
+                                OGL_VARYO               " vec4 v_fragColor;\n"
+                                OGL_VARYO               " vec2 v_UV;\n"
+                                "uniform mat4 u_MVP;\n"
+                                "void main()\n"
+                                "{\n"
+                                "   gl_Position = u_MVP * vec4(a_position, 0.0, 1.0);\n"
+                                "	  v_fragColor = a_color;\n"
+                                "	  v_UV = a_UV;\n"
+                                "}\n";
 
 const std::string fragsimple2d =
-OGL_VARYI               " vec4 v_fragColor;\n"
-OGL_VARYI               " vec2 v_UV;\n"
-OGL_FragColorDec
-"uniform sampler2D u_diffuse;\n"
-"void main()\n"
-"{\n"
-" vec4 finalColor = v_fragColor * " OGL_TEXTURE "(u_diffuse, v_UV);\n"
-//    " if(finalColor.a < 0.5) discard;\n"
-OGL_FragColor " =  finalColor;\n"
-//    OGL_FragColor " =  vec4(1.0, 0.0, 0.0, 1.0);\n"
-"}\n";
+                                OGL_VARYI               " vec4 v_fragColor;\n"
+                                OGL_VARYI               " vec2 v_UV;\n"
+                                OGL_FragColorDec
+                                "uniform sampler2D u_diffuse;\n"
+                                "void main()\n"
+                                "{\n"
+                                    OGL_FragColor " =  v_fragColor * " OGL_TEXTURE "(u_diffuse, v_UV);\n"
+                                "}\n";
 
 //Text Rendering
 //    "void main()\n"
@@ -78,9 +75,9 @@ void OSimple2DShader::init()
 
 void OSimple2DShader::bindLocations()
 {
-    m_program->BindLocation(0, "a_position");
-    m_program->BindLocation(1, "a_color");
-    m_program->BindLocation(2, "a_UV");
+    m_Program->bindLocation(0, "a_position");
+    m_Program->bindLocation(1, "a_color");
+    m_Program->bindLocation(2, "a_UV");
 
 }
 

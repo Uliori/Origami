@@ -12,18 +12,16 @@ OTextureCache * OResourceManager::textureCache()
     return m_TextureCache;
 }
 
-OTexture OResourceManager::loadTexture(const std::string& texturePath,
-                                       bool invert_y /* = true */,
-                                       GLint param_W_S /* = GL_CLAMP_TO_BORDER */,
-                                       GLint param_W_T /* = GL_CLAMP_TO_BORDER */)
-{
-    return textureCache()->getTexture(texturePath, invert_y, param_W_S, param_W_T);
-}
-
 void OResourceManager::checkResources()
 {
-    ORendererFactory::initRenderers();
+    ORendererFactory::createRenderers();
     textureCache()->checkTextures();
+}
+
+void OResourceManager::reloadResources()
+{
+    ORendererFactory::createRenderers();
+    // textureCache()->reloadTextures();
 }
 
 void OResourceManager::cleanUp()

@@ -7,59 +7,56 @@
 NS_O_BEGIN
 class Program
 {
-    GLuint m_shaderProgram;
+    GLuint m_ShaderProgram;
 public:
-    
+
     Program(const GLuint vertexShader, const GLuint fragmentShader)
     {
-        m_shaderProgram = glCreateProgram();
-        glAttachShader(m_shaderProgram, vertexShader);
-        glAttachShader(m_shaderProgram, fragmentShader);
+        m_ShaderProgram = glCreateProgram();
+        glAttachShader(m_ShaderProgram, vertexShader);
+        glAttachShader(m_ShaderProgram, fragmentShader);
     }
-    
+
     ~Program()
     {
-        glDeleteProgram(m_shaderProgram);
+        glDeleteProgram(m_ShaderProgram);
     }
-    
+
     void link()
     {
-        glLinkProgram(m_shaderProgram);
-        
+        glLinkProgram(m_ShaderProgram);
+
         GLint linkStatus;
-        glGetProgramiv(m_shaderProgram, GL_LINK_STATUS, &linkStatus);
+        glGetProgramiv(m_ShaderProgram, GL_LINK_STATUS, &linkStatus);
         if (linkStatus != GL_TRUE) {
             OErrLog("Program Link Failed");
-            
-            
             GLint infosLogLength;
-            glGetProgramiv(m_shaderProgram, GL_INFO_LOG_LENGTH, &infosLogLength);
+            glGetProgramiv(m_ShaderProgram, GL_INFO_LOG_LENGTH, &infosLogLength);
             GLchar *infoLog = new GLchar[infosLogLength + 1];
-            glGetProgramInfoLog(m_shaderProgram, infosLogLength + 1, NULL, infoLog);
+            glGetProgramInfoLog(m_ShaderProgram, infosLogLength + 1, NULL, infoLog);
             OErrLog(infoLog);
             delete []infoLog;
         }
     }
-    
-    void Bind() const
+
+    void bind() const
     {
-        glUseProgram(m_shaderProgram);
+        glUseProgram(m_ShaderProgram);
     }
-    
-    void Unbind() const
+
+    void unbind() const
     {
         glUseProgram(0);
     }
-    
-    void BindLocation(GLuint index, const GLchar *name)
+
+    void bindLocation(GLuint index, const GLchar *name)
     {
-        glBindAttribLocation(m_shaderProgram, index, name);
+        glBindAttribLocation(m_ShaderProgram, index, name);
     }
-    
-    GLuint GetUniform(const GLchar *name)
+
+    GLuint getUniform(const GLchar *name)
     {
-        return glGetUniformLocation(m_shaderProgram, name);
+        return glGetUniformLocation(m_ShaderProgram, name);
     }
 };
 NS_O_END
-

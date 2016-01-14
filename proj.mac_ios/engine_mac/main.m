@@ -10,6 +10,6 @@
 
 int main() {
     OGame game("Blaze", 480, 800);
-    game.Start();
+    game.start();
     return 0;
 }

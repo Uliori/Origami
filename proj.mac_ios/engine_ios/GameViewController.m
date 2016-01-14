@@ -55,9 +55,9 @@
     
     [self setupGL];
     
-    self.preferredFramesPerSecond = [AppDelegate appDelegate].game->GetPreferredFPS();
+    self.preferredFramesPerSecond = [AppDelegate appDelegate].game->getPreferredFPS();
     
-    DESIRED_FRAMETIME  = 1000.0f / [AppDelegate appDelegate].game->GetPreferredFPS();
+    DESIRED_FRAMETIME  = 1000.0f / [AppDelegate appDelegate].game->getPreferredFPS();
     
     [((GLKView *)self.view) bindDrawable];
     
@@ -101,7 +101,7 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     [AppDelegate appDelegate].game = new OGame("",screenRect.size.width * [[UIScreen mainScreen] scale], screenRect.size.height * [[UIScreen mainScreen] scale]);
-    [AppDelegate appDelegate].game->Start();
+    [AppDelegate appDelegate].game->start();
     
 
     previousTicks   = ODirector::director()->getTimer()->getTime();
@@ -169,15 +169,14 @@
         
         while(accumulator >= DESIRED_FRAMETIME && loops < 10)
         {
-            [AppDelegate appDelegate].game->Update(DESIRED_FRAMETIME / 1000.0f);
+            [AppDelegate appDelegate].game->update(DESIRED_FRAMETIME / 1000.0f);
             accumulator -= DESIRED_FRAMETIME;
             updates ++;
             loops++;
         }
     }
-
     
-    [AppDelegate appDelegate].game->Refresh();
+    [AppDelegate appDelegate].game->refresh();
     
 #ifdef O_MODE_DEBUG
     
@@ -191,7 +190,7 @@
         updates = 0;
         tickCounter -= 1000.0f;
         
-        if (![AppDelegate appDelegate].game->isSupended()) [AppDelegate appDelegate].game->Tick();
+        if (![AppDelegate appDelegate].game->isSupended()) [AppDelegate appDelegate].game->tick();
     }
     
 #endif
@@ -201,7 +200,7 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     float interpolation = float(ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
-    [AppDelegate appDelegate].game->Render(interpolation);
+    [AppDelegate appDelegate].game->render(interpolation);
 }
 
 

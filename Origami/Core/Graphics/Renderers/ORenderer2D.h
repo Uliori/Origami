@@ -21,19 +21,15 @@ class OFont;
 
 class ORenderer2D
 {
-protected:
-    
-    
 public:
     virtual ~ORenderer2D() { }
-    
-    
-    virtual void Init() {}
-    virtual void Begin() {}
-    virtual void Submit(const OSprite* renderable) = 0;
-    virtual void DrawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) { }
-    virtual void End() {}
-    virtual void Flush(OLayer2D *layer) = 0;
+
+    virtual void init() {}
+    virtual void begin() {}
+    virtual void submit(const OSprite* renderable) = 0;
+    virtual void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) { }
+    virtual void end() {}
+    virtual void flush(OLayer2D *layer) = 0;
 };
 
 NS_O_END

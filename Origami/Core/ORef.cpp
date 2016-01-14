@@ -1,7 +1,7 @@
 /****************************************************************************
- CloudsScene.hpp
+ ORef.cpp
 
- Created by El Mehdi KHALLOUKI on 1/9/16.
+ Created by El Mehdi KHALLOUKI on 1/12/16.
  Copyright (c) 2016 __MyCompanyName__.
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,33 +24,36 @@
 
  ****************************************************************************/
 
-#pragma once
-
-#include <Core/ODirector.h>
-#include <Core/Graphics/Scenes/OScene.h>
-
-#include <Core/Maths/OMaths.h>
-
+#include "ORef.hpp"
 #include <Core/OMacros.h>
-USING_NS_O
+#include <Core/Utils/OLog.h>
 
-#define CLOUDS_COUNT 9
+ORef::ORef():m_ReferenceCount(1)
+{
 
-class CloudsScene : public OScene {
+}
 
-private:
+ORef::~ORef()
+{
 
-    std::vector<OSprite*> m_Clouds;
+}
 
-public:
+void ORef::retain()
+{
+    ++m_ReferenceCount;
+    OLog("retaining");
+}
 
-    CloudsScene();
-    virtual ~CloudsScene();
+void ORef::release()
+{
+    OLog("releasing");
+    if (-- m_ReferenceCount == 0) {
+      OLog("deleting");
+      delete this;
+    }
+}
 
-    void create() override;
-    void clear() override;
-    void update(float deltaTime) override;
-    void onResize() override;
-    void onInput(float deltaTime) override;
-
-};
+unsigned int ORef::getReferenceCount() const
+{
+    return m_ReferenceCount;
+}

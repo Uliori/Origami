@@ -4,15 +4,15 @@ NS_O_BEGIN
 
     OApplication::~OApplication()
     {
-        SAFE_DELETE(m_window);
-        
+        SAFE_DELETE(m_Window);
+
         OResourceManager::cleanUp();
         ORendererFactory::deleteRenderers();
     }
-    
-    void OApplication::Run()
+
+    void OApplication::run()
     {
 
     }
-    
+
 NS_O_END
