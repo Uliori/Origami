@@ -67,7 +67,6 @@ void OParticleBatch2D::update(float deltaTime) {
 
 void OParticleBatch2D::draw(ORenderer2D* renderer) {
     maths::vec4 uvRect(0.0f, 0.0f, 1.0f, 1.0f);
-    
     for (int i = 0; i < m_MaxParticles; i++) {
         auto& p = m_Particles[i];
         if (p.life > 0.0f) {

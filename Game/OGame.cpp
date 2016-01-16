@@ -27,10 +27,12 @@ void OGame::init()
     sc1 = new BeachScene();
     sc2 = new CloudsScene();
     sc3 = new BambooScene();
-
+    sc4 = new BeachNMScene();
+    
     ODirector::director()->addScene("1", sc1);
     ODirector::director()->addScene("2", sc2);
-    ODirector::director()->addScene("3", sc3, true);
+    ODirector::director()->addScene("3", sc3);
+    ODirector::director()->addScene("4", sc4, true);
 }
 
 void OGame::tick()
@@ -53,6 +55,9 @@ void OGame::update(float deltaTime)
     }
     if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_E)) {
         ODirector::director()->loadScene("3");
+    }
+    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_R)) {
+        ODirector::director()->loadScene("4");
     }
 #endif
 

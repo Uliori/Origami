@@ -10,8 +10,9 @@
 
 #include <Core/App/OApplication.h>
 
-#include "BeachScene.hpp"
 #include "CloudsScene.hpp"
+#include "BeachScene.hpp"
+#include "BeachNMScene.hpp"
 #include "BambooScene.hpp"
 
 #include <Core/OMacros.h>
@@ -22,6 +23,7 @@ class OGame : public OApplication
     BeachScene *sc1;
     CloudsScene *sc2;
     BambooScene *sc3;
+    BeachNMScene *sc4;
 
 public:
     OGame(const char* name, uint width, uint height);

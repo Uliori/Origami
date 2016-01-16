@@ -49,21 +49,24 @@ void BambooScene::create()
     
     particles = new OParticleBatch2D();
 //    particles->init(1000, 1.0f , "cloud.png", 5); //For default particles update method
-    particles->init(1000, 1.0f , "cloud.png", 5, [](OParticle2D& particle, float deltaTime){
+    
+    particles->init(40, .9f , "cloud.png", 5, [](OParticle2D& particle, float deltaTime){
         particle.position += particle.velocity * deltaTime;
         
+        uint a = (uint)(sin(MATH_PI * particle.life) * 255.0f);
         uint r = (uint)(255.0f);
-        uint a = (uint)(particle.life * 255.0f);
+//        uint c = (uint)(particle.life * 255.0f);
         particle.color = a << 24 | r << 16 | r << 8 | r;
     });
-    getMainLayer2D()->particleEngine.addParticleBatch(particles);
+    getMainLayer2D()->particleEngine->addParticleBatch(particles);
     
 }
 
 void BambooScene::update(float deltaTime)
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
-    particles->addParticle(vec2(frameSize.width/2, frameSize.height/2), vec2(fRand(-100, 100), fRand(-100, 100)), 0xffffffff, 80);
+    vec2 posi = vec2(fRand(0, frameSize.width), fRand(0, frameSize.height));
+    particles->addParticle(posi, vec2(), 0xffffffff, 20);
     OScene::update(deltaTime);
 }
 

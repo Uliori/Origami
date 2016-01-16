@@ -58,6 +58,8 @@ LOCAL_SRC_FILES 		:= 	Origami.cpp \
 							$(CORE_LIST)/Graphics/OWindow.cpp \
 							$(CORE_LIST)/Graphics/2D/OCamera2D.cpp \
 							$(CORE_LIST)/Graphics/2D/OSprite.cpp \
+							$(CORE_LIST)/Graphics/2D/OParticleBach2D.cpp \
+							$(CORE_LIST)/Graphics/2D/OParticleEngine2D.cpp \
 							$(CORE_LIST)/Graphics/GUI/OFont.cpp \
 							$(CORE_LIST)/Graphics/GUI/OFontManager.cpp \
 							$(CORE_LIST)/Graphics/GUI/OLabel.cpp \
@@ -70,7 +72,9 @@ LOCAL_SRC_FILES 		:= 	Origami.cpp \
 							$(CORE_LIST)/Graphics/Shaders/OSimple2DShader.cpp \
 							$(Game_SRC_PATH)/OGame.cpp \
 							$(Game_SRC_PATH)/BeachScene.cpp \
+							$(Game_SRC_PATH)/BeachNMScene.cpp \
 							$(Game_SRC_PATH)/CloudsScene.cpp \
+							$(Game_SRC_PATH)/BambooScene.cpp \
 							#$(FREETYPEGL_SRC_PATH)/texture-font.cpp $(FREETYPEGL_SRC_PATH)/platform.c \
 							$(FREETYPEGL_SRC_PATH)/texture-atlas.c $(FREETYPEGL_SRC_PATH)/vector.c \
 

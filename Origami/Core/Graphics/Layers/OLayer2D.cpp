@@ -28,6 +28,7 @@ void OLayer2D::init()
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
     m_Camera = new OCamera2D(frameSize.width, frameSize.height);
+    particleEngine = new OParticleEngine2D();
 }
 
 void OLayer2D::updateResolution()
@@ -49,6 +50,7 @@ void OLayer2D::create()
 void OLayer2D::clear()
 {
     SAFE_DELETE(m_Camera);
+    SAFE_DELETE(particleEngine);
 
     for (OSprite *renderable : m_Renderables)
     {
@@ -60,7 +62,7 @@ void OLayer2D::clear()
 void OLayer2D::update(float deltaTime)
 {
     if(m_Camera) m_Camera->update(deltaTime);
-    particleEngine.update(deltaTime);
+    if(particleEngine) particleEngine->update(deltaTime);
 
 }
 
@@ -76,7 +78,7 @@ void OLayer2D::render(float interpolation)
             }
 
         //Send particles
-        particleEngine.draw(m_CurrentRenderer);
+        particleEngine->draw(m_CurrentRenderer);
         
         m_CurrentRenderer->end();
         m_CurrentRenderer->flush(this);
