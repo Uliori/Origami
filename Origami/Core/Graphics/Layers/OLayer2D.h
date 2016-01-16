@@ -29,7 +29,7 @@ private:
 
     OCamera2D* m_Camera;
 public:
-    OParticleEngine2D particleEngine;
+    OParticleEngine2D *particleEngine;
 
 public:
     OLayer2D();

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910A8EE51C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */; };
+		910A8EE61C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */; };
 		911ADE331C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
 		911ADE341C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
 		911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
@@ -211,6 +213,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachNMScene.cpp; sourceTree = "<group>"; };
+		910A8EE41C4AB4AF006ACBC3 /* BeachNMScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachNMScene.hpp; sourceTree = "<group>"; };
 		911ADE311C484A4600CCE944 /* BambooScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BambooScene.cpp; sourceTree = "<group>"; };
 		911ADE321C484A4600CCE944 /* BambooScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BambooScene.hpp; sourceTree = "<group>"; };
 		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
@@ -565,6 +569,8 @@
 				919AA4F51BC82006004C7052 /* OGame.cpp */,
 				917155331C34038400161AE5 /* BeachScene.hpp */,
 				917155321C34038400161AE5 /* BeachScene.cpp */,
+				910A8EE41C4AB4AF006ACBC3 /* BeachNMScene.hpp */,
+				910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */,
 				91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */,
 				91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */,
 				911ADE321C484A4600CCE944 /* BambooScene.hpp */,
@@ -1010,6 +1016,7 @@
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
 				91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */,
 				91DC9D031C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
+				910A8EE51C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */,
 				913BC93B1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */,
 				913BC9451BE002C90013209D /* ftglyph.c in Sources */,
@@ -1043,6 +1050,7 @@
 				913BC94C1BE002C90013209D /* ftstroke.c in Sources */,
 				913BC94E1BE002C90013209D /* ftsystem.c in Sources */,
 				913BC7321BDFF1020013209D /* platform.c in Sources */,
+				910A8EE61C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */,
 				917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */,
 				91F5F3C01BC6FCF40030DA6A /* AppDelegate.m in Sources */,
 				913BC96A1BE003500013209D /* sfnt.c in Sources */,
