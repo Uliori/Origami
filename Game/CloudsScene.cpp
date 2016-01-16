@@ -37,10 +37,18 @@ CloudsScene::CloudsScene() : OScene()
 
 void CloudsScene::create()
 {
+    OScene::create();
+    
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
 
     OSize frameSize = ODirector::director()->getVirtualSize();
-
+    
+    //sky
+    sky = new OSprite(0, 0, frameSize.width, frameSize.height, "diffuse.jpg", 0);
+    sky->setColor(maths::vec4(135.0/255, 206.0/255, 235.0/255, 1.0f));
+    addSprite(sky);
+    
+    //clouds
     for (int i = 0; i < CLOUDS_COUNT; i++) {
         m_Clouds.push_back(new OSprite(maths::fRand(0, frameSize.width),
                                      maths::fRand(percent(frameSize.height, 40), percent(frameSize.height, 80)),
@@ -53,7 +61,7 @@ void CloudsScene::create()
         addSprite(m_Clouds.back());
     }
 
-    OScene::create();
+
     OResourceManager::textureCache()->releaseTexture("cloud.png");
 }
 
@@ -78,14 +86,7 @@ void CloudsScene::update(float deltaTime)
         }
 
     }
-    glClearColor(135.0/255, 206.0/255, 235.0/255, 1.0f);
-
     OScene::update(deltaTime);
-}
-
-void CloudsScene::onInput(float deltaTime)
-{
-
 }
 
 void CloudsScene::onResize()
@@ -93,6 +94,7 @@ void CloudsScene::onResize()
 
     OSize frameSize = ODirector::director()->getVirtualSize();
 
+    sky->setSize(vec2(frameSize.width, frameSize.height));
 
     for (int i = 0; i < CLOUDS_COUNT; i++) {
         OSprite *cloud = m_Clouds.at(i);

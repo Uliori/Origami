@@ -52,13 +52,13 @@ public:
     static void deleteManager();
 
     // that uint will store the screen fbo
-    uint m_screen_fbo;
+    uint screen_fbo;
 
     //Search path list, depending on the screen resolution
     std::vector<FileSuffix> fileExtensions;
 private:
     //Scenes data
-    OScene *m_CurrentScene = nullptr;
+    OScene* m_CurrentScene = nullptr;
     std::map<std::string, OScene*> m_Scenes;
     std::string m_CurrentSceneID;
 
@@ -90,9 +90,9 @@ public:
     void updateCurrentScene(float deltaTime);
     void renderCurrentScene(float interpolation);
 
-    void updateScene(OScene *scene, float deltaTime);
-    void renderScene(OScene *scene, float interpolation);
-    inline OScene * getCurrentScene() {return m_CurrentScene;}
+    void updateScene(OScene* scene, float deltaTime);
+    void renderScene(OScene* scene, float interpolation);
+    inline OScene* getCurrentScene() {return m_CurrentScene;}
 
     void reloadScene(OScene *scene);
     void reloadCurrentScene();
@@ -115,7 +115,6 @@ public:
     void setDesignResolutionSize(uint width, uint height, ResolutionPolicy resolutionPolicy);
 
     void setFilesSuffixOrder();
-
 
 };
 

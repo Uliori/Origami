@@ -8,7 +8,6 @@
 
 #pragma once
 
-#include <Core/OGL.h>
 
 #include <Core/Graphics/Renderers/ORenderer2D.h>
 #include <Core/Graphics/2D/Vertex2D.h>
@@ -33,15 +32,13 @@ public:
     VertexData2D bottomRight;
 
     float a_zOrder;
-
 };
 
 // Each render batch is used for a single draw call
 class RenderBatch {
 public:
-    RenderBatch(GLuint Offset, GLuint NumVertices, GLuint Texture) : offset(Offset),
-    numVertices(NumVertices), texture(Texture) {
-    }
+    RenderBatch(GLuint Offset, GLuint NumVertices, GLuint Texture)
+    :offset(Offset),numVertices(NumVertices), texture(Texture) {}
     GLuint offset;
     GLuint numVertices;
     GLuint texture;
@@ -57,9 +54,9 @@ public:
     void init() override;
     void begin() override;
     void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
-    void submit(const OSprite* renderable) override;
+    void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) override;
     void end() override;
-    void flush(OLayer2D *layer) override;
+    void flush(OLayer2D* layer) override;
 
 private:
     // Creates all the needed RenderBatches

@@ -74,9 +74,9 @@ void ORendererSpriteBatch::begin()
     m_Glyphs.clear();
 }
 
-void ORendererSpriteBatch::submit(const OSprite* renderable)
+void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
 {
-    m_Glyphs.emplace_back(renderable->getPosition(), renderable->getSize(), renderable->getUV(), renderable->getTID(), renderable->getColor(), renderable->getZOrder());
+    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder);
 }
 
 void ORendererSpriteBatch::drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)

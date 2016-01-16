@@ -40,6 +40,7 @@ class CloudsScene : public OScene {
 
 private:
 
+    OSprite *sky;
     std::vector<OSprite*> m_Clouds;
 
 public:
@@ -51,6 +52,5 @@ public:
     void clear() override;
     void update(float deltaTime) override;
     void onResize() override;
-    void onInput(float deltaTime) override;
 
 };

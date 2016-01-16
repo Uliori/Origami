@@ -18,7 +18,8 @@ BeachScene::BeachScene() : OScene()
 
 void BeachScene::create()
 {
-
+    OScene::create();
+    
     OTexture *waveTexture   = OResourceManager::textureCache()->loadTexture("wave2.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
     OTexture *boatTexture   = OResourceManager::textureCache()->loadTexture("boat.png");
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
@@ -29,6 +30,10 @@ void BeachScene::create()
 
     float p = addPercent(frameSize.width, 50);
 
+    //sky
+    sky = new OSprite(0, 0, frameSize.width, frameSize.height, "diffuse.jpg", 0);
+    sky->setColor(maths::vec4(135.0/255, 206.0/255, 235.0/255, 1.0f));
+    
     //boat
     boat = new OSprite(frameSize.width * 0.75f, 45, boatTexture->getWidth(), boatTexture->getHeight(), "boat.png", 3);
 
@@ -52,6 +57,7 @@ void BeachScene::create()
     sun =  new OSprite(frameSize.width * 0.75f, frameSize.height * 0.75f, sunTexture->getWidth(), sunTexture->getHeight(), "sun.png", 1);
 
 
+    addSprite(sky);
     addSprite(mountains1);
     addSprite(wave1);
     addSprite(wave2);
@@ -72,8 +78,6 @@ void BeachScene::create()
         addSprite(clouds.back());
     }
 
-    
-    OScene::create();
     
     OResourceManager::textureCache()->releaseTexture("wave2.png");
     OResourceManager::textureCache()->releaseTexture("boat.png");
@@ -118,43 +122,42 @@ void BeachScene::update(float deltaTime)
         }
 
     }
-    glClearColor(135.0/255, 206.0/255, 235.0/255, 1.0f);
 
     OScene::update(deltaTime);
 }
 
-void BeachScene::onInput(float deltaTime)
-{
-#ifdef O_TARGET_DESKTOP
-    OLayer2D* sc1_mainLayer = getMainLayer2D();
-    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_W)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, CAM_SPEED) * deltaTime));
-    }
-
-    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_S)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, -CAM_SPEED) * deltaTime));
-    }
-
-
-    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_A)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(-CAM_SPEED, 0.0f) * deltaTime));
-    }
-
-    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_D)) {
-        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(CAM_SPEED, 0.0f) * deltaTime));
-    }
-
-    //    OLog(deltaTime);
-    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_Q)) {
-    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() - sc1->CAM_ZOOM);
-    //    }
-    //
-    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_E)) {
-    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() + sc1->CAM_ZOOM);
-    //    }
-
-#endif
-}
+//void BeachScene::onInput(float deltaTime)
+//{
+//#ifdef O_TARGET_DESKTOP
+//    OLayer2D* sc1_mainLayer = getMainLayer2D();
+//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_W)) {
+//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, CAM_SPEED) * deltaTime));
+//    }
+//
+//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_S)) {
+//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, -CAM_SPEED) * deltaTime));
+//    }
+//
+//
+//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_A)) {
+//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(-CAM_SPEED, 0.0f) * deltaTime));
+//    }
+//
+//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_D)) {
+//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(CAM_SPEED, 0.0f) * deltaTime));
+//    }
+//
+//    //    OLog(deltaTime);
+//    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_Q)) {
+//    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() - sc1->CAM_ZOOM);
+//    //    }
+//    //
+//    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_E)) {
+//    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() + sc1->CAM_ZOOM);
+//    //    }
+//
+//#endif
+//}
 
 void BeachScene::onResize()
 {
@@ -164,6 +167,8 @@ void BeachScene::onResize()
     OSize frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
 
+    sky->setSize(vec2(frameSize.width, frameSize.height));
+    
     //boat
     boat->setPosition(vec2(frameSize.width * 0.75f, 45.0f));
 

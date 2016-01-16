@@ -19,7 +19,7 @@ OLayer2D::OLayer2D() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatc
 
 }
 
-OLayer2D::OLayer2D(ORenderer2D *renderer) : m_CurrentRenderer(renderer)
+OLayer2D::OLayer2D(ORenderer2D* renderer) : m_CurrentRenderer(renderer)
 {
 
 }
@@ -48,36 +48,36 @@ void OLayer2D::create()
 
 void OLayer2D::clear()
 {
-  SAFE_DELETE(m_Camera);
+    SAFE_DELETE(m_Camera);
 
-  for (OSprite *renderable : m_Renderables)
-  {
-      SAFE_DELETE(renderable);
-  }
+    for (OSprite *renderable : m_Renderables)
+    {
+        SAFE_DELETE(renderable);
+    }
     m_Renderables.clear();
-
-  //ORenderer2D is deleted in ORendererFactory ;)
 }
 
 void OLayer2D::update(float deltaTime)
 {
     if(m_Camera) m_Camera->update(deltaTime);
+    particleEngine.update(deltaTime);
 
 }
 
 void OLayer2D::render(float interpolation)
 {
-
     if (m_CurrentRenderer) {
         m_CurrentRenderer->begin();
-        //Send particles
-
+        
         //Send sprites
         for (const OSprite* renderable : m_Renderables)
             if(m_Camera->isBoxInView(renderable->getPosition(), renderable->getSize())){
                 renderable->submit(m_CurrentRenderer);
             }
 
+        //Send particles
+        particleEngine.draw(m_CurrentRenderer);
+        
         m_CurrentRenderer->end();
         m_CurrentRenderer->flush(this);
     }

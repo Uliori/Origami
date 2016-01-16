@@ -26,14 +26,16 @@ void OGame::init()
 
     sc1 = new BeachScene();
     sc2 = new CloudsScene();
+    sc3 = new BambooScene();
 
     ODirector::director()->addScene("1", sc1);
     ODirector::director()->addScene("2", sc2);
+    ODirector::director()->addScene("3", sc3, true);
 }
 
 void OGame::tick()
 {
-//    OLog("FPS : " << GetFPS() << ",UPS : " << GetUPS());
+    OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //
@@ -43,11 +45,14 @@ void OGame::tick()
 void OGame::update(float deltaTime)
 {
 #ifdef O_TARGET_DESKTOP
-    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_1)) {
+    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_Q)) {
         ODirector::director()->loadScene("1");
     }
-    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_2)) {
+    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_W)) {
         ODirector::director()->loadScene("2");
+    }
+    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_E)) {
+        ODirector::director()->loadScene("3");
     }
 #endif
 

@@ -16,11 +16,11 @@ ODirector* ODirector::director()
     }
     return m_Instance;
 }
+
 void ODirector::deleteManager()
 {
     SAFE_DELETE(m_Instance);
 }
-
 
 ODirector::ODirector() : m_CurrentScene(nullptr)
 {

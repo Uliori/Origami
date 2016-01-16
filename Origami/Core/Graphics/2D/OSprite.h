@@ -23,26 +23,20 @@ private:
     maths::vec2 m_Size;
     maths::vec4 m_UV;
 
-    GLuint m_VaoID;
-    GLuint m_VboID;
-
     std::string m_TexturePath;
-    OTexture *m_Texture;
+    OTexture* m_Texture;
 
 protected:
     maths::vec2  m_Position;
     unsigned int m_Color;
     float        m_zOrder;
     OSprite(){}
+    
 public:
     OSprite(float x, float y, float width, float height, std::string texturePath, float zOrder);
-//    OSprite(float x, float y, float width, float height, OTexture *texture, float zOrder);
     ~OSprite();
 
     float tag;
-
-//    void create();
-//    void draw();
 
     //setters
     inline void setColor(unsigned int color) { m_Color = color; }
@@ -86,10 +80,7 @@ public:
 
     inline OTexture* getTexture() const { return m_Texture; }
 
-    virtual void submit(ORenderer2D* renderer) const
-    {
-        renderer->submit(this);
-    }
+    virtual void submit(ORenderer2D* renderer) const;
 
 private:
     void setUVDefaults()

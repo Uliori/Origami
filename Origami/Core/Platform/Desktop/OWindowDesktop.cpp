@@ -67,7 +67,7 @@ void window_focus_callback(GLFWwindow* window, int focused)
 bool OWindow::platformInit()
 {
     //get screen fbo
-    ODirector::director()->m_screen_fbo = 0;
+    ODirector::director()->screen_fbo = 0;
     //
 
     //init and create GLFW window

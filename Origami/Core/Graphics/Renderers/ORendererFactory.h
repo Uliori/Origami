@@ -27,16 +27,16 @@ public:
     static void createRenderers();
     static void initRenderers();
     static void deleteRenderers();
-    static void addRenderer(ORenderer2D * renderer);
+    static void addRenderer(ORenderer2D* renderer);
     
     //Shaders
-    static OSimple2DShader * OShader_Simple2D;
+    static OSimple2DShader* OShader_Simple2D;
 
     //user Renderers
-    static std::vector<ORenderer2D *> userRenderers;
+    static std::vector<ORenderer2D*> userRenderers;
 
     //Origami Renderers
-    static ORendererSpriteBatch * ORenderer_SpriteBatch; //2D
+    static ORendererSpriteBatch* ORenderer_SpriteBatch; //2D
 };
 
 NS_O_END

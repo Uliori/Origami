@@ -12,6 +12,7 @@
 
 #include <Core/Maths/OMaths.h>
 #include <Core/OMacros.h>
+#include <Core/OGL.h>
 
 NS_O_BEGIN
 
@@ -26,10 +27,10 @@ public:
 
     virtual void init() {}
     virtual void begin() {}
-    virtual void submit(const OSprite* renderable) = 0;
+    virtual void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) = 0;
     virtual void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) { }
     virtual void end() {}
-    virtual void flush(OLayer2D *layer) = 0;
+    virtual void flush(OLayer2D* layer) = 0;
 };
 
 NS_O_END

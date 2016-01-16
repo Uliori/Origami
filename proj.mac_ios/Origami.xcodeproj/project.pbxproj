@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911ADE331C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
+		911ADE341C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
+		911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
+		911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
+		911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
+		911ADE3D1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
 		911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; };
 		911B76341BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; };
 		911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; };
@@ -205,6 +211,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		911ADE311C484A4600CCE944 /* BambooScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BambooScene.cpp; sourceTree = "<group>"; };
+		911ADE321C484A4600CCE944 /* BambooScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BambooScene.hpp; sourceTree = "<group>"; };
+		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
+		911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBach2D.hpp; sourceTree = "<group>"; };
+		911ADE391C49868C00CCE944 /* OTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTypes.h; sourceTree = "<group>"; };
+		911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleEngine2D.cpp; sourceTree = "<group>"; };
+		911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleEngine2D.hpp; sourceTree = "<group>"; };
 		911B76311BD076E800D09E89 /* ORendererFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORendererFactory.cpp; sourceTree = "<group>"; };
 		911B76321BD076E800D09E89 /* ORendererFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORendererFactory.h; sourceTree = "<group>"; };
 		911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORendererSpriteBatch.cpp; sourceTree = "<group>"; };
@@ -554,6 +567,8 @@
 				917155321C34038400161AE5 /* BeachScene.cpp */,
 				91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */,
 				91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */,
+				911ADE321C484A4600CCE944 /* BambooScene.hpp */,
+				911ADE311C484A4600CCE944 /* BambooScene.cpp */,
 				916E36BF1BD96E3F005EE626 /* AppData */,
 			);
 			name = Game;
@@ -592,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				91B0FEDA1BC71C3C0051529B /* OGL.h */,
+				911ADE391C49868C00CCE944 /* OTypes.h */,
 				91CC3DFE1C34947100F923C1 /* OMacros.h */,
 				91CC3E001C357E0700F923C1 /* ODirector.h */,
 				91CC3DFF1C357E0700F923C1 /* ODirector.cpp */,
@@ -787,6 +803,10 @@
 				917574A91BD7A5E800EE8547 /* OSprite.h */,
 				9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */,
 				9147DF521BDBAEA0006DBC72 /* OCamera2D.h */,
+				911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */,
+				911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */,
+				911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */,
+				911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */,
 			);
 			path = 2D;
 			sourceTree = "<group>";
@@ -923,6 +943,7 @@
 				911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */,
 				913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */,
 				91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */,
+				911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */,
 				913BC6D61BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */,
 				911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
@@ -959,6 +980,7 @@
 				917155341C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC6F21BDF8A210013209D /* hb-set.cc in Sources */,
 				91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */,
+				911ADE331C484A4600CCE944 /* BambooScene.cpp in Sources */,
 				91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */,
 				913BC9661BE0033A0013209D /* smooth.c in Sources */,
 				91B0FEF61BC71C3C0051529B /* OWindowDesktop.cpp in Sources */,
@@ -974,6 +996,7 @@
 				913BC6F81BDF8A210013209D /* hb-shaper.cc in Sources */,
 				91B0FEF41BC71C3C0051529B /* OApplicationDesktop.cpp in Sources */,
 				9175749F1BD691C000EE8547 /* OShader.cpp in Sources */,
+				911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */,
 				913BC6D41BDF8A210013209D /* hb-ot-map.cc in Sources */,
 				913BC7271BDFF03B0013209D /* texture-atlas.c in Sources */,
 				913BC6541BDF8A210013209D /* hb-buffer.cc in Sources */,
@@ -1048,6 +1071,7 @@
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
 				91DC9D041C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
+				911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
 				91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */,
 				913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */,
@@ -1069,7 +1093,9 @@
 				913BC9461BE002C90013209D /* ftglyph.c in Sources */,
 				913BC65D1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6571BDF8A210013209D /* hb-common.cc in Sources */,
+				911ADE341C484A4600CCE944 /* BambooScene.cpp in Sources */,
 				913BC6F31BDF8A210013209D /* hb-set.cc in Sources */,
+				911ADE3D1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */,
 				917155351C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC9551BE002E50013209D /* ftraster.c in Sources */,
 				913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
