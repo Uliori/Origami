@@ -11,10 +11,10 @@
 NS_O_BEGIN
 
 
-OSimple2DShader * ORendererFactory::OShader_Simple2D;
-ORendererSpriteBatch * ORendererFactory::ORenderer_SpriteBatch;
+OSimple2DShader* ORendererFactory::OShader_Simple2D;
+ORendererSpriteBatch* ORendererFactory::ORenderer_SpriteBatch;
 
-std::vector<ORenderer2D *> ORendererFactory::userRenderers;
+std::vector<ORenderer2D*> ORendererFactory::userRenderers;
 
 
 void ORendererFactory::createRenderers()
@@ -38,13 +38,13 @@ void ORendererFactory::initRenderers()
 
     ORenderer_SpriteBatch->init();
 
-    for (ORenderer2D *renderer : userRenderers)
+    for (ORenderer2D* renderer : userRenderers)
     {
         renderer->init();
     }
 }
 
-void ORendererFactory::addRenderer(ORenderer2D * renderer)
+void ORendererFactory::addRenderer(ORenderer2D* renderer)
 {
     userRenderers.push_back(renderer);
 }

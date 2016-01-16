@@ -7,7 +7,7 @@ NS_O_BEGIN
         //get screen fbo
         GLint DFBO;
         glGetIntegerv(GL_FRAMEBUFFER_BINDING, &DFBO);
-        ODirector::director()->m_screen_fbo = (GLuint) DFBO;
+        ODirector::director()->screen_fbo = (GLuint) DFBO;
         //
 
         OGLUtils::printGLInfo();

@@ -16,9 +16,6 @@ NS_O_BEGIN
                         x;
 #endif
 
-	typedef unsigned char byte;
-	typedef unsigned int uint;
-
 class OGLUtils
 {
 public:

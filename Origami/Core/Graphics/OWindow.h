@@ -28,7 +28,6 @@ public:
     OWindow(const char* title, uint width, uint height, OApplication *app);
     ~OWindow();
 
-
     void clear() const;
     void refreshInput();
 
@@ -44,7 +43,7 @@ public:
     void setVsync(bool enabled);
     inline bool isVsync() const { return m_Vsync; }
 
-    OApplication * m_Application;
+    OApplication* m_Application;
 private:
     bool init();
 
