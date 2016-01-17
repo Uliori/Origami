@@ -37,6 +37,7 @@ public class GL2JNILib {
     public static native void init(int width, int height);
     public static native void resize(int width, int height);
     public static native void step();
+	public static native void loadScene(String scene);
     public static native void setPaused(boolean paused);
     public static native void cleanUp();
     public static native void setAssetManager(AssetManager mgr);

@@ -30,7 +30,12 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/wallpaper" />
         </service>
-        
+        <activity
+            android:name=".WallpaperPreferencesActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.WallpaperSettings" >
+        </activity>
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ LOCAL_C_INCLUDES  		:=  \
 							$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPEGL_SRC_PATH) \
 
 
-LOCAL_SRC_FILES 		:= 	Origami.cpp \
+LOCAL_SRC_FILES 		:= 	Game.cpp Origami.cpp \
 							$(CORE_LIST)/ODirector.cpp \
 							$(CORE_LIST)/ORef.cpp \
 							$(CORE_LIST)/App/OApplication.cpp \

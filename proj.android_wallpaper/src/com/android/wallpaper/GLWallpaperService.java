@@ -80,16 +80,16 @@ public abstract class GLWallpaperService extends WallpaperService {
 	    
 	}
 	public class GLEngine extends Engine {
-		
-//		private static final String TAG = "GLEngine";
-		 
+				
 		private WallpaperGLSurfaceView glSurfaceView;
 		private boolean rendererHasBeenSet;
 		 
 		@Override
 		public void onCreate(SurfaceHolder surfaceHolder) {
 		    super.onCreate(surfaceHolder);
+		    
 		    glSurfaceView = new WallpaperGLSurfaceView(GLWallpaperService.this);
+		    glSurfaceView.setPreserveEGLContextOnPause(true);
 		}
 		
 		@Override
@@ -117,7 +117,6 @@ public abstract class GLWallpaperService extends WallpaperService {
 		    if (rendererHasBeenSet) {
 		        if (visible) {
 		            glSurfaceView.onResume();
-//		            GLWallpaperService.getPreferences();
 		        } else {
 		            glSurfaceView.onPause();            
 		        }
@@ -125,16 +124,9 @@ public abstract class GLWallpaperService extends WallpaperService {
 		}
 		
 		class WallpaperGLSurfaceView extends GLSurfaceView {
-//		    private static final String TAG = "WallpaperGLSurfaceView";
-		 
+
 		    WallpaperGLSurfaceView(Context context) {
 		        super(context);
-//		    	WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-//		    	Display display = wm.getDefaultDisplay();
-//			    Point size = new Point();
-//			    display.getSize(size);
-//			    GLWallpaperService.width = size.x;
-//			    GLWallpaperService.height = size.y;
 		    }
 		 
 		    @Override
@@ -145,8 +137,7 @@ public abstract class GLWallpaperService extends WallpaperService {
 		    public void onDestroy() {
 		        super.onDetachedFromWindow();
 		    }
-		}
-		
+		}		
 	}
 	
 }

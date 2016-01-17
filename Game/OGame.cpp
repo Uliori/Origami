@@ -28,7 +28,7 @@ void OGame::init()
     sc2 = new CloudsScene();
     sc3 = new BambooScene();
     sc4 = new BeachNMScene();
-    
+
     ODirector::director()->addScene("1", sc1);
     ODirector::director()->addScene("2", sc2);
     ODirector::director()->addScene("3", sc3);
@@ -37,7 +37,7 @@ void OGame::init()
 
 void OGame::tick()
 {
-    OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
+    // OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //
