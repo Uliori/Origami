@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Point;
 import android.opengl.GLSurfaceView;
+import android.preference.PreferenceManager;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -29,9 +30,8 @@ public class WallpaperRenderer implements GLSurfaceView.Renderer
 		return mgr;
 	}
 
-	@Override
-	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-		// TODO Auto-generated method stub
+	void createWallpaper()
+	{
 		GL2JNILib.setAssetManager(getAssetsManager());
     	WindowManager wm = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
     	Display display = wm.getDefaultDisplay();
@@ -42,6 +42,15 @@ public class WallpaperRenderer implements GLSurfaceView.Renderer
     	m_height = size.y;
     	
     	GL2JNILib.init(m_width, m_height);
+    	
+    	String scene = PreferenceManager.getDefaultSharedPreferences(m_context).getString("oWallpaper", "1");
+		GL2JNILib.loadScene(scene);
+	}
+	
+	@Override
+	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+		// TODO Auto-generated method stub
+		createWallpaper();
 	}
 
 	@Override
@@ -49,12 +58,14 @@ public class WallpaperRenderer implements GLSurfaceView.Renderer
 		// TODO Auto-generated method stub
 		GL2JNILib.setAssetManager(getAssetsManager());
     	GL2JNILib.resize(width, height);
+    	
+    	String scene = PreferenceManager.getDefaultSharedPreferences(m_context).getString("oWallpaper", "1");
+		GL2JNILib.loadScene(scene);
 	}
-
+	
 	@Override
 	public void onDrawFrame(GL10 gl) {
 		// TODO Auto-generated method stub
 		GL2JNILib.step();
 	}
-
 }

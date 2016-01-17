@@ -21,7 +21,7 @@ void OResourceManager::checkResources()
 void OResourceManager::reloadResources()
 {
     ORendererFactory::createRenderers();
-    // textureCache()->reloadTextures();
+    textureCache()->reloadTextures();
 }
 
 void OResourceManager::cleanUp()
