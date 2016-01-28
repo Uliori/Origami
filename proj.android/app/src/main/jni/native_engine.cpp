@@ -55,6 +55,7 @@ NativeEngine::NativeEngine(struct android_app *app) {
     VLOGD("NativeEngine: querying API level.");
     LOGD("NativeEngine: API version %d.", mApiVersion);
 
+//    mgr = app->activity->assetManager;
 //    if (m_Game == nullptr) {
 //        m_Game = new OGame("", 0, 0);
 //    }

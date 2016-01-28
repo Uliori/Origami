@@ -19,6 +19,7 @@
 #include "common.hpp"
 
 struct NativeEngineSavedState {};
+//extern AAssetManager *mgr;
 
 class NativeEngine {
     public:
