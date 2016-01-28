@@ -3,17 +3,19 @@
 #include <stdio.h>
 #include <string>
 
-namespace Origami {
-		class ResourcesUtils {
-		public:
-			static std::string s_PackageName;
-			static std::string s_ExternalStorage;
+#include <Core/OMacros.h>
 
-			static const char* getResourcePathforFile(const char * file);
-			static FILE * openFile(const char * file);
-			static int fileLength(FILE* f, unsigned char *& buffer, size_t &buffer_length);
-		};
-}
+NS_O_BEGIN
+class ResourcesUtils {
+public:
+    static std::string s_PackageName;
+    static std::string s_ExternalStorage;
+
+    static const char* getResourcePathforFile(const char * file);
+    static bool doesFileExists(const char * file);
+    static int fileLength(const char * filePath, unsigned char *& buffer, size_t &buffer_length);
+};
+NS_O_END
 
 
 

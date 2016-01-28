@@ -3,7 +3,9 @@
 #include <Core/OGL.h>
 #include <Core/Utils/OLog.h>
 
-namespace Origami {
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
 
 #ifdef O_MODE_DEBUG
 	#define OGLCall(x)	glGetError();\
@@ -13,9 +15,6 @@ namespace Origami {
 	#define OGLCall(x) \
                         x;
 #endif
-
-	typedef unsigned char byte;
-	typedef unsigned int uint;
 
 class OGLUtils
 {
@@ -30,10 +29,10 @@ public:
 	}
 
 	inline static void printGLInfo(bool printExtensions = false) {
-		OLog(glGetString(GL_VERSION));
-		OLog(glGetString(GL_SHADING_LANGUAGE_VERSION));
-		OLog(glGetString(GL_VENDOR));
-		OLog(glGetString(GL_RENDERER));
+		OLog("OGL  Version : " << glGetString(GL_VERSION));
+		OLog("GLSL Version : " << glGetString(GL_SHADING_LANGUAGE_VERSION));
+		OLog("Vendor       : " << glGetString(GL_VENDOR));
+		OLog("Renderer     : " << glGetString(GL_RENDERER));
 
 		if (printExtensions) {
 			OLog(glGetString(GL_EXTENSIONS));
@@ -41,4 +40,4 @@ public:
 	}
 };
 
-}
+NS_O_END

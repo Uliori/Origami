@@ -7,180 +7,204 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; settings = {ASSET_TAGS = (); }; };
-		911B76341BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; settings = {ASSET_TAGS = (); }; };
-		911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; settings = {ASSET_TAGS = (); }; };
-		911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED4E1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED501BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED511BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; settings = {ASSET_TAGS = (); }; };
-		911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; settings = {ASSET_TAGS = (); }; };
-		913BC5491BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		913BC54A1BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC64D1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6521BDF8A210013209D /* hb-buffer-serialize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5971BDF8A200013209D /* hb-buffer-serialize.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5971BDF8A200013209D /* hb-buffer-serialize.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6541BDF8A210013209D /* hb-buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5981BDF8A200013209D /* hb-buffer.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6551BDF8A210013209D /* hb-buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5981BDF8A200013209D /* hb-buffer.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6561BDF8A210013209D /* hb-common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59B1BDF8A200013209D /* hb-common.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6571BDF8A210013209D /* hb-common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59B1BDF8A200013209D /* hb-common.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65A1BDF8A210013209D /* hb-fallback-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59F1BDF8A200013209D /* hb-fallback-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65B1BDF8A210013209D /* hb-fallback-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59F1BDF8A200013209D /* hb-fallback-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65C1BDF8A210013209D /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A11BDF8A200013209D /* hb-font.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65D1BDF8A210013209D /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A11BDF8A200013209D /* hb-font.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65E1BDF8A210013209D /* hb-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A31BDF8A210013209D /* hb-ft.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC65F1BDF8A210013209D /* hb-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A31BDF8A210013209D /* hb-ft.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D21BDF8A210013209D /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60A1BDF8A210013209D /* hb-ot-layout.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D31BDF8A210013209D /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60A1BDF8A210013209D /* hb-ot-layout.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D41BDF8A210013209D /* hb-ot-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60D1BDF8A210013209D /* hb-ot-map.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D51BDF8A210013209D /* hb-ot-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60D1BDF8A210013209D /* hb-ot-map.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D61BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6121BDF8A210013209D /* hb-ot-shape-complex-arabic.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D71BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6121BDF8A210013209D /* hb-ot-shape-complex-arabic.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D81BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6131BDF8A210013209D /* hb-ot-shape-complex-default.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6D91BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6131BDF8A210013209D /* hb-ot-shape-complex-default.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6DC1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6171BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6DD1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6171BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6DE1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6181BDF8A210013209D /* hb-ot-shape-complex-indic.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6181BDF8A210013209D /* hb-ot-shape-complex-indic.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61B1BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E31BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61B1BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E61BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61F1BDF8A210013209D /* hb-ot-shape-complex-sea.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E71BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61F1BDF8A210013209D /* hb-ot-shape-complex-sea.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E81BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6201BDF8A210013209D /* hb-ot-shape-complex-thai.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6E91BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6201BDF8A210013209D /* hb-ot-shape-complex-thai.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6EA1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6221BDF8A210013209D /* hb-ot-shape-fallback.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6EB1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6221BDF8A210013209D /* hb-ot-shape-fallback.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6EC1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6241BDF8A210013209D /* hb-ot-shape-normalize.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6ED1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6241BDF8A210013209D /* hb-ot-shape-normalize.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6EE1BDF8A210013209D /* hb-ot-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6261BDF8A210013209D /* hb-ot-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6EF1BDF8A210013209D /* hb-ot-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6261BDF8A210013209D /* hb-ot-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F01BDF8A210013209D /* hb-ot-tag.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6271BDF8A210013209D /* hb-ot-tag.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F11BDF8A210013209D /* hb-ot-tag.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6271BDF8A210013209D /* hb-ot-tag.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F21BDF8A210013209D /* hb-set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62C1BDF8A210013209D /* hb-set.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F31BDF8A210013209D /* hb-set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62C1BDF8A210013209D /* hb-set.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F41BDF8A210013209D /* hb-shape-plan.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62F1BDF8A210013209D /* hb-shape-plan.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F51BDF8A210013209D /* hb-shape-plan.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62F1BDF8A210013209D /* hb-shape-plan.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F61BDF8A210013209D /* hb-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6311BDF8A210013209D /* hb-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6311BDF8A210013209D /* hb-shape.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F81BDF8A210013209D /* hb-shaper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6361BDF8A210013209D /* hb-shaper.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6F91BDF8A210013209D /* hb-shaper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6361BDF8A210013209D /* hb-shaper.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6371BDF8A210013209D /* hb-tt-font.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC6FB1BDF8A210013209D /* hb-tt-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6371BDF8A210013209D /* hb-tt-font.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC7021BDF8A210013209D /* hb-unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6401BDF8A210013209D /* hb-unicode.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC7031BDF8A210013209D /* hb-unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6401BDF8A210013209D /* hb-unicode.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC7061BDF8A210013209D /* hb-warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6461BDF8A210013209D /* hb-warning.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC7071BDF8A210013209D /* hb-warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6461BDF8A210013209D /* hb-warning.cc */; settings = {ASSET_TAGS = (); }; };
-		913BC7271BDFF03B0013209D /* texture-atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7211BDFF03B0013209D /* texture-atlas.c */; settings = {ASSET_TAGS = (); }; };
-		913BC7281BDFF03B0013209D /* texture-atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7211BDFF03B0013209D /* texture-atlas.c */; settings = {ASSET_TAGS = (); }; };
-		913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7231BDFF03B0013209D /* texture-font.cpp */; settings = {ASSET_TAGS = (); }; };
-		913BC72A1BDFF03B0013209D /* texture-font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7231BDFF03B0013209D /* texture-font.cpp */; settings = {ASSET_TAGS = (); }; };
-		913BC72B1BDFF03B0013209D /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7251BDFF03B0013209D /* vector.c */; settings = {ASSET_TAGS = (); }; };
-		913BC72C1BDFF03B0013209D /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7251BDFF03B0013209D /* vector.c */; settings = {ASSET_TAGS = (); }; };
-		913BC7311BDFF1020013209D /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC72F1BDFF1020013209D /* platform.c */; settings = {ASSET_TAGS = (); }; };
-		913BC7321BDFF1020013209D /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC72F1BDFF1020013209D /* platform.c */; settings = {ASSET_TAGS = (); }; };
-		913BC92D1BE0026D0013209D /* ftrend1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92C1BE0026D0013209D /* ftrend1.c */; settings = {ASSET_TAGS = (); }; };
-		913BC92E1BE0026D0013209D /* ftrend1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92C1BE0026D0013209D /* ftrend1.c */; settings = {ASSET_TAGS = (); }; };
-		913BC93B1BE002C90013209D /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92F1BE002C90013209D /* ftbase.c */; settings = {ASSET_TAGS = (); }; };
-		913BC93C1BE002C90013209D /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92F1BE002C90013209D /* ftbase.c */; settings = {ASSET_TAGS = (); }; };
-		913BC93D1BE002C90013209D /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9301BE002C90013209D /* ftbbox.c */; settings = {ASSET_TAGS = (); }; };
-		913BC93E1BE002C90013209D /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9301BE002C90013209D /* ftbbox.c */; settings = {ASSET_TAGS = (); }; };
-		913BC93F1BE002C90013209D /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9311BE002C90013209D /* ftbitmap.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9401BE002C90013209D /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9311BE002C90013209D /* ftbitmap.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9411BE002C90013209D /* ftfstype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9321BE002C90013209D /* ftfstype.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9421BE002C90013209D /* ftfstype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9321BE002C90013209D /* ftfstype.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9431BE002C90013209D /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9331BE002C90013209D /* ftgasp.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9441BE002C90013209D /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9331BE002C90013209D /* ftgasp.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9451BE002C90013209D /* ftglyph.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9341BE002C90013209D /* ftglyph.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9461BE002C90013209D /* ftglyph.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9341BE002C90013209D /* ftglyph.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9471BE002C90013209D /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9351BE002C90013209D /* ftinit.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9481BE002C90013209D /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9351BE002C90013209D /* ftinit.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9491BE002C90013209D /* ftlcdfil.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9361BE002C90013209D /* ftlcdfil.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94A1BE002C90013209D /* ftlcdfil.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9361BE002C90013209D /* ftlcdfil.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94B1BE002C90013209D /* ftstroke.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9371BE002C90013209D /* ftstroke.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94C1BE002C90013209D /* ftstroke.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9371BE002C90013209D /* ftstroke.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94D1BE002C90013209D /* ftsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9381BE002C90013209D /* ftsystem.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94E1BE002C90013209D /* ftsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9381BE002C90013209D /* ftsystem.c */; settings = {ASSET_TAGS = (); }; };
-		913BC94F1BE002C90013209D /* fttype1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9391BE002C90013209D /* fttype1.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9501BE002C90013209D /* fttype1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9391BE002C90013209D /* fttype1.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9511BE002C90013209D /* ftxf86.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC93A1BE002C90013209D /* ftxf86.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9521BE002C90013209D /* ftxf86.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC93A1BE002C90013209D /* ftxf86.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9541BE002E50013209D /* ftraster.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9531BE002E50013209D /* ftraster.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9551BE002E50013209D /* ftraster.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9531BE002E50013209D /* ftraster.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9571BE002F30013209D /* pshinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9561BE002F30013209D /* pshinter.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9581BE002F30013209D /* pshinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9561BE002F30013209D /* pshinter.c */; settings = {ASSET_TAGS = (); }; };
-		913BC95A1BE002FE0013209D /* psnames.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9591BE002FE0013209D /* psnames.c */; settings = {ASSET_TAGS = (); }; };
-		913BC95B1BE002FE0013209D /* psnames.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9591BE002FE0013209D /* psnames.c */; settings = {ASSET_TAGS = (); }; };
-		913BC95D1BE0030C0013209D /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95C1BE0030C0013209D /* cff.c */; settings = {ASSET_TAGS = (); }; };
-		913BC95E1BE0030C0013209D /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95C1BE0030C0013209D /* cff.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9601BE0031D0013209D /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95F1BE0031D0013209D /* truetype.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9611BE0031D0013209D /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95F1BE0031D0013209D /* truetype.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9631BE003270013209D /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9621BE003270013209D /* autofit.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9641BE003270013209D /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9621BE003270013209D /* autofit.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9661BE0033A0013209D /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9651BE0033A0013209D /* smooth.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9671BE0033A0013209D /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9651BE0033A0013209D /* smooth.c */; settings = {ASSET_TAGS = (); }; };
-		913BC9691BE003500013209D /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9681BE003500013209D /* sfnt.c */; settings = {ASSET_TAGS = (); }; };
-		913BC96A1BE003500013209D /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9681BE003500013209D /* sfnt.c */; settings = {ASSET_TAGS = (); }; };
-		9147DF4D1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF491BDBAE35006DBC72 /* OLayer2D.cpp */; settings = {ASSET_TAGS = (); }; };
-		9147DF4E1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF491BDBAE35006DBC72 /* OLayer2D.cpp */; settings = {ASSET_TAGS = (); }; };
-		9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */; settings = {ASSET_TAGS = (); }; };
-		9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */; settings = {ASSET_TAGS = (); }; };
-		9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; settings = {ASSET_TAGS = (); }; };
-		9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; settings = {ASSET_TAGS = (); }; };
-		916E36C01BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; settings = {ASSET_TAGS = (); }; };
-		916E36C11BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; settings = {ASSET_TAGS = (); }; };
-		9175749F1BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; settings = {ASSET_TAGS = (); }; };
-		917574A01BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; settings = {ASSET_TAGS = (); }; };
-		917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; settings = {ASSET_TAGS = (); }; };
-		917574A71BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; settings = {ASSET_TAGS = (); }; };
-		917574AA1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; settings = {ASSET_TAGS = (); }; };
-		917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; settings = {ASSET_TAGS = (); }; };
+		911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
+		911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
+		911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
+		911ADE3D1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
+		911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; };
+		911B76341BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; };
+		911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; };
+		911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; };
+		911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; };
+		911EED4E1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; };
+		911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; };
+		911EED501BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; };
+		911EED511BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; };
+		911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; };
+		912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
+		912DAAA31C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
+		913BC5491BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
+		913BC54A1BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
+		913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; };
+		913BC64D1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; };
+		913BC6521BDF8A210013209D /* hb-buffer-serialize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5971BDF8A200013209D /* hb-buffer-serialize.cc */; };
+		913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5971BDF8A200013209D /* hb-buffer-serialize.cc */; };
+		913BC6541BDF8A210013209D /* hb-buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5981BDF8A200013209D /* hb-buffer.cc */; };
+		913BC6551BDF8A210013209D /* hb-buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5981BDF8A200013209D /* hb-buffer.cc */; };
+		913BC6561BDF8A210013209D /* hb-common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59B1BDF8A200013209D /* hb-common.cc */; };
+		913BC6571BDF8A210013209D /* hb-common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59B1BDF8A200013209D /* hb-common.cc */; };
+		913BC65A1BDF8A210013209D /* hb-fallback-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59F1BDF8A200013209D /* hb-fallback-shape.cc */; };
+		913BC65B1BDF8A210013209D /* hb-fallback-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC59F1BDF8A200013209D /* hb-fallback-shape.cc */; };
+		913BC65C1BDF8A210013209D /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A11BDF8A200013209D /* hb-font.cc */; };
+		913BC65D1BDF8A210013209D /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A11BDF8A200013209D /* hb-font.cc */; };
+		913BC65E1BDF8A210013209D /* hb-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A31BDF8A210013209D /* hb-ft.cc */; };
+		913BC65F1BDF8A210013209D /* hb-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5A31BDF8A210013209D /* hb-ft.cc */; };
+		913BC6D21BDF8A210013209D /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60A1BDF8A210013209D /* hb-ot-layout.cc */; };
+		913BC6D31BDF8A210013209D /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60A1BDF8A210013209D /* hb-ot-layout.cc */; };
+		913BC6D41BDF8A210013209D /* hb-ot-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60D1BDF8A210013209D /* hb-ot-map.cc */; };
+		913BC6D51BDF8A210013209D /* hb-ot-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC60D1BDF8A210013209D /* hb-ot-map.cc */; };
+		913BC6D61BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6121BDF8A210013209D /* hb-ot-shape-complex-arabic.cc */; };
+		913BC6D71BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6121BDF8A210013209D /* hb-ot-shape-complex-arabic.cc */; };
+		913BC6D81BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6131BDF8A210013209D /* hb-ot-shape-complex-default.cc */; };
+		913BC6D91BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6131BDF8A210013209D /* hb-ot-shape-complex-default.cc */; };
+		913BC6DC1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6171BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc */; };
+		913BC6DD1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6171BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc */; };
+		913BC6DE1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6181BDF8A210013209D /* hb-ot-shape-complex-indic.cc */; };
+		913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6181BDF8A210013209D /* hb-ot-shape-complex-indic.cc */; };
+		913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61B1BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc */; };
+		913BC6E31BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61B1BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc */; };
+		913BC6E61BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61F1BDF8A210013209D /* hb-ot-shape-complex-sea.cc */; };
+		913BC6E71BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC61F1BDF8A210013209D /* hb-ot-shape-complex-sea.cc */; };
+		913BC6E81BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6201BDF8A210013209D /* hb-ot-shape-complex-thai.cc */; };
+		913BC6E91BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6201BDF8A210013209D /* hb-ot-shape-complex-thai.cc */; };
+		913BC6EA1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6221BDF8A210013209D /* hb-ot-shape-fallback.cc */; };
+		913BC6EB1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6221BDF8A210013209D /* hb-ot-shape-fallback.cc */; };
+		913BC6EC1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6241BDF8A210013209D /* hb-ot-shape-normalize.cc */; };
+		913BC6ED1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6241BDF8A210013209D /* hb-ot-shape-normalize.cc */; };
+		913BC6EE1BDF8A210013209D /* hb-ot-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6261BDF8A210013209D /* hb-ot-shape.cc */; };
+		913BC6EF1BDF8A210013209D /* hb-ot-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6261BDF8A210013209D /* hb-ot-shape.cc */; };
+		913BC6F01BDF8A210013209D /* hb-ot-tag.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6271BDF8A210013209D /* hb-ot-tag.cc */; };
+		913BC6F11BDF8A210013209D /* hb-ot-tag.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6271BDF8A210013209D /* hb-ot-tag.cc */; };
+		913BC6F21BDF8A210013209D /* hb-set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62C1BDF8A210013209D /* hb-set.cc */; };
+		913BC6F31BDF8A210013209D /* hb-set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62C1BDF8A210013209D /* hb-set.cc */; };
+		913BC6F41BDF8A210013209D /* hb-shape-plan.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62F1BDF8A210013209D /* hb-shape-plan.cc */; };
+		913BC6F51BDF8A210013209D /* hb-shape-plan.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC62F1BDF8A210013209D /* hb-shape-plan.cc */; };
+		913BC6F61BDF8A210013209D /* hb-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6311BDF8A210013209D /* hb-shape.cc */; };
+		913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6311BDF8A210013209D /* hb-shape.cc */; };
+		913BC6F81BDF8A210013209D /* hb-shaper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6361BDF8A210013209D /* hb-shaper.cc */; };
+		913BC6F91BDF8A210013209D /* hb-shaper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6361BDF8A210013209D /* hb-shaper.cc */; };
+		913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6371BDF8A210013209D /* hb-tt-font.cc */; };
+		913BC6FB1BDF8A210013209D /* hb-tt-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6371BDF8A210013209D /* hb-tt-font.cc */; };
+		913BC7021BDF8A210013209D /* hb-unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6401BDF8A210013209D /* hb-unicode.cc */; };
+		913BC7031BDF8A210013209D /* hb-unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6401BDF8A210013209D /* hb-unicode.cc */; };
+		913BC7061BDF8A210013209D /* hb-warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6461BDF8A210013209D /* hb-warning.cc */; };
+		913BC7071BDF8A210013209D /* hb-warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC6461BDF8A210013209D /* hb-warning.cc */; };
+		913BC7271BDFF03B0013209D /* texture-atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7211BDFF03B0013209D /* texture-atlas.c */; };
+		913BC7281BDFF03B0013209D /* texture-atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7211BDFF03B0013209D /* texture-atlas.c */; };
+		913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7231BDFF03B0013209D /* texture-font.cpp */; };
+		913BC72A1BDFF03B0013209D /* texture-font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7231BDFF03B0013209D /* texture-font.cpp */; };
+		913BC72B1BDFF03B0013209D /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7251BDFF03B0013209D /* vector.c */; };
+		913BC72C1BDFF03B0013209D /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC7251BDFF03B0013209D /* vector.c */; };
+		913BC7311BDFF1020013209D /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC72F1BDFF1020013209D /* platform.c */; };
+		913BC7321BDFF1020013209D /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC72F1BDFF1020013209D /* platform.c */; };
+		913BC92D1BE0026D0013209D /* ftrend1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92C1BE0026D0013209D /* ftrend1.c */; };
+		913BC92E1BE0026D0013209D /* ftrend1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92C1BE0026D0013209D /* ftrend1.c */; };
+		913BC93B1BE002C90013209D /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92F1BE002C90013209D /* ftbase.c */; };
+		913BC93C1BE002C90013209D /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC92F1BE002C90013209D /* ftbase.c */; };
+		913BC93D1BE002C90013209D /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9301BE002C90013209D /* ftbbox.c */; };
+		913BC93E1BE002C90013209D /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9301BE002C90013209D /* ftbbox.c */; };
+		913BC93F1BE002C90013209D /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9311BE002C90013209D /* ftbitmap.c */; };
+		913BC9401BE002C90013209D /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9311BE002C90013209D /* ftbitmap.c */; };
+		913BC9411BE002C90013209D /* ftfstype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9321BE002C90013209D /* ftfstype.c */; };
+		913BC9421BE002C90013209D /* ftfstype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9321BE002C90013209D /* ftfstype.c */; };
+		913BC9431BE002C90013209D /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9331BE002C90013209D /* ftgasp.c */; };
+		913BC9441BE002C90013209D /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9331BE002C90013209D /* ftgasp.c */; };
+		913BC9451BE002C90013209D /* ftglyph.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9341BE002C90013209D /* ftglyph.c */; };
+		913BC9461BE002C90013209D /* ftglyph.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9341BE002C90013209D /* ftglyph.c */; };
+		913BC9471BE002C90013209D /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9351BE002C90013209D /* ftinit.c */; };
+		913BC9481BE002C90013209D /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9351BE002C90013209D /* ftinit.c */; };
+		913BC9491BE002C90013209D /* ftlcdfil.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9361BE002C90013209D /* ftlcdfil.c */; };
+		913BC94A1BE002C90013209D /* ftlcdfil.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9361BE002C90013209D /* ftlcdfil.c */; };
+		913BC94B1BE002C90013209D /* ftstroke.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9371BE002C90013209D /* ftstroke.c */; };
+		913BC94C1BE002C90013209D /* ftstroke.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9371BE002C90013209D /* ftstroke.c */; };
+		913BC94D1BE002C90013209D /* ftsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9381BE002C90013209D /* ftsystem.c */; };
+		913BC94E1BE002C90013209D /* ftsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9381BE002C90013209D /* ftsystem.c */; };
+		913BC94F1BE002C90013209D /* fttype1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9391BE002C90013209D /* fttype1.c */; };
+		913BC9501BE002C90013209D /* fttype1.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9391BE002C90013209D /* fttype1.c */; };
+		913BC9511BE002C90013209D /* ftxf86.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC93A1BE002C90013209D /* ftxf86.c */; };
+		913BC9521BE002C90013209D /* ftxf86.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC93A1BE002C90013209D /* ftxf86.c */; };
+		913BC9541BE002E50013209D /* ftraster.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9531BE002E50013209D /* ftraster.c */; };
+		913BC9551BE002E50013209D /* ftraster.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9531BE002E50013209D /* ftraster.c */; };
+		913BC9571BE002F30013209D /* pshinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9561BE002F30013209D /* pshinter.c */; };
+		913BC9581BE002F30013209D /* pshinter.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9561BE002F30013209D /* pshinter.c */; };
+		913BC95A1BE002FE0013209D /* psnames.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9591BE002FE0013209D /* psnames.c */; };
+		913BC95B1BE002FE0013209D /* psnames.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9591BE002FE0013209D /* psnames.c */; };
+		913BC95D1BE0030C0013209D /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95C1BE0030C0013209D /* cff.c */; };
+		913BC95E1BE0030C0013209D /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95C1BE0030C0013209D /* cff.c */; };
+		913BC9601BE0031D0013209D /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95F1BE0031D0013209D /* truetype.c */; };
+		913BC9611BE0031D0013209D /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC95F1BE0031D0013209D /* truetype.c */; };
+		913BC9631BE003270013209D /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9621BE003270013209D /* autofit.c */; };
+		913BC9641BE003270013209D /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9621BE003270013209D /* autofit.c */; };
+		913BC9661BE0033A0013209D /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9651BE0033A0013209D /* smooth.c */; };
+		913BC9671BE0033A0013209D /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9651BE0033A0013209D /* smooth.c */; };
+		913BC9691BE003500013209D /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9681BE003500013209D /* sfnt.c */; };
+		913BC96A1BE003500013209D /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 913BC9681BE003500013209D /* sfnt.c */; };
+		9147DF4D1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF491BDBAE35006DBC72 /* OLayer2D.cpp */; };
+		9147DF4E1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF491BDBAE35006DBC72 /* OLayer2D.cpp */; };
+		9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */; };
+		9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */; };
+		9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
+		9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
+		916E36C01BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
+		916E36C11BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
+		9175749F1BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
+		917574A01BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
+		917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; };
+		917574A71BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; };
+		917574AA1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; };
+		917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; };
 		919AA4EC1BC816D0004C7052 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4EB1BC816D0004C7052 /* Foundation.framework */; };
 		919AA4EE1BC816D6004C7052 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4ED1BC816D6004C7052 /* UIKit.framework */; };
 		919AA4F01BC816DB004C7052 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4EF1BC816DB004C7052 /* GLKit.framework */; };
 		919AA4F21BC816E0004C7052 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4F11BC816E0004C7052 /* OpenGLES.framework */; };
-		919AA4F71BC82006004C7052 /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4F51BC82006004C7052 /* OGame.cpp */; settings = {ASSET_TAGS = (); }; };
-		919AA4F81BC82006004C7052 /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4F51BC82006004C7052 /* OGame.cpp */; settings = {ASSET_TAGS = (); }; };
-		919AA4FC1BC85418004C7052 /* OApplicationiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FA1BC85418004C7052 /* OApplicationiOS.cpp */; settings = {ASSET_TAGS = (); }; };
-		919AA4FE1BC85435004C7052 /* OWindowiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FD1BC85435004C7052 /* OWindowiOS.cpp */; settings = {ASSET_TAGS = (); }; };
-		919AA5041BC85E27004C7052 /* s55HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5011BC85E27004C7052 /* s55HD.png */; settings = {ASSET_TAGS = (); }; };
-		919AA5051BC85E27004C7052 /* sIph.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5021BC85E27004C7052 /* sIph.png */; settings = {ASSET_TAGS = (); }; };
-		919AA5061BC85E27004C7052 /* sIphHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5031BC85E27004C7052 /* sIphHD.png */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF01BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF11BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED81BC71C3C0051529B /* OMaths.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF31BC71C3C0051529B /* OMaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED81BC71C3C0051529B /* OMaths.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF41BC71C3C0051529B /* OApplicationDesktop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEDE1BC71C3C0051529B /* OApplicationDesktop.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF61BC71C3C0051529B /* OWindowDesktop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEDF1BC71C3C0051529B /* OWindowDesktop.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF81BC71C3C0051529B /* OEException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE11BC71C3C0051529B /* OEException.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEF91BC71C3C0051529B /* OEException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE11BC71C3C0051529B /* OEException.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFA1BC71C3C0051529B /* OResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE51BC71C3C0051529B /* OResourceManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE51BC71C3C0051529B /* OResourceManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFC1BC71C3C0051529B /* OTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE71BC71C3C0051529B /* OTextureCache.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFD1BC71C3C0051529B /* OTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE71BC71C3C0051529B /* OTextureCache.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEA1BC71C3C0051529B /* ResourcesUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FEFF1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEA1BC71C3C0051529B /* ResourcesUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FF001BC71C3C0051529B /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEC1BC71C3C0051529B /* ShaderUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FF011BC71C3C0051529B /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEC1BC71C3C0051529B /* ShaderUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FF021BC71C3C0051529B /* TextureUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEE1BC71C3C0051529B /* TextureUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FF031BC71C3C0051529B /* TextureUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEE1BC71C3C0051529B /* TextureUtils.cpp */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1A1BC71E1C0051529B /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF061BC71E1C0051529B /* etc1_utils.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1B1BC71E1C0051529B /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF061BC71E1C0051529B /* etc1_utils.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1C1BC71E1C0051529B /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF081BC71E1C0051529B /* image_DXT.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1D1BC71E1C0051529B /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF081BC71E1C0051529B /* image_DXT.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0A1BC71E1C0051529B /* image_helper.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF1F1BC71E1C0051529B /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0A1BC71E1C0051529B /* image_helper.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0E1BC71E1C0051529B /* SOIL2.c */; settings = {ASSET_TAGS = (); }; };
-		91B0FF211BC71E1C0051529B /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0E1BC71E1C0051529B /* SOIL2.c */; settings = {ASSET_TAGS = (); }; };
+		919AA4FC1BC85418004C7052 /* OApplicationiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FA1BC85418004C7052 /* OApplicationiOS.cpp */; };
+		919AA4FE1BC85435004C7052 /* OWindowiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FD1BC85435004C7052 /* OWindowiOS.cpp */; };
+		919AA5041BC85E27004C7052 /* s55HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5011BC85E27004C7052 /* s55HD.png */; };
+		919AA5051BC85E27004C7052 /* sIph.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5021BC85E27004C7052 /* sIph.png */; };
+		919AA5061BC85E27004C7052 /* sIphHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5031BC85E27004C7052 /* sIphHD.png */; };
+		91B0FEF01BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; };
+		91B0FEF11BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; };
+		91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED81BC71C3C0051529B /* OMaths.cpp */; };
+		91B0FEF31BC71C3C0051529B /* OMaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED81BC71C3C0051529B /* OMaths.cpp */; };
+		91B0FEF41BC71C3C0051529B /* OApplicationDesktop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEDE1BC71C3C0051529B /* OApplicationDesktop.cpp */; };
+		91B0FEF61BC71C3C0051529B /* OWindowDesktop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEDF1BC71C3C0051529B /* OWindowDesktop.cpp */; };
+		91B0FEF81BC71C3C0051529B /* OEException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE11BC71C3C0051529B /* OEException.cpp */; };
+		91B0FEF91BC71C3C0051529B /* OEException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE11BC71C3C0051529B /* OEException.cpp */; };
+		91B0FEFA1BC71C3C0051529B /* OResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE51BC71C3C0051529B /* OResourceManager.cpp */; };
+		91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE51BC71C3C0051529B /* OResourceManager.cpp */; };
+		91B0FEFC1BC71C3C0051529B /* OTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE71BC71C3C0051529B /* OTextureCache.cpp */; };
+		91B0FEFD1BC71C3C0051529B /* OTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEE71BC71C3C0051529B /* OTextureCache.cpp */; };
+		91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEA1BC71C3C0051529B /* ResourcesUtils.cpp */; };
+		91B0FEFF1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEA1BC71C3C0051529B /* ResourcesUtils.cpp */; };
+		91B0FF001BC71C3C0051529B /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEC1BC71C3C0051529B /* ShaderUtils.cpp */; };
+		91B0FF011BC71C3C0051529B /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEC1BC71C3C0051529B /* ShaderUtils.cpp */; };
+		91B0FF021BC71C3C0051529B /* TextureUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEE1BC71C3C0051529B /* TextureUtils.cpp */; };
+		91B0FF031BC71C3C0051529B /* TextureUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FEEE1BC71C3C0051529B /* TextureUtils.cpp */; };
+		91B0FF1A1BC71E1C0051529B /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF061BC71E1C0051529B /* etc1_utils.c */; };
+		91B0FF1B1BC71E1C0051529B /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF061BC71E1C0051529B /* etc1_utils.c */; };
+		91B0FF1C1BC71E1C0051529B /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF081BC71E1C0051529B /* image_DXT.c */; };
+		91B0FF1D1BC71E1C0051529B /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF081BC71E1C0051529B /* image_DXT.c */; };
+		91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0A1BC71E1C0051529B /* image_helper.c */; };
+		91B0FF1F1BC71E1C0051529B /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0A1BC71E1C0051529B /* image_helper.c */; };
+		91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0E1BC71E1C0051529B /* SOIL2.c */; };
+		91B0FF211BC71E1C0051529B /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FF0E1BC71E1C0051529B /* SOIL2.c */; };
 		91B0FF231BC71F6E0051529B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF221BC71F6E0051529B /* CoreVideo.framework */; };
 		91B0FF251BC71F750051529B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF241BC71F750051529B /* IOKit.framework */; };
 		91B0FF271BC71F7C0051529B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF261BC71F7C0051529B /* OpenGL.framework */; };
 		91B0FF291BC71F820051529B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF281BC71F820051529B /* Cocoa.framework */; };
 		91B0FF2E1BC71FC60051529B /* glew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2D1BC71FC60051529B /* glew.a */; };
 		91B0FF301BC728280051529B /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2F1BC728280051529B /* libglfw3.a */; };
-		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		91CC3E011C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
+		91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
+		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; };
+		91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
+		91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
+		91F235161C5A7B340066A66F /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235061C5A7B340066A66F /* BambooScene.cpp */; };
+		91F235171C5A7B340066A66F /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235061C5A7B340066A66F /* BambooScene.cpp */; };
+		91F235181C5A7B340066A66F /* BeachAScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235081C5A7B340066A66F /* BeachAScene.cpp */; };
+		91F235191C5A7B340066A66F /* BeachAScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235081C5A7B340066A66F /* BeachAScene.cpp */; };
+		91F2351A1C5A7B340066A66F /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */; };
+		91F2351B1C5A7B340066A66F /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */; };
+		91F2351C1C5A7B340066A66F /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350C1C5A7B340066A66F /* BeachScene.cpp */; };
+		91F2351D1C5A7B340066A66F /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350C1C5A7B340066A66F /* BeachScene.cpp */; };
+		91F2351E1C5A7B340066A66F /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350E1C5A7B340066A66F /* CloudsScene.cpp */; };
+		91F2351F1C5A7B340066A66F /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350E1C5A7B340066A66F /* CloudsScene.cpp */; };
+		91F235201C5A7B340066A66F /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235101C5A7B340066A66F /* OGame.cpp */; };
+		91F235211C5A7B340066A66F /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235101C5A7B340066A66F /* OGame.cpp */; };
+		91F235221C5A7B340066A66F /* Particles2Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235121C5A7B340066A66F /* Particles2Scene.cpp */; };
+		91F235231C5A7B340066A66F /* Particles2Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235121C5A7B340066A66F /* Particles2Scene.cpp */; };
+		91F235241C5A7B340066A66F /* ParticlesScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235141C5A7B340066A66F /* ParticlesScene.cpp */; };
+		91F235251C5A7B340066A66F /* ParticlesScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235141C5A7B340066A66F /* ParticlesScene.cpp */; };
 		91F5F3901BC6F8F70030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F38F1BC6F8F70030DA6A /* main.m */; };
 		91F5F3921BC6F8F80030DA6A /* MacAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */; };
 		91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F3BC1BC6FCF40030DA6A /* main.m */; };
@@ -188,15 +212,19 @@
 		91F5F3C71BC6FCF40030DA6A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F3C61BC6FCF40030DA6A /* GameViewController.m */; };
 		91F5F3CA1BC6FCF40030DA6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3C81BC6FCF40030DA6A /* Main.storyboard */; };
 		91F5F3CF1BC6FCF40030DA6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3CD1BC6FCF40030DA6A /* LaunchScreen.storyboard */; };
-		91FB90111BCB0B4C00526B2D /* OApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90101BCB0B4C00526B2D /* OApplication.cpp */; settings = {ASSET_TAGS = (); }; };
-		91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90101BCB0B4C00526B2D /* OApplication.cpp */; settings = {ASSET_TAGS = (); }; };
-		91FB901A1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; settings = {ASSET_TAGS = (); }; };
-		91FB901B1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; settings = {ASSET_TAGS = (); }; };
-		91FB901C1BCB1DD900526B2D /* OScenesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90181BCB1DD900526B2D /* OScenesManager.cpp */; settings = {ASSET_TAGS = (); }; };
-		91FB901D1BCB1DD900526B2D /* OScenesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90181BCB1DD900526B2D /* OScenesManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		91FB90111BCB0B4C00526B2D /* OApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90101BCB0B4C00526B2D /* OApplication.cpp */; };
+		91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90101BCB0B4C00526B2D /* OApplication.cpp */; };
+		91FB901A1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; };
+		91FB901B1BCB1DD900526B2D /* OScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB90161BCB1DD900526B2D /* OScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91068BAE1C4D95D700787929 /* OColorRGBA8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OColorRGBA8.h; sourceTree = "<group>"; };
+		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
+		911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBach2D.hpp; sourceTree = "<group>"; };
+		911ADE391C49868C00CCE944 /* OTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTypes.h; sourceTree = "<group>"; };
+		911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleEngine2D.cpp; sourceTree = "<group>"; };
+		911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleEngine2D.hpp; sourceTree = "<group>"; };
 		911B76311BD076E800D09E89 /* ORendererFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORendererFactory.cpp; sourceTree = "<group>"; };
 		911B76321BD076E800D09E89 /* ORendererFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORendererFactory.h; sourceTree = "<group>"; };
 		911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORendererSpriteBatch.cpp; sourceTree = "<group>"; };
@@ -208,6 +236,8 @@
 		911EED4A1BE7CD6000A3FCB1 /* OFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFontManager.h; sourceTree = "<group>"; };
 		911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OLabel.cpp; sourceTree = "<group>"; };
 		911EED4C1BE7CD6000A3FCB1 /* OLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLabel.h; sourceTree = "<group>"; };
+		912DAAA01C447AA6003F8339 /* ORef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORef.cpp; sourceTree = "<group>"; };
+		912DAAA11C447AA6003F8339 /* ORef.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ORef.hpp; sourceTree = "<group>"; };
 		913BC5471BDD7E100013209D /* OInputsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OInputsManager.cpp; sourceTree = "<group>"; };
 		913BC5481BDD7E100013209D /* OInputsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OInputsManager.h; sourceTree = "<group>"; };
 		913BC5901BDF8A200013209D /* hb-blob.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "hb-blob.cc"; sourceTree = "<group>"; };
@@ -289,8 +319,6 @@
 		919AA4ED1BC816D6004C7052 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4EF1BC816DB004C7052 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4F11BC816E0004C7052 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
-		919AA4F51BC82006004C7052 /* OGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGame.cpp; sourceTree = "<group>"; };
-		919AA4F61BC82006004C7052 /* OGame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OGame.hpp; sourceTree = "<group>"; };
 		919AA4FA1BC85418004C7052 /* OApplicationiOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OApplicationiOS.cpp; path = iOS/OApplicationiOS.cpp; sourceTree = "<group>"; };
 		919AA4FD1BC85435004C7052 /* OWindowiOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OWindowiOS.cpp; path = iOS/OWindowiOS.cpp; sourceTree = "<group>"; };
 		919AA5011BC85E27004C7052 /* s55HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s55HD.png; sourceTree = "<group>"; };
@@ -329,7 +357,28 @@
 		91B0FF281BC71F820051529B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91B0FF2D1BC71FC60051529B /* glew.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = glew.a; path = ../../Origami/Dependencies/GLEW/lib/osx/glew.a; sourceTree = "<group>"; };
 		91B0FF2F1BC728280051529B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Origami/Dependencies/GLFW/lib/osx/libglfw3.a; sourceTree = "<group>"; };
+		91CC3DFE1C34947100F923C1 /* OMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMacros.h; sourceTree = "<group>"; };
+		91CC3DFF1C357E0700F923C1 /* ODirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ODirector.cpp; sourceTree = "<group>"; };
+		91CC3E001C357E0700F923C1 /* ODirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODirector.h; sourceTree = "<group>"; };
 		91D0521E1BC861DC00F4F246 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		91D3CEC31C39610300C3B1A3 /* OGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGeometry.h; sourceTree = "<group>"; };
+		91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGeometry.cpp; sourceTree = "<group>"; };
+		91F235061C5A7B340066A66F /* BambooScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BambooScene.cpp; sourceTree = "<group>"; };
+		91F235071C5A7B340066A66F /* BambooScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BambooScene.hpp; sourceTree = "<group>"; };
+		91F235081C5A7B340066A66F /* BeachAScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachAScene.cpp; sourceTree = "<group>"; };
+		91F235091C5A7B340066A66F /* BeachAScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachAScene.hpp; sourceTree = "<group>"; };
+		91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachNMScene.cpp; sourceTree = "<group>"; };
+		91F2350B1C5A7B340066A66F /* BeachNMScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachNMScene.hpp; sourceTree = "<group>"; };
+		91F2350C1C5A7B340066A66F /* BeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachScene.cpp; sourceTree = "<group>"; };
+		91F2350D1C5A7B340066A66F /* BeachScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachScene.hpp; sourceTree = "<group>"; };
+		91F2350E1C5A7B340066A66F /* CloudsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CloudsScene.cpp; sourceTree = "<group>"; };
+		91F2350F1C5A7B340066A66F /* CloudsScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CloudsScene.hpp; sourceTree = "<group>"; };
+		91F235101C5A7B340066A66F /* OGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGame.cpp; sourceTree = "<group>"; };
+		91F235111C5A7B340066A66F /* OGame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OGame.hpp; sourceTree = "<group>"; };
+		91F235121C5A7B340066A66F /* Particles2Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particles2Scene.cpp; sourceTree = "<group>"; };
+		91F235131C5A7B340066A66F /* Particles2Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Particles2Scene.hpp; sourceTree = "<group>"; };
+		91F235141C5A7B340066A66F /* ParticlesScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticlesScene.cpp; sourceTree = "<group>"; };
+		91F235151C5A7B340066A66F /* ParticlesScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParticlesScene.hpp; sourceTree = "<group>"; };
 		91F5F3881BC6F8F70030DA6A /* engine_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = engine_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F5F38F1BC6F8F70030DA6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MacAssets.xcassets; sourceTree = "<group>"; };
@@ -346,8 +395,6 @@
 		91FB90101BCB0B4C00526B2D /* OApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OApplication.cpp; sourceTree = "<group>"; };
 		91FB90161BCB1DD900526B2D /* OScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OScene.cpp; sourceTree = "<group>"; };
 		91FB90171BCB1DD900526B2D /* OScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OScene.h; sourceTree = "<group>"; };
-		91FB90181BCB1DD900526B2D /* OScenesManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OScenesManager.cpp; sourceTree = "<group>"; };
-		91FB90191BCB1DD900526B2D /* OScenesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OScenesManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,8 +578,7 @@
 		919AA4F41BC81FE2004C7052 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				919AA4F61BC82006004C7052 /* OGame.hpp */,
-				919AA4F51BC82006004C7052 /* OGame.cpp */,
+				91F235051C5A7B340066A66F /* AppSrc */,
 				916E36BF1BD96E3F005EE626 /* AppData */,
 			);
 			name = Game;
@@ -571,10 +617,16 @@
 			isa = PBXGroup;
 			children = (
 				91B0FEDA1BC71C3C0051529B /* OGL.h */,
+				911ADE391C49868C00CCE944 /* OTypes.h */,
+				91CC3DFE1C34947100F923C1 /* OMacros.h */,
+				91CC3E001C357E0700F923C1 /* ODirector.h */,
+				91CC3DFF1C357E0700F923C1 /* ODirector.cpp */,
+				912DAAA11C447AA6003F8339 /* ORef.hpp */,
+				912DAAA01C447AA6003F8339 /* ORef.cpp */,
 				91B0FECD1BC71C3C0051529B /* App */,
 				91B0FECF1BC71C3C0051529B /* Graphics */,
-				91B0FED61BC71C3C0051529B /* Inputs */,
 				91B0FED71BC71C3C0051529B /* Maths */,
+				91B0FED61BC71C3C0051529B /* Inputs */,
 				91B0FEDC1BC71C3C0051529B /* Platform */,
 				91B0FEE01BC71C3C0051529B /* Utils */,
 			);
@@ -595,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				916E36BE1BD92DE3005EE626 /* OTexture.h */,
+				91068BAE1C4D95D700787929 /* OColorRGBA8.h */,
 				91B0FED21BC71C3C0051529B /* OWindow.h */,
 				91B0FED11BC71C3C0051529B /* OWindow.cpp */,
 				91FB90131BCB1D6600526B2D /* 2D */,
@@ -622,6 +675,8 @@
 			children = (
 				91B0FED81BC71C3C0051529B /* OMaths.cpp */,
 				91B0FED91BC71C3C0051529B /* OMaths.h */,
+				91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */,
+				91D3CEC31C39610300C3B1A3 /* OGeometry.h */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -702,6 +757,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		91F235051C5A7B340066A66F /* AppSrc */ = {
+			isa = PBXGroup;
+			children = (
+				91F235061C5A7B340066A66F /* BambooScene.cpp */,
+				91F235071C5A7B340066A66F /* BambooScene.hpp */,
+				91F235081C5A7B340066A66F /* BeachAScene.cpp */,
+				91F235091C5A7B340066A66F /* BeachAScene.hpp */,
+				91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */,
+				91F2350B1C5A7B340066A66F /* BeachNMScene.hpp */,
+				91F2350C1C5A7B340066A66F /* BeachScene.cpp */,
+				91F2350D1C5A7B340066A66F /* BeachScene.hpp */,
+				91F2350E1C5A7B340066A66F /* CloudsScene.cpp */,
+				91F2350F1C5A7B340066A66F /* CloudsScene.hpp */,
+				91F235101C5A7B340066A66F /* OGame.cpp */,
+				91F235111C5A7B340066A66F /* OGame.hpp */,
+				91F235121C5A7B340066A66F /* Particles2Scene.cpp */,
+				91F235131C5A7B340066A66F /* Particles2Scene.hpp */,
+				91F235141C5A7B340066A66F /* ParticlesScene.cpp */,
+				91F235151C5A7B340066A66F /* ParticlesScene.hpp */,
+			);
+			path = AppSrc;
+			sourceTree = "<group>";
+		};
 		91F5F37D1BC563E20030DA6A = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +837,10 @@
 				917574A91BD7A5E800EE8547 /* OSprite.h */,
 				9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */,
 				9147DF521BDBAEA0006DBC72 /* OCamera2D.h */,
+				911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */,
+				911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */,
+				911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */,
+				911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */,
 			);
 			path = 2D;
 			sourceTree = "<group>";
@@ -775,8 +857,6 @@
 			children = (
 				91FB90171BCB1DD900526B2D /* OScene.h */,
 				91FB90161BCB1DD900526B2D /* OScene.cpp */,
-				91FB90191BCB1DD900526B2D /* OScenesManager.h */,
-				91FB90181BCB1DD900526B2D /* OScenesManager.cpp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -824,7 +904,8 @@
 		91F5F37E1BC563E20030DA6A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					91F5F3871BC6F8F70030DA6A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -893,8 +974,12 @@
 				91B0FEF01BC71C3C0051529B /* OWindow.cpp in Sources */,
 				913BC93D1BE002C90013209D /* ftbbox.c in Sources */,
 				913BC95D1BE0030C0013209D /* cff.c in Sources */,
+				91F235201C5A7B340066A66F /* OGame.cpp in Sources */,
 				911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */,
 				913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */,
+				91F2351A1C5A7B340066A66F /* BeachNMScene.cpp in Sources */,
+				91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */,
+				911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */,
 				913BC6D61BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */,
 				911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
@@ -903,6 +988,7 @@
 				913BC95A1BE002FE0013209D /* psnames.c in Sources */,
 				917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */,
 				913BC7311BDFF1020013209D /* platform.c in Sources */,
+				91CC3E011C357E0700F923C1 /* ODirector.cpp in Sources */,
 				913BC6561BDF8A210013209D /* hb-common.cc in Sources */,
 				913BC6D21BDF8A210013209D /* hb-ot-layout.cc in Sources */,
 				913BC92D1BE0026D0013209D /* ftrend1.c in Sources */,
@@ -912,8 +998,9 @@
 				913BC7021BDF8A210013209D /* hb-unicode.cc in Sources */,
 				913BC6DE1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */,
-				919AA4F71BC82006004C7052 /* OGame.cpp in Sources */,
 				913BC65E1BDF8A210013209D /* hb-ft.cc in Sources */,
+				91F2351E1C5A7B340066A66F /* CloudsScene.cpp in Sources */,
+				912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */,
 				913BC9471BE002C90013209D /* ftinit.c in Sources */,
 				913BC9601BE0031D0013209D /* truetype.c in Sources */,
 				91B0FEF81BC71C3C0051529B /* OEException.cpp in Sources */,
@@ -922,9 +1009,11 @@
 				913BC72B1BDFF03B0013209D /* vector.c in Sources */,
 				913BC94B1BE002C90013209D /* ftstroke.c in Sources */,
 				913BC6F61BDF8A210013209D /* hb-shape.cc in Sources */,
+				91F2351C1C5A7B340066A66F /* BeachScene.cpp in Sources */,
 				91B0FF1C1BC71E1C0051529B /* image_DXT.c in Sources */,
 				913BC9571BE002F30013209D /* pshinter.c in Sources */,
 				9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
+				91F235221C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
 				913BC9491BE002C90013209D /* ftlcdfil.c in Sources */,
 				913BC6F21BDF8A210013209D /* hb-set.cc in Sources */,
 				91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */,
@@ -934,16 +1023,17 @@
 				913BC65C1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6E81BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */,
 				913BC9431BE002C90013209D /* ftgasp.c in Sources */,
-				91FB901C1BCB1DD900526B2D /* OScenesManager.cpp in Sources */,
 				91B0FEFC1BC71C3C0051529B /* OTextureCache.cpp in Sources */,
 				911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */,
 				913BC6EE1BDF8A210013209D /* hb-ot-shape.cc in Sources */,
 				913BC9541BE002E50013209D /* ftraster.c in Sources */,
+				91F235241C5A7B340066A66F /* ParticlesScene.cpp in Sources */,
 				913BC9691BE003500013209D /* sfnt.c in Sources */,
 				913BC65A1BDF8A210013209D /* hb-fallback-shape.cc in Sources */,
 				913BC6F81BDF8A210013209D /* hb-shaper.cc in Sources */,
 				91B0FEF41BC71C3C0051529B /* OApplicationDesktop.cpp in Sources */,
 				9175749F1BD691C000EE8547 /* OShader.cpp in Sources */,
+				911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */,
 				913BC6D41BDF8A210013209D /* hb-ot-map.cc in Sources */,
 				913BC7271BDFF03B0013209D /* texture-atlas.c in Sources */,
 				913BC6541BDF8A210013209D /* hb-buffer.cc in Sources */,
@@ -957,6 +1047,7 @@
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
 				91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */,
 				913BC93B1BE002C90013209D /* ftbase.c in Sources */,
+				91F235181C5A7B340066A66F /* BeachAScene.cpp in Sources */,
 				913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */,
 				913BC9451BE002C90013209D /* ftglyph.c in Sources */,
 				9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */,
@@ -969,6 +1060,7 @@
 				913BC6DC1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */,
 				913BC93F1BE002C90013209D /* ftbitmap.c in Sources */,
 				913BC6EC1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,
+				91F235161C5A7B340066A66F /* BambooScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,11 +1086,13 @@
 				913BC96A1BE003500013209D /* sfnt.c in Sources */,
 				913BC9481BE002C90013209D /* ftinit.c in Sources */,
 				91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */,
-				919AA4F81BC82006004C7052 /* OGame.cpp in Sources */,
+				91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */,
 				917574A01BD691C000EE8547 /* OShader.cpp in Sources */,
+				91F2351D1C5A7B340066A66F /* BeachScene.cpp in Sources */,
 				911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
 				913BC72C1BDFF03B0013209D /* vector.c in Sources */,
 				913BC6551BDF8A210013209D /* hb-buffer.cc in Sources */,
+				91F235251C5A7B340066A66F /* ParticlesScene.cpp in Sources */,
 				913BC7071BDF8A210013209D /* hb-warning.cc in Sources */,
 				913BC65F1BDF8A210013209D /* hb-ft.cc in Sources */,
 				91B0FF211BC71E1C0051529B /* SOIL2.c in Sources */,
@@ -1015,22 +1109,27 @@
 				913BC93C1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
+				911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
+				91F2351F1C5A7B340066A66F /* CloudsScene.cpp in Sources */,
 				91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */,
-				91FB901D1BCB1DD900526B2D /* OScenesManager.cpp in Sources */,
 				913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */,
 				913BC65B1BDF8A210013209D /* hb-fallback-shape.cc in Sources */,
 				913BC95B1BE002FE0013209D /* psnames.c in Sources */,
 				913BC72A1BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC6EB1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */,
 				9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
+				91F235191C5A7B340066A66F /* BeachAScene.cpp in Sources */,
+				91F235231C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
 				913BC64D1BDF8A210013209D /* hb-blob.cc in Sources */,
 				913BC7031BDF8A210013209D /* hb-unicode.cc in Sources */,
 				91B0FEF91BC71C3C0051529B /* OEException.cpp in Sources */,
 				91B0FEF31BC71C3C0051529B /* OMaths.cpp in Sources */,
+				91F235211C5A7B340066A66F /* OGame.cpp in Sources */,
 				9147DF4E1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */,
 				913BC6E91BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */,
 				913BC94A1BE002C90013209D /* ftlcdfil.c in Sources */,
+				91F235171C5A7B340066A66F /* BambooScene.cpp in Sources */,
 				913BC6F91BDF8A210013209D /* hb-shaper.cc in Sources */,
 				91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */,
 				913BC9501BE002C90013209D /* fttype1.c in Sources */,
@@ -1038,16 +1137,20 @@
 				913BC65D1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6571BDF8A210013209D /* hb-common.cc in Sources */,
 				913BC6F31BDF8A210013209D /* hb-set.cc in Sources */,
+				911ADE3D1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */,
 				913BC9551BE002E50013209D /* ftraster.c in Sources */,
 				913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
 				913BC9611BE0031D0013209D /* truetype.c in Sources */,
+				912DAAA31C447AA6003F8339 /* ORef.cpp in Sources */,
 				919AA4FE1BC85435004C7052 /* OWindowiOS.cpp in Sources */,
 				91B0FF1B1BC71E1C0051529B /* etc1_utils.c in Sources */,
 				913BC6D31BDF8A210013209D /* hb-ot-layout.cc in Sources */,
 				913BC9671BE0033A0013209D /* smooth.c in Sources */,
 				9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */,
+				91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */,
 				913BC6E71BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */,
 				913BC9421BE002C90013209D /* ftfstype.c in Sources */,
+				91F2351B1C5A7B340066A66F /* BeachNMScene.cpp in Sources */,
 				913BC6ED1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,
 				913BC92E1BE0026D0013209D /* ftrend1.c in Sources */,
 				913BC9641BE003270013209D /* autofit.c in Sources */,
@@ -1089,6 +1192,8 @@
 		91F5F3821BC563E20030DA6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};

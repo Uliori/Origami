@@ -10,40 +10,39 @@
 
 #include <unordered_map>
 
-namespace Origami {
+#include <Core/OMacros.h>
 
-    class OInputsManager {
-    private:
-        //singleton
-        static OInputsManager m_instance;
-    public:
-        //singleton
-        static OInputsManager* Manager();
-        
-        
-        
-        
-    public:
-        OInputsManager();
-        virtual ~OInputsManager();
-        
-        void update();
-        
-        void pressKey(unsigned int keyID);
-        void releaseKey(unsigned int keyID);
-        
-        //returns true if a key was held down
-        bool isKeyDown(unsigned int keyID);
-        
-        //returns true if a key was just pressed
-        bool isKeyPressed(unsigned int keyID);
-        
-        
-    private:
-        std::unordered_map<unsigned int, bool> m_keyMap;
-        std::unordered_map<unsigned int, bool> m_previouskeyMap;
-        
-        bool wasKeyDown(unsigned int keyID);
-    };
-    
-}
+NS_O_BEGIN
+
+class OInputsManager {
+private:
+    //singleton
+    static OInputsManager m_Instance;
+public:
+    //singleton
+    static OInputsManager* manager();
+
+public:
+    OInputsManager();
+    virtual ~OInputsManager();
+
+    void update();
+
+    void pressKey(unsigned int keyID);
+    void releaseKey(unsigned int keyID);
+
+    //returns true if a key was held down
+    bool isKeyDown(unsigned int keyID);
+
+    //returns true if a key was just pressed
+    bool isKeyPressed(unsigned int keyID);
+
+
+private:
+    std::unordered_map<unsigned int, bool> m_KeyMap;
+    std::unordered_map<unsigned int, bool> m_PreviouskeyMap;
+
+    bool wasKeyDown(unsigned int keyID);
+};
+
+NS_O_END

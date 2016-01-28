@@ -1,56 +1,78 @@
 #pragma once
 
+//#ifdef O_TARGET_DESKTOP
 #include <chrono>
 #include <thread>
 
-namespace Origami
+#include <Core/OMacros.h>
+
+NS_O_BEGIN
+class OTimer
 {
-	class OTimer
-	{
-	private:
-		typedef std::chrono::high_resolution_clock  HighResolutionClock;
-		typedef std::chrono::milliseconds           milliseconds_type;
-        
-//		std::chrono::time_point<HighResolutionClock> m_Start;
-        
-//        float m_delta;
+private:
+    typedef std::chrono::system_clock		clock;
+    typedef std::chrono::milliseconds  	milliseconds_type;
 
-	public:
-        
-		OTimer()
-		{
-//			Reset();
-		}
+    std::chrono::time_point<clock>      m_Passed;
 
-//		void Reset()
-//		{
-//			m_Start = HighResolutionClock::now();
-//		}
-        
-        float getTime()
-        {
-            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now().time_since_epoch()).count() / 1000.0f;
-        }
-        
-//        float getRunningTime()
-//        {
-//            return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
-//        }
-        
-//        float getDelta()
-//        {
-//            return m_delta;
-//        }
-//        
-//        void setDelta(float delta)
-//        {
-//            m_delta = delta;
-//        }
+    std::chrono::time_point<clock>      m_PausedTime;
 
+    double m_Time;
+public:
 
-        void sleep(int milliseconds)
-        {
-            std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-        }
-	};
-}
+    OTimer()
+    {
+        m_Time = 0;
+        reset();
+    }
+
+    void reset()
+    {
+        m_Passed = clock::now();
+    }
+
+    double elapsed()
+    {
+        auto dif = std::chrono::duration_cast<milliseconds_type>(clock::now() - m_Passed);
+        m_Passed = clock::now();
+
+        m_Time += dif.count();
+
+        return m_Time;
+    }
+
+    double getTime()
+    {
+        elapsed();
+        return m_Time;
+    }
+
+    double getHours()
+    {
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return local_tm.tm_hour;
+        
+    }
+    
+    double getMinutes()
+    {
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return local_tm.tm_min;
+    }
+    
+    double getDayMinutesTime()
+    {
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return ((local_tm.tm_hour * 60) + local_tm.tm_min);
+    }
+
+    static void sleep(int milliseconds)
+    {
+        std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+    }
+
+};
+NS_O_END

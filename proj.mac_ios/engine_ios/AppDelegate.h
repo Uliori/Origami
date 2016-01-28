@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#include "OGame.hpp"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property OGame *game;
 
++ (AppDelegate *)appDelegate;
 
 @end
 

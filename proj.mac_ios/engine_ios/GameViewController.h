@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
-#include "OGame.hpp"
+
 
 class TouchPoint
 {
@@ -37,16 +37,15 @@ public:
 static TouchPoint __touchPoints[TOUCH_POINTS_MAX];
 
 @interface GameViewController : GLKViewController{
-    OGame *game;
     
     int updates;
-    double lastTime;
     double tickCounter;
     
-    float currentTicks;
-    float previousTicks;
+    double currentTicks;
+    double previousTicks;
+    double accumulator;
     
-    float     DESIRED_FRAMETIME;
+    float  DESIRED_FRAMETIME;
 }
 
 @end
