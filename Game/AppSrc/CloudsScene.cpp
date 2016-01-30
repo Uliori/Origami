@@ -38,16 +38,16 @@ CloudsScene::CloudsScene() : OScene()
 void CloudsScene::create()
 {
     OScene::create();
-    
+
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
 
     OSize frameSize = ODirector::director()->getVirtualSize();
-    
+
     //sky
     sky = new OSprite(0, 0, frameSize.width, frameSize.height, "diffuse.jpg", 0);
     sky->setColor(maths::vec4(135.0/255, 206.0/255, 235.0/255, 1.0f));
     addSprite(sky);
-    
+
     //clouds
     for (int i = 0; i < CLOUDS_COUNT; i++) {
         m_Clouds.push_back(new OSprite(maths::fRand(0, frameSize.width),

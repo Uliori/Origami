@@ -23,13 +23,13 @@ USING_NS_O
 
 class OGame : public OApplication
 {
-    CloudsScene*        m_Clouds;
-    BeachScene*         m_Beach;
-    BeachNMScene*       m_BeachNM;
-    BeachAScene*        m_BeachA;
-    ParticlesScene*     m_Particles;
-    Particles2Scene*    m_Particlest;
-    BambooScene*        m_Bamboo;
+   CloudsScene*        m_Clouds;
+   BeachScene*         m_Beach;
+   BeachNMScene*       m_BeachNM;
+   BeachAScene*        m_BeachA;
+   ParticlesScene*     m_Particles;
+   Particles2Scene*    m_Particlest;
+   BambooScene*        m_Bamboo;
 
 public:
     OGame(const char* name, uint width, uint height);

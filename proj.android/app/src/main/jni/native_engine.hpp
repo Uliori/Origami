@@ -19,7 +19,6 @@
 #include "common.hpp"
 
 struct NativeEngineSavedState {};
-//extern AAssetManager *mgr;
 
 class NativeEngine {
     public:
@@ -29,9 +28,6 @@ class NativeEngine {
 
         // runs application until it dies
         void GameLoop();
-
-        // returns the JNI environment
-        JNIEnv *GetJniEnv();
 
         // returns the Android app object
         android_app* GetAndroidApp();
@@ -64,9 +60,6 @@ class NativeEngine {
         // additional saved state
         struct NativeEngineSavedState mState;
 
-        // JNI environment
-        JNIEnv *mJniEnv;
-
         // is this the first frame we're drawing?
         bool mIsFirstFrame;
 
@@ -89,8 +82,6 @@ class NativeEngine {
         bool InitGLObjects();
         void KillGLObjects();
 
-        void ConfigureOpenGL();
-
         bool PrepareToRender();
 
         void DoFrame();
@@ -101,10 +92,6 @@ class NativeEngine {
         // these are public for simplicity because we have internal static callbacks
         void HandleCommand(int32_t cmd);
         bool HandleInput(AInputEvent *event);
-
-    private:
-//        OGame *m_Game = nullptr;
-
 };
 
 #endif

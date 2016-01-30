@@ -5,11 +5,11 @@ OrigamiCore_SRC_PATH	:= ../../../../../Origami/Core
 Game_SRC_PATH			:= ../../../../../Game/AppSrc
 
 SOIL_SRC_PATH			:= ../../../../../Origami/Dependencies/SOIL2
-#FREETYPE_HEA_PATH	 	:= ../../Origami/Dependencies/FreeType/include
-#FREETYPE_SRC_PATH	 	:= ../../Origami/Dependencies/FreeType/
-#FREETYPEGL_SRC_PATH	:= ../../Origami/Dependencies/FreeType-gl
-#HARFBUZZ_HEA_PATH	 	:= ../../Origami/Dependencies/harfbuzz-ng/src
-#HARFBUZZ_SRC_PATH	 	:= ../../Origami/Dependencies/harfbuzz-ng/
+#FREETYPE_HEA_PATH	 	:= ../../../../../Origami/Dependencies/FreeType/include
+#FREETYPE_SRC_PATH	 	:= ../../../../../Origami/Dependencies/FreeType/
+#FREETYPEGL_SRC_PATH	:= ../../../../../Origami/Dependencies/FreeType-gl
+#HARFBUZZ_HEA_PATH	 	:= ../../../../../Origami/Dependencies/harfbuzz-ng/src
+#HARFBUZZ_SRC_PATH	 	:= ../../../../../Origami/Dependencies/harfbuzz-ng/
 
 ############################################ libSOIL2 ############################################
 include $(CLEAR_VARS)
@@ -30,6 +30,7 @@ LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_
 #-g
 CORE_LIST 				:= $(OrigamiCore_SRC_PATH)
 PROJECT_LIST 			:= $(Game_SRC_PATH)
+GAME_SRC_LIST 			:= $(wildcard $(LOCAL_PATH)/$(Game_SRC_PATH)/*.cpp)
 
 LOCAL_C_INCLUDES  		:=  \
 							$(LOCAL_PATH)/native_app_glue \
@@ -42,6 +43,7 @@ LOCAL_C_INCLUDES  		:=  \
 
 
 LOCAL_SRC_FILES 		:= 	main.cpp \
+							Game.cpp \
                             native_engine.cpp \
 							native_app_glue/android_native_app_glue.c \
 							$(CORE_LIST)/ODirector.cpp \
@@ -73,14 +75,7 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							$(CORE_LIST)/Graphics/Scenes/OScene.cpp \
 							$(CORE_LIST)/Graphics/Shaders/OShader.cpp \
 							$(CORE_LIST)/Graphics/Shaders/OSimple2DShader.cpp \
-							$(Game_SRC_PATH)/OGame.cpp \
-							$(Game_SRC_PATH)/CloudsScene.cpp \
-							$(Game_SRC_PATH)/BeachScene.cpp \
-							$(Game_SRC_PATH)/BeachAScene.cpp \
-							$(Game_SRC_PATH)/BeachNMScene.cpp \
-							$(Game_SRC_PATH)/Particles2Scene.cpp \
-							$(Game_SRC_PATH)/ParticlesScene.cpp \
-							$(Game_SRC_PATH)/BambooScene.cpp \
+							$(GAME_SRC_LIST:$(LOCAL_PATH)/%=%)\
 							#$(FREETYPEGL_SRC_PATH)/texture-font.cpp $(FREETYPEGL_SRC_PATH)/platform.c \
 							$(FREETYPEGL_SRC_PATH)/texture-atlas.c $(FREETYPEGL_SRC_PATH)/vector.c \
 
