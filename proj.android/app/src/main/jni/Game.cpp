@@ -102,11 +102,9 @@ void Game::step()
       accumulator -= DESIRED_FRAMETIME;
       updates ++;
       loops++;
+      s_game->refresh();
     }
   }
-
-
-  s_game->refresh();
 
   float interpolation = float(ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
   s_game->render(interpolation);
