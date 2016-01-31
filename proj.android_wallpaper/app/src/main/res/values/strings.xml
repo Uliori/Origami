@@ -10,6 +10,7 @@
     <string name="ads">Ads</string>
     <string name="adsO">Ok</string>
     <string name="adsN">Cancel</string>
+    <string name="adsD">Ads disabled !</string>
 
 
     <!-- <string name="banner_ad_unit_id">ca-app-pub-1060148675448438/9756338702</string>

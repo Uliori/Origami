@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class WallpaperPreferencesActivity extends PreferenceActivity {
 
@@ -75,6 +76,7 @@ public class WallpaperPreferencesActivity extends PreferenceActivity {
                                             SharedPreferences.Editor editor = sharedPref.edit();
                                             editor.putBoolean("adsDisabled", true);
                                             editor.commit();
+                                            Toast.makeText(getActivity(), getString(R.string.adsD), Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 })

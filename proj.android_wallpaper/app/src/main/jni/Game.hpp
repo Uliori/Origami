@@ -32,6 +32,7 @@ public:
   void step();
   void setPaused(bool paused);
   void cleanUp();
+  void loadScene(std::string scene);
 
 private:
   void createGame();

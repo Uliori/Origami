@@ -8,7 +8,12 @@
 #import <Foundation/Foundation.h>
 #elif __ANDROID__
 #include <android/asset_manager.h>
-#include "native_engine.hpp"
+	#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+		#include "native_engine.hpp"
+	#else
+		extern AAssetManager *mgr;
+	#endif
+
 #endif
 
 NS_O_BEGIN
@@ -39,7 +44,9 @@ const char* ResourcesUtils::getResourcePathforFile(const char * file) {
 bool ResourcesUtils::doesFileExists(const char * file)
 {
 #ifdef __ANDROID__
-    AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+	    AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#endif
     if (!mgr){
         OErrLog("The asset manager is not loaded !")
         return false;
@@ -64,7 +71,9 @@ bool ResourcesUtils::doesFileExists(const char * file)
 int ResourcesUtils::fileLength(const char * filePath, unsigned char *& buffer,
 		size_t &buffer_length) {
 #ifdef __ANDROID__
-	AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+				AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#endif
     if (!mgr){
         OErrLog("The asset manager is not loaded !")
         return 0;

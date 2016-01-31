@@ -55,7 +55,7 @@ void Game::init(int width, int height)
      OResourceManager::reloadResources();
   }
 
-  DESIRED_FRAMETIME = MS_IN_SECOND / game()->getPreferredFPS();//
+  DESIRED_FRAMETIME = MS_IN_SECOND / game()->getPreferredFPS();
   previousTicks = ODirector::director()->getTimer()->getTime();
 }
 
@@ -141,6 +141,17 @@ void Game::setPaused(bool paused)
 	{
 		s_game->resume();
 	}
+}
+
+void Game::loadScene(std::string scene)
+{
+  if (ODirector::director()->getCurrentSceneID() != scene) {
+      ODirector::director()->loadScene(scene);
+  }
+  else
+  {
+      OResourceManager::reloadResources();
+  }
 }
 
 void Game::cleanUp()

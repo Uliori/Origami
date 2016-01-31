@@ -26,14 +26,14 @@ include $(BUILD_SHARED_LIBRARY)
 ############################################ libOrigami ############################################
 include $(CLEAR_VARS)
 LOCAL_MODULE   			:= liborigamiwallpaper
-LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_MODE_DEBUG
+LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID
+LOCAL_CFLAGS            += -DO_TARGET_MOBILE_ANDROID_WALLPAPER -DO_MODE_DEBUG
 #-g
 CORE_LIST 				:= $(OrigamiCore_SRC_PATH)
 PROJECT_LIST 			:= $(Game_SRC_PATH)
 GAME_SRC_LIST 			:= $(wildcard $(LOCAL_PATH)/$(Game_SRC_PATH)/*.cpp)
 
 LOCAL_C_INCLUDES  		:=  \
-							$(LOCAL_PATH)/native_app_glue \
 							$(LOCAL_PATH)/$(SOIL_SRC_PATH) \
 							$(LOCAL_PATH)/$(Origami_SRC_PATH) \
 							$(LOCAL_PATH)/$(Game_SRC_PATH)
@@ -42,10 +42,8 @@ LOCAL_C_INCLUDES  		:=  \
 							$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPEGL_SRC_PATH) \
 
 
-LOCAL_SRC_FILES 		:= 	main.cpp \
+LOCAL_SRC_FILES 		:= 	Origami.cpp \
 							Game.cpp \
-                            native_engine.cpp \
-							native_app_glue/android_native_app_glue.c \
 							$(CORE_LIST)/ODirector.cpp \
 							$(CORE_LIST)/ORef.cpp \
 							$(CORE_LIST)/App/OApplication.cpp \
