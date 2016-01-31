@@ -25,7 +25,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 ############################################ libOrigami ############################################
 include $(CLEAR_VARS)
-LOCAL_MODULE   			:= liborigami
+LOCAL_MODULE   			:= liborigamiwallpaper
 LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_MODE_DEBUG
 #-g
 CORE_LIST 				:= $(OrigamiCore_SRC_PATH)

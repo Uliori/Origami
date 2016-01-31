@@ -1,4 +1,4 @@
-package com.medisoft.origami;
+package com.android.common;
 
 public class MainActivity extends android.app.NativeActivity {
     static {

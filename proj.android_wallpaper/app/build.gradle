@@ -6,7 +6,7 @@ model {
         buildToolsVersion = "23.0.1"
 
         defaultConfig.with {
-            applicationId = "com.medisoft.origami"
+            applicationId = "com.medisoft.origamiwallpaper"
             minSdkVersion.apiLevel = 15
             targetSdkVersion.apiLevel = 23
             versionCode = 1
@@ -44,6 +44,11 @@ model {
             }
         }
     }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
 }
 
 import org.apache.tools.ant.taskdefs.condition.Os

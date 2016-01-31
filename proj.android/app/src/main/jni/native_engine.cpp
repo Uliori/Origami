@@ -135,10 +135,12 @@ void NativeEngine::HandleCommand(int32_t cmd) {
         case APP_CMD_GAINED_FOCUS:
             OLog("NativeEngine: APP_CMD_GAINED_FOCUS");
             mHasFocus = true;
+            Game::instance()->setPaused(false);//test
             break;
         case APP_CMD_LOST_FOCUS:
             OLog("NativeEngine: APP_CMD_LOST_FOCUS");
             mHasFocus = false;
+            Game::instance()->setPaused(true);//test
             break;
         case APP_CMD_PAUSE:
             OLog("NativeEngine: APP_CMD_PAUSE");

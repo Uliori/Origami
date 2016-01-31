@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+    
+    <PreferenceCategory android:title="@string/ads">
+    	<com.android.ads.AdPreference android:layout="@layout/ad_layout" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/app_name">
+    	<ListPreference
+    	    android:key="oWallpaper"
+      		android:title="@string/choose"
+      		android:summary=""
+      		android:defaultValue="1"
+      		android:entries="@array/listArray"
+      		android:entryValues="@array/listValues" />
+    	
+    	<Preference android:title="@string/version"
+                android:key="@string/version"
+                android:summary="@string/versionV"/>
+    	
+    </PreferenceCategory>
+</PreferenceScreen>
