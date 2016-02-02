@@ -38,10 +38,8 @@ BambooScene::~BambooScene()
     
 }
 
-void BambooScene::create()
+void BambooScene::onCreate()
 {
-    OScene::create();
-    
     OSize frameSize = ODirector::director()->getVirtualSize();
     
     //sky
@@ -61,6 +59,11 @@ void BambooScene::create()
                         particle.color.setAlpha(particle.life);
     });
     getMainLayer2D()->particleEngine->addParticleBatch(particles);
+    
+}
+
+void BambooScene::onClear()
+{
     
 }
 

@@ -64,9 +64,10 @@ public:
     BeachAScene();
     virtual ~BeachAScene();
     
-    void create() override;
-    void clear() override;
-    void update(float deltaTime) override;
+    void onCreate() override;
+    void onClear() override;
+    
+    void onUpdate(float deltaTime) override;
     void onResize() override;
     //    void onInput(float deltaTime) override;
     

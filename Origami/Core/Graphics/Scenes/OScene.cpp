@@ -27,6 +27,8 @@ void OScene::create()
     m_MainLayer2D->create();
     m_GUIView->create();
     OLog("Scene created.");
+    
+    onCreate();
 
     m_Created = true;
 }
@@ -34,6 +36,8 @@ void OScene::create()
 void OScene::clear()
 {
     if (m_Created) {
+        onClear();
+        
         m_MainLayer3D->clear();
         m_MainLayer2D->clear();
         m_GUIView->clear();
@@ -46,18 +50,21 @@ void OScene::clear()
 void OScene::update(float deltaTime)
 {
     if (m_Created) {
-      m_MainLayer3D->update(deltaTime);
-      m_MainLayer2D->update(deltaTime);
-      m_GUIView->update(deltaTime);
+        onUpdate(deltaTime);
+        
+        m_MainLayer3D->update(deltaTime);
+        m_MainLayer2D->update(deltaTime);
+        m_GUIView->update(deltaTime);
     }
 }
 
 void OScene::render(float interpolation)
 {
     if (m_Created) {
-      m_MainLayer3D->render(interpolation);
-      m_MainLayer2D->render(interpolation);
-      m_GUIView->render(interpolation);
+        m_MainLayer3D->render(interpolation);
+        m_MainLayer2D->render(interpolation);
+        m_GUIView->render(interpolation);
+        
     }
 }
 

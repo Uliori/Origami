@@ -46,9 +46,10 @@ public:
     CloudsScene();
     virtual ~CloudsScene();
 
-    void create() override;
-    void clear() override;
-    void update(float deltaTime) override;
+    void onCreate() override;
+    void onClear() override;
+    
+    void onUpdate(float deltaTime) override;
     void onResize() override;
 
 };

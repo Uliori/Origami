@@ -16,9 +16,8 @@ BeachScene::BeachScene() : OScene()
 
 }
 
-void BeachScene::create()
+void BeachScene::onCreate()
 {
-    OScene::create();
     
     OTexture *waveTexture   = OResourceManager::textureCache()->loadTexture("wave2.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
     OTexture *boatTexture   = OResourceManager::textureCache()->loadTexture("boat.png");
@@ -86,13 +85,12 @@ void BeachScene::create()
     OResourceManager::textureCache()->releaseTexture("mountains.png");
 }
 
-void BeachScene::clear()
+void BeachScene::onClear()
 {
     clouds.clear();
-    OScene::clear();
 }
 
-void BeachScene::update(float deltaTime)
+void BeachScene::onUpdate(float deltaTime)
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
 
@@ -122,42 +120,7 @@ void BeachScene::update(float deltaTime)
         }
 
     }
-
-    OScene::update(deltaTime);
 }
-
-//void BeachScene::onInput(float deltaTime)
-//{
-//#ifdef O_TARGET_DESKTOP
-//    OLayer2D* sc1_mainLayer = getMainLayer2D();
-//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_W)) {
-//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, CAM_SPEED) * deltaTime));
-//    }
-//
-//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_S)) {
-//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(0.0f, -CAM_SPEED) * deltaTime));
-//    }
-//
-//
-//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_A)) {
-//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(-CAM_SPEED, 0.0f) * deltaTime));
-//    }
-//
-//    if (OInputsManager::manager()->isKeyDown(GLFW_KEY_D)) {
-//        sc1_mainLayer->getCamera()->setPosition(sc1_mainLayer->getCamera()->getPosition() + (maths::vec2(CAM_SPEED, 0.0f) * deltaTime));
-//    }
-//
-//    //    OLog(deltaTime);
-//    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_Q)) {
-//    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() - sc1->CAM_ZOOM);
-//    //    }
-//    //
-//    //    if (inputs::OInputsManager::Manager()->isKeyDown(GLFW_KEY_E)) {
-//    //        sc1_mainLayer->getCamera()->setScale(sc1_mainLayer->getCamera()->getScale() + sc1->CAM_ZOOM);
-//    //    }
-//
-//#endif
-//}
 
 void BeachScene::onResize()
 {

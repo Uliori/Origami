@@ -36,10 +36,8 @@ ParticlesScene::ParticlesScene() : OScene()
     
 }
 
-void ParticlesScene::create()
+void ParticlesScene::onCreate()
 {
-    OScene::create();
-    
     
     OSize frameSize = ODirector::director()->getVirtualSize();
     
@@ -70,6 +68,11 @@ void ParticlesScene::create()
                         }
                     });
     getMainLayer2D()->particleEngine->addParticleBatch(particles);
+}
+
+void ParticlesScene::onClear()
+{
+    
 }
 
 void ParticlesScene::onResize()

@@ -135,6 +135,8 @@
 		9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */; };
 		9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
 		9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
+		91682C551C61490900B678A0 /* SandboxScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91682C531C61490900B678A0 /* SandboxScene.cpp */; };
+		91682C561C61490900B678A0 /* SandboxScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91682C531C61490900B678A0 /* SandboxScene.cpp */; };
 		916E36C01BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
 		916E36C11BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
 		9175749F1BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
@@ -305,6 +307,8 @@
 		9147DF4C1BDBAE35006DBC72 /* OLayer3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLayer3D.h; sourceTree = "<group>"; };
 		9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OCamera2D.cpp; sourceTree = "<group>"; };
 		9147DF521BDBAEA0006DBC72 /* OCamera2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCamera2D.h; sourceTree = "<group>"; };
+		91682C531C61490900B678A0 /* SandboxScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SandboxScene.cpp; sourceTree = "<group>"; };
+		91682C541C61490900B678A0 /* SandboxScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SandboxScene.hpp; sourceTree = "<group>"; };
 		916E36BE1BD92DE3005EE626 /* OTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTexture.h; sourceTree = "<group>"; };
 		916E36BF1BD96E3F005EE626 /* AppData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppData; sourceTree = "<group>"; };
 		9175749B1BD691C000EE8547 /* OShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OShader.cpp; sourceTree = "<group>"; };
@@ -776,6 +780,8 @@
 				91F235131C5A7B340066A66F /* Particles2Scene.hpp */,
 				91F235141C5A7B340066A66F /* ParticlesScene.cpp */,
 				91F235151C5A7B340066A66F /* ParticlesScene.hpp */,
+				91682C531C61490900B678A0 /* SandboxScene.cpp */,
+				91682C541C61490900B678A0 /* SandboxScene.hpp */,
 			);
 			path = AppSrc;
 			sourceTree = "<group>";
@@ -1043,6 +1049,7 @@
 				913BC6F01BDF8A210013209D /* hb-ot-tag.cc in Sources */,
 				913BC6D81BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */,
 				913BC9511BE002C90013209D /* ftxf86.c in Sources */,
+				91682C551C61490900B678A0 /* SandboxScene.cpp in Sources */,
 				913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
 				91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */,
@@ -1084,6 +1091,7 @@
 				917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */,
 				91F5F3C01BC6FCF40030DA6A /* AppDelegate.m in Sources */,
 				913BC96A1BE003500013209D /* sfnt.c in Sources */,
+				91682C561C61490900B678A0 /* SandboxScene.cpp in Sources */,
 				913BC9481BE002C90013209D /* ftinit.c in Sources */,
 				91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */,
 				91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */,

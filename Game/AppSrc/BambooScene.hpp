@@ -45,7 +45,9 @@ public:
     BambooScene();
     virtual ~BambooScene();
     
-    void create() override;
+    void onCreate() override;
+    void onClear() override;
+    
     void onResize() override;
     
 };

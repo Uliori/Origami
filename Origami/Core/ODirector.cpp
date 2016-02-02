@@ -161,7 +161,7 @@ void ODirector::reloadCurrentScene()
 void ODirector::updateScene(OScene *scene, float deltaTime)
 {
     if (scene && scene->isCreated()) {
-        scene->onInput(deltaTime);
+        scene->onInput(OInputsManager::manager(), deltaTime);
         scene->update(deltaTime);
     }
 }

@@ -17,9 +17,8 @@ BeachNMScene::BeachNMScene() : OScene()
 
 }
 
-void BeachNMScene::create()
+void BeachNMScene::onCreate()
 {
-    OScene::create();
     
     OTexture *waveTexture   = OResourceManager::textureCache()->loadTexture("wave2.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
     OTexture *boatTexture   = OResourceManager::textureCache()->loadTexture("boat.png");
@@ -86,10 +85,13 @@ void BeachNMScene::create()
 
 }
 
-
-void BeachNMScene::update(float deltaTime)
+void BeachNMScene::onClear()
 {
-    if (isCreated()) {
+    
+}
+
+void BeachNMScene::onUpdate(float deltaTime)
+{
       OSize frameSize = ODirector::director()->getVirtualSize();
 
       float time = sin(ODirector::director()->getTimer()->getTime() / 1000.0);
@@ -107,9 +109,6 @@ void BeachNMScene::update(float deltaTime)
 
       position = boat->getPosition();
       boat->setPosition(maths::vec2(p + st * 60,  30 + sin(time * 2.5f) * WAVE_SPEED));
-
-      OScene::update(deltaTime);
-    }
 
 }
 

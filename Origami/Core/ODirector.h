@@ -8,6 +8,7 @@
 #include <Core/Utils/OTime.h>
 #include <Core/Maths/OGeometry.h>
 #include <Core/Graphics/Scenes/OScene.h>
+#include <Core/Inputs/OInputsManager.h>
 
 
 NS_O_BEGIN

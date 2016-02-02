@@ -1,7 +1,7 @@
 /****************************************************************************
- BeachNMScene.hpp
+ SandboxScene.cpp
  
- Created by El Mehdi KHALLOUKI on 1/16/16.
+ Created by El Mehdi KHALLOUKI on 2/2/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,41 +24,37 @@
  
  ****************************************************************************/
 
-#include <Core/ODirector.h>
-#include <Core/Graphics/Scenes/OScene.h>
+#include "SandboxScene.hpp"
+#include <Core/Inputs/OInputsManager.h>
+#include <Core/Graphics/2D/OParticleBach2D.hpp>
 
-#include <Core/OMacros.h>
-USING_NS_O
+SandboxScene::SandboxScene()
+{
+    
+}
 
-#define WAVE_SPEED 20
+SandboxScene::~SandboxScene()
+{
+    
+}
 
-class BeachNMScene : public OScene {
-    
-private:
-    
-    OSprite *sky;
-    OSprite *sun;
-    OSprite *boat;
-    OSprite *wave1;
-    OSprite *wave2;
-    OSprite *wave3;
-    OSprite *mountains1;
-    
-    OParticleBatch2D *particles;
-    
-    const float waterSpeed = .04f;
-    
-    
-public:
-    
-    BeachNMScene();
-    virtual ~BeachNMScene();
-    
-    void onCreate() override;
-    void onClear() override;
-    
-    void onUpdate(float deltaTime) override;
-    void onResize() override;
-    
-};
+void SandboxScene::onUpdate(float deltaTime)
+{
 
+}
+
+void SandboxScene::onCreate()
+{
+    
+}
+
+void SandboxScene::onClear()
+{
+    
+}
+
+void SandboxScene::onResize()
+{
+    OSize frameSize = ODirector::director()->getVirtualSize();
+    
+}

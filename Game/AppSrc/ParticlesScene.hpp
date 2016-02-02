@@ -46,7 +46,9 @@ public:
     ParticlesScene();
     virtual ~ParticlesScene();
     
-    void create() override;
+    void onCreate() override;
+    void onClear() override;
+    
     void onResize() override;
     
 };

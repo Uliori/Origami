@@ -45,10 +45,8 @@ BeachAScene::BeachAScene() : OScene()
 
 }
 
-void BeachAScene::create()
+void BeachAScene::onCreate()
 {
-    OScene::create();
-
     OTexture *waveTexture   = OResourceManager::textureCache()->loadTexture("wave2.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
     OTexture *boatTexture   = OResourceManager::textureCache()->loadTexture("boat.png");
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
@@ -139,13 +137,12 @@ void BeachAScene::create()
     OResourceManager::textureCache()->releaseTexture("mountains.png");
 }
 
-void BeachAScene::clear()
+void BeachAScene::onClear()
 {
     clouds.clear();
-    OScene::clear();
 }
 
-void BeachAScene::update(float deltaTime)
+void BeachAScene::onUpdate(float deltaTime)
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
 
@@ -214,8 +211,6 @@ void BeachAScene::update(float deltaTime)
         }
 
     }
-
-    OScene::update(deltaTime);
 }
 
 

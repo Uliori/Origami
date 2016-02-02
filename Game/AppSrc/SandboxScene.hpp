@@ -1,7 +1,7 @@
 /****************************************************************************
- BeachNMScene.hpp
+ SandboxScene.hpp
  
- Created by El Mehdi KHALLOUKI on 1/16/16.
+ Created by El Mehdi KHALLOUKI on 2/2/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,23 @@
  
  ****************************************************************************/
 
+#pragma once
+
 #include <Core/ODirector.h>
 #include <Core/Graphics/Scenes/OScene.h>
 
 #include <Core/OMacros.h>
 USING_NS_O
 
-#define WAVE_SPEED 20
-
-class BeachNMScene : public OScene {
+class SandboxScene : public OScene {
     
 private:
-    
-    OSprite *sky;
-    OSprite *sun;
-    OSprite *boat;
-    OSprite *wave1;
-    OSprite *wave2;
-    OSprite *wave3;
-    OSprite *mountains1;
-    
-    OParticleBatch2D *particles;
-    
-    const float waterSpeed = .04f;
     
     
 public:
     
-    BeachNMScene();
-    virtual ~BeachNMScene();
+    SandboxScene();
+    virtual ~SandboxScene();
     
     void onCreate() override;
     void onClear() override;
@@ -61,4 +49,3 @@ public:
     void onResize() override;
     
 };
-

@@ -35,10 +35,8 @@ CloudsScene::CloudsScene() : OScene()
 
 }
 
-void CloudsScene::create()
+void CloudsScene::onCreate()
 {
-    OScene::create();
-
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
 
     OSize frameSize = ODirector::director()->getVirtualSize();
@@ -65,13 +63,12 @@ void CloudsScene::create()
     OResourceManager::textureCache()->releaseTexture("cloud.png");
 }
 
-void CloudsScene::clear()
+void CloudsScene::onClear()
 {
     m_Clouds.clear();
-    OScene::clear();
 }
 
-void CloudsScene::update(float deltaTime)
+void CloudsScene::onUpdate(float deltaTime)
 {
     OSize frameSize = ODirector::director()->getVirtualSize();
     maths::vec2 position;
@@ -86,7 +83,6 @@ void CloudsScene::update(float deltaTime)
         }
 
     }
-    OScene::update(deltaTime);
 }
 
 void CloudsScene::onResize()
