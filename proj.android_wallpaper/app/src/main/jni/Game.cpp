@@ -50,10 +50,10 @@ void Game::init(int width, int height)
   if (s_game->getReferenceCount() == 1) {
     s_game->start();
   }
-  else
-  {
+//  else
+//  {
      OResourceManager::reloadResources();
-  }
+//  }
 
   DESIRED_FRAMETIME = MS_IN_SECOND / game()->getPreferredFPS();
   previousTicks = ODirector::director()->getTimer()->getTime();

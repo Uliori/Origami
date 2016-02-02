@@ -85,7 +85,7 @@ public abstract class OpenGLES2WallpaperService extends GLWallpaperService {
         	super.onVisibilityChanged(visible);
         	
         	if (WallpaperRenderer.m_height != 0 && WallpaperRenderer.m_width != 0) {
-        		GL2JNILib.setPaused(!visible);
+				GL2JNILib.setPaused(!visible);
 			}
         }
         
