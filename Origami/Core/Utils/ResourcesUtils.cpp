@@ -8,8 +8,12 @@
 #import <Foundation/Foundation.h>
 #elif __ANDROID__
 #include <android/asset_manager.h>
+	#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+		#include "native_engine.hpp"
+	#else
+		extern AAssetManager *mgr;
+	#endif
 
-extern AAssetManager *mgr;
 #endif
 
 NS_O_BEGIN
@@ -40,6 +44,14 @@ const char* ResourcesUtils::getResourcePathforFile(const char * file) {
 bool ResourcesUtils::doesFileExists(const char * file)
 {
 #ifdef __ANDROID__
+		#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+	    AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#endif
+    if (!mgr){
+        OErrLog("The asset manager is not loaded !")
+        return false;
+    }
+
     AAsset* aa = AAssetManager_open(mgr, file, AASSET_MODE_UNKNOWN);
     bool fileExists = false;
     if (aa)
@@ -59,22 +71,28 @@ bool ResourcesUtils::doesFileExists(const char * file)
 int ResourcesUtils::fileLength(const char * filePath, unsigned char *& buffer,
 		size_t &buffer_length) {
 #ifdef __ANDROID__
+		#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER
+				AAssetManager* mgr = NativeEngine::GetInstance()->GetAndroidApp()->activity->assetManager;
+		#endif
+    if (!mgr){
+        OErrLog("The asset manager is not loaded !")
+        return 0;
+    }
 
-	if (!mgr)
-		return 0;
+	 AAsset *fileAsset = AAssetManager_open(mgr, filePath, AASSET_MODE_BUFFER);
 
-	AAsset *fileAsset = AAssetManager_open(mgr, filePath, AASSET_MODE_BUFFER);
+	 if (fileAsset != NULL) {
+	 	buffer_length = AAsset_getLength(fileAsset);
+	 	buffer = new unsigned char[buffer_length + 1];
+	 	int32_t numBytes = AAsset_read(fileAsset, buffer, buffer_length);
+	 	buffer[buffer_length] = '\0';
 
-	if (fileAsset != NULL) {
-		buffer_length = AAsset_getLength(fileAsset);
-		buffer = new unsigned char[buffer_length + 1];
-		int32_t numBytes = AAsset_read(fileAsset, buffer, buffer_length);
-		buffer[buffer_length] = '\0';
-
-		AAsset_close(fileAsset);
+	 	AAsset_close(fileAsset);
+	 }
+	else {
+		OErrLog("Could not load file : " << filePath);
 	}
-
-	return 1;
+	 return 1;
 #else
 	size_t bytes_read;
 	FILE *f;

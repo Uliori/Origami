@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		910A8EE51C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */; };
-		910A8EE61C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */; };
-		911ADE331C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
-		911ADE341C484A4600CCE944 /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE311C484A4600CCE944 /* BambooScene.cpp */; };
 		911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
 		911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
 		911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
@@ -141,8 +137,6 @@
 		9147DF541BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */; };
 		916E36C01BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
 		916E36C11BD96E3F005EE626 /* AppData in Resources */ = {isa = PBXBuildFile; fileRef = 916E36BF1BD96E3F005EE626 /* AppData */; };
-		917155341C34038400161AE5 /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917155321C34038400161AE5 /* BeachScene.cpp */; };
-		917155351C34038400161AE5 /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917155321C34038400161AE5 /* BeachScene.cpp */; };
 		9175749F1BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
 		917574A01BD691C000EE8547 /* OShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9175749B1BD691C000EE8547 /* OShader.cpp */; };
 		917574A61BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; };
@@ -153,8 +147,6 @@
 		919AA4EE1BC816D6004C7052 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4ED1BC816D6004C7052 /* UIKit.framework */; };
 		919AA4F01BC816DB004C7052 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4EF1BC816DB004C7052 /* GLKit.framework */; };
 		919AA4F21BC816E0004C7052 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4F11BC816E0004C7052 /* OpenGLES.framework */; };
-		919AA4F71BC82006004C7052 /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4F51BC82006004C7052 /* OGame.cpp */; };
-		919AA4F81BC82006004C7052 /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4F51BC82006004C7052 /* OGame.cpp */; };
 		919AA4FC1BC85418004C7052 /* OApplicationiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FA1BC85418004C7052 /* OApplicationiOS.cpp */; };
 		919AA4FE1BC85435004C7052 /* OWindowiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919AA4FD1BC85435004C7052 /* OWindowiOS.cpp */; };
 		919AA5041BC85E27004C7052 /* s55HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5011BC85E27004C7052 /* s55HD.png */; };
@@ -197,8 +189,22 @@
 		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; };
 		91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
 		91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */; };
-		91DC9D031C4180B60001F7B4 /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */; };
-		91DC9D041C4180B60001F7B4 /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */; };
+		91F235161C5A7B340066A66F /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235061C5A7B340066A66F /* BambooScene.cpp */; };
+		91F235171C5A7B340066A66F /* BambooScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235061C5A7B340066A66F /* BambooScene.cpp */; };
+		91F235181C5A7B340066A66F /* BeachAScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235081C5A7B340066A66F /* BeachAScene.cpp */; };
+		91F235191C5A7B340066A66F /* BeachAScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235081C5A7B340066A66F /* BeachAScene.cpp */; };
+		91F2351A1C5A7B340066A66F /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */; };
+		91F2351B1C5A7B340066A66F /* BeachNMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */; };
+		91F2351C1C5A7B340066A66F /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350C1C5A7B340066A66F /* BeachScene.cpp */; };
+		91F2351D1C5A7B340066A66F /* BeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350C1C5A7B340066A66F /* BeachScene.cpp */; };
+		91F2351E1C5A7B340066A66F /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350E1C5A7B340066A66F /* CloudsScene.cpp */; };
+		91F2351F1C5A7B340066A66F /* CloudsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F2350E1C5A7B340066A66F /* CloudsScene.cpp */; };
+		91F235201C5A7B340066A66F /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235101C5A7B340066A66F /* OGame.cpp */; };
+		91F235211C5A7B340066A66F /* OGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235101C5A7B340066A66F /* OGame.cpp */; };
+		91F235221C5A7B340066A66F /* Particles2Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235121C5A7B340066A66F /* Particles2Scene.cpp */; };
+		91F235231C5A7B340066A66F /* Particles2Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235121C5A7B340066A66F /* Particles2Scene.cpp */; };
+		91F235241C5A7B340066A66F /* ParticlesScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235141C5A7B340066A66F /* ParticlesScene.cpp */; };
+		91F235251C5A7B340066A66F /* ParticlesScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F235141C5A7B340066A66F /* ParticlesScene.cpp */; };
 		91F5F3901BC6F8F70030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F38F1BC6F8F70030DA6A /* main.m */; };
 		91F5F3921BC6F8F80030DA6A /* MacAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */; };
 		91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5F3BC1BC6FCF40030DA6A /* main.m */; };
@@ -213,10 +219,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachNMScene.cpp; sourceTree = "<group>"; };
-		910A8EE41C4AB4AF006ACBC3 /* BeachNMScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachNMScene.hpp; sourceTree = "<group>"; };
-		911ADE311C484A4600CCE944 /* BambooScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BambooScene.cpp; sourceTree = "<group>"; };
-		911ADE321C484A4600CCE944 /* BambooScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BambooScene.hpp; sourceTree = "<group>"; };
+		91068BAE1C4D95D700787929 /* OColorRGBA8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OColorRGBA8.h; sourceTree = "<group>"; };
 		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
 		911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBach2D.hpp; sourceTree = "<group>"; };
 		911ADE391C49868C00CCE944 /* OTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTypes.h; sourceTree = "<group>"; };
@@ -304,8 +307,6 @@
 		9147DF521BDBAEA0006DBC72 /* OCamera2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCamera2D.h; sourceTree = "<group>"; };
 		916E36BE1BD92DE3005EE626 /* OTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTexture.h; sourceTree = "<group>"; };
 		916E36BF1BD96E3F005EE626 /* AppData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppData; sourceTree = "<group>"; };
-		917155321C34038400161AE5 /* BeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachScene.cpp; sourceTree = "<group>"; };
-		917155331C34038400161AE5 /* BeachScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachScene.hpp; sourceTree = "<group>"; };
 		9175749B1BD691C000EE8547 /* OShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OShader.cpp; sourceTree = "<group>"; };
 		9175749C1BD691C000EE8547 /* OShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OShader.h; sourceTree = "<group>"; };
 		917574A31BD6972E00EE8547 /* program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program.h; sourceTree = "<group>"; };
@@ -318,8 +319,6 @@
 		919AA4ED1BC816D6004C7052 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4EF1BC816DB004C7052 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4F11BC816E0004C7052 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
-		919AA4F51BC82006004C7052 /* OGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGame.cpp; sourceTree = "<group>"; };
-		919AA4F61BC82006004C7052 /* OGame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OGame.hpp; sourceTree = "<group>"; };
 		919AA4FA1BC85418004C7052 /* OApplicationiOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OApplicationiOS.cpp; path = iOS/OApplicationiOS.cpp; sourceTree = "<group>"; };
 		919AA4FD1BC85435004C7052 /* OWindowiOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OWindowiOS.cpp; path = iOS/OWindowiOS.cpp; sourceTree = "<group>"; };
 		919AA5011BC85E27004C7052 /* s55HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s55HD.png; sourceTree = "<group>"; };
@@ -364,8 +363,22 @@
 		91D0521E1BC861DC00F4F246 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91D3CEC31C39610300C3B1A3 /* OGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGeometry.h; sourceTree = "<group>"; };
 		91D3CEC41C39610300C3B1A3 /* OGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGeometry.cpp; sourceTree = "<group>"; };
-		91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CloudsScene.cpp; sourceTree = "<group>"; };
-		91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CloudsScene.hpp; sourceTree = "<group>"; };
+		91F235061C5A7B340066A66F /* BambooScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BambooScene.cpp; sourceTree = "<group>"; };
+		91F235071C5A7B340066A66F /* BambooScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BambooScene.hpp; sourceTree = "<group>"; };
+		91F235081C5A7B340066A66F /* BeachAScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachAScene.cpp; sourceTree = "<group>"; };
+		91F235091C5A7B340066A66F /* BeachAScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachAScene.hpp; sourceTree = "<group>"; };
+		91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachNMScene.cpp; sourceTree = "<group>"; };
+		91F2350B1C5A7B340066A66F /* BeachNMScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachNMScene.hpp; sourceTree = "<group>"; };
+		91F2350C1C5A7B340066A66F /* BeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeachScene.cpp; sourceTree = "<group>"; };
+		91F2350D1C5A7B340066A66F /* BeachScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeachScene.hpp; sourceTree = "<group>"; };
+		91F2350E1C5A7B340066A66F /* CloudsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CloudsScene.cpp; sourceTree = "<group>"; };
+		91F2350F1C5A7B340066A66F /* CloudsScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CloudsScene.hpp; sourceTree = "<group>"; };
+		91F235101C5A7B340066A66F /* OGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGame.cpp; sourceTree = "<group>"; };
+		91F235111C5A7B340066A66F /* OGame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OGame.hpp; sourceTree = "<group>"; };
+		91F235121C5A7B340066A66F /* Particles2Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particles2Scene.cpp; sourceTree = "<group>"; };
+		91F235131C5A7B340066A66F /* Particles2Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Particles2Scene.hpp; sourceTree = "<group>"; };
+		91F235141C5A7B340066A66F /* ParticlesScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticlesScene.cpp; sourceTree = "<group>"; };
+		91F235151C5A7B340066A66F /* ParticlesScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParticlesScene.hpp; sourceTree = "<group>"; };
 		91F5F3881BC6F8F70030DA6A /* engine_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = engine_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F5F38F1BC6F8F70030DA6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91F5F3911BC6F8F80030DA6A /* MacAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MacAssets.xcassets; sourceTree = "<group>"; };
@@ -565,16 +578,7 @@
 		919AA4F41BC81FE2004C7052 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				919AA4F61BC82006004C7052 /* OGame.hpp */,
-				919AA4F51BC82006004C7052 /* OGame.cpp */,
-				917155331C34038400161AE5 /* BeachScene.hpp */,
-				917155321C34038400161AE5 /* BeachScene.cpp */,
-				910A8EE41C4AB4AF006ACBC3 /* BeachNMScene.hpp */,
-				910A8EE31C4AB4AF006ACBC3 /* BeachNMScene.cpp */,
-				91DC9D021C4180B60001F7B4 /* CloudsScene.hpp */,
-				91DC9D011C4180B60001F7B4 /* CloudsScene.cpp */,
-				911ADE321C484A4600CCE944 /* BambooScene.hpp */,
-				911ADE311C484A4600CCE944 /* BambooScene.cpp */,
+				91F235051C5A7B340066A66F /* AppSrc */,
 				916E36BF1BD96E3F005EE626 /* AppData */,
 			);
 			name = Game;
@@ -643,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				916E36BE1BD92DE3005EE626 /* OTexture.h */,
+				91068BAE1C4D95D700787929 /* OColorRGBA8.h */,
 				91B0FED21BC71C3C0051529B /* OWindow.h */,
 				91B0FED11BC71C3C0051529B /* OWindow.cpp */,
 				91FB90131BCB1D6600526B2D /* 2D */,
@@ -750,6 +755,29 @@
 				91B0FF221BC71F6E0051529B /* CoreVideo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91F235051C5A7B340066A66F /* AppSrc */ = {
+			isa = PBXGroup;
+			children = (
+				91F235061C5A7B340066A66F /* BambooScene.cpp */,
+				91F235071C5A7B340066A66F /* BambooScene.hpp */,
+				91F235081C5A7B340066A66F /* BeachAScene.cpp */,
+				91F235091C5A7B340066A66F /* BeachAScene.hpp */,
+				91F2350A1C5A7B340066A66F /* BeachNMScene.cpp */,
+				91F2350B1C5A7B340066A66F /* BeachNMScene.hpp */,
+				91F2350C1C5A7B340066A66F /* BeachScene.cpp */,
+				91F2350D1C5A7B340066A66F /* BeachScene.hpp */,
+				91F2350E1C5A7B340066A66F /* CloudsScene.cpp */,
+				91F2350F1C5A7B340066A66F /* CloudsScene.hpp */,
+				91F235101C5A7B340066A66F /* OGame.cpp */,
+				91F235111C5A7B340066A66F /* OGame.hpp */,
+				91F235121C5A7B340066A66F /* Particles2Scene.cpp */,
+				91F235131C5A7B340066A66F /* Particles2Scene.hpp */,
+				91F235141C5A7B340066A66F /* ParticlesScene.cpp */,
+				91F235151C5A7B340066A66F /* ParticlesScene.hpp */,
+			);
+			path = AppSrc;
 			sourceTree = "<group>";
 		};
 		91F5F37D1BC563E20030DA6A = {
@@ -946,8 +974,10 @@
 				91B0FEF01BC71C3C0051529B /* OWindow.cpp in Sources */,
 				913BC93D1BE002C90013209D /* ftbbox.c in Sources */,
 				913BC95D1BE0030C0013209D /* cff.c in Sources */,
+				91F235201C5A7B340066A66F /* OGame.cpp in Sources */,
 				911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */,
 				913BC6E21BDF8A210013209D /* hb-ot-shape-complex-myanmar.cc in Sources */,
+				91F2351A1C5A7B340066A66F /* BeachNMScene.cpp in Sources */,
 				91D3CEC51C39610300C3B1A3 /* OGeometry.cpp in Sources */,
 				911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				91B0FF201BC71E1C0051529B /* SOIL2.c in Sources */,
@@ -968,8 +998,8 @@
 				913BC7021BDF8A210013209D /* hb-unicode.cc in Sources */,
 				913BC6DE1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911B76331BD076E800D09E89 /* ORendererFactory.cpp in Sources */,
-				919AA4F71BC82006004C7052 /* OGame.cpp in Sources */,
 				913BC65E1BDF8A210013209D /* hb-ft.cc in Sources */,
+				91F2351E1C5A7B340066A66F /* CloudsScene.cpp in Sources */,
 				912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */,
 				913BC9471BE002C90013209D /* ftinit.c in Sources */,
 				913BC9601BE0031D0013209D /* truetype.c in Sources */,
@@ -979,14 +1009,14 @@
 				913BC72B1BDFF03B0013209D /* vector.c in Sources */,
 				913BC94B1BE002C90013209D /* ftstroke.c in Sources */,
 				913BC6F61BDF8A210013209D /* hb-shape.cc in Sources */,
+				91F2351C1C5A7B340066A66F /* BeachScene.cpp in Sources */,
 				91B0FF1C1BC71E1C0051529B /* image_DXT.c in Sources */,
 				913BC9571BE002F30013209D /* pshinter.c in Sources */,
 				9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
+				91F235221C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
 				913BC9491BE002C90013209D /* ftlcdfil.c in Sources */,
-				917155341C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC6F21BDF8A210013209D /* hb-set.cc in Sources */,
 				91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */,
-				911ADE331C484A4600CCE944 /* BambooScene.cpp in Sources */,
 				91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */,
 				913BC9661BE0033A0013209D /* smooth.c in Sources */,
 				91B0FEF61BC71C3C0051529B /* OWindowDesktop.cpp in Sources */,
@@ -997,6 +1027,7 @@
 				911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */,
 				913BC6EE1BDF8A210013209D /* hb-ot-shape.cc in Sources */,
 				913BC9541BE002E50013209D /* ftraster.c in Sources */,
+				91F235241C5A7B340066A66F /* ParticlesScene.cpp in Sources */,
 				913BC9691BE003500013209D /* sfnt.c in Sources */,
 				913BC65A1BDF8A210013209D /* hb-fallback-shape.cc in Sources */,
 				913BC6F81BDF8A210013209D /* hb-shaper.cc in Sources */,
@@ -1015,9 +1046,8 @@
 				913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
 				91B0FF1E1BC71E1C0051529B /* image_helper.c in Sources */,
-				91DC9D031C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
-				910A8EE51C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */,
 				913BC93B1BE002C90013209D /* ftbase.c in Sources */,
+				91F235181C5A7B340066A66F /* BeachAScene.cpp in Sources */,
 				913BC6FA1BDF8A210013209D /* hb-tt-font.cc in Sources */,
 				913BC9451BE002C90013209D /* ftglyph.c in Sources */,
 				9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */,
@@ -1030,6 +1060,7 @@
 				913BC6DC1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */,
 				913BC93F1BE002C90013209D /* ftbitmap.c in Sources */,
 				913BC6EC1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,
+				91F235161C5A7B340066A66F /* BambooScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,18 +1081,18 @@
 				913BC94C1BE002C90013209D /* ftstroke.c in Sources */,
 				913BC94E1BE002C90013209D /* ftsystem.c in Sources */,
 				913BC7321BDFF1020013209D /* platform.c in Sources */,
-				910A8EE61C4AB4AF006ACBC3 /* BeachNMScene.cpp in Sources */,
 				917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */,
 				91F5F3C01BC6FCF40030DA6A /* AppDelegate.m in Sources */,
 				913BC96A1BE003500013209D /* sfnt.c in Sources */,
 				913BC9481BE002C90013209D /* ftinit.c in Sources */,
 				91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */,
-				919AA4F81BC82006004C7052 /* OGame.cpp in Sources */,
 				91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */,
 				917574A01BD691C000EE8547 /* OShader.cpp in Sources */,
+				91F2351D1C5A7B340066A66F /* BeachScene.cpp in Sources */,
 				911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
 				913BC72C1BDFF03B0013209D /* vector.c in Sources */,
 				913BC6551BDF8A210013209D /* hb-buffer.cc in Sources */,
+				91F235251C5A7B340066A66F /* ParticlesScene.cpp in Sources */,
 				913BC7071BDF8A210013209D /* hb-warning.cc in Sources */,
 				913BC65F1BDF8A210013209D /* hb-ft.cc in Sources */,
 				91B0FF211BC71E1C0051529B /* SOIL2.c in Sources */,
@@ -1078,9 +1109,9 @@
 				913BC93C1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
-				91DC9D041C4180B60001F7B4 /* CloudsScene.cpp in Sources */,
 				911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
+				91F2351F1C5A7B340066A66F /* CloudsScene.cpp in Sources */,
 				91B0FEFB1BC71C3C0051529B /* OResourceManager.cpp in Sources */,
 				913BC6F71BDF8A210013209D /* hb-shape.cc in Sources */,
 				913BC65B1BDF8A210013209D /* hb-fallback-shape.cc in Sources */,
@@ -1088,23 +1119,25 @@
 				913BC72A1BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC6EB1BDF8A210013209D /* hb-ot-shape-fallback.cc in Sources */,
 				9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
+				91F235191C5A7B340066A66F /* BeachAScene.cpp in Sources */,
+				91F235231C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
 				913BC64D1BDF8A210013209D /* hb-blob.cc in Sources */,
 				913BC7031BDF8A210013209D /* hb-unicode.cc in Sources */,
 				91B0FEF91BC71C3C0051529B /* OEException.cpp in Sources */,
 				91B0FEF31BC71C3C0051529B /* OMaths.cpp in Sources */,
+				91F235211C5A7B340066A66F /* OGame.cpp in Sources */,
 				9147DF4E1BDBAE35006DBC72 /* OLayer2D.cpp in Sources */,
 				913BC6E91BDF8A210013209D /* hb-ot-shape-complex-thai.cc in Sources */,
 				913BC94A1BE002C90013209D /* ftlcdfil.c in Sources */,
+				91F235171C5A7B340066A66F /* BambooScene.cpp in Sources */,
 				913BC6F91BDF8A210013209D /* hb-shaper.cc in Sources */,
 				91F5F3BD1BC6FCF40030DA6A /* main.m in Sources */,
 				913BC9501BE002C90013209D /* fttype1.c in Sources */,
 				913BC9461BE002C90013209D /* ftglyph.c in Sources */,
 				913BC65D1BDF8A210013209D /* hb-font.cc in Sources */,
 				913BC6571BDF8A210013209D /* hb-common.cc in Sources */,
-				911ADE341C484A4600CCE944 /* BambooScene.cpp in Sources */,
 				913BC6F31BDF8A210013209D /* hb-set.cc in Sources */,
 				911ADE3D1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */,
-				917155351C34038400161AE5 /* BeachScene.cpp in Sources */,
 				913BC9551BE002E50013209D /* ftraster.c in Sources */,
 				913BC6531BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
 				913BC9611BE0031D0013209D /* truetype.c in Sources */,
@@ -1117,6 +1150,7 @@
 				91D3CEC61C39610300C3B1A3 /* OGeometry.cpp in Sources */,
 				913BC6E71BDF8A210013209D /* hb-ot-shape-complex-sea.cc in Sources */,
 				913BC9421BE002C90013209D /* ftfstype.c in Sources */,
+				91F2351B1C5A7B340066A66F /* BeachNMScene.cpp in Sources */,
 				913BC6ED1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,
 				913BC92E1BE0026D0013209D /* ftrend1.c in Sources */,
 				913BC9641BE003270013209D /* autofit.c in Sources */,

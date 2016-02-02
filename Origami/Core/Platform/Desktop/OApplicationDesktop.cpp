@@ -46,12 +46,11 @@ void OApplication::run()
             while (accumulator >= DESIRED_FRAMETIME && loops < MAX_PHYSICS_STEPS) {
                 accumulator -= DESIRED_FRAMETIME;
                 loops++;
-                    update(DESIRED_FRAMETIME / MS_IN_SECONDS);
-                    updates ++;
+                update(DESIRED_FRAMETIME / MS_IN_SECONDS);
+                updates ++;
+                refresh();
             }
         }
-
-        refresh();
 
         float interpolation = float( ODirector::director()->getTimer()->getTime() + DESIRED_FRAMETIME - previousTicks )/ float( DESIRED_FRAMETIME );
         render(interpolation);

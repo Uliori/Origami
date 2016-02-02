@@ -16,7 +16,7 @@ class OShader
 protected:
     const char* m_Name;
 
-    Program* m_Program;
+    Program* m_Program = nullptr;
 
 public:
 //        OShader(const char* name, const char* vertSrc, const char* fragSrc);

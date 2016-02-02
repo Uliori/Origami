@@ -12,6 +12,7 @@
 #include <Core/Utils/OGLUtils.h>
 
 #include <Core/OMacros.h>
+#include <Core/Graphics/OColorRGBA8.h>
 
 NS_O_BEGIN
 

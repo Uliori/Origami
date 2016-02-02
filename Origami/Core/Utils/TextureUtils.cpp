@@ -90,6 +90,7 @@ OTexture* TextureUtils::loadTexture(const char* texname, bool invert_y /* = true
     texture->param_W_S = param_W_S;
     texture->param_W_T = param_W_T;
 
+    glBindTexture(GL_TEXTURE_2D,0);
     // Créer la texture
     glGenTextures(1, &(texture->textureID));
     glBindTexture(GL_TEXTURE_2D, texture->textureID);
@@ -159,7 +160,7 @@ void TextureUtils::reloadTexture(OTexture* texture, const char * imagepath, bool
       }
   }
 
-//
+  glBindTexture(GL_TEXTURE_2D,0);
 // Créer la texture
   glGenTextures(1, &(texture->textureID));
   glBindTexture(GL_TEXTURE_2D, texture->textureID);

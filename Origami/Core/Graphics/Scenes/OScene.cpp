@@ -45,16 +45,20 @@ void OScene::clear()
 
 void OScene::update(float deltaTime)
 {
-    m_MainLayer3D->update(deltaTime);
-    m_MainLayer2D->update(deltaTime);
-    m_GUIView->update(deltaTime);
+    if (m_Created) {
+      m_MainLayer3D->update(deltaTime);
+      m_MainLayer2D->update(deltaTime);
+      m_GUIView->update(deltaTime);
+    }
 }
 
 void OScene::render(float interpolation)
 {
-    m_MainLayer3D->render(interpolation);
-    m_MainLayer2D->render(interpolation);
-    m_GUIView->render(interpolation);
+    if (m_Created) {
+      m_MainLayer3D->render(interpolation);
+      m_MainLayer2D->render(interpolation);
+      m_GUIView->render(interpolation);
+    }
 }
 
 void OScene::addSprite(OSprite *sprite)

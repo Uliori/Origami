@@ -11,9 +11,9 @@ NS_O_BEGIN
 class OScene{
 
 private:
-    OLayer3D* m_MainLayer3D;
-    OLayer2D* m_MainLayer2D;
-    OLayer2D* m_GUIView;
+    OLayer3D* m_MainLayer3D = nullptr;
+    OLayer2D* m_MainLayer2D = nullptr;
+    OLayer2D* m_GUIView     = nullptr;
 
     bool m_Created = false;
     bool m_Paused  = false;

@@ -47,9 +47,26 @@ public:
         return m_Time;
     }
 
-    double getMachineTime()
+    double getHours()
     {
-        return std::chrono::duration_cast<milliseconds_type>(clock::now().time_since_epoch()).count();
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return local_tm.tm_hour;
+        
+    }
+    
+    double getMinutes()
+    {
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return local_tm.tm_min;
+    }
+    
+    double getDayMinutesTime()
+    {
+        time_t tt = clock::to_time_t(clock::now());
+        tm local_tm = *localtime(&tt);
+        return ((local_tm.tm_hour * 60) + local_tm.tm_min);
     }
 
     static void sleep(int milliseconds)

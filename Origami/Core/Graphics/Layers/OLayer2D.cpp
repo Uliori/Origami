@@ -24,12 +24,11 @@ OLayer2D::OLayer2D(ORenderer2D* renderer) : m_CurrentRenderer(renderer)
 
 }
 
-void OLayer2D::init()
+OLayer2D::~OLayer2D()
 {
-    OSize frameSize = ODirector::director()->getVirtualSize();
-    m_Camera = new OCamera2D(frameSize.width, frameSize.height);
-    particleEngine = new OParticleEngine2D();
+
 }
+
 
 void OLayer2D::updateResolution()
 {
@@ -37,14 +36,11 @@ void OLayer2D::updateResolution()
     m_Camera->setProjection(frameSize.width, frameSize.height);
 }
 
-OLayer2D::~OLayer2D()
-{
-
-}
-
 void OLayer2D::create()
 {
-    init();
+  OSize frameSize = ODirector::director()->getVirtualSize();
+  m_Camera = new OCamera2D(frameSize.width, frameSize.height);
+  particleEngine = new OParticleEngine2D();
 }
 
 void OLayer2D::clear()
@@ -63,23 +59,22 @@ void OLayer2D::update(float deltaTime)
 {
     if(m_Camera) m_Camera->update(deltaTime);
     if(particleEngine) particleEngine->update(deltaTime);
-
 }
 
 void OLayer2D::render(float interpolation)
 {
     if (m_CurrentRenderer) {
         m_CurrentRenderer->begin();
-        
+
         //Send sprites
-        for (const OSprite* renderable : m_Renderables)
-            if(m_Camera->isBoxInView(renderable->getPosition(), renderable->getSize())){
+        for ( OSprite* renderable : m_Renderables)
+            if(m_Camera->isBoxInView(renderable->getPosition(), renderable->getSize()) && !renderable->hidden){
                 renderable->submit(m_CurrentRenderer);
             }
 
         //Send particles
         particleEngine->draw(m_CurrentRenderer);
-        
+
         m_CurrentRenderer->end();
         m_CurrentRenderer->flush(this);
     }

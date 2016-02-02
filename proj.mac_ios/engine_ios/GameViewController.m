@@ -169,18 +169,15 @@
         
         while(accumulator >= DESIRED_FRAMETIME && loops < 10)
         {
-            [AppDelegate appDelegate].game->update(DESIRED_FRAMETIME / 1000.0f);
             accumulator -= DESIRED_FRAMETIME;
-            updates ++;
             loops++;
+            [AppDelegate appDelegate].game->update(DESIRED_FRAMETIME / 1000.0f);
+            updates ++;
+            [AppDelegate appDelegate].game->refresh();
         }
     }
     
-    [AppDelegate appDelegate].game->refresh();
-    
-#ifdef O_MODE_DEBUG
-    
-    
+#ifdef O_MODE_DEBUG    
     tickCounter += passedTime;
     
     if (tickCounter >= 1000.0f) {

@@ -13,7 +13,7 @@ NS_O_BEGIN
 
 class OApplication : public ORef {
 protected:
-    OWindow* m_Window;
+    OWindow* m_Window = nullptr;
 
     uint m_Width, m_Height;
 

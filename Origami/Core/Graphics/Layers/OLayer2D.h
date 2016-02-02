@@ -25,11 +25,10 @@ private:
 
     std::vector<OSprite *> m_Renderables;
 
-    ORenderer2D* m_CurrentRenderer;
-
-    OCamera2D* m_Camera;
+    ORenderer2D* m_CurrentRenderer    = nullptr;
+    OCamera2D* m_Camera               = nullptr;
 public:
-    OParticleEngine2D *particleEngine;
+    OParticleEngine2D *particleEngine = nullptr;
 
 public:
     OLayer2D();
@@ -49,7 +48,5 @@ public:
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
 
-private:
-    void init();
 };
 NS_O_END

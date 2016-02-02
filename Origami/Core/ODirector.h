@@ -93,6 +93,7 @@ public:
     void updateScene(OScene* scene, float deltaTime);
     void renderScene(OScene* scene, float interpolation);
     inline OScene* getCurrentScene() {return m_CurrentScene;}
+    inline std::string getCurrentSceneID(){ return m_CurrentSceneID; }
 
     void reloadScene(OScene *scene);
     void reloadCurrentScene();

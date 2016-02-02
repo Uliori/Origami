@@ -11,9 +11,7 @@ OTextureCache::OTextureCache() {
 OTextureCache::~OTextureCache() {
     for (auto iterator : m_TextureMap) {
         OTexture *texture = iterator.second;
-        if(glIsTexture(texture->textureID) == true)
-            glDeleteTextures(1, &texture->textureID);
-
+        glDeleteTextures(1, &texture->textureID);
         SAFE_DELETE(texture);
     }
     m_TextureMap.clear();
@@ -41,7 +39,7 @@ OTexture* OTextureCache::loadTexture(const std::string& texturePath,
     {
         mit->second->retain();
     }
-    
+
     return mit->second;
 }
 
@@ -51,10 +49,11 @@ void OTextureCache::releaseTexture(const std::string& texturePath)
     if (mit != m_TextureMap.end()) {
         OTexture *texture = mit->second;
         int tmpRC = texture->getReferenceCount();
-        texture->release();
         if (tmpRC == 1) {
-            m_TextureMap.erase(mit);
+          glDeleteTextures(1, &texture->textureID);
+          m_TextureMap.erase(mit);
         }
+        texture->release();
     }
 }
 
@@ -62,9 +61,9 @@ void OTextureCache::checkTextures()
 {
     for(auto texture : m_TextureMap)
     {
-        if (glIsTexture(texture.second->textureID) == false) {
+        if (!glIsTexture(texture.second->textureID)) {
+            TextureUtils::reloadTexture(texture.second, texture.first.c_str());
             OLog("Texture : "<< texture.first << " recreated.");
-            texture.second = TextureUtils::loadTexture(texture.first.c_str());
         }
     }
 }
@@ -73,9 +72,7 @@ void OTextureCache::reloadTextures()
 {
     for(auto texture : m_TextureMap)
     {
-      if (glIsTexture(texture.second->textureID) == true) {
-          glDeleteTextures(1, &texture.second->textureID);
-      }
+      // glDeleteTextures(1, &texture.second->textureID);
       // then recreate
       TextureUtils::reloadTexture(texture.second, texture.first.c_str());
     }

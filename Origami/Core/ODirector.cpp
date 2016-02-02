@@ -197,9 +197,9 @@ void ODirector::addScene(const std::string& scene_name, OScene *scene, bool setC
     }
 
     m_Scenes.insert(std::make_pair(scene_name, scene));
-    if (setCurrent || m_CurrentScene == nullptr) {
-        loadScene(scene_name);
-    }
+//     if (setCurrent || m_CurrentScene == nullptr) {
+//         loadScene(scene_name);
+//     }
 }
 
 void ODirector::deleteScene(const std::string& scene_name)
@@ -221,7 +221,7 @@ void ODirector::loadScene(const std::string& scene_name)
     auto s_scene = m_Scenes.find(scene_name);
     if(s_scene != m_Scenes.end())
     {
-        if (m_CurrentScene) {
+        if (m_CurrentScene && m_CurrentScene->isCreated()) {
           m_CurrentScene->clear();
         }
         m_CurrentScene = s_scene->second;
