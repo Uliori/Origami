@@ -13,11 +13,11 @@
     <string name="adsD">Ads disabled !</string>
 
 
-    <!-- <string name="banner_ad_unit_id">ca-app-pub-1060148675448438/9756338702</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-1060148675448438/5186538306</string> -->
+    <string name="banner_ad_unit_id">ca-app-pub-1060148675448438/9756338702</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-1060148675448438/5186538306</string>
 
     <!-- for tests -->
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--<string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
 
 </resources>
