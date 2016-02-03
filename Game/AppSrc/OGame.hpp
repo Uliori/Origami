@@ -8,9 +8,8 @@
 
 #pragma once
 
-#include <Core/App/OApplication.h>
+#include <Core/Origami.h>
 
-#include <Core/OMacros.h>
 USING_NS_O
 
 class OGame : public OApplication

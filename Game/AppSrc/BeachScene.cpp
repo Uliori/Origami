@@ -8,9 +8,6 @@
 
 #include "BeachScene.hpp"
 
-#include <Core/Utils/OResourceManager.h>
-#include <Core/Inputs/OInputsManager.h>
-
 BeachScene::BeachScene() : OScene()
 {
 

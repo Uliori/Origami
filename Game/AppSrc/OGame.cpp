@@ -7,8 +7,6 @@
 //
 
 #include "OGame.hpp"
-#include <Core/ODirector.h>
-#include <Core/Inputs/OInputsManager.h>
 
 //sand
 #include "CloudsScene.hpp"

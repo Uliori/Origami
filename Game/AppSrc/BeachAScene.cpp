@@ -34,10 +34,6 @@
 
 #include "BeachAScene.hpp"
 
-#include <Core/Utils/OResourceManager.h>
-#include <Core/Inputs/OInputsManager.h>
-#include <Core/Graphics/2D/OParticleBach2D.hpp>
-
 bool BeachAScene::isDay = true;
 
 BeachAScene::BeachAScene() : OScene()

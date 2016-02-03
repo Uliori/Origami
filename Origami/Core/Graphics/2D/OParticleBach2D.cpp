@@ -24,7 +24,7 @@
 
  ****************************************************************************/
 
-#include "OParticleBach2D.hpp"
+#include "OParticleBatch2D.hpp"
 #include <Core/Utils/OResourceManager.h>
 
 NS_O_BEGIN

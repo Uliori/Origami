@@ -27,10 +27,8 @@
 
 #pragma once
 
-#include <Core/ODirector.h>
-#include <Core/Graphics/Scenes/OScene.h>
+#include <Core/Origami.h>
 
-#include <Core/OMacros.h>
 USING_NS_O
 
 class BambooScene : public OScene {

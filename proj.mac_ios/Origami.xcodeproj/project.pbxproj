@@ -223,7 +223,7 @@
 /* Begin PBXFileReference section */
 		91068BAE1C4D95D700787929 /* OColorRGBA8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OColorRGBA8.h; sourceTree = "<group>"; };
 		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
-		911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBach2D.hpp; sourceTree = "<group>"; };
+		911ADE361C4985C400CCE944 /* OParticleBatch2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBatch2D.hpp; sourceTree = "<group>"; };
 		911ADE391C49868C00CCE944 /* OTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTypes.h; sourceTree = "<group>"; };
 		911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleEngine2D.cpp; sourceTree = "<group>"; };
 		911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleEngine2D.hpp; sourceTree = "<group>"; };
@@ -309,6 +309,7 @@
 		9147DF521BDBAEA0006DBC72 /* OCamera2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCamera2D.h; sourceTree = "<group>"; };
 		91682C531C61490900B678A0 /* SandboxScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SandboxScene.cpp; sourceTree = "<group>"; };
 		91682C541C61490900B678A0 /* SandboxScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SandboxScene.hpp; sourceTree = "<group>"; };
+		91682C571C619E0200B678A0 /* Origami.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Origami.h; sourceTree = "<group>"; };
 		916E36BE1BD92DE3005EE626 /* OTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTexture.h; sourceTree = "<group>"; };
 		916E36BF1BD96E3F005EE626 /* AppData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppData; sourceTree = "<group>"; };
 		9175749B1BD691C000EE8547 /* OShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OShader.cpp; sourceTree = "<group>"; };
@@ -620,6 +621,7 @@
 		91B0FECC1BC71C3C0051529B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				91682C571C619E0200B678A0 /* Origami.h */,
 				91B0FEDA1BC71C3C0051529B /* OGL.h */,
 				911ADE391C49868C00CCE944 /* OTypes.h */,
 				91CC3DFE1C34947100F923C1 /* OMacros.h */,
@@ -844,7 +846,7 @@
 				9147DF511BDBAEA0006DBC72 /* OCamera2D.cpp */,
 				9147DF521BDBAEA0006DBC72 /* OCamera2D.h */,
 				911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */,
-				911ADE361C4985C400CCE944 /* OParticleBach2D.hpp */,
+				911ADE361C4985C400CCE944 /* OParticleBatch2D.hpp */,
 				911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */,
 				911ADE3B1C498C5500CCE944 /* OParticleEngine2D.hpp */,
 			);

@@ -26,11 +26,6 @@
 
 #include "Particles2Scene.hpp"
 
-
-#include <Core/Utils/OResourceManager.h>
-#include <Core/Inputs/OInputsManager.h>
-#include <Core/Graphics/2D/OParticleBach2D.hpp>
-
 Particles2Scene::Particles2Scene() : OScene()
 {
     

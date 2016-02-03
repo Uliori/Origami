@@ -9,11 +9,8 @@
 #ifndef BeachScene_hpp
 #define BeachScene_hpp
 
+#include <Core/Origami.h>
 
-#include <Core/ODirector.h>
-#include <Core/Graphics/Scenes/OScene.h>
-
-#include <Core/OMacros.h>
 USING_NS_O
 
 #define WAVE_SPEED 20

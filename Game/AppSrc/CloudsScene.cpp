@@ -26,10 +26,6 @@
 
 #include "CloudsScene.hpp"
 
-
-#include <Core/Utils/OResourceManager.h>
-#include <Core/Inputs/OInputsManager.h>
-
 CloudsScene::CloudsScene() : OScene()
 {
 

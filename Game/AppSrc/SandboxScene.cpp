@@ -25,8 +25,6 @@
  ****************************************************************************/
 
 #include "SandboxScene.hpp"
-#include <Core/Inputs/OInputsManager.h>
-#include <Core/Graphics/2D/OParticleBach2D.hpp>
 
 SandboxScene::SandboxScene()
 {

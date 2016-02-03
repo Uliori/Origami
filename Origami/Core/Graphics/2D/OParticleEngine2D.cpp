@@ -27,7 +27,7 @@
 #include "OParticleEngine2D.hpp"
 
 #include <Core/Graphics/Renderers/ORenderer2D.h>
-#include <Core/Graphics/2D/OParticleBach2D.hpp>
+#include <Core/Graphics/2D/OParticleBatch2D.hpp>
 
 NS_O_BEGIN
 
