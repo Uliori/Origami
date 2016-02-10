@@ -1,5 +1,5 @@
-#include "OResourceManager.h"
-#include <Core/Graphics/Renderers/ORendererFactory.h>
+#include "OResourceManager.hpp"
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
 #include <string>
 
 NS_O_BEGIN

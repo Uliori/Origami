@@ -27,7 +27,7 @@
 
 #pragma once
 
-#include <Core/Origami.h>
+#include <Core/Origami.hpp>
 
 USING_NS_O
 

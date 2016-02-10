@@ -9,7 +9,7 @@
 #ifndef BeachScene_hpp
 #define BeachScene_hpp
 
-#include <Core/Origami.h>
+#include <Core/Origami.hpp>
 
 USING_NS_O
 

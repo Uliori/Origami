@@ -1,5 +1,5 @@
-#include "OWindow.h"
-#include <Core/Inputs/OInputsManager.h>
+#include "OWindow.hpp"
+#include <Core/Inputs/OInputsManager.hpp>
 NS_O_BEGIN
 
 OWindow::OWindow(const char* title, uint width, uint height, OApplication *app)

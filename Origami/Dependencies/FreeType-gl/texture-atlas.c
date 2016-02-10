@@ -36,7 +36,7 @@
 #include <string.h>
 #include <assert.h>
 #include <limits.h>
-#include <Core/OGL.h>
+#include <Core/OGL.hpp>
 #include "texture-atlas.h"
 
 #ifdef __cplusplus

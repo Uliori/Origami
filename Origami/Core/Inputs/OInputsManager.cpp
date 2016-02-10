@@ -6,7 +6,7 @@
 //
 //
 
-#include "OInputsManager.h"
+#include "OInputsManager.hpp"
 
 NS_O_BEGIN
 

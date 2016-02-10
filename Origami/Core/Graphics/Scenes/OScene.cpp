@@ -1,6 +1,6 @@
 
-#include "OScene.h"
-#include <Core/Utils/OGLUtils.h>
+#include "OScene.hpp"
+#include <Core/Utils/OGLUtils.hpp>
 
 
 NS_O_BEGIN

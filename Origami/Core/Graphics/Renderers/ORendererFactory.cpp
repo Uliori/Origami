@@ -6,16 +6,18 @@
 //
 //
 
-#include "ORendererFactory.h"
+#include "ORendererFactory.hpp"
 
 NS_O_BEGIN
 
-
-OSimple2DShader* ORendererFactory::OShader_Simple2D;
-ORendererSpriteBatch* ORendererFactory::ORenderer_SpriteBatch;
+//shaders
+O2DTextureShader* ORendererFactory::OShader_Texture2D = nullptr;
+O2DColorShader* ORendererFactory::OShader_Color2D = nullptr;
+//Renderers
+ORendererSpriteBatch* ORendererFactory::ORenderer_SpriteBatch = nullptr;
+ORendererPrimitives* ORendererFactory::ORenderer_Primitives = nullptr;
 
 std::vector<ORenderer2D*> ORendererFactory::userRenderers;
-
 
 void ORendererFactory::createRenderers()
 {
@@ -23,18 +25,20 @@ void ORendererFactory::createRenderers()
 
 
     //Create Shaders
-    if (OShader_Simple2D == nullptr) OShader_Simple2D = new OSimple2DShader();
+    if (OShader_Color2D == nullptr) OShader_Color2D = new O2DColorShader();
+    if (OShader_Texture2D == nullptr) OShader_Texture2D = new O2DTextureShader();
 
     //Create Renderers
     if (ORenderer_SpriteBatch == nullptr) ORenderer_SpriteBatch = new ORendererSpriteBatch();
-
+    if (ORenderer_Primitives == nullptr) ORenderer_Primitives = new ORendererPrimitives();
 
     initRenderers();
 }
 
 void ORendererFactory::initRenderers()
 {
-    OShader_Simple2D->init();
+    OShader_Color2D->init();
+    OShader_Texture2D->init();
 
     ORenderer_SpriteBatch->init();
 
@@ -52,10 +56,13 @@ void ORendererFactory::addRenderer(ORenderer2D* renderer)
 void ORendererFactory::deleteRenderers()
 {
     //delete shaders
-    SAFE_DELETE(OShader_Simple2D);
+    SAFE_DELETE(OShader_Color2D);
+    SAFE_DELETE(OShader_Texture2D);
 
     //delete renderers
     SAFE_DELETE(ORenderer_SpriteBatch);
+    SAFE_DELETE(ORenderer_Primitives);
+    
     for (ORenderer2D *renderer : userRenderers)
     {
         SAFE_DELETE(renderer);

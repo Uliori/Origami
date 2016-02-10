@@ -1,5 +1,5 @@
-#include <Core/App/OApplication.h>
-#include <Core/Inputs/OInputsManager.h>
+#include <Core/App/OApplication.hpp>
+#include <Core/Inputs/OInputsManager.hpp>
 
 NS_O_BEGIN
 

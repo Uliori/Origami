@@ -1,6 +1,6 @@
-#include <Core/Graphics/OWindow.h>
-#include <Core/Inputs/OInputsManager.h>
-#include <Core/App/OApplication.h>
+#include <Core/Graphics/OWindow.hpp>
+#include <Core/Inputs/OInputsManager.hpp>
+#include <Core/App/OApplication.hpp>
 
 NS_O_BEGIN
 

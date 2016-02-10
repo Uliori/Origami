@@ -1,4 +1,4 @@
-#include "OLabel.h"
+#include "OLabel.hpp"
 
 NS_O_BEGIN
 

@@ -25,8 +25,8 @@
  ****************************************************************************/
 
 #include "ORef.hpp"
-#include <Core/OMacros.h>
-#include <Core/Utils/OLog.h>
+#include <Core/OMacros.hpp>
+#include <Core/Utils/OLog.hpp>
 
 ORef::ORef():m_ReferenceCount(1)
 {

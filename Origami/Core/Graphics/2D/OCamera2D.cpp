@@ -6,8 +6,8 @@
 //
 //
 
-#include "OCamera2D.h"
-#include <Core/Utils/OLog.h>
+#include "OCamera2D.hpp"
+#include <Core/Utils/OLog.hpp>
 
 NS_O_BEGIN
 

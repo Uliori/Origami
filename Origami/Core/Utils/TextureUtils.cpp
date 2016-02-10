@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Sephiroth. All rights reserved.
 //
 
-#include "TextureUtils.h"
-#include "ResourcesUtils.h"
+#include "TextureUtils.hpp"
+#include "ResourcesUtils.hpp"
 
 #include <SOIL2/SOIL2.h>
 

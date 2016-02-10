@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Sephiroth. All rights reserved.
 //
 
-#include "ShaderUtils.h"
-#include "ResourcesUtils.h"
+#include "ShaderUtils.hpp"
+#include "ResourcesUtils.hpp"
 
 #include <fstream>
 #include <streambuf>

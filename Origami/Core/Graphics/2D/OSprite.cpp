@@ -6,10 +6,10 @@
 //
 //
 
-#include "OSprite.h"
-#include "Vertex2D.h"
+#include "OSprite.hpp"
+#include "Vertex2D.hpp"
 
-#include <Core/Utils/OResourceManager.h>
+#include <Core/Utils/OResourceManager.hpp>
 
 NS_O_BEGIN
 
@@ -31,4 +31,8 @@ void OSprite::submit(ORenderer2D* renderer)
     renderer->submit(m_Position, m_Size, m_UV, m_Texture->textureID, m_Color.getColorUint(), m_zOrder, m_angle);
 }
 
+bool OSprite::shouldBeRendered(OCamera2D* camera)
+{
+    return camera->isBoxInView(m_Position, m_Size);
+}
 NS_O_END

@@ -1,4 +1,4 @@
-#include <Core/App/OApplication.h>
+#include <Core/App/OApplication.hpp>
 
 NS_O_BEGIN
 

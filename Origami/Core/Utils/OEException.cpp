@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Sephiroth. All rights reserved.
 //
 
-#include "OEException.h"
+#include "OEException.hpp"
 
 OEException::OEException()
 {

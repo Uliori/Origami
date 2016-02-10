@@ -29,13 +29,13 @@
 #include <functional>
 #include <vector>
 
-#include <Core/OMacros.h>
-#include <Core/OTypes.h>
-#include <Core/Graphics/OTexture.h>
-#include <Core/Graphics/OColorRGBA8.h>
-#include <Core/Graphics/Renderers/ORenderer2D.h>
+#include <Core/OMacros.hpp>
+#include <Core/OTypes.hpp>
+#include <Core/Graphics/OTexture.hpp>
+#include <Core/Graphics/OColorRGBA8.hpp>
+#include <Core/Graphics/Renderers/ORenderer2D.hpp>
 
-#include <Core/Maths/OMaths.h>
+#include <Core/Maths/OMaths.hpp>
 
 NS_O_BEGIN
 

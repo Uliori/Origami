@@ -1,9 +1,9 @@
 
 
 
-#include "ODirector.h"
-#include <Core/Utils/OGLUtils.h>
-#include <Core/Utils/ResourcesUtils.h>
+#include "ODirector.hpp"
+#include <Core/Utils/OGLUtils.hpp>
+#include <Core/Utils/ResourcesUtils.hpp>
 
 NS_O_BEGIN
 

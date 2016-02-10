@@ -6,11 +6,11 @@
 //
 //
 
-#include "OLayer2D.h"
+#include "OLayer2D.hpp"
 
 
-#include <Core/Graphics/Renderers/ORendererFactory.h>
-#include <Core/ODirector.h>
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
+#include <Core/ODirector.hpp>
 
 NS_O_BEGIN
 
@@ -68,7 +68,7 @@ void OLayer2D::render(float interpolation)
 
         //Send sprites
         for ( OSprite* renderable : m_Renderables)
-            if(m_Camera->isBoxInView(renderable->getPosition(), renderable->getSize()) && !renderable->hidden){
+            if(renderable->shouldBeRendered(m_Camera) && !renderable->hidden){
                 renderable->submit(m_CurrentRenderer);
             }
 

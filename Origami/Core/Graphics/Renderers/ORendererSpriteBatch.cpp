@@ -6,15 +6,15 @@
 //
 //
 
-#include "ORendererSpriteBatch.h"
+#include "ORendererSpriteBatch.hpp"
 #include <algorithm>
 
-#include <Core/Graphics/Renderers/ORendererFactory.h>
-#include <Core/Graphics/Layers/OLayer2D.h>
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
+#include <Core/Graphics/Layers/OLayer2D.hpp>
 
 //#include "freetype-gl.h"
-#include <Core/Graphics/GUI/OFont.h>
-#include <Core/Graphics/GUI/OFontManager.h>
+#include <Core/Graphics/GUI/OFont.hpp>
+#include <Core/Graphics/GUI/OFontManager.hpp>
 
 
 NS_O_BEGIN
@@ -84,7 +84,7 @@ maths::vec2 Glyph::rotatePoint(const maths::vec2& pos, float angle) {
 //SpriteBatch
 ORendererSpriteBatch::ORendererSpriteBatch(): m_VboID(0), m_VaoID(0)
 {
-    init();
+    
 }
 
 ORendererSpriteBatch::~ORendererSpriteBatch()
@@ -203,10 +203,10 @@ void ORendererSpriteBatch::flush(OLayer2D *layer)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    ORendererFactory::OShader_Simple2D->bind();
+    ORendererFactory::OShader_Texture2D->bind();
     glActiveTexture(GL_TEXTURE0);
-    ORendererFactory::OShader_Simple2D->setUniform1i("u_diffuse", 0);
-    ORendererFactory::OShader_Simple2D->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
+    ORendererFactory::OShader_Texture2D->setUniform1i("u_diffuse", 0);
+    ORendererFactory::OShader_Texture2D->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
     glBindVertexArray(m_VaoID);
 
     for (size_t i = 0; i < m_RenderBatches.size(); i++) {
@@ -215,7 +215,7 @@ void ORendererSpriteBatch::flush(OLayer2D *layer)
         glDrawArrays(GL_TRIANGLES, m_RenderBatches[i].offset, m_RenderBatches[i].numVertices);
     }
 
-    ORendererFactory::OShader_Simple2D->unbind();
+    ORendererFactory::OShader_Texture2D->unbind();
     glBindVertexArray(0);
 }
 

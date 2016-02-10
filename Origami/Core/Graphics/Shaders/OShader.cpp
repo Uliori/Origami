@@ -1,5 +1,5 @@
-#include "OShader.h"
-#include <Core/Utils/ShaderUtils.h>
+#include "OShader.hpp"
+#include <Core/Utils/ShaderUtils.hpp>
 
 NS_O_BEGIN
 

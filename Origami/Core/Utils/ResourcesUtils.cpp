@@ -1,5 +1,5 @@
-#include "ResourcesUtils.h"
-#include <Core/Utils/OLog.h>
+#include "ResourcesUtils.hpp"
+#include <Core/Utils/OLog.hpp>
 
 #include <sstream>
 #include <fstream>

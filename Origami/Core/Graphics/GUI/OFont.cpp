@@ -1,7 +1,7 @@
-#include "OFont.h"
+#include "OFont.hpp"
 
-#include <Core/Utils/OLog.h>
-#include <Core/Utils/ResourcesUtils.h>
+#include <Core/Utils/OLog.hpp>
+#include <Core/Utils/ResourcesUtils.hpp>
 
 NS_O_BEGIN
 

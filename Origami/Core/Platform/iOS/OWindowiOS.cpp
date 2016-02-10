@@ -1,4 +1,4 @@
-#include <Core/Graphics/OWindow.h>
+#include <Core/Graphics/OWindow.hpp>
 
 NS_O_BEGIN
 
