@@ -50,7 +50,6 @@ void BeachNMScene::onCreate()
     //sun
     sun =  new OSprite(frameSize.width * 0.65f, frameSize.height * 0.75f, 160.0, 160.0, "moon.png", 1);
 
-
     addSprite(sky);
     addSprite(mountains1);
     addSprite(wave1);

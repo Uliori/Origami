@@ -23,6 +23,7 @@ class Glyph {
 public:
     Glyph() {};
     Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder);
+    Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle);
 
     GLuint textureID;
 
@@ -32,6 +33,9 @@ public:
     VertexData2D bottomRight;
 
     float a_zOrder;
+    
+private:
+    maths::vec2 rotatePoint(const maths::vec2& pos, float angle);
 };
 
 // Each render batch is used for a single draw call
@@ -55,6 +59,8 @@ public:
     void begin() override;
     void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
     void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) override;
+    void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) override;
+    void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir) override;
     void end() override;
     void flush(OLayer2D* layer) override;
 

@@ -21,9 +21,7 @@ NS_O_BEGIN
 
 //Glyph
 Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) :
-textureID(texture) {
-
-    a_zOrder = zOrder;
+textureID(texture), a_zOrder(zOrder) {
 
     topLeft.setColor(color);
     topLeft.setPosition(position.x, position.y + dimensions.y);
@@ -42,6 +40,46 @@ textureID(texture) {
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
+Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) :
+textureID(texture), a_zOrder(zOrder) {
+    
+    maths::vec2 halfDims(dimensions.x * 0.5f, dimensions.y * 0.5f);
+    
+    // Get points centered at origin
+    maths::vec2 tl(-halfDims.x, halfDims.y);
+    maths::vec2 bl(-halfDims.x, -halfDims.y);
+    maths::vec2 br(halfDims.x, -halfDims.y);
+    maths::vec2 tr(halfDims.x, halfDims.y);
+    
+    // Rotate the points
+    tl = rotatePoint(tl, angle) + halfDims;
+    bl = rotatePoint(bl, angle) + halfDims;
+    br = rotatePoint(br, angle) + halfDims;
+    tr = rotatePoint(tr, angle) + halfDims;
+    
+    topLeft.setColor(color);
+    topLeft.setPosition(position.x + tl.x, position.y + tl.y);
+    topLeft.setUV(uvRect.x, uvRect.y + uvRect.w);
+    
+    bottomLeft.setColor(color);
+    bottomLeft.setPosition(position.x + bl.x, position.y + bl.y);
+    bottomLeft.setUV(uvRect.x, uvRect.y);
+    
+    bottomRight.setColor(color);
+    bottomRight.setPosition(position.x + br.x, position.y + br.y);
+    bottomRight.setUV(uvRect.x + uvRect.z, uvRect.y);
+    
+    topRight.setColor(color);
+    topRight.setPosition(position.x + tr.x, position.y + tr.y);
+    topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
+}
+
+maths::vec2 Glyph::rotatePoint(const maths::vec2& pos, float angle) {
+    maths::vec2 newv;
+    newv.x = pos.x * cos(angle) - pos.y * sin(angle);
+    newv.y = pos.x * sin(angle) + pos.y * cos(angle);
+    return newv;
+}
 
 //SpriteBatch
 ORendererSpriteBatch::ORendererSpriteBatch(): m_VboID(0), m_VaoID(0)
@@ -77,6 +115,20 @@ void ORendererSpriteBatch::begin()
 void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
 {
     m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder);
+}
+
+void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
+{
+    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder, angle);
+}
+
+void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir)
+{
+    const maths::vec2 right(1.0f, 0.0f);
+    float angle = acos(maths::dot(right, dir));
+    if (dir.y < 0.0f) angle = -angle;
+    
+    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder, angle);
 }
 
 void ORendererSpriteBatch::drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)

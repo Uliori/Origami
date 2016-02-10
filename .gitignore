@@ -4,3 +4,5 @@ proj.android/libs/*
 proj.android/obj/*
 proj.android_wallpaper/
 proj.win32/bin/*
+Game/AppData/RG*
+Game/AppSrc/RG*

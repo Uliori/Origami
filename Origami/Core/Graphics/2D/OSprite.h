@@ -27,6 +27,7 @@ private:
     std::string m_TexturePath;
     OTexture* m_Texture = nullptr;
 
+    float m_angle = 0;
 protected:
     maths::vec2  m_Position;
     OColorRGBA8  m_Color;
@@ -65,14 +66,20 @@ public:
     {
         m_UV = uv;
     }
-
+    
+    inline void setAngle(float angle)
+    {
+        m_angle = angle;
+    }
+    
     //getters
     inline const maths::vec2& getPosition() const { return m_Position; }
     inline const maths::vec2& getSize() const { return m_Size; }
     inline const unsigned int getColor()  { return m_Color.getColorUint(); }
     inline const maths::vec4& getUV() const { return m_UV; }
     inline const GLuint getTID() const { return m_Texture->textureID; }
-    inline const GLuint getZOrder() const { return m_zOrder; }
+    inline const float getZOrder() const { return m_zOrder; }
+    inline const float getAngle() const { return m_angle; }
 
     inline OTexture* getTexture() const { return m_Texture; }
 

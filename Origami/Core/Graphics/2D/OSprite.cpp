@@ -28,7 +28,7 @@ OSprite::~OSprite()
 
 void OSprite::submit(ORenderer2D* renderer) 
 {
-    renderer->submit(getPosition(), getSize(), getUV(), getTID(), getColor(), getZOrder());
+    renderer->submit(m_Position, m_Size, m_UV, m_Texture->textureID, m_Color.getColorUint(), m_zOrder, m_angle);
 }
 
 NS_O_END

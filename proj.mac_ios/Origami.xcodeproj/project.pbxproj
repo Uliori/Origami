@@ -145,6 +145,10 @@
 		917574A71BD6C5C600EE8547 /* OSimple2DShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A41BD6C5C600EE8547 /* OSimple2DShader.cpp */; };
 		917574AA1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; };
 		917574AB1BD7A5E800EE8547 /* OSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917574A81BD7A5E800EE8547 /* OSprite.cpp */; };
+		9179C2131C6BCC6D00F9D97A /* RGTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9179C2111C6BCC6D00F9D97A /* RGTerrain.cpp */; };
+		9179C2141C6BCC6D00F9D97A /* RGTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9179C2111C6BCC6D00F9D97A /* RGTerrain.cpp */; };
+		9179C2171C6BCC9800F9D97A /* RGSandboxScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */; };
+		9179C2181C6BCC9800F9D97A /* RGSandboxScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */; };
 		919AA4EC1BC816D0004C7052 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4EB1BC816D0004C7052 /* Foundation.framework */; };
 		919AA4EE1BC816D6004C7052 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4ED1BC816D6004C7052 /* UIKit.framework */; };
 		919AA4F01BC816DB004C7052 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919AA4EF1BC816DB004C7052 /* GLKit.framework */; };
@@ -320,6 +324,10 @@
 		917574A81BD7A5E800EE8547 /* OSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OSprite.cpp; sourceTree = "<group>"; };
 		917574A91BD7A5E800EE8547 /* OSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSprite.h; sourceTree = "<group>"; };
 		917574AC1BD7B8B200EE8547 /* Vertex2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex2D.h; sourceTree = "<group>"; };
+		9179C2111C6BCC6D00F9D97A /* RGTerrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RGTerrain.cpp; sourceTree = "<group>"; };
+		9179C2121C6BCC6D00F9D97A /* RGTerrain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RGTerrain.hpp; sourceTree = "<group>"; };
+		9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RGSandboxScene.cpp; sourceTree = "<group>"; };
+		9179C2161C6BCC9800F9D97A /* RGSandboxScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RGSandboxScene.hpp; sourceTree = "<group>"; };
 		919AA4EB1BC816D0004C7052 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4ED1BC816D6004C7052 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		919AA4EF1BC816DB004C7052 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -784,6 +792,10 @@
 				91F235151C5A7B340066A66F /* ParticlesScene.hpp */,
 				91682C531C61490900B678A0 /* SandboxScene.cpp */,
 				91682C541C61490900B678A0 /* SandboxScene.hpp */,
+				9179C2111C6BCC6D00F9D97A /* RGTerrain.cpp */,
+				9179C2121C6BCC6D00F9D97A /* RGTerrain.hpp */,
+				9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */,
+				9179C2161C6BCC9800F9D97A /* RGSandboxScene.hpp */,
 			);
 			path = AppSrc;
 			sourceTree = "<group>";
@@ -1051,6 +1063,7 @@
 				913BC6F01BDF8A210013209D /* hb-ot-tag.cc in Sources */,
 				913BC6D81BDF8A210013209D /* hb-ot-shape-complex-default.cc in Sources */,
 				913BC9511BE002C90013209D /* ftxf86.c in Sources */,
+				9179C2131C6BCC6D00F9D97A /* RGTerrain.cpp in Sources */,
 				91682C551C61490900B678A0 /* SandboxScene.cpp in Sources */,
 				913BC7291BDFF03B0013209D /* texture-font.cpp in Sources */,
 				913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */,
@@ -1069,6 +1082,7 @@
 				913BC6DC1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */,
 				913BC93F1BE002C90013209D /* ftbitmap.c in Sources */,
 				913BC6EC1BDF8A210013209D /* hb-ot-shape-normalize.cc in Sources */,
+				9179C2171C6BCC9800F9D97A /* RGSandboxScene.cpp in Sources */,
 				91F235161C5A7B340066A66F /* BambooScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1081,6 +1095,7 @@
 				911EED4E1BE7CD6000A3FCB1 /* OFont.cpp in Sources */,
 				913BC6DD1BDF8A210013209D /* hb-ot-shape-complex-indic-table.cc in Sources */,
 				91B0FEFF1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */,
+				9179C2181C6BCC9800F9D97A /* RGSandboxScene.cpp in Sources */,
 				913BC6D71BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */,
 				913BC6EF1BDF8A210013209D /* hb-ot-shape.cc in Sources */,
 				913BC6F51BDF8A210013209D /* hb-shape-plan.cc in Sources */,
@@ -1097,6 +1112,7 @@
 				913BC9481BE002C90013209D /* ftinit.c in Sources */,
 				91FB90121BCB0B4C00526B2D /* OApplication.cpp in Sources */,
 				91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */,
+				9179C2141C6BCC6D00F9D97A /* RGTerrain.cpp in Sources */,
 				917574A01BD691C000EE8547 /* OShader.cpp in Sources */,
 				91F2351D1C5A7B340066A66F /* BeachScene.cpp in Sources */,
 				911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */,
