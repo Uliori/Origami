@@ -26,10 +26,21 @@
 
 #pragma once
 
-#include <Core/OMacros.hpp>
+#include <Core/Maths/OMaths.hpp>
+#include <Core/OGL.hpp>
 #include <Core/Graphics/OColorRGBA8.hpp>
+#include <vector>
 
+#include <Core/OMacros.hpp>
 NS_O_BEGIN
+
+class OCamera2D;
+
+struct PrimitiveVertexData2D
+{
+    maths::vec2  m_Vertex;
+    unsigned int m_Color;
+};
 
 class ORendererPrimitives {
     
@@ -39,6 +50,24 @@ public:
     ~ORendererPrimitives();
     
     void setDrawColor(float red, float green, float blue, float alpha);
+    
+    //Will draw a line depending on the camera MVP
+    void drawLine(OCamera2D* camera, const maths::vec2& from, const maths::vec2& to);
+    
+    //will draw lines where :
+    //x : from.x, y : from.y, z : to.x, w : to.y
+    void drawLines(OCamera2D* camera, const std::vector<maths::vec4>& lines);
+    
+    void init();
+private:
+    // Generates our VAO and VBO
+    void createVertexArray();
+    
+    GLuint m_VboID;
+    GLuint m_VaoID;
+    
+    void getVertices(std::vector<PrimitiveVertexData2D>& vertices, const maths::vec2& from, const maths::vec2& to);
+    void getVertices(std::vector<PrimitiveVertexData2D>& vertices, const std::vector<maths::vec4>& lines);
 };
 
 NS_O_END

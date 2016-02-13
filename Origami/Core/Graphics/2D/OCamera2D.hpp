@@ -23,7 +23,8 @@ public:
 private:
     int m_ScreenWidth, m_ScreenHeight;
     bool m_NeedsMatrixUpdate;
-//        float m_Scale;
+    
+    float m_Scale;
 
     maths::vec2 m_Position;
     maths::mat4 m_CameraMatrix;
@@ -33,12 +34,15 @@ public:
 
     //setters
     void setPosition(const maths::vec2& newPosition) { m_Position = newPosition; m_NeedsMatrixUpdate = true; }
-//        void setScale(float newScale) { m_Scale = newScale; m_NeedsMatrixUpdate = true; }
+    void setScale(float newScale) { m_Scale = newScale; m_NeedsMatrixUpdate = true; }
     void setProjection(int screenWidth, int screenHeight);
+    
+    
+    void moveBy(float x, float y) { m_Position.x += x; m_Position.y += y;  m_NeedsMatrixUpdate = true;}
 
     //getters
     maths::vec2 getPosition() { return m_Position; }
-//        float getScale() { return _scale; }
+    float getScale() { return m_Scale; }
     maths::mat4 getCameraMatrix() { return m_CameraMatrix; }
 
 

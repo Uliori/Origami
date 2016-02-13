@@ -71,10 +71,12 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							$(CORE_LIST)/Graphics/Layers/OLayer2D.cpp \
 							$(CORE_LIST)/Graphics/Layers/OLayer3D.cpp \
 							$(CORE_LIST)/Graphics/Renderers/ORendererFactory.cpp \
+							$(CORE_LIST)/Graphics/Renderers/ORendererPrimitives.cpp \
 							$(CORE_LIST)/Graphics/Renderers/ORendererSpriteBatch.cpp \
 							$(CORE_LIST)/Graphics/Scenes/OScene.cpp \
 							$(CORE_LIST)/Graphics/Shaders/OShader.cpp \
-							$(CORE_LIST)/Graphics/Shaders/OSimple2DShader.cpp \
+							$(CORE_LIST)/Graphics/Shaders/O2DColorShader.cpp \
+							$(CORE_LIST)/Graphics/Shaders/O2DTextureShader.cpp \
 							$(GAME_SRC_LIST:$(LOCAL_PATH)/%=%)\
 							#$(FREETYPEGL_SRC_PATH)/texture-font.cpp $(FREETYPEGL_SRC_PATH)/platform.c \
 							$(FREETYPEGL_SRC_PATH)/texture-atlas.c $(FREETYPEGL_SRC_PATH)/vector.c \

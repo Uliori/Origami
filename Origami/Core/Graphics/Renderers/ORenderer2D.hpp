@@ -13,6 +13,7 @@
 #include <Core/Maths/OMaths.hpp>
 #include <Core/OMacros.hpp>
 #include <Core/OGL.hpp>
+#include <Core/Graphics/2D/Vertex2D.hpp>
 
 NS_O_BEGIN
 
@@ -27,6 +28,7 @@ public:
 
     virtual void init() {}
     virtual void begin() {}
+    virtual void submit(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder) {};
     virtual void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) = 0;
     virtual void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) {};
     virtual void submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir) {};

@@ -14,6 +14,8 @@
 #include <Core/ODirector.hpp>
 #include <Core/ORef.hpp>
 
+#include <Core/Utils/cpp14Ext.hpp>
+
 //App folder
 #include <Core/App/OApplication.hpp>
 

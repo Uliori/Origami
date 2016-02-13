@@ -41,6 +41,7 @@ void ORendererFactory::initRenderers()
     OShader_Texture2D->init();
 
     ORenderer_SpriteBatch->init();
+    ORenderer_Primitives->init();
 
     for (ORenderer2D* renderer : userRenderers)
     {

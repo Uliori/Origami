@@ -25,11 +25,11 @@ private:
     maths::vec2 m_Size;
     maths::vec4 m_UV;
 
-    std::string m_TexturePath;
-    OTexture* m_Texture = nullptr;
-
     float m_angle = 0;
 protected:
+    std::string m_TexturePath;
+    OTexture* m_Texture = nullptr;
+    
     maths::vec2  m_Position;
     OColorRGBA8  m_Color;
     float        m_zOrder;

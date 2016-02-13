@@ -26,6 +26,7 @@ void OCamera2D::setProjection(int screenWidth, int screenHeight)
 {
     m_ScreenWidth = screenWidth;
     m_ScreenHeight = screenHeight;
+    m_Scale = 1;
     m_OrthoMatrix = maths::ortho(0.0f, (float) screenWidth, 0.0f, (float)screenHeight, -1.0f, 1.0f);
     m_NeedsMatrixUpdate = true;
     update(1);
@@ -37,12 +38,12 @@ void OCamera2D::update(float deltaTime)
     if (m_NeedsMatrixUpdate) {
 
         maths::vec3 translate(-m_Position.x, -m_Position.y, 0.0f);
-//            maths::vec3 scale(m_scale, m_scale, 0.0f);
+        maths::vec3 scale(m_Scale, m_Scale, 0.0f);
 
         maths::mat4 mt = maths::translate(translate);
-//            maths::mat4 ms = maths::scale(scale);
+        maths::mat4 ms = maths::scale(scale);
 
-        m_CameraMatrix = m_OrthoMatrix * mt;// * ms;
+        m_CameraMatrix = m_OrthoMatrix * mt * ms;
 
         m_NeedsMatrixUpdate = false;
     }

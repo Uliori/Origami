@@ -1,8 +1,8 @@
 #pragma once
 
 #include "OGame.hpp"
-#include <Core/ODirector.h>
-#include <Core/Utils/OResourceManager.h>
+#include <Core/ODirector.hpp>
+#include <Core/Utils/OResourceManager.hpp>
 
 class Game {
 

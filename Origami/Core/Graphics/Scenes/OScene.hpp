@@ -42,7 +42,7 @@ public:
     void create();
     void clear();
     void update(float deltaTime);
-    void render(float interpolation);
+    virtual void render(float interpolation);
     
     /*  onCreate : will be called when the scene is loaded, you should initialize 
      *  your objects here.

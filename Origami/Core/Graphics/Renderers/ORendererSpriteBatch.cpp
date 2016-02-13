@@ -20,8 +20,8 @@
 NS_O_BEGIN
 
 //Glyph
-Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) :
-textureID(texture), a_zOrder(zOrder) {
+Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
+:textureID(texture), a_zOrder(zOrder) {
 
     topLeft.setColor(color);
     topLeft.setPosition(position.x, position.y + dimensions.y);
@@ -40,8 +40,8 @@ textureID(texture), a_zOrder(zOrder) {
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
-Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) :
-textureID(texture), a_zOrder(zOrder) {
+Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
+:textureID(texture), a_zOrder(zOrder) {
     
     maths::vec2 halfDims(dimensions.x * 0.5f, dimensions.y * 0.5f);
     
@@ -74,7 +74,18 @@ textureID(texture), a_zOrder(zOrder) {
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
-maths::vec2 Glyph::rotatePoint(const maths::vec2& pos, float angle) {
+Glyph::Glyph(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
+:a_zOrder(zOrder), textureID(texture)
+{
+    topLeft = atopLeft;
+    topRight = atopRight;
+    bottomLeft = abottomLeft;
+    bottomRight = abottomRight;
+}
+
+
+maths::vec2 Glyph::rotatePoint(const maths::vec2& pos, float angle)
+{
     maths::vec2 newv;
     newv.x = pos.x * cos(angle) - pos.y * sin(angle);
     newv.y = pos.x * sin(angle) + pos.y * cos(angle);
@@ -120,6 +131,11 @@ void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2
 void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
 {
     m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder, angle);
+}
+
+void ORendererSpriteBatch::submit(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
+{
+    m_Glyphs.emplace_back(atopLeft, abottomLeft, atopRight, abottomRight, texture, zOrder);
 }
 
 void ORendererSpriteBatch::submit(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir)

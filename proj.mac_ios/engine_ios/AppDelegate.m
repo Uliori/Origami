@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#include <Core/ODirector.h>
+#include <Core/ODirector.hpp>
 
 @interface AppDelegate ()
 
