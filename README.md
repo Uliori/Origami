@@ -12,6 +12,7 @@ Features :
 Dependencies :
  - GLFW (Desktop).
  - GLEW (Desktop).
+ - Box2D
  - SOIL2.
  - FreeType.
  - Freetpe-gl.
