@@ -35,7 +35,7 @@ void ParticlesScene::onCreate()
 {
     
     OSize frameSize = ODirector::director()->getVirtualSize();
-    
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
     //sky
     sky = new OSprite(0, 0, frameSize.width, frameSize.height, "psky.png", 0);
     addSprite(sky);
@@ -74,7 +74,7 @@ void ParticlesScene::onResize()
 {
     
     OSize frameSize = ODirector::director()->getVirtualSize();
-    
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
     sky->setSize(vec2(frameSize.width, frameSize.height));
 }
 

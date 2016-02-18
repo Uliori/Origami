@@ -14,10 +14,10 @@ private:
     std::string m_Text;
     float m_X, m_Y;
 public:
-    OLabel(const std::string& text, float x, float y, OColorRGBA8& color);
-    OLabel(const std::string& text, float x, float y, OFont* font, OColorRGBA8& color);
-    OLabel(const std::string& text, float x, float y, const std::string& font, OColorRGBA8& color);
-    OLabel(const std::string& text, float x, float y, const std::string& font, uint size, OColorRGBA8& color);
+    OLabel(const std::string& text, float x, float y, const OColorRGBA8& color);
+    OLabel(const std::string& text, float x, float y, OFont* font, const OColorRGBA8& color);
+    OLabel(const std::string& text, float x, float y, const std::string& font, const OColorRGBA8& color);
+    OLabel(const std::string& text, float x, float y, const std::string& font, uint size, const OColorRGBA8& color);
     void submit(ORenderer2D* renderer)  override;
     void validateFont(const std::string& name, int size = -1);
 

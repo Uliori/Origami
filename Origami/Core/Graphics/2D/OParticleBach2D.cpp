@@ -85,7 +85,7 @@ void OParticleBatch2D::draw(ORenderer2D* renderer) {
     for (int i = 0; i < m_MaxParticles; i++) {
         auto& p = m_Particles[i];
         if (p.life > 0.0f) {
-            renderer->submit(p.position, maths::vec2(p.width, p.width), uvRect, m_Texture->textureID, p.color.getColorUint(), m_ZOrder);
+            renderer->submitBox(p.position, maths::vec2(p.width, p.width), uvRect, m_Texture->textureID, p.color.getColorUint(), m_ZOrder);
         }
     }
 }

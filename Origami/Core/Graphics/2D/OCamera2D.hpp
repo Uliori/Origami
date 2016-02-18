@@ -13,7 +13,7 @@
 #include <Core/OMacros.hpp>
 
 NS_O_BEGIN
-
+class OSprite;
 class OCamera2D
 {
 public:
@@ -22,9 +22,8 @@ public:
 
 private:
     int m_ScreenWidth, m_ScreenHeight;
-    bool m_NeedsMatrixUpdate;
-    
     float m_Scale;
+    bool m_NeedsMatrixUpdate;
 
     maths::vec2 m_Position;
     maths::mat4 m_CameraMatrix;
@@ -37,13 +36,14 @@ public:
     void setScale(float newScale) { m_Scale = newScale; m_NeedsMatrixUpdate = true; }
     void setProjection(int screenWidth, int screenHeight);
     
+    void setTarget(const maths::vec2& target, const maths::vec2& offset);
     
     void moveBy(float x, float y) { m_Position.x += x; m_Position.y += y;  m_NeedsMatrixUpdate = true;}
 
     //getters
-    maths::vec2 getPosition() { return m_Position; }
+    const maths::vec2& getPosition() { return m_Position; }
     float getScale() { return m_Scale; }
-    maths::mat4 getCameraMatrix() { return m_CameraMatrix; }
+    const maths::mat4& getCameraMatrix() { return m_CameraMatrix; }
 
 
     //Camera culling

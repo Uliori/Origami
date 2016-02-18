@@ -21,22 +21,24 @@ NS_O_BEGIN
 class ORenderer2D;
 class OCamera2D;
 class OSprite {
-private:
+    
+protected:
     maths::vec2 m_Size;
     maths::vec4 m_UV;
-
+    
     float m_angle = 0;
-protected:
+    
     std::string m_TexturePath;
     OTexture* m_Texture = nullptr;
     
     maths::vec2  m_Position;
     OColorRGBA8  m_Color;
     float        m_zOrder;
+    
     OSprite(){}
 
 public:
-    OSprite(float x, float y, float width, float height, std::string texturePath, float zOrder);
+    OSprite(float x, float y, float width, float height, const std::string& texturePath, float zOrder);
     virtual ~OSprite();
 
     float tag;
@@ -74,13 +76,15 @@ public:
     }
     
     //getters
-    inline const maths::vec2& getPosition() const { return m_Position; }
+    virtual inline maths::vec2& getPosition() { return m_Position; }
+    virtual inline float getAngle() { return m_angle; }
+    
     inline const maths::vec2& getSize() const { return m_Size; }
     inline const unsigned int getColor()  { return m_Color.getColorUint(); }
     inline const maths::vec4& getUV() const { return m_UV; }
     inline const GLuint getTID() const { return m_Texture->textureID; }
     inline const float getZOrder() const { return m_zOrder; }
-    inline const float getAngle() const { return m_angle; }
+    
 
     inline OTexture* getTexture() const { return m_Texture; }
 

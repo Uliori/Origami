@@ -21,7 +21,7 @@ void BeachNMScene::onCreate()
     OTexture *mountsTexture = OResourceManager::textureCache()->loadTexture("mountains.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
 
     OSize frameSize = ODirector::director()->getVirtualSize();
-
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
     float p = addPercent(frameSize.width, 50);
 
     //sky
@@ -114,7 +114,7 @@ void BeachNMScene::onResize()
 
     OSize frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
-
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
     sky->setSize(vec2(frameSize.width, frameSize.height));
 
     //boat

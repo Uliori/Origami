@@ -17,22 +17,22 @@ OFont* OFontManager::get()
 
 OFont* OFontManager::get(const std::string& name)
 {
-    for (OFont* font : m_Fonts)
-    {
+//    for (OFont* font : m_Fonts)
+//    {
 //			if (font->GetName() == name)
 //				return font;
-    }
+//    }
     // TODO: Maybe return a default font instead?
     return nullptr;
 }
 
 OFont* OFontManager::get(const std::string& name, unsigned int size)
 {
-    for (OFont* font : m_Fonts)
-    {
+//    for (OFont* font : m_Fonts)
+//    {
 //			if (font->GetSize() == size && font->GetName() == name)
 //				return font;
-    }
+//    }
     // TODO: Maybe return a default font instead?
     return nullptr;
 }

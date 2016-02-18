@@ -29,7 +29,7 @@ public:
     static void createRenderers();
     static void initRenderers();
     static void deleteRenderers();
-    static void addRenderer(ORenderer2D* renderer);
+    static void addRenderer(ORenderer2D* renderer, bool init = false);
     
     //Shaders
     static O2DColorShader* OShader_Color2D;

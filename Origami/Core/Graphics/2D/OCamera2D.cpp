@@ -8,6 +8,7 @@
 
 #include "OCamera2D.hpp"
 #include <Core/Utils/OLog.hpp>
+#include <Core/Graphics/2D/OSprite.hpp>
 
 NS_O_BEGIN
 
@@ -32,16 +33,18 @@ void OCamera2D::setProjection(int screenWidth, int screenHeight)
     update(1);
 }
 
+void OCamera2D::setTarget(const maths::vec2& target, const maths::vec2& offset)
+{
+    m_Position = target + offset;
+    m_NeedsMatrixUpdate = true;
+}
 
 void OCamera2D::update(float deltaTime)
 {
     if (m_NeedsMatrixUpdate) {
 
-        maths::vec3 translate(-m_Position.x, -m_Position.y, 0.0f);
-        maths::vec3 scale(m_Scale, m_Scale, 0.0f);
-
-        maths::mat4 mt = maths::translate(translate);
-        maths::mat4 ms = maths::scale(scale);
+        maths::mat4 mt = maths::translate(-m_Position.x + m_ScreenWidth /2, -m_Position.y + m_ScreenHeight / 2, 0.0f);
+        maths::mat4 ms = maths::scale(m_Scale, m_Scale, 0.0f);
 
         m_CameraMatrix = m_OrthoMatrix * mt * ms;
 
@@ -53,9 +56,9 @@ maths::vec2 OCamera2D::convertScreenToWorld(maths::vec2 screenCoords) {
     // Invert Y direction
     screenCoords.y = m_ScreenHeight - screenCoords.y;
     // Make it so that 0 is the center
-    //screenCoords -= maths::vec2(_screenWidth / 2, _screenHeight / 2);
+    screenCoords -= maths::vec2(m_ScreenWidth / 2, m_ScreenHeight / 2);
     // Scale the coordinates
-//        screenCoords /= _scale;
+    screenCoords /= m_Scale;
     // Translate with the camera position
     screenCoords += m_Position;
     return screenCoords;
@@ -66,7 +69,7 @@ maths::vec2 OCamera2D::convertScreenToWorld(maths::vec2 screenCoords) {
 //TODO : correct a bug when scaling camera
 bool OCamera2D::isBoxInView(const maths::vec2& position, const maths::vec2& dimensions)
 {
-    maths::vec2 scaledScreenDimensions = maths::vec2((float)m_ScreenWidth, (float)m_ScreenHeight);// / (_scale);
+    maths::vec2 scaledScreenDimensions = maths::vec2((float)m_ScreenWidth, (float)m_ScreenHeight) / m_Scale;
 
     // The minimum distance before a collision occurs
     const float MIN_DISTANCE_X = dimensions.x / 2.0f + scaledScreenDimensions.x / 2.0f;
@@ -75,7 +78,7 @@ bool OCamera2D::isBoxInView(const maths::vec2& position, const maths::vec2& dime
     // Center position of the parameters
     maths::vec2 centerPos = position + dimensions / 2.0f;
     // Center position of the camera
-    maths::vec2 centerCameraPos = m_Position + maths::vec2(m_ScreenWidth / 2.0f, m_ScreenHeight / 2.0f);
+    maths::vec2 centerCameraPos = m_Position;
     // Vector from the input to the camera
     maths::vec2 distVec = centerPos - centerCameraPos;
 

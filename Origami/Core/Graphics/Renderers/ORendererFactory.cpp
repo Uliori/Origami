@@ -21,7 +21,7 @@ std::vector<ORenderer2D*> ORendererFactory::userRenderers;
 
 void ORendererFactory::createRenderers()
 {
-    //Important : for any Shader/Renderer class you create, make sure that OpenGL initialization are implemented in shader->Init and renderer->Init methods
+    //Important : for any Shader/Renderer class you create, make sure that OpenGL initialization are implemented in shader->init and renderer->init methods
 
 
     //Create Shaders
@@ -49,9 +49,11 @@ void ORendererFactory::initRenderers()
     }
 }
 
-void ORendererFactory::addRenderer(ORenderer2D* renderer)
+void ORendererFactory::addRenderer(ORenderer2D* renderer, bool init/* = false*/)
 {
     userRenderers.push_back(renderer);
+    if (init)
+        renderer->init();
 }
 
 void ORendererFactory::deleteRenderers()

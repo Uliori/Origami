@@ -20,22 +20,22 @@ public:
 
     OTexture():ORef() {}
 
-    float getScaledWidth()
+    const float getScaledWidth() const
     {
         return m_Width;
     }
 
-    float getWidth()
+    const float getWidth() const
     {
         return m_Width / m_Scale;
     }
 
-    float getScaledHeight()
+    const float getScaledHeight() const
     {
         return m_Height;
     }
 
-    float getHeight()
+    const float getHeight() const
     {
         return m_Height / m_Scale;
     }

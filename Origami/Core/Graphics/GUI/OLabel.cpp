@@ -2,21 +2,21 @@
 
 NS_O_BEGIN
 
-OLabel::OLabel(const std::string& text, float x, float y, OColorRGBA8& color)
+OLabel::OLabel(const std::string& text, float x, float y, const OColorRGBA8& color)
     : m_Text(text), m_Font(OFontManager::get("SourceSansPro"))
 {
     m_Position = maths::vec2(x, y);
     m_Color = color;
 }
 
-OLabel::OLabel(const std::string& text, float x, float y, OFont* font, OColorRGBA8& color)
+OLabel::OLabel(const std::string& text, float x, float y, OFont* font, const OColorRGBA8& color)
     : m_Text(text), m_Font(font)
 {
     m_Position = maths::vec2(x, y);
     m_Color = color;
 }
 
-OLabel::OLabel(const std::string& text, float x, float y, const std::string& font, OColorRGBA8& color)
+OLabel::OLabel(const std::string& text, float x, float y, const std::string& font, const OColorRGBA8& color)
     : m_Text(text), m_Font(OFontManager::get(font))
 {
     m_Position = maths::vec2(x, y);
@@ -25,7 +25,7 @@ OLabel::OLabel(const std::string& text, float x, float y, const std::string& fon
     validateFont(font);
 }
 
-OLabel::OLabel(const std::string& text, float x, float y, const std::string& font, uint size, OColorRGBA8& color)
+OLabel::OLabel(const std::string& text, float x, float y, const std::string& font, uint size, const OColorRGBA8& color)
     : m_Text(text), m_Font(OFontManager::get(font, size))
 {
     m_Position = maths::vec2(x, y);

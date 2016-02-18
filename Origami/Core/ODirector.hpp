@@ -86,7 +86,7 @@ public:
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
 
-    OTimer* getTimer(){ return m_Timer;}
+    OTimer* getTimer() const { return m_Timer;}
 
     void updateCurrentScene(float deltaTime);
     void renderCurrentScene(float interpolation);
@@ -108,9 +108,9 @@ public:
     void pause();
     void resume();
 
-    inline OSize& getFrameSize() {return m_FrameSize;}
-    inline OSize& getDesignResolutionSize() {return m_DesignResolutionSize;}
-    inline OSize& getVirtualSize() {return m_VirtualSize;}
+    const OSize& getFrameSize() const {return m_FrameSize;}
+    const OSize& getDesignResolutionSize() const {return m_DesignResolutionSize;}
+    const OSize& getVirtualSize() const {return m_VirtualSize;}
     inline ResolutionPolicy &getResolutionPolicy() {return m_ResolutionPolicy;}
 
     void setFrameSize(uint width, uint height) { m_FrameSize = OSize(width, height);}

@@ -1,22 +1,44 @@
 #pragma once
 
 
-#include <Box2D/Box2D.h>
-#include <Core/OGL.hpp>
-struct b2AABB;
+#include <Core/OMacros.hpp>
 
-// This class implements debug drawing callbacks that are invoked
-// inside b2World::Step.
+#include <Core/Physics/2D/O2DPhysics.hpp>
+#include <Core/OGL.hpp>
+#include <Core/Maths/OMaths.hpp>
+#include <Core/Graphics/2D/OCamera2D.hpp>
+
+NS_O_BEGIN
+
+struct PhysicsVertexData2D
+{
+    maths::vec2  m_Vertex;
+    unsigned int m_Color;
+};
+
+/// B2DDebugDraw implements debug drawing callbacks that are invoked
+/// inside b2World::DrawDebugData.
 class B2DDebugDraw : public b2Draw
 {
-	float32 mRatio;
-	GLint		mColorLocation;
+    OCamera2D* m_Camera = nullptr;
+    float m_Ratio = 1;
+	void init();
+    
+    GLuint m_VboID = 0;
+    GLuint m_VaoID = 0;
+    void createVertexArray();
 
-	void initShader( void );
+    void bind();
+    void unbind();
 public:
-	B2DDebugDraw();
 
-	B2DDebugDraw( float32 ratio );
+    
+	B2DDebugDraw(OCamera2D* camera, float ratio = 1);
+
+    ~B2DDebugDraw();
+    
+    
+    void drawWorld(b2World* world);
 
 	void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color);
 
@@ -37,3 +59,4 @@ public:
     void DrawAABB(b2AABB* aabb, const b2Color& color);
 };
 
+NS_O_END

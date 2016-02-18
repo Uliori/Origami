@@ -5,6 +5,8 @@ OrigamiCore_SRC_PATH	:= ../../../../../Origami/Core
 Game_SRC_PATH			:= ../../../../../Game/AppSrc
 
 SOIL_SRC_PATH			:= ../../../../../Origami/Dependencies/SOIL2
+BOX2D_HEA_PATH	 		:= ../../../../../Origami/Dependencies/Box2D
+BOX2D_SRC_PATH	 		:= ../../../../../Origami/Dependencies/Box2D/Box2D/
 #FREETYPE_HEA_PATH	 	:= ../../../../../Origami/Dependencies/FreeType/include
 #FREETYPE_SRC_PATH	 	:= ../../../../../Origami/Dependencies/FreeType/
 #FREETYPEGL_SRC_PATH	:= ../../../../../Origami/Dependencies/FreeType-gl
@@ -14,19 +16,17 @@ SOIL_SRC_PATH			:= ../../../../../Origami/Dependencies/SOIL2
 ############################################ libSOIL2 ############################################
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    		:= libsoil2
+LOCAL_MODULE    		:= soil2
 LOCAL_SRC_FILES			:= \
    							$(SOIL_SRC_PATH)/SOIL2/etc1_utils.c $(SOIL_SRC_PATH)/SOIL2/image_DXT.c \
 							$(SOIL_SRC_PATH)/SOIL2/image_helper.c $(SOIL_SRC_PATH)/SOIL2/SOIL2.c
 
-LOCAL_LDLIBS    		:= -lGLESv2 -lEGL
-
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 ############################################ libOrigami ############################################
 include $(CLEAR_VARS)
-LOCAL_MODULE   			:= liborigami
-LOCAL_CFLAGS    		:= -std=c++11 -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_MODE_DEBUG
+LOCAL_MODULE   			:= origami
+LOCAL_CFLAGS    		:= -DO_TARGET_MOBILE -DO_TARGET_MOBILE_ANDROID -DO_MODE_DEBUG
 #-g
 CORE_LIST 				:= $(OrigamiCore_SRC_PATH)
 PROJECT_LIST 			:= $(Game_SRC_PATH)
@@ -35,8 +35,10 @@ GAME_SRC_LIST 			:= $(wildcard $(LOCAL_PATH)/$(Game_SRC_PATH)/*.cpp)
 LOCAL_C_INCLUDES  		:=  \
 							$(LOCAL_PATH)/native_app_glue \
 							$(LOCAL_PATH)/$(SOIL_SRC_PATH) \
+							$(LOCAL_PATH)/$(BOX2D_HEA_PATH) \
 							$(LOCAL_PATH)/$(Origami_SRC_PATH) \
-							$(LOCAL_PATH)/$(Game_SRC_PATH)
+							$(LOCAL_PATH)/$(Game_SRC_PATH)\
+
 							#$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPE_HEA_PATH) \
 							$(NDK_APP_PROJECT_PATH)/jni/$(HARFBUZZ_HEA_PATH) \
 							$(NDK_APP_PROJECT_PATH)/jni/$(FREETYPEGL_SRC_PATH) \
@@ -52,6 +54,8 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							$(CORE_LIST)/Inputs/OInputsManager.cpp \
 							$(CORE_LIST)/Maths/OMaths.cpp \
 							$(CORE_LIST)/Maths/OGeometry.cpp \
+							$(CORE_LIST)/Physics/2D/B2DDebugDraw.cpp \
+							$(CORE_LIST)/Physics/2D/OB2DSprite.cpp \
 							$(CORE_LIST)/Utils/OEException.cpp \
 							$(CORE_LIST)/Utils/OResourceManager.cpp \
 							$(CORE_LIST)/Utils/OTextureCache.cpp \
@@ -81,9 +85,8 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							#$(FREETYPEGL_SRC_PATH)/texture-font.cpp $(FREETYPEGL_SRC_PATH)/platform.c \
 							$(FREETYPEGL_SRC_PATH)/texture-atlas.c $(FREETYPEGL_SRC_PATH)/vector.c \
 
-
+LOCAL_STATIC_LIBRARIES :=  soil2 box2d_static
 LOCAL_SHARED_LIBRARIES 	:= \
-							libsoil2
 							#libfreetype2\
 							#libharfbuzz
 
@@ -91,6 +94,9 @@ LOCAL_SHARED_LIBRARIES 	:= \
 LOCAL_LDLIBS    		:= -landroid -lGLESv2 -lEGL -llog
 # -ldl  -lz
 include $(BUILD_SHARED_LIBRARY)
+
+############################################ libBox2D   ############################################
+include $(LOCAL_PATH)/$(BOX2D_SRC_PATH)Android.mk
 
 ############################################ libFreeType2 ############################################
 #include $(NDK_APP_PROJECT_PATH)/jni/$(FREETYPE_SRC_PATH)Android.mk

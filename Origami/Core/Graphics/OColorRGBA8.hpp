@@ -42,10 +42,10 @@ public:
     ~OColorRGBA8() {}
     
 public:
-    float red()     { return m_Color[R]; };
-    float green()   { return m_Color[G]; };
-    float blue()    { return m_Color[B]; };
-    float alpha()   { return m_Color[A]; };
+    const float red()     const { return m_Color[R]; };
+    const float green()   const { return m_Color[G]; };
+    const float blue()    const { return m_Color[B]; };
+    const float alpha()   const { return m_Color[A]; };
     
 public:
     void setRed(float red)      { m_Color[R] = red; }
@@ -61,7 +61,7 @@ public:
     }
     
 public:
-    maths::vec4 getColor(){ return m_Color; }
+    const maths::vec4& getColor(){ return m_Color; }
     uint getColorUint(){
         uint r = (uint)(m_Color.x * 255.0f);
         uint g = (uint)(m_Color.y * 255.0f);

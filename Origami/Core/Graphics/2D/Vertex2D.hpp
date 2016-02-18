@@ -51,7 +51,6 @@ struct VertexData2D
         m_Vertex = position;
     }
 
-
     void setTexture(GLuint texture)
     {
         m_TID = texture;

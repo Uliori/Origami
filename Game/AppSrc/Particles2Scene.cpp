@@ -39,6 +39,9 @@ void Particles2Scene::onCreate()
 //    back = new OSprite(0, 0, frameSize.width, frameSize.height, "psky2.png", 0);
 //    addSprite(back);
     
+    OSize frameSize = ODirector::director()->getVirtualSize();
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
+    
     particles->init(150, .25f , "particle3.png", 1,
                     [](OParticleBatch2D* batch, float deltaTime){
                         OSize frameSize = ODirector::director()->getVirtualSize();
@@ -69,6 +72,9 @@ void Particles2Scene::onResize()
 {
 //    OSize frameSize = ODirector::director()->getVirtualSize();
 //    back->setSize(maths::vec2(frameSize.width, frameSize.height));
+    
+    OSize frameSize = ODirector::director()->getVirtualSize();
+    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
 }
 
 Particles2Scene::~Particles2Scene()

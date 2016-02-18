@@ -71,6 +71,13 @@ struct quat;
         return 1.0f / length;
     }
     
+    inline float angle(float cx, float cy, float ex, float ey) {
+        float dy = ey - cy;
+        float dx = ex - cx;
+        float theta = atan2(dy, dx); // range (-PI, PI]
+        //if (theta < 0) theta = 360 + theta; // range [0, 360)
+        return theta;
+    }
 /*****************************************************************************/
 /*                                                                           */
 /* vec2                                                                      */
