@@ -23,6 +23,8 @@
 		911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */; };
 		912DAAA21C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
 		912DAAA31C447AA6003F8339 /* ORef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912DAAA01C447AA6003F8339 /* ORef.cpp */; };
+		913790461C7666780024ECFC /* RGSTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913790441C7666780024ECFC /* RGSTerrain.cpp */; };
+		913790471C7666780024ECFC /* RGSTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913790441C7666780024ECFC /* RGSTerrain.cpp */; };
 		913BC5491BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
 		913BC54A1BDD7E100013209D /* OInputsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5471BDD7E100013209D /* OInputsManager.cpp */; };
 		913BC64C1BDF8A210013209D /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = 913BC5901BDF8A200013209D /* hb-blob.cc */; };
@@ -346,6 +348,8 @@
 		911EED4C1BE7CD6000A3FCB1 /* OLabel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OLabel.hpp; sourceTree = "<group>"; };
 		912DAAA01C447AA6003F8339 /* ORef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORef.cpp; sourceTree = "<group>"; };
 		912DAAA11C447AA6003F8339 /* ORef.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ORef.hpp; sourceTree = "<group>"; };
+		913790441C7666780024ECFC /* RGSTerrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RGSTerrain.cpp; sourceTree = "<group>"; };
+		913790451C7666780024ECFC /* RGSTerrain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RGSTerrain.hpp; sourceTree = "<group>"; };
 		913BC5471BDD7E100013209D /* OInputsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OInputsManager.cpp; sourceTree = "<group>"; };
 		913BC5481BDD7E100013209D /* OInputsManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OInputsManager.hpp; sourceTree = "<group>"; };
 		913BC5901BDF8A200013209D /* hb-blob.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "hb-blob.cc"; sourceTree = "<group>"; };
@@ -1096,6 +1100,8 @@
 				91F235151C5A7B340066A66F /* ParticlesScene.hpp */,
 				91682C531C61490900B678A0 /* SandboxScene.cpp */,
 				91682C541C61490900B678A0 /* SandboxScene.hpp */,
+				913790441C7666780024ECFC /* RGSTerrain.cpp */,
+				913790451C7666780024ECFC /* RGSTerrain.hpp */,
 				9179C2111C6BCC6D00F9D97A /* RGTerrain.cpp */,
 				9179C2121C6BCC6D00F9D97A /* RGTerrain.hpp */,
 				9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */,
@@ -1317,6 +1323,7 @@
 				9197F2301C6EADE700A0CFA3 /* b2Distance.cpp in Sources */,
 				91FB90111BCB0B4C00526B2D /* OApplication.cpp in Sources */,
 				917574AA1BD7A5E800EE8547 /* OSprite.cpp in Sources */,
+				913790461C7666780024ECFC /* RGSTerrain.cpp in Sources */,
 				913BC95A1BE002FE0013209D /* psnames.c in Sources */,
 				917574A61BD6C5C600EE8547 /* O2DTextureShader.cpp in Sources */,
 				91E45AC51C74F34300708B30 /* ORenderer2D.cpp in Sources */,
@@ -1503,6 +1510,7 @@
 				913BC93C1BE002C90013209D /* ftbase.c in Sources */,
 				9197F2591C6EADE700A0CFA3 /* b2ChainAndPolygonContact.cpp in Sources */,
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
+				913790471C7666780024ECFC /* RGSTerrain.cpp in Sources */,
 				911EED521BE7CD6000A3FCB1 /* OLabel.cpp in Sources */,
 				9197F25B1C6EADE700A0CFA3 /* b2CircleContact.cpp in Sources */,
 				911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,

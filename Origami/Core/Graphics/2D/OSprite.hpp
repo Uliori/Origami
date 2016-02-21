@@ -50,7 +50,7 @@ public:
         m_Color = color;
     }
     
-    inline void setPosition(const maths::vec2& position)
+    virtual inline void setPosition(const maths::vec2& position)
     {
         m_Position = position;
     }

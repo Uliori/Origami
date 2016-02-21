@@ -49,9 +49,16 @@ public:
     
     b2Body*                    getBody()          const { return m_Body; }
     b2Fixture*                 getFixture()       const { return m_Fixture; }
+    
+    inline void setPosition(const maths::vec2& position) override
+    {
+        if (m_Body)
+            m_Body->SetTransform(b2Vec2(position.x / O_PTM_RATIO, position.y / O_PTM_RATIO), 0);
+    }
+    
     inline maths::vec2& getPosition() override
     {
-        OSprite::setPosition(maths::vec2(m_Body->GetPosition().x * 32, m_Body->GetPosition().y * 32));
+        OSprite::setPosition(maths::vec2(m_Body->GetPosition().x * O_PTM_RATIO, m_Body->GetPosition().y * O_PTM_RATIO));
         return  m_Position;
     }
     

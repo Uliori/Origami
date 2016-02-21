@@ -35,6 +35,12 @@ struct VertexData2D
         m_Color = a << 24 | b << 16 | g << 8 | r;
     }
 
+    
+    void moveBy(float x, float y)
+    {
+        m_Vertex += maths::vec2(x, y);
+    }
+    
     void setPosition(float x, float y)
     {
         m_Vertex = maths::vec2(x, y);

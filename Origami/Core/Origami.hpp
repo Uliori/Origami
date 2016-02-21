@@ -60,6 +60,11 @@
 #include <Core/Maths/OMaths.hpp>
 #include <Core/Maths/OGeometry.hpp>
 
+//Physics folder
+#include <Core/Physics/2D/B2DDebugDraw.hpp>
+#include <Core/Physics/2D/OB2DSprite.hpp>
+#include <Core/Physics/2D/O2DPhysics.hpp>
+
 //Inputs folder
 #include <Core/Inputs/OInputsManager.hpp>
 
