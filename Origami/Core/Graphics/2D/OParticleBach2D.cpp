@@ -54,8 +54,6 @@ void OParticleBatch2D::init(int maxParticles,
     
     m_Particles.clear();
     m_Particles.resize(m_MaxParticles, OParticle2D());
-//    for (unsigned int i = 0; i < m_MaxParticles; ++i)
-//        m_Particles.push_back(OParticle2D());
 
     m_DecayRate = decayRate;
     m_TexturePath = texturePath;

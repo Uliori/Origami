@@ -62,7 +62,7 @@ public:
         return  m_Position;
     }
     
-    inline float getAngle() override{ return m_Body->GetAngle(); }
+//    inline float getAngle() override{ return m_Body->GetAngle(); }
     const bool& getFixedRotation() const { return m_FixedRotation; }
     const bool& getIsDynamic()     const { return m_IsDynamic; }
     

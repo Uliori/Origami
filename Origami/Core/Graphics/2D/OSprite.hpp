@@ -50,6 +50,11 @@ public:
         m_Color = color;
     }
     
+    inline void moveBy(float x, float y)
+    {
+        m_Position += maths::vec2(x, y);
+    }
+    
     virtual inline void setPosition(const maths::vec2& position)
     {
         m_Position = position;

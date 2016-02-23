@@ -55,7 +55,7 @@ m_FixedRotation(fixedRotation), m_IsDynamic(isDynamic)
 void OB2DSprite::createFixture()
 {
     b2CircleShape circleShape;
-    circleShape.m_radius = 10 / O_PTM_RATIO;
+    circleShape.m_radius = 20 / O_PTM_RATIO;
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
