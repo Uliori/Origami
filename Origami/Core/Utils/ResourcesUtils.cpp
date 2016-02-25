@@ -35,9 +35,15 @@ const char* ResourcesUtils::getResourcePathforFile(const char * file) {
 	return NULL;
 #elif __ANDROID__
 	return file;
-#else
-	std::string outp = RESOURCES_FOLDER + '\\' + file;
-	return outp.c_str();
+#elif O_TARGET_DESKTOP_WIN32
+	std::string fullP =  std::string(RESOURCES_FOLDER);
+	fullP.append("\\");
+	fullP.append(file);
+
+	char *cstr = new char[fullP.length() + 1];
+	strcpy(cstr, fullP.c_str());
+
+	return cstr;
 #endif
 }
 
@@ -61,10 +67,12 @@ bool ResourcesUtils::doesFileExists(const char * file)
     }
     return fileExists;
 #else
-    if (std::ifstream(ResourcesUtils::getResourcePathforFile(file))) {
-        return true;
-    }
-    return false;
+	const char *cstr = ResourcesUtils::getResourcePathforFile(file);
+	bool exists = std::ifstream(cstr)?true:false;
+	#ifdef O_TARGET_DESKTOP_WIN32
+		delete[] cstr;
+	#endif
+	return exists;
 #endif
 }
 
@@ -96,7 +104,11 @@ int ResourcesUtils::fileLength(const char * filePath, unsigned char *& buffer,
 #else
 	size_t bytes_read;
 	FILE *f;
-	f = fopen(getResourcePathforFile(filePath), "rb");
+	const char *cstr = ResourcesUtils::getResourcePathforFile(filePath);
+	f = fopen(cstr, "rb");
+	#ifdef O_TARGET_DESKTOP_WIN32
+		delete[] cstr;
+	#endif
 
 	if (NULL == f)
 	{

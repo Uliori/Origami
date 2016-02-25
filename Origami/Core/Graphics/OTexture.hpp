@@ -45,7 +45,7 @@ public:
     void setScale (float s) { m_Scale = s; if(m_Scale == 0) m_Scale = 1;}
 
 private:
-    float m_Width;
-    float m_Height;
-    float m_Scale;
+    float m_Width = 0;
+    float m_Height = 0;
+    float m_Scale = 1;
 };

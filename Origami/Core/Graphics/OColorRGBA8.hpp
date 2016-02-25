@@ -32,7 +32,7 @@ public:
     OColorRGBA8(maths::vec4 &color) {
         m_Color = color;
     }
-    OColorRGBA8(double red, double green, double blue, double alpha = 1)
+    OColorRGBA8(float red, float green, float blue, float alpha = 1)
     {
         m_Color[R] = red;
         m_Color[G] = green;

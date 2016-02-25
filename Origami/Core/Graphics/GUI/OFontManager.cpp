@@ -1,5 +1,6 @@
 #include "OFontManager.hpp"
 #include <Core/Utils/OGLUtils.hpp>
+#include <Core/OTypes.hpp>
 
 NS_O_BEGIN
 

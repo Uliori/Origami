@@ -4,5 +4,6 @@ proj.android/libs/*
 proj.android/obj/*
 proj.android_wallpaper/
 proj.win32/bin/*
+proj.win32/Origami-core/AppData/
 Game/AppData/RG*
 Game/AppSrc/RG*

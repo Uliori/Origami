@@ -130,6 +130,48 @@
     <Filter Include="Header Files\Origami\Dependencies\FreeType-gl">
       <UniqueIdentifier>{4099bfc5-b85c-462a-a338-ad1d6d740120}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game\AppSrc">
+      <UniqueIdentifier>{79131948-afcf-4651-9bcb-fce81a001ccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\AppSrc">
+      <UniqueIdentifier>{d4cd86eb-dded-40f1-8b14-15bf0169e1b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Physics">
+      <UniqueIdentifier>{09e2881c-fe00-49ef-9370-7f636ab0cf57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Origami\Core\Physics\2D">
+      <UniqueIdentifier>{69c7f559-7cb3-4eea-b6cd-1d91c78f5f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Physics">
+      <UniqueIdentifier>{faffece3-7ea8-4841-a299-097e0391a9d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Core\Physics\2D">
+      <UniqueIdentifier>{a952cbfe-90ee-450c-b769-0a9cfa4b80b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D">
+      <UniqueIdentifier>{81281a08-87eb-4f9a-ba8f-28b12725cc66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Collision">
+      <UniqueIdentifier>{9c45c921-6b11-4703-863d-d0445ad70ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Common">
+      <UniqueIdentifier>{048a3b22-c872-449c-83de-3c310a4726bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Dynamics">
+      <UniqueIdentifier>{7266b041-9b70-4ae3-89be-29a00bddb3cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Rope">
+      <UniqueIdentifier>{82a9353c-8771-4e36-ab7c-1fe261714117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts">
+      <UniqueIdentifier>{698d4678-cd74-4ceb-a126-478e336d44ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Dynamics\Joints">
+      <UniqueIdentifier>{c2385770-ea5f-46a5-bd6f-d95e23b192ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Origami\Dependencies\Box2D\Collision\Shapes">
+      <UniqueIdentifier>{0a7f876e-2f37-42b1-ad56-2a23ae5483e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -177,9 +219,6 @@
     <ClCompile Include="..\..\Origami\Core\Platform\Desktop\OApplicationDesktop.cpp">
       <Filter>Source Files\Origami\Core\Platform\Desktop</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Game\OGame.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Origami\Core\App\OApplication.cpp">
       <Filter>Source Files\Origami\Core\App</Filter>
     </ClCompile>
@@ -215,12 +254,6 @@
     </ClCompile>
     <ClCompile Include="..\..\Origami\Core\Graphics\Scenes\OScene.cpp">
       <Filter>Source Files\Origami\Core\Graphics\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp">
-      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.cpp">
-      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\vector.c">
       <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
@@ -294,9 +327,6 @@
     <ClCompile Include="..\..\Origami\Dependencies\FreeType\src\sfnt\sfnt.c">
       <Filter>Source Files\Origami\Dependencies\FreeType</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Game\BeachScene.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Origami\Core\ODirector.cpp">
       <Filter>Source Files\Origami\Core</Filter>
     </ClCompile>
@@ -306,101 +336,212 @@
     <ClCompile Include="..\..\Origami\Dependencies\FreeType-gl\texture-font.cpp">
       <Filter>Source Files\Origami\Dependencies\FreeType-gl</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\BambooScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\BeachAScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\BeachNMScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\BeachScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\CloudsScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\OGame.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\Particles2Scene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\ParticlesScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\RGSandboxScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\RGSTerrain.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\RGTerrain.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\AppSrc\SandboxScene.cpp">
+      <Filter>Source Files\Game\AppSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\ORef.cpp">
+      <Filter>Source Files\Origami\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OParticleBach2D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\2D\OParticleEngine2D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORenderer2D.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Renderers\ORendererPrimitives.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\O2DColorShader.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\O2DTextureShader.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Graphics\Shaders\OShader.cpp">
+      <Filter>Source Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Physics\2D\B2DDebugDraw.cpp">
+      <Filter>Source Files\Origami\Core\Physics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Core\Physics\2D\OB2DSprite.cpp">
+      <Filter>Source Files\Origami\Core\Physics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Rope\b2Rope.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Rope</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2Body.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2ContactManager.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2Fixture.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2Island.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2World.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\b2WorldCallbacks.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2DistanceJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2FrictionJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2GearJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2Joint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2MotorJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2MouseJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2PulleyJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2RopeJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2WeldJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Joints\b2WheelJoint.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2CircleContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2Contact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2ContactSolver.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Dynamics\Contacts\b2PolygonContact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2BlockAllocator.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2Draw.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2Math.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2Settings.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2StackAllocator.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Common\b2Timer.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2BroadPhase.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2CollideCircle.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2CollideEdge.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2CollidePolygon.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2Collision.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2Distance.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2DynamicTree.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\b2TimeOfImpact.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\Shapes\b2ChainShape.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\Shapes\b2CircleShape.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\Shapes\b2EdgeShape.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Origami\Dependencies\Box2D\Box2D\Collision\Shapes\b2PolygonShape.cpp">
+      <Filter>Source Files\Origami\Dependencies\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Origami\Core\Graphics\OWindow.h">
-      <Filter>Header Files\Origami\Core\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Maths\OMaths.h">
-      <Filter>Header Files\Origami\Core\Maths</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\OGL.h">
-      <Filter>Header Files\Origami\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OLog.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OGLUtils.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OTime.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\ResourcesUtils.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\ShaderUtils.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\TextureUtils.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OTextureCache.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OResourceManager.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Utils\OEException.h">
-      <Filter>Header Files\Origami\Core\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\App\OApplication.h">
-      <Filter>Header Files\Origami\Core\App</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Game\OGame.hpp">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Inputs\OInputsManager.h">
-      <Filter>Header Files\Origami\Core\Inputs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\OTexture.h">
-      <Filter>Header Files\Origami\Core\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OCamera2D.h">
-      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OSprite.h">
-      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\2D\Vertex2D.h">
-      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFont.h">
-      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFontManager.h">
-      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OLabel.h">
-      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.h">
-      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.h">
-      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORenderer2D.h">
-      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.h">
-      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.h">
-      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.h">
-      <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.h">
-      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OSimple2DShader.h">
-      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\program.h">
-      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\vector.h">
       <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
     </ClInclude>
@@ -422,17 +563,176 @@
     <ClInclude Include="..\..\Origami\Dependencies\FreeType-gl\freetype-gl.h">
       <Filter>Header Files\Origami\Dependencies\FreeType-gl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Game\BeachScene.hpp">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="..\..\Game\AppSrc\BambooScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\ODirector.h">
+    <ClInclude Include="..\..\Game\AppSrc\BeachAScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\BeachNMScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\BeachScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\CloudsScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\OGame.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\Particles2Scene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\ParticlesScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\RGSandboxScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\RGSTerrain.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\RGTerrain.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\AppSrc\SandboxScene.hpp">
+      <Filter>Header Files\Game\AppSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\ODirector.hpp">
       <Filter>Header Files\Origami\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\OMacros.h">
+    <ClInclude Include="..\..\Origami\Core\OGL.hpp">
       <Filter>Header Files\Origami\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Origami\Core\Maths\OGeometry.h">
+    <ClInclude Include="..\..\Origami\Core\OMacros.hpp">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\ORef.hpp">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Origami.hpp">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\OTypes.hpp">
+      <Filter>Header Files\Origami\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\App\OApplication.hpp">
+      <Filter>Header Files\Origami\Core\App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\OColorRGBA8.hpp">
+      <Filter>Header Files\Origami\Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\OTexture.hpp">
+      <Filter>Header Files\Origami\Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\OWindow.hpp">
+      <Filter>Header Files\Origami\Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OCamera2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OParticleBatch2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OParticleEngine2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\OSprite.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\2D\Vertex2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFont.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OFontManager.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\GUI\OLabel.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Layers\OLayer3D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORenderer2D.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererFactory.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererPrimitives.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Renderers\ORendererSpriteBatch.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Scenes\OScene.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\O2DColorShader.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\O2DTextureShader.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\OShader.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Graphics\Shaders\program.hpp">
+      <Filter>Header Files\Origami\Core\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Inputs\OInputsManager.hpp">
+      <Filter>Header Files\Origami\Core\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Maths\OGeometry.hpp">
       <Filter>Header Files\Origami\Core\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Maths\OMaths.hpp">
+      <Filter>Header Files\Origami\Core\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Physics\2D\B2DDebugDraw.hpp">
+      <Filter>Header Files\Origami\Core\Physics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Physics\2D\O2DPhysics.hpp">
+      <Filter>Header Files\Origami\Core\Physics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Physics\2D\OB2DSprite.hpp">
+      <Filter>Header Files\Origami\Core\Physics\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\cpp14Ext.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OEException.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OGLUtils.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OLog.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OResourceManager.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OTextureCache.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\OTime.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\ResourcesUtils.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\ShaderUtils.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Origami\Core\Utils\TextureUtils.hpp">
+      <Filter>Header Files\Origami\Core\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
