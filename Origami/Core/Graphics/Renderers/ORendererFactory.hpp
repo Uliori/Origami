@@ -11,6 +11,7 @@
 #include <vector>
 
 //shaders
+#include <Core/Graphics/Shaders/OTextShader.hpp>
 #include <Core/Graphics/Shaders/O2DColorShader.hpp>
 #include <Core/Graphics/Shaders/O2DTextureShader.hpp>
 
@@ -34,7 +35,7 @@ public:
     //Shaders
     static O2DColorShader* OShader_Color2D;
     static O2DTextureShader* OShader_Texture2D;
-
+    static OTextShader* OShader_Text;
     //user Renderers
     static std::vector<ORenderer2D*> userRenderers;
 

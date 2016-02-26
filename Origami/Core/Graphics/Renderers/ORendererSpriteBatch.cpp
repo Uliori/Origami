@@ -50,28 +50,28 @@ void ORendererSpriteBatch::begin()
     m_Glyphs.clear();
 }
 
-void ORendererSpriteBatch::submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
+void ORendererSpriteBatch::submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
 {
-    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder);
+    m_Glyphs.emplace_back(shader, position, dimensions, uvRect, texture, color, zOrder);
 }
 
-void ORendererSpriteBatch::submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
+void ORendererSpriteBatch::submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
 {
-    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder, angle);
+    m_Glyphs.emplace_back(shader, position, dimensions, uvRect, texture, color, zOrder, angle);
 }
 
-void ORendererSpriteBatch::submitBox(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
+void ORendererSpriteBatch::submitBox(OShader *shader, const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
 {
-    m_Glyphs.emplace_back(atopLeft, abottomLeft, atopRight, abottomRight, texture, zOrder);
+    m_Glyphs.emplace_back(shader, atopLeft, abottomLeft, atopRight, abottomRight, texture, zOrder);
 }
 
-void ORendererSpriteBatch::submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir)
+void ORendererSpriteBatch::submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir)
 {
     const maths::vec2 right(1.0f, 0.0f);
     float angle = acos(maths::dot(right, dir));
     if (dir.y < 0.0f) angle = -angle;
     
-    m_Glyphs.emplace_back(position, dimensions, uvRect, texture, color, zOrder, angle);
+    m_Glyphs.emplace_back(shader, position, dimensions, uvRect, texture, color, zOrder, angle);
 }
 
 void ORendererSpriteBatch::submitPolygon(const std::vector<Glyph>& glyphs)
@@ -79,59 +79,59 @@ void ORendererSpriteBatch::submitPolygon(const std::vector<Glyph>& glyphs)
     m_Glyphs.insert(m_Glyphs.end(), glyphs.begin(), glyphs.end());
 }
 
-void ORendererSpriteBatch::drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color)
+void ORendererSpriteBatch::drawString(OShader *shader, const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color, float zOrder)
 {
-    //        using namespace ftgl;
-    //
-    //        uint ts = font.GetID();
-    //
-    //
-    //        const maths::vec2& scale = font.GetScale();
-    //
-    //        float x = position.x;
-    //        float y = position.y;
-    //
-    //        texture_font_t* ftFont = font.GetFTFont();
-    //
-    //        for (uint i = 0; i < text.length(); i++)
-    //        {
-    //            char c = text[i];
-    //            texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
-    //            if (glyph != NULL)
-    //            {
-    //                if (i > 0)
-    //                {
-    //                    float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-    //                    x += kerning / scale.x;
-    //                }
-    //
-    //                float x0 = x + glyph->offset_x / scale.x;
-    //                float y0 = y + glyph->offset_y / scale.y;
-    //                float x1 = x0 + glyph->width / scale.x;
-    //                float y1 = y0 - glyph->height / scale.y;
-    //
-    //                float u0 = glyph->s0;
-    //                float v0 = glyph->t0;
-    //                float u1 = glyph->s1;
-    //                float v1 = glyph->t1;
-    //
-    //                m_glyphs.emplace_back(maths::vec3(x0, y0, 0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color);
-    //
-    //                x += glyph->advance_x / scale.x ;
-    //
-    ////                if (y < position.y - 100) {
-    ////                    DrawString("...", maths::vec3(x, y, position.z), font, color);
-    ////                    break;
-    ////                }
-    //                if (x >= position.x + 300) {
-    //                    x = position.x;
-    //                    y -= ftFont->height;
-    //                }
-    //
-    //
-    //            }
-    //        }
-    //
+    using namespace ftgl;
+    
+    uint ts = font.GetID();
+    
+    
+    const maths::vec2& scale = font.GetScale();
+    
+    float x = position.x;
+    float y = position.y;
+    
+    texture_font_t* ftFont = font.GetFTFont();
+    
+    for (uint i = 0; i < text.length(); i++)
+    {
+        char c = text[i];
+        texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
+        if (glyph != NULL)
+        {
+            if (i > 0)
+            {
+                float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+                x += kerning / scale.x;
+            }
+            
+            float x0 = x + glyph->offset_x / scale.x;
+            float y0 = y + glyph->offset_y / scale.y;
+            float x1 = x0 + glyph->width / scale.x;
+            float y1 = y0 - glyph->height / scale.y;
+            
+            float u0 = glyph->s0;
+            float v0 = glyph->t0;
+            float u1 = glyph->s1;
+            float v1 = glyph->t1;
+            
+            m_Glyphs.emplace_back(shader, maths::vec2(x0, y0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color, 1);
+            
+            x += glyph->advance_x / scale.x ;
+            
+            //                if (y < position.y - 100) {
+            //                    DrawString("...", maths::vec3(x, y, position.z), font, color);
+            //                    break;
+            //                }
+//            if (x >= position.x + 300) {
+//                x = position.x;
+//                y -= ftFont->height;
+//            }
+            
+            
+        }
+    }
+
 }
 
 void ORendererSpriteBatch::end()
@@ -151,15 +151,16 @@ void ORendererSpriteBatch::flush(OLayer2D *layer)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    ORendererFactory::OShader_Texture2D->bind();
-    glActiveTexture(GL_TEXTURE0);
-    ORendererFactory::OShader_Texture2D->setUniform1i("u_diffuse", 0);
-    ORendererFactory::OShader_Texture2D->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
     glBindVertexArray(m_VaoID);
 
     for (size_t i = 0; i < m_RenderBatches.size(); i++) {
+        
+        m_RenderBatches[i].currentShader->bind();
+        glActiveTexture(GL_TEXTURE0);
+        m_RenderBatches[i].currentShader->setUniform1i("u_diffuse", 0);
+        m_RenderBatches[i].currentShader->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
+        
         glBindTexture(GL_TEXTURE_2D, m_RenderBatches[i].texture);
-
         glDrawArrays(GL_TRIANGLES, m_RenderBatches[i].offset, m_RenderBatches[i].numVertices);
     }
 
@@ -183,7 +184,7 @@ void ORendererSpriteBatch::createRenderBatches() {
     int cv = 0; // current vertex
 
     //Add the first batch
-    m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[0]->textureID);
+    m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[0]->textureID, m_GlyphPointers[0]->currentShader);
     vertices[cv++] = m_GlyphPointers[0]->topLeft;
     vertices[cv++] = m_GlyphPointers[0]->bottomLeft;
     vertices[cv++] = m_GlyphPointers[0]->bottomRight;
@@ -196,9 +197,9 @@ void ORendererSpriteBatch::createRenderBatches() {
     for (size_t cg = 1; cg < m_GlyphPointers.size(); cg++) {
 
         // Check if this glyph can be part of the current batch
-        if (m_GlyphPointers[cg]->textureID != m_GlyphPointers[cg - 1]->textureID) {
+        if (m_GlyphPointers[cg]->textureID != m_GlyphPointers[cg - 1]->textureID || m_GlyphPointers[cg]->currentShader != m_GlyphPointers[cg - 1]->currentShader) {
             // Make a new batch
-            m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[cg]->textureID);
+            m_RenderBatches.emplace_back(offset, 6, m_GlyphPointers[cg]->textureID, m_GlyphPointers[cg]->currentShader);
         } else {
             // If its part of the current batch, just increase numVertices
             m_RenderBatches.back().numVertices += 6;

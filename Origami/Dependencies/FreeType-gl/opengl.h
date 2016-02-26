@@ -34,7 +34,7 @@
 #ifndef __OPEN_GL_H__
 #define __OPEN_GL_H__
 
-#include <Core/OGL.h>
+#include <Core/OGL.hpp>
 
 
 //#if defined(__APPLE__)

@@ -99,6 +99,8 @@
 		9116B7E01C7F84E9003B8A69 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9116B7801C7F84E9003B8A69 /* b2WheelJoint.cpp */; };
 		9116B7E11C7F84E9003B8A69 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9116B7831C7F84E9003B8A69 /* b2Rope.cpp */; };
 		9116B7E21C7F84E9003B8A69 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9116B7831C7F84E9003B8A69 /* b2Rope.cpp */; };
+		9116B7E91C7FD257003B8A69 /* OTextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9116B7E71C7FD257003B8A69 /* OTextShader.cpp */; };
+		9116B7EA1C7FD257003B8A69 /* OTextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9116B7E71C7FD257003B8A69 /* OTextShader.cpp */; };
 		911ADE371C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
 		911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */; };
 		911ADE3C1C498C5500CCE944 /* OParticleEngine2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ADE3A1C498C5500CCE944 /* OParticleEngine2D.cpp */; };
@@ -423,6 +425,8 @@
 		9116B7811C7F84E9003B8A69 /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		9116B7831C7F84E9003B8A69 /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		9116B7841C7F84E9003B8A69 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		9116B7E71C7FD257003B8A69 /* OTextShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OTextShader.cpp; sourceTree = "<group>"; };
+		9116B7E81C7FD257003B8A69 /* OTextShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OTextShader.hpp; sourceTree = "<group>"; };
 		911ADE351C4985C400CCE944 /* OParticleBach2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OParticleBach2D.cpp; sourceTree = "<group>"; };
 		911ADE361C4985C400CCE944 /* OParticleBatch2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OParticleBatch2D.hpp; sourceTree = "<group>"; };
 		911ADE391C49868C00CCE944 /* OTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OTypes.hpp; sourceTree = "<group>"; };
@@ -953,6 +957,8 @@
 				917574A51BD6C5C600EE8547 /* O2DTextureShader.hpp */,
 				9179C21D1C6BE0AE00F9D97A /* O2DColorShader.cpp */,
 				9179C21E1C6BE0AE00F9D97A /* O2DColorShader.hpp */,
+				9116B7E71C7FD257003B8A69 /* OTextShader.cpp */,
+				9116B7E81C7FD257003B8A69 /* OTextShader.hpp */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -1525,6 +1531,7 @@
 				913BC9451BE002C90013209D /* ftglyph.c in Sources */,
 				9147DF531BDBAEA0006DBC72 /* OCamera2D.cpp in Sources */,
 				9116B7C31C7F84E9003B8A69 /* b2EdgeAndPolygonContact.cpp in Sources */,
+				9116B7E91C7FD257003B8A69 /* OTextShader.cpp in Sources */,
 				913BC94F1BE002C90013209D /* fttype1.c in Sources */,
 				913BC6521BDF8A210013209D /* hb-buffer-serialize.cc in Sources */,
 				91B0FF1A1BC71E1C0051529B /* etc1_utils.c in Sources */,
@@ -1631,6 +1638,7 @@
 				9147DF501BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
 				91F235191C5A7B340066A66F /* BeachAScene.cpp in Sources */,
 				91F235231C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
+				9116B7EA1C7FD257003B8A69 /* OTextShader.cpp in Sources */,
 				913BC64D1BDF8A210013209D /* hb-blob.cc in Sources */,
 				9116B7C81C7F84E9003B8A69 /* b2PolygonContact.cpp in Sources */,
 				913BC7031BDF8A210013209D /* hb-unicode.cc in Sources */,

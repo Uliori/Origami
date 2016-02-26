@@ -9,6 +9,7 @@
 #include <Core/Maths/OGeometry.hpp>
 #include <Core/Graphics/Scenes/OScene.hpp>
 #include <Core/Inputs/OInputsManager.hpp>
+#include <Core/Graphics/GUI/OFontManager.hpp>
 
 
 NS_O_BEGIN

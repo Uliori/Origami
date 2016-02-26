@@ -1,4 +1,5 @@
 #include "OLabel.hpp"
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
 
 NS_O_BEGIN
 
@@ -36,7 +37,7 @@ OLabel::OLabel(const std::string& text, float x, float y, const std::string& fon
 
 void OLabel::submit(ORenderer2D* renderer) 
 {
-//    renderer->DrawString(m_text, m_Position, *m_Font, m_Color);
+    renderer->drawString(ORendererFactory::OShader_Text, m_Text, maths::vec3(m_Position), *m_Font, m_Color.getColorUint(), m_zOrder);
 }
 
 void OLabel::validateFont(const std::string& name, int size)

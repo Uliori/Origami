@@ -29,8 +29,8 @@ ORenderer2D.cpp
 NS_O_BEGIN
 
 //Glyph
-Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
-:textureID(texture), a_zOrder(zOrder) {
+Glyph::Glyph(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder)
+:textureID(texture), a_zOrder(zOrder), currentShader(shader) {
     
     topLeft.setColor(color);
     topLeft.setPosition(position.x, position.y + dimensions.y);
@@ -49,8 +49,8 @@ Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const m
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
-Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
-:textureID(texture), a_zOrder(zOrder) {
+Glyph::Glyph(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle)
+:textureID(texture), a_zOrder(zOrder), currentShader(shader) {
     
     maths::vec2 halfDims(dimensions.x * 0.5f, dimensions.y * 0.5f);
     
@@ -83,8 +83,8 @@ Glyph::Glyph(const maths::vec2 &position, const maths::vec2 &dimensions, const m
     topRight.setUV(uvRect.x + uvRect.z, uvRect.y + uvRect.w);
 }
 
-Glyph::Glyph(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
-:a_zOrder(zOrder), textureID(texture)
+Glyph::Glyph(OShader *shader, const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder)
+:a_zOrder(zOrder), textureID(texture), currentShader(shader)
 {
     topLeft = atopLeft;
     topRight = atopRight;

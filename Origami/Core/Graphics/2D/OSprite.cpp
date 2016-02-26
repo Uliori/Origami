@@ -10,6 +10,7 @@
 #include "Vertex2D.hpp"
 
 #include <Core/Utils/OResourceManager.hpp>
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
 
 NS_O_BEGIN
 
@@ -28,7 +29,7 @@ OSprite::~OSprite()
 
 void OSprite::submit(ORenderer2D* renderer) 
 {
-    renderer->submitBox(getPosition(), getSize(), getUV(), m_Texture->textureID, m_Color.getColorUint(), getZOrder(), getAngle());
+    renderer->submitBox(ORendererFactory::OShader_Texture2D, getPosition(), getSize(), getUV(), m_Texture->textureID, m_Color.getColorUint(), getZOrder(), getAngle());
 }
 
 bool OSprite::shouldBeRendered(OCamera2D* camera)

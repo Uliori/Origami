@@ -25,6 +25,7 @@
  ****************************************************************************/
 
 #include "OB2DSprite.hpp"
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
 
 NS_O_BEGIN
 
@@ -79,7 +80,7 @@ OB2DSprite::~OB2DSprite()
 
 void OB2DSprite::submit(ORenderer2D* renderer)
 {
-    renderer->submitBox(getPosition() - (m_Size / 2), getSize(), getUV(), m_Texture->textureID, m_Color.getColorUint(), getZOrder(), getAngle());
+    renderer->submitBox(ORendererFactory::OShader_Texture2D, getPosition() - (m_Size / 2), getSize(), getUV(), m_Texture->textureID, m_Color.getColorUint(), getZOrder(), getAngle());
 }
 
 NS_O_END

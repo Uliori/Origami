@@ -42,6 +42,8 @@ ODirector::~ODirector()
     //
 
     SAFE_DELETE(m_Timer);
+    
+    OFontManager::clean();
 }
 
 void ODirector::setFilesSuffixOrder()

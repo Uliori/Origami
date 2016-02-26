@@ -47,16 +47,6 @@ const std::string fragsimple2d =
 //                                    OGL_FragColor " =  vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
                                 "}\n";
 
-//Text Rendering
-//    "void main()\n"
-//    "{\n"
-//    "float a = " OGL_TEXTURE"(u_diffuse, v_UV).r;\n"
-//    OGL_FragColor " = vec4(v_fragColor.xyz, a * v_fragColor.a);\n"
-//    "}\n";
-
-
-
-
 
 O2DTextureShader::O2DTextureShader()
 {

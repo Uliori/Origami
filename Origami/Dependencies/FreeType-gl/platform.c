@@ -57,11 +57,11 @@ char *strndup( const char *s1, size_t n)
 
 
 // strndup() was only added in OSX lion
-#if defined(__APPLE__)
+//#if defined(__APPLE__)
 //char *strndup( const char *s1, size_t n)
 //{
 //    char *copy = calloc( n+1, sizeof(char) );
 //    memcpy( copy, s1, n );
 //    return copy;
 //};
-#endif
+//#endif

@@ -13,6 +13,8 @@ NS_O_BEGIN
 //shaders
 O2DTextureShader* ORendererFactory::OShader_Texture2D = nullptr;
 O2DColorShader* ORendererFactory::OShader_Color2D = nullptr;
+OTextShader* ORendererFactory::OShader_Text = nullptr;
+
 //Renderers
 ORendererSpriteBatch* ORendererFactory::ORenderer_SpriteBatch = nullptr;
 ORendererPrimitives* ORendererFactory::ORenderer_Primitives = nullptr;
@@ -27,6 +29,7 @@ void ORendererFactory::createRenderers()
     //Create Shaders
     if (OShader_Color2D == nullptr) OShader_Color2D = new O2DColorShader();
     if (OShader_Texture2D == nullptr) OShader_Texture2D = new O2DTextureShader();
+    if (OShader_Text == nullptr) OShader_Text = new OTextShader();
 
     //Create Renderers
     if (ORenderer_SpriteBatch == nullptr) ORenderer_SpriteBatch = new ORendererSpriteBatch();
@@ -39,7 +42,8 @@ void ORendererFactory::initRenderers()
 {
     OShader_Color2D->init();
     OShader_Texture2D->init();
-
+    OShader_Text->init();
+    
     ORenderer_SpriteBatch->init();
     ORenderer_Primitives->init();
 
@@ -61,6 +65,7 @@ void ORendererFactory::deleteRenderers()
     //delete shaders
     SAFE_DELETE(OShader_Color2D);
     SAFE_DELETE(OShader_Texture2D);
+    SAFE_DELETE(OShader_Text);
 
     //delete renderers
     SAFE_DELETE(ORenderer_SpriteBatch);

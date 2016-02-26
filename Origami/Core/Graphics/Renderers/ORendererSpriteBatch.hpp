@@ -19,18 +19,6 @@
 NS_O_BEGIN
 
 
-
-// Each render batch is used for a single draw call
-class RenderBatch {
-public:
-    RenderBatch(GLuint Offset, GLuint NumVertices, GLuint Texture)
-    :offset(Offset),numVertices(NumVertices), texture(Texture) {}
-    GLuint offset = 0;
-    GLuint numVertices = 0;
-    GLuint texture = 0;
-};
-
-
 class ORendererSpriteBatch : public ORenderer2D
 {
 public:
@@ -40,12 +28,12 @@ public:
     void init() override;
     void begin() override;
     
-    void drawString(const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color) override;
+    void drawString(OShader *shader, const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color, float zOrder) override;
     
-    void submitBox(const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder) override;
-    void submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) override;
-    void submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) override;
-    void submitBox(const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir) override;
+    void submitBox(OShader *shader, const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder) override;
+    void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) override;
+    void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) override;
+    void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir) override;
     
     void submitPolygon(const std::vector<Glyph>& glyphs) override;
     
