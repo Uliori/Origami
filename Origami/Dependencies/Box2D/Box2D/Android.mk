@@ -4,8 +4,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libbox2d_static
 
-#LOCAL_MODULE_FILENAME := libbox2d
-
 LOCAL_SRC_FILES := \
 Collision/b2BroadPhase.cpp \
 Collision/b2CollideCircle.cpp \

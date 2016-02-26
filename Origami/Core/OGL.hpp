@@ -30,9 +30,6 @@
 
         #define GL_DEPTH24_STENCIL8 GL_DEPTH24_STENCIL8_OES
         #define glClearDepth glClearDepthf
-
-        #define GL_RED GL_RED_EXT
-
     #endif
 #elif defined(O_TARGET_MOBILE_ANDROID)
     #ifdef O_USE_ES3
@@ -51,8 +48,6 @@
         #define GL_DEPTH24_STENCIL8 GL_DEPTH24_STENCIL8_OES
         #define glClearDepth glClearDepthf
 
-        #define GL_RED GL_RED_EXT
-//        #define GL_RED 0x1903
     #endif
 
 #endif

@@ -8,10 +8,16 @@ NS_O_BEGIN
 OFont::OFont(const std::string& name, const std::string& filename, float size)
 : m_Name(name), m_Filename(filename), m_Size(size), m_Scale(maths::vec2(1.0f, 1.0f))
 {
-		m_FTAtlas = ftgl::texture_atlas_new(512, 512, 1);
-        m_FTFont = ftgl::texture_font_new_from_file(m_FTAtlas, size, ResourcesUtils::getResourcePathforFile(filename.c_str()));
-        if(!m_FTFont)
-			OErrLog("Failed to load font '" <<  filename.c_str() << "'!");
+    m_FTAtlas = ftgl::texture_atlas_new(512, 512, 1);
+    
+    unsigned char* buffer;
+    size_t buffer_length;
+    ResourcesUtils::fileLength(filename.c_str(), buffer, buffer_length);
+    
+    m_FTFont = ftgl::texture_font_new_from_memory(m_FTAtlas, size, buffer, buffer_length);
+    
+    if(!m_FTFont)
+        OErrLog("Failed to load font '" <<  filename.c_str() << "'!");
 }
 
 	OFont::OFont(const std::string& name, const unsigned char* data, unsigned int datasize, float size)
