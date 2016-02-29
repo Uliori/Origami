@@ -21,7 +21,7 @@ public:
     O2DTextureShader();
     
     void init() override;
-    
+    void prepare(OCamera2D *camera) override;
 private:
     void bindLocations() override;
     

@@ -26,8 +26,8 @@ OFont* OFontManager::get(const std::string& name)
         if (font->GetName() == name)
             return font;
     }
-    // TODO: Maybe return a default font instead?
-    return nullptr;
+    //return the default font
+    return get();
 }
 
 OFont* OFontManager::get(const std::string& name, unsigned int size)
@@ -37,8 +37,8 @@ OFont* OFontManager::get(const std::string& name, unsigned int size)
         if (font->GetSize() == size && font->GetName() == name)
             return font;
     }
-    // TODO: Maybe return a default font instead?
-    return nullptr;
+    //return the default font
+    return get();
 }
 
 void OFontManager::clean()

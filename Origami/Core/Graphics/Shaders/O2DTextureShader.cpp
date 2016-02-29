@@ -72,4 +72,10 @@ void O2DTextureShader::bindLocations()
 
 }
 
+void O2DTextureShader::prepare(OCamera2D *camera)
+{
+    glActiveTexture(GL_TEXTURE0);
+    setUniform1i("u_diffuse", 0);
+    setUniformMat4("u_MVP", camera->getCameraMatrix());
+}
 NS_O_END

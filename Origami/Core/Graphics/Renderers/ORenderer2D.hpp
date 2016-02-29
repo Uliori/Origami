@@ -12,6 +12,8 @@
 #include <vector>
 
 #include <Core/Maths/OMaths.hpp>
+#include <Core/Maths/OGeometry.hpp>
+
 #include <Core/OMacros.hpp>
 #include <Core/OGL.hpp>
 #include <Core/Graphics/Shaders/OShader.hpp>
@@ -71,7 +73,8 @@ public:
     virtual void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) {}
     virtual void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, float angle) {}
     virtual void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder, const maths::vec2& dir) {}
-    virtual void drawString(OShader *shader, const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color, float zOrder) {}
+    
+    virtual void drawString(OShader *shader, const std::vector<std::string>& Lines, const std::vector<float>& LinesLength, const Rect& rect, int alignment, const OFont& font, unsigned int color, float zOrder) {}
     
     virtual void end() {}
     

@@ -93,4 +93,10 @@ void OTextShader::bindLocations()
     
 }
 
+void OTextShader::prepare(OCamera2D *camera)
+{
+    glActiveTexture(GL_TEXTURE0);
+    setUniform1i("u_diffuse", 0);
+    setUniformMat4("u_MVP", camera->getCameraMatrix());
+}
 NS_O_END

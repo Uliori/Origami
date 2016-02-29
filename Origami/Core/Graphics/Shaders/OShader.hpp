@@ -4,7 +4,7 @@
 
 #include <Core/OGL.hpp>
 #include <Core/Maths/OMaths.hpp>
-
+#include <Core/Graphics/2D/OCamera2D.hpp>
 #include <string>
 
 #include <Core/OMacros.hpp>
@@ -40,6 +40,7 @@ public:
     void unbind() const;
 
     virtual void bindLocations() = 0;
+    virtual void prepare(OCamera2D *camera) = 0;
     virtual void init() = 0;
 protected:
     GLuint load(const std::string &vertSrc, const std::string &fragSrc);

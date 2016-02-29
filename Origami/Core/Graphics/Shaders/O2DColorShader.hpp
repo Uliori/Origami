@@ -39,7 +39,7 @@ public:
     O2DColorShader();
     
     void init() override;
-    
+    void prepare(OCamera2D *camera) override;
 private:
     void bindLocations() override;
     

@@ -81,4 +81,8 @@ void O2DColorShader::bindLocations()
     m_Program->bindLocation(1, "a_color");
 }
 
+void O2DColorShader::prepare(OCamera2D *camera)
+{
+    setUniformMat4("u_MVP", camera->getCameraMatrix());
+}
 NS_O_END

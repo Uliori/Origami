@@ -33,4 +33,8 @@
   #define MAX(A,B)	((A) > (B) ? (A) : (B))
 #endif
 
+#define fromBottomLeft(frameSize, position) maths::vec2(-frameSize.width / 2, -frameSize.height / 2) + position
+#define fromCenter(frameSize, position) maths::vec2(-frameSize.width / 2, 0) + position
+
+
 #endif /* OMacros_h */

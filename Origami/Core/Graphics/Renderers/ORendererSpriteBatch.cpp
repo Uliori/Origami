@@ -79,59 +79,108 @@ void ORendererSpriteBatch::submitPolygon(const std::vector<Glyph>& glyphs)
     m_Glyphs.insert(m_Glyphs.end(), glyphs.begin(), glyphs.end());
 }
 
-void ORendererSpriteBatch::drawString(OShader *shader, const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color, float zOrder)
+void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::string>& Lines, const std::vector<float>& LinesLength, const Rect& rect, int alignment, const OFont& font, unsigned int color, float zOrder)
 {
+    //Get font data
     using namespace ftgl;
-    
     uint ts = font.GetID();
-    
-    
-    const maths::vec2& scale = font.GetScale();
-    
-    float x = position.x;
-    float y = position.y;
-    
+    if (ts == 0) {
+        return;
+    }
     texture_font_t* ftFont = font.GetFTFont();
+    const maths::vec2& scale = font.GetScale();
+    float fontHeight = font.GetSize() / scale.y;
+    //
     
-    for (uint i = 0; i < text.length(); i++)
-    {
-        char c = text[i];
-        texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
-        if (glyph != NULL)
+    float startX = rect.origin.x;
+    float startY = rect.origin.y + rect.size.height - fontHeight;
+
+    float x = startX;
+    float y = startY;
+
+    //get the number of lines that can be rendered inside the rect, given a font size;
+    int nbrOfLines = 0;
+    float textHeightTMP = 0;
+    for (int i = 0; i < Lines.size(); i++) {
+        if (textHeightTMP + fontHeight < rect.size.height) {
+            textHeightTMP += fontHeight;
+            nbrOfLines++;
+        }
+        else
         {
-            if (i > 0)
-            {
-                float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-                x += kerning / scale.x;
-            }
-            
-            float x0 = x + glyph->offset_x / scale.x;
-            float y0 = y + glyph->offset_y / scale.y;
-            float x1 = x0 + glyph->width / scale.x;
-            float y1 = y0 - glyph->height / scale.y;
-            
-            float u0 = glyph->s0;
-            float v0 = glyph->t0;
-            float u1 = glyph->s1;
-            float v1 = glyph->t1;
-            
-            m_Glyphs.emplace_back(shader, maths::vec2(x0, y0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color, 1);
-            
-            x += glyph->advance_x / scale.x ;
-            
-            //                if (y < position.y - 100) {
-            //                    DrawString("...", maths::vec3(x, y, position.z), font, color);
-            //                    break;
-            //                }
-//            if (x >= position.x + 300) {
-//                x = position.x;
-//                y -= ftFont->height;
-//            }
-            
-            
+            break;
         }
     }
+    //if the font size is greater than the rect height, or if there is no line to render
+    if (nbrOfLines  == 0) {
+        return;
+    }
+    //
+    
+    //the height of the actual text to render
+    float textHeight = nbrOfLines * fontHeight;
+    
+    
+    //Text vertical alignment
+    if (alignment & OTextAlignment::OTEXT_ALIGN_TOP)
+        y = startY;
+    else if (alignment & OTextAlignment::OTEXT_ALIGN_CENTERED_V)
+        y = startY - (rect.size.height - textHeight)/2 + fontHeight/2;
+    else if (alignment & OTextAlignment::OTEXT_ALIGN_BOTTOM)
+        y = startY - (rect.size.height - textHeight);
 
+    
+    for (int i = 0; i < nbrOfLines; i++) {
+        const std::string& text = Lines[i];
+        float lineWidth = LinesLength[i];
+        
+        //Text horizontal alignment
+        if (alignment & OTextAlignment::OTEXT_ALIGN_LEFT)
+            x = startX;
+        else if (alignment & OTextAlignment::OTEXT_ALIGN_CENTERED_H)
+            x = startX + (rect.size.width - lineWidth)/2;
+        else if (alignment & OTextAlignment::OTEXT_ALIGN_RIGHT)
+            x = startX + (rect.size.width - lineWidth);
+        
+        for (uint i = 0; i < text.length(); i++)
+        {
+            char c = text[i];
+            texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
+            if (glyph != NULL)
+            {
+                if (i > 0)
+                {
+                    float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+                    x += kerning / scale.x;
+                }
+                
+                float x0 = x + glyph->offset_x / scale.x;
+                float y0 = y + glyph->offset_y / scale.y;
+                float x1 = x0 + glyph->width / scale.x;
+                float y1 = y0 - glyph->height / scale.y;
+                
+                float u0 = glyph->s0;
+                float v0 = glyph->t0;
+                float u1 = glyph->s1;
+                float v1 = glyph->t1;
+                
+                if (c == ' ')
+                {
+                    x += glyph->advance_x / scale.x ;
+                    continue;
+                }
+                
+                m_Glyphs.emplace_back(shader, maths::vec2(x0, y0), maths::vec2(x1 - x0, y1 - y0), maths::vec4(u0, v0, u1 - u0, v1 - v0), ts, color, zOrder);
+                
+                x += glyph->advance_x / scale.x ;
+                
+            }
+        }
+        
+        x = startX;
+        y -= fontHeight;
+        
+    }
 }
 
 void ORendererSpriteBatch::end()
@@ -156,10 +205,7 @@ void ORendererSpriteBatch::flush(OLayer2D *layer)
     for (size_t i = 0; i < m_RenderBatches.size(); i++) {
         
         m_RenderBatches[i].currentShader->bind();
-        glActiveTexture(GL_TEXTURE0);
-        m_RenderBatches[i].currentShader->setUniform1i("u_diffuse", 0);
-        m_RenderBatches[i].currentShader->setUniformMat4("u_MVP", layer->getCamera()->getCameraMatrix());
-        
+        m_RenderBatches[i].currentShader->prepare(layer->getCamera());
         glBindTexture(GL_TEXTURE_2D, m_RenderBatches[i].texture);
         glDrawArrays(GL_TRIANGLES, m_RenderBatches[i].offset, m_RenderBatches[i].numVertices);
     }

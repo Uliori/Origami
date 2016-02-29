@@ -52,7 +52,7 @@ void OGame::init()
 
 void OGame::tick()
 {
-  OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
+//  OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
 //    std::ostringstream stream;
 //    stream << GetFPS();
 //

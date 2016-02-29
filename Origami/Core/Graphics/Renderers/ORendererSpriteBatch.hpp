@@ -21,6 +21,16 @@ NS_O_BEGIN
 
 class ORendererSpriteBatch : public ORenderer2D
 {
+    enum OTextAlignment
+    {
+        OTEXT_ALIGN_LEFT = 1,
+        OTEXT_ALIGN_CENTERED_H = 2,
+        OTEXT_ALIGN_RIGHT = 4,
+        OTEXT_ALIGN_TOP = 8,
+        OTEXT_ALIGN_CENTERED_V = 16,
+        OTEXT_ALIGN_BOTTOM = 32
+    };
+    
 public:
     ORendererSpriteBatch();
     virtual ~ORendererSpriteBatch();
@@ -28,7 +38,7 @@ public:
     void init() override;
     void begin() override;
     
-    void drawString(OShader *shader, const std::string& text, const maths::vec3& position, const OFont& font, unsigned int color, float zOrder) override;
+    void drawString(OShader *shader, const std::vector<std::string>& Lines, const std::vector<float>& LinesLength, const Rect& rect, int alignment, const OFont& font, unsigned int color, float zOrder) override;
     
     void submitBox(OShader *shader, const VertexData2D &atopLeft,const VertexData2D &abottomLeft,const VertexData2D &atopRight,const VertexData2D &abottomRight, GLuint texture, float zOrder) override;
     void submitBox(OShader *shader, const maths::vec2 &position, const maths::vec2 &dimensions, const maths::vec4 &uvRect, GLuint texture, unsigned int color, float zOrder) override;
