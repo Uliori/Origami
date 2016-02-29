@@ -93,7 +93,7 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
     //
     
     float startX = rect.origin.x;
-    float startY = rect.origin.y + rect.size.height - fontHeight;
+    float startY = rect.origin.y + rect.size.height - (fontHeight + ftFont->descender); // need to substract only the origin point
 
     float x = startX;
     float y = startY;
@@ -102,7 +102,7 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
     int nbrOfLines = 0;
     float textHeightTMP = 0;
     for (int i = 0; i < Lines.size(); i++) {
-        if (textHeightTMP + fontHeight < rect.size.height) {
+        if (textHeightTMP + fontHeight <= rect.size.height) {
             textHeightTMP += fontHeight;
             nbrOfLines++;
         }
@@ -112,6 +112,7 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
         }
     }
     //if the font size is greater than the rect height, or if there is no line to render
+    OLog(nbrOfLines << " " << fontHeight << " " << rect.size.height);
     if (nbrOfLines  == 0) {
         return;
     }
@@ -125,7 +126,7 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
     if (alignment & OTextAlignment::OTEXT_ALIGN_TOP)
         y = startY;
     else if (alignment & OTextAlignment::OTEXT_ALIGN_CENTERED_V)
-        y = startY - (rect.size.height - textHeight)/2 + fontHeight/2;
+        y = startY - (rect.size.height - textHeight)/2 ;
     else if (alignment & OTextAlignment::OTEXT_ALIGN_BOTTOM)
         y = startY - (rect.size.height - textHeight);
 
@@ -158,6 +159,8 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
                 float y0 = y + glyph->offset_y / scale.y;
                 float x1 = x0 + glyph->width / scale.x;
                 float y1 = y0 - glyph->height / scale.y;
+                
+                
                 
                 float u0 = glyph->s0;
                 float v0 = glyph->t0;

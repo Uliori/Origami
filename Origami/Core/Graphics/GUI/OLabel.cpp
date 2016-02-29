@@ -132,9 +132,6 @@ void OLabel::getLines()
     m_Lines.clear();
     m_LinesWidth.clear();
     
-    m_Lines.push_back("");
-    m_LinesWidth.push_back(0);
-    
     std::stringstream stringStream(m_Text);
     std::string line;
     std::vector<std::string> wordVector;
@@ -144,6 +141,9 @@ void OLabel::getLines()
     float currentLineLength = 0;
     while(std::getline(stringStream, line))
     {
+        m_Lines.push_back("");
+        m_LinesWidth.push_back(0);
+        
         std::size_t prev = 0, pos;
         while ((pos = line.find_first_of(" ", prev)) != std::string::npos) //while there is a separator
         {
