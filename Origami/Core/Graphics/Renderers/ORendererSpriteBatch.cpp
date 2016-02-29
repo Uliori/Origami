@@ -93,7 +93,7 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
     //
     
     float startX = rect.origin.x;
-    float startY = rect.origin.y + rect.size.height - (fontHeight + ftFont->descender); // need to substract only the origin point
+    float startY = rect.origin.y + rect.size.height - (fontHeight + (ftFont->descender / scale.y)); // need to substract only the origin point
 
     float x = startX;
     float y = startY;
@@ -112,7 +112,6 @@ void ORendererSpriteBatch::drawString(OShader *shader, const std::vector<std::st
         }
     }
     //if the font size is greater than the rect height, or if there is no line to render
-    OLog(nbrOfLines << " " << fontHeight << " " << rect.size.height);
     if (nbrOfLines  == 0) {
         return;
     }

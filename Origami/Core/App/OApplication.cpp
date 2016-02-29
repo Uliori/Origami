@@ -11,8 +11,12 @@ OApplication::OApplication(const char* name, uint width, uint height)
 void OApplication::init()
 {
     m_Window = new OWindow(m_Name, m_Width, m_Height, this);
-
     ORendererFactory::createRenderers();
+    
+    ODirector::director()->setFilesSuffixOrder();
+    OFontManager::init();
+    
+    onInit();
 }
 
 void OApplication::start()
@@ -53,6 +57,7 @@ void OApplication::tick()
 
 void OApplication::update(float deltaTime)
 {
+    onUpdate(deltaTime);
     if (!m_Suspended) {
         ODirector::director()->update(deltaTime);
     }

@@ -5,6 +5,7 @@
 #include "OFontManager.hpp"
 
 #include <Core/OMacros.hpp>
+#include <string>
 
 NS_O_BEGIN
 
@@ -43,13 +44,14 @@ private:
     
     void init();
 public:
-    OLabel(const std::string& text, const maths::vec2& position);
-    OLabel(const std::string& text, const maths::vec2& position, OFont* font);
+    OLabel(const std::string& text);
+    OLabel(const std::string& text, OFont* font);
     
     void submit(ORenderer2D* renderer)  override;
 
     inline void setText(const std::string& nt) { m_Text = nt; getLines(); }
     inline void setTextColor(const OColorRGBA8& color) { m_TextColor = color; }
+    inline void setBackgroundColor(const OColorRGBA8& color) { m_Color = color; }
     inline void setFont(OFont* font) { m_Font = font; }
     inline void setTextAlignment(OTextAlignment alignment) { textAlignment = alignment; }
     

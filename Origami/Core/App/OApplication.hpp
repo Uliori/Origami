@@ -28,7 +28,10 @@ public:
     OApplication(const char* name, uint width, uint height);
     virtual ~OApplication();
 
-    virtual void init();
+    virtual void onInit() {};
+    virtual void onUpdate(float deltaTime) {};
+    
+    void init();
 
     void start();
     void suspend();

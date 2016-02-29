@@ -52,6 +52,7 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							$(CORE_LIST)/ODirector.cpp \
 							$(CORE_LIST)/ORef.cpp \
 							$(CORE_LIST)/App/OApplication.cpp \
+							$(CORE_LIST)/Embedded/Embedded.cpp \
 							$(CORE_LIST)/Inputs/OInputsManager.cpp \
 							$(CORE_LIST)/Maths/OMaths.cpp \
 							$(CORE_LIST)/Maths/OGeometry.cpp \

@@ -5,25 +5,24 @@
 
 NS_O_BEGIN
 
-OLabel::OLabel(const std::string& text, const maths::vec2& position)
-    : m_Text(text), m_Font(OFontManager::get("SourceSansPro"))
+OLabel::OLabel(const std::string& text)
+: m_Text(text), m_Font(OFontManager::get())
 {
-    m_Position = position;
     init();
 }
 
-OLabel::OLabel(const std::string& text, const maths::vec2& position, OFont* font)
+OLabel::OLabel(const std::string& text, OFont* font)
     : m_Text(text), m_Font(font)
 {
-    m_Position = position;
     init();
 }
 
 void OLabel::init()
 {
-    m_Size = maths::vec2(180, 150);
+    m_Position = maths::vec2(0, 0);
+    m_Size = maths::vec2(180, 50);
     m_TextColor = OColorRGBA8();
-    m_Color = OColorRGBA8(1, 0, 0);
+    m_Color = OColorRGBA8(0, 0, 0, 0);
     borders = maths::vec4(2, 2, 2, 2);
     
     getLines();
@@ -35,11 +34,11 @@ void OLabel::submit(ORenderer2D* renderer)
     
     //draw the background color
     renderer->submitBox(ORendererFactory::OShader_Color2D, m_Position, m_Size, maths::vec4(), 0, m_Color.getColorUint(), m_zOrder);
-    //draw the text rect (this is for tests only)
-    renderer->submitBox(ORendererFactory::OShader_Color2D, maths::vec2(textRect.x, textRect.y),
-                        maths::vec2(textRect.z, textRect.w), maths::vec4(),
-                        0, OColorRGBA8(0, 0, 1).getColorUint(),
-                        m_zOrder);
+//    //draw the text rect (this is for tests only)
+//    renderer->submitBox(ORendererFactory::OShader_Color2D, maths::vec2(textRect.x, textRect.y),
+//                        maths::vec2(textRect.z, textRect.w), maths::vec4(),
+//                        0, OColorRGBA8(0, 0, 1).getColorUint(),
+//                        m_zOrder);
     //draw the text in the rect
     renderer->drawString(ORendererFactory::OShader_Text, m_Lines, m_LinesWidth,
                          Rect(textRect.x, textRect.y, textRect.z, textRect.w), textAlignment, *m_Font,

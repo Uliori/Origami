@@ -2,9 +2,17 @@
 #include <Core/Utils/OGLUtils.hpp>
 #include <Core/OTypes.hpp>
 
+#include <Core/Embedded/Embedded.hpp>
+
 NS_O_BEGIN
 
 std::vector<OFont*> OFontManager::m_Fonts;
+
+void OFontManager::init()
+{
+    //Add a default font
+    new OFont("SourceSansPro", DEFAULT_FONT, DEFAULT_FONT_SIZE, 34);
+}
 
 void OFontManager::add(OFont* font)
 {

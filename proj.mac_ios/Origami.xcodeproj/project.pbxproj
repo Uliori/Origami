@@ -262,6 +262,10 @@
 		919AA5061BC85E27004C7052 /* sIphHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 919AA5031BC85E27004C7052 /* sIphHD.png */; };
 		919CC6471C72033800F6CA63 /* OB2DSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919CC6451C72033800F6CA63 /* OB2DSprite.cpp */; };
 		919CC6481C72033800F6CA63 /* OB2DSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919CC6451C72033800F6CA63 /* OB2DSprite.cpp */; };
+		91AA88561C84BA9E005C1DD6 /* Embedded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91AA88521C84BA9E005C1DD6 /* Embedded.cpp */; };
+		91AA88571C84BA9E005C1DD6 /* Embedded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91AA88521C84BA9E005C1DD6 /* Embedded.cpp */; };
+		91AA88581C84BA9E005C1DD6 /* SourceSansPro-Light.embed in Resources */ = {isa = PBXBuildFile; fileRef = 91AA88551C84BA9E005C1DD6 /* SourceSansPro-Light.embed */; };
+		91AA88591C84BA9E005C1DD6 /* SourceSansPro-Light.embed in Resources */ = {isa = PBXBuildFile; fileRef = 91AA88551C84BA9E005C1DD6 /* SourceSansPro-Light.embed */; };
 		91B0FEF01BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; };
 		91B0FEF11BC71C3C0051529B /* OWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED11BC71C3C0051529B /* OWindow.cpp */; };
 		91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B0FED81BC71C3C0051529B /* OMaths.cpp */; };
@@ -549,6 +553,9 @@
 		919AA5031BC85E27004C7052 /* sIphHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sIphHD.png; sourceTree = "<group>"; };
 		919CC6451C72033800F6CA63 /* OB2DSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OB2DSprite.cpp; sourceTree = "<group>"; };
 		919CC6461C72033800F6CA63 /* OB2DSprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OB2DSprite.hpp; sourceTree = "<group>"; };
+		91AA88521C84BA9E005C1DD6 /* Embedded.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Embedded.cpp; sourceTree = "<group>"; };
+		91AA88531C84BA9E005C1DD6 /* Embedded.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Embedded.hpp; sourceTree = "<group>"; };
+		91AA88551C84BA9E005C1DD6 /* SourceSansPro-Light.embed */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SourceSansPro-Light.embed"; sourceTree = "<group>"; };
 		91B0FECE1BC71C3C0051529B /* OApplication.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OApplication.hpp; sourceTree = "<group>"; };
 		91B0FED11BC71C3C0051529B /* OWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OWindow.cpp; sourceTree = "<group>"; };
 		91B0FED21BC71C3C0051529B /* OWindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OWindow.hpp; sourceTree = "<group>"; };
@@ -1023,6 +1030,24 @@
 			path = splashscreen;
 			sourceTree = "<group>";
 		};
+		91AA88511C84BA9E005C1DD6 /* Embedded */ = {
+			isa = PBXGroup;
+			children = (
+				91AA88521C84BA9E005C1DD6 /* Embedded.cpp */,
+				91AA88531C84BA9E005C1DD6 /* Embedded.hpp */,
+				91AA88541C84BA9E005C1DD6 /* files */,
+			);
+			path = Embedded;
+			sourceTree = "<group>";
+		};
+		91AA88541C84BA9E005C1DD6 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				91AA88551C84BA9E005C1DD6 /* SourceSansPro-Light.embed */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
 		91B0FE931BC71B270051529B /* Origami */ = {
 			isa = PBXGroup;
 			children = (
@@ -1043,6 +1068,7 @@
 				91CC3DFF1C357E0700F923C1 /* ODirector.cpp */,
 				912DAAA11C447AA6003F8339 /* ORef.hpp */,
 				912DAAA01C447AA6003F8339 /* ORef.cpp */,
+				91AA88511C84BA9E005C1DD6 /* Embedded */,
 				91B0FECD1BC71C3C0051529B /* App */,
 				91B0FECF1BC71C3C0051529B /* Graphics */,
 				91B0FED71BC71C3C0051529B /* Maths */,
@@ -1373,6 +1399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				916E36C01BD96E3F005EE626 /* AppData in Resources */,
+				91AA88581C84BA9E005C1DD6 /* SourceSansPro-Light.embed in Resources */,
 				91F5F3921BC6F8F80030DA6A /* MacAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1381,6 +1408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91AA88591C84BA9E005C1DD6 /* SourceSansPro-Light.embed in Resources */,
 				91F5F3CA1BC6FCF40030DA6A /* Main.storyboard in Resources */,
 				916E36C11BD96E3F005EE626 /* AppData in Resources */,
 				919AA5051BC85E27004C7052 /* sIph.png in Resources */,
@@ -1472,6 +1500,7 @@
 				9116B79F1C7F84E9003B8A69 /* b2BlockAllocator.cpp in Sources */,
 				9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
 				9179C21F1C6BE0AE00F9D97A /* O2DColorShader.cpp in Sources */,
+				91AA88561C84BA9E005C1DD6 /* Embedded.cpp in Sources */,
 				91F235221C5A7B340066A66F /* Particles2Scene.cpp in Sources */,
 				913BC9491BE002C90013209D /* ftlcdfil.c in Sources */,
 				913BC6F21BDF8A210013209D /* hb-set.cc in Sources */,
@@ -1611,6 +1640,7 @@
 				91B0FF031BC71C3C0051529B /* TextureUtils.cpp in Sources */,
 				913BC9581BE002F30013209D /* pshinter.c in Sources */,
 				919AA4FC1BC85418004C7052 /* OApplicationiOS.cpp in Sources */,
+				91AA88571C84BA9E005C1DD6 /* Embedded.cpp in Sources */,
 				913BC93C1BE002C90013209D /* ftbase.c in Sources */,
 				913BC6DF1BDF8A210013209D /* hb-ot-shape-complex-indic.cc in Sources */,
 				9116B7B01C7F84E9003B8A69 /* b2Fixture.cpp in Sources */,

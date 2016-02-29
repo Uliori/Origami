@@ -19,6 +19,7 @@ public:
     static OFont* get(const std::string& name);
     static OFont* get(const std::string& name, unsigned int size);
     
+    static void init();
     static void clean();
 private:
     OFontManager() { }

@@ -17,9 +17,9 @@ class OGame : public OApplication
 public:
     OGame(const char* name, uint width, uint height);
 
-    void init() override;
     void tick() override;
-
-    void update(float deltaTime) override;
+    
+    void onInit() override;
+    void onUpdate(float deltaTime) override;
 
 };

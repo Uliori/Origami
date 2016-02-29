@@ -12,8 +12,8 @@ NS_O_BEGIN
 class OFont
 {
 private:
-    ftgl::texture_atlas_t* m_FTAtlas;
-    ftgl::texture_font_t* m_FTFont;
+    ftgl::texture_atlas_t* m_FTAtlas = nullptr;
+    ftgl::texture_font_t* m_FTFont = nullptr;
     
     float m_Size;
     maths::vec2 m_Scale;
@@ -22,7 +22,8 @@ private:
 public:
     OFont(const std::string& name, const std::string& filename, float size);
     OFont(const std::string& name, const unsigned char* data, unsigned int datasize, float size);
-
+    ~OFont();
+    
     void setScale(float x, float y);
 
     inline ftgl::texture_font_t* GetFTFont() const { return m_FTFont; }

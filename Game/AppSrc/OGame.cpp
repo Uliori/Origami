@@ -28,13 +28,10 @@ OGame::OGame(const char* name, uint width, uint height) : OApplication(name, wid
     OLog("Application Height : " << height);
 }
 
-void OGame::init()
+void OGame::onInit()
 {
-
-    OApplication::init();
-    ODirector::director()->setFilesSuffixOrder();
     ODirector::director()->setDesignResolutionSize(800, 480, ResolutionPolicy::FIXED);
-
+    
 //    ODirector::director()->addScene("1", new CloudsScene());
 //    ODirector::director()->addScene("2", new BeachScene());
 //    ODirector::director()->addScene("3", new BeachNMScene());
@@ -59,7 +56,7 @@ void OGame::tick()
 //   sc1->fps->setText(stream.str());
 }
 
-void OGame::update(float deltaTime)
+void OGame::onUpdate(float deltaTime)
 {
 //#ifdef O_TARGET_DESKTOP
 //    if (OInputsManager::manager()->isKeyPressed(GLFW_KEY_1)) {
@@ -81,6 +78,4 @@ void OGame::update(float deltaTime)
 //        ODirector::director()->loadScene("6");
 //    }
 //#endif
-
-    OApplication::update(deltaTime);
 }
