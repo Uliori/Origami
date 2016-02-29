@@ -3,6 +3,8 @@
 #include <Core/Graphics/Layers/OLayer2D.hpp>
 #include <Core/Graphics/Layers/OLayer3D.hpp>
 
+#include <Core/Graphics/GUI/OLabel.hpp>
+
 #include <Core/Inputs/OInputsManager.hpp>
 
 #include <Core/OMacros.hpp>
@@ -15,7 +17,10 @@ private:
     OLayer3D* m_MainLayer3D = nullptr;
     OLayer2D* m_MainLayer2D = nullptr;
     OLayer2D* m_GUIView     = nullptr;
-
+    
+    OLayer2D* m_debugLayer  = nullptr;
+    OLabel *fpsLabel        = nullptr;
+    
     bool m_Created = false;
     bool m_Paused  = false;
 
@@ -24,9 +29,9 @@ public:
     OScene();
     virtual ~OScene();
 
-    inline OLayer3D* getMainLayer3D(){return m_MainLayer3D;}
-    inline OLayer2D* getMainLayer2D(){return m_MainLayer2D;}
-    inline OLayer2D* getGUIView(){return m_GUIView;}
+    inline OLayer3D* getMainLayer3D(){ return m_MainLayer3D; }
+    inline OLayer2D* getMainLayer2D(){ return m_MainLayer2D; }
+    inline OLayer2D* getGUIView()    { return m_GUIView;     }
 
     /*  addSprite : will add a sprite to the MainLayer2D
      *  Sprites added to the MainLayer2D will be automatically deleted
@@ -71,6 +76,8 @@ public:
     inline void resume() { m_Paused = false; }
     inline bool isPaused() { return m_Paused; }
 
+    inline void setFPSValue(const std::string& fpsv) { fpsLabel->setText(fpsv); }
+    
 };
 
 NS_O_END

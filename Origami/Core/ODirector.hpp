@@ -77,6 +77,8 @@ private:
     ResolutionPolicy m_ResolutionPolicy;
 
     void updateDesignResolutionSize();
+    
+    bool shouldShowFPS = false;
 public:
 
     ODirector();
@@ -106,11 +108,17 @@ public:
     // load the scene and call it's create method
     void loadScene(const std::string& scene_name);
 
+    void init();
     void pause();
     void resume();
 
     const OSize& getFrameSize() const {return m_FrameSize;}
     const OSize& getDesignResolutionSize() const {return m_DesignResolutionSize;}
+    /**
+     * @desc return the screen calculated size based on the DesignResolutionSize 
+     *       and the ResolutionPolicy.
+     * @return OSize - the screen rect.
+     */
     const OSize& getVirtualSize() const {return m_VirtualSize;}
     inline ResolutionPolicy &getResolutionPolicy() {return m_ResolutionPolicy;}
 
@@ -119,6 +127,10 @@ public:
 
     void setFilesSuffixOrder();
 
+    void showFPS(bool fps) { shouldShowFPS = fps; }
+    bool isFPSShown() { return shouldShowFPS; }
+    
+    void setFPSValue(const std::string& fpsv);
 };
 
 NS_O_END

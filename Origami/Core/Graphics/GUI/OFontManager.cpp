@@ -11,7 +11,7 @@ std::vector<OFont*> OFontManager::m_Fonts;
 void OFontManager::init()
 {
     //Add a default font
-    new OFont("SourceSansPro", DEFAULT_FONT, DEFAULT_FONT_SIZE, 34);
+    new OFont("SourceSansPro", DEFAULT_FONT, DEFAULT_FONT_SIZE, 24);
 }
 
 void OFontManager::add(OFont* font)

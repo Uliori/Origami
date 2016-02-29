@@ -20,8 +20,6 @@
 
 #include "RGSandboxScene.hpp"
 
-//#include <sstream>
-
 OGame::OGame(const char* name, uint width, uint height) : OApplication(name, width, height)
 {
     OLog("Application Width  : " << width);
@@ -31,6 +29,7 @@ OGame::OGame(const char* name, uint width, uint height) : OApplication(name, wid
 void OGame::onInit()
 {
     ODirector::director()->setDesignResolutionSize(800, 480, ResolutionPolicy::FIXED);
+    ODirector::director()->showFPS(true);
     
 //    ODirector::director()->addScene("1", new CloudsScene());
 //    ODirector::director()->addScene("2", new BeachScene());
@@ -42,18 +41,7 @@ void OGame::onInit()
 //    ODirector::director()->addScene("sandbox", new SandboxScene());
     
     ODirector::director()->addScene("rgs", new RGSandboxScene());
-    
-//    ODirector::director()->loadScene("1");
     ODirector::director()->loadScene("rgs");
-}
-
-void OGame::tick()
-{
-//  OLog("FPS : " << getFPS() << ",UPS : " << getUPS());
-//    std::ostringstream stream;
-//    stream << GetFPS();
-//
-//   sc1->fps->setText(stream.str());
 }
 
 void OGame::onUpdate(float deltaTime)

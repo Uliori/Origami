@@ -14,14 +14,22 @@ enum OTextAlignment
     OTEXT_ALIGN_LEFT = 1,
     OTEXT_ALIGN_CENTERED_H = 2,
     OTEXT_ALIGN_RIGHT = 4,
+    
     OTEXT_ALIGN_TOP = 8,
-    OTEXT_ALIGN_TOP_LEFT = 9,
-    OTEXT_ALIGN_TOP_RIGHT = 12,
     OTEXT_ALIGN_CENTERED_V = 16,
-    OTEXT_ALIGN_CENTERED = 18,
     OTEXT_ALIGN_BOTTOM = 32,
-    OTEXT_ALIGN_BOTTOM_LEFT = 33,
-    OTEXT_ALIGN_BOTTOM_RIGHT = 36
+    
+    OTEXT_ALIGN_TOP_LEFT        = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERV_LEFT    = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_LEFT     = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_BOTTOM,
+    OTEXT_ALIGN_TOP_CENTERH     = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERED        = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_CENTERH  = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_BOTTOM,
+    OTEXT_ALIGN_TOP_RIGHT       = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERV_RIGHT   = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_RIGHT    = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_BOTTOM,
+    
+
 };
 
 class OLabel : public OSprite
@@ -53,7 +61,7 @@ public:
     inline void setTextColor(const OColorRGBA8& color) { m_TextColor = color; }
     inline void setBackgroundColor(const OColorRGBA8& color) { m_Color = color; }
     inline void setFont(OFont* font) { m_Font = font; }
-    inline void setTextAlignment(OTextAlignment alignment) { textAlignment = alignment; }
+    inline void setTextAlignment(int alignment) { textAlignment = alignment; }
     
     inline void setPadding(int p) { borders = maths::vec4(p, p, p, p); }
     inline void setPadding(int left, int bottom, int right, int top) { borders = maths::vec4(left, bottom, right, top); }

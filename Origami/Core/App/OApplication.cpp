@@ -1,4 +1,5 @@
 #include <Core/App/OApplication.hpp>
+#include <sstream>
 
 NS_O_BEGIN
 
@@ -15,6 +16,7 @@ void OApplication::init()
     
     ODirector::director()->setFilesSuffixOrder();
     OFontManager::init();
+    ODirector::director()->init();
     
     onInit();
 }
@@ -52,7 +54,10 @@ void OApplication::stop()
 
 void OApplication::tick()
 {
-
+    std::ostringstream stream;
+    stream << " UPS : " << getUPS() << ", FPS : " << getFPS();
+    
+    ODirector::director()->setFPSValue(stream.str());
 }
 
 void OApplication::update(float deltaTime)

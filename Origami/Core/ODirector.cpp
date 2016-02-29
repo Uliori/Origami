@@ -24,6 +24,11 @@ void ODirector::deleteManager()
 
 ODirector::ODirector() : m_CurrentScene(nullptr)
 {
+    
+}
+
+void ODirector::init()
+{
     m_Timer = new OTimer();
 }
 
@@ -152,6 +157,13 @@ void ODirector::reloadScene(OScene *scene)
     if (scene && scene->isCreated()) {
         scene->clear();
         scene->create();
+    }
+}
+
+void ODirector::setFPSValue(const std::string& fpsv)
+{
+    if (m_CurrentScene && m_CurrentScene->isCreated()) {
+        m_CurrentScene->setFPSValue(fpsv);
     }
 }
 
