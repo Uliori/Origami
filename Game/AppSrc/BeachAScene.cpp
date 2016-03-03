@@ -51,7 +51,7 @@ void BeachAScene::onCreate()
 
     OSize frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
-    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
+    
     //sky
     sky = new OSprite(0, 0, frameSize.width, frameSize.height, "diffuse.jpg", 0);
 
@@ -217,7 +217,7 @@ void BeachAScene::onResize()
 
     OSize frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
-    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
+    
     
     sky->setSize(vec2(frameSize.width, frameSize.height));
 

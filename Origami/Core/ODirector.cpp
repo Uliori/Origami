@@ -134,6 +134,9 @@ void ODirector::loadGame()
 
 void ODirector::update(float deltaTime)
 {
+#ifdef O_TARGET_DESKTOP
+    handleMouseLeftClick();
+#endif
     updateCurrentScene(deltaTime);
 }
 
@@ -245,7 +248,6 @@ void ODirector::loadScene(const std::string& scene_name)
         if (m_CurrentScene && !m_CurrentScene->isCreated()) {
             m_CurrentScene->create();
         }
-
     }
     else
     {
@@ -253,4 +255,37 @@ void ODirector::loadScene(const std::string& scene_name)
     }
 }
 
+void ODirector::refreshInput()
+{
+    releaseMouseLeftClick();
+}
+
+void ODirector::releaseMouseLeftClick()
+{
+    TouchPoint& mouse = OInputsManager::manager()->mousePoint;
+    mouse.down = false;
+    handleTouch(0, TouchPoint::TOUCH_RELEASE, mouse.position, maths::vec2());
+}
+void ODirector::handleMouseLeftClick()
+{
+#ifdef O_TARGET_DESKTOP
+    
+    TouchPoint& mouse = OInputsManager::manager()->mousePoint;
+    if (mouse.down && mouse.position != mouse.lastPosition) {
+        handleTouch(0, TouchPoint::TOUCH_MOVE, mouse.position, mouse.lastPosition);
+    }
+    if (OInputsManager::manager()->isKeyPressed(GLFW_MOUSE_BUTTON_LEFT)) {
+        handleTouch(0, TouchPoint::TOUCH_PRESS, mouse.position, maths::vec2());
+        OInputsManager::manager()->mousePoint.down = true;
+    }
+    mouse.lastPosition = OInputsManager::manager()->getMousePosition();
+#endif
+}
+
+void ODirector::handleTouch(int hashID, TouchPoint::TouchEvent event, const maths::vec2& position, const maths::vec2& oldPosition)
+{
+    if (m_CurrentScene && m_CurrentScene->isCreated()) {
+        OLog("Id : " << hashID << ", event : " << event << ", Position : " << position << ", OldPosition : " << oldPosition);
+    }
+}
 NS_O_END

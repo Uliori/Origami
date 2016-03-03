@@ -12,8 +12,7 @@
 
 NS_O_BEGIN
 
-OCamera2D::OCamera2D(int screenWidth, int screenHeight):m_Position(0.0f, 0.0f),m_NeedsMatrixUpdate(true)
-//    _scale(1.0f),
+OCamera2D::OCamera2D(int screenWidth, int screenHeight):m_Position(0.0f, 0.0f),m_NeedsMatrixUpdate(true), m_Scale(1.0f)
 {
     setProjection(screenWidth, screenHeight);
 }
@@ -43,7 +42,7 @@ void OCamera2D::update(float deltaTime)
 {
     if (m_NeedsMatrixUpdate) {
 
-        maths::mat4 mt = maths::translate(-m_Position.x + m_ScreenWidth /2, -m_Position.y + m_ScreenHeight / 2, 0.0f);
+        maths::mat4 mt = maths::translate(-m_Position.x, -m_Position.y, 0.0f);
         maths::mat4 ms = maths::scale(m_Scale, m_Scale, 0.0f);
 
         m_CameraMatrix = m_OrthoMatrix * mt * ms;
@@ -56,7 +55,7 @@ maths::vec2 OCamera2D::convertScreenToWorld(maths::vec2 screenCoords) {
     // Invert Y direction
     screenCoords.y = m_ScreenHeight - screenCoords.y;
     // Make it so that 0 is the center
-    screenCoords -= maths::vec2(m_ScreenWidth / 2, m_ScreenHeight / 2);
+//    screenCoords -= maths::vec2(m_ScreenWidth / 2, m_ScreenHeight / 2);
     // Scale the coordinates
     screenCoords /= m_Scale;
     // Translate with the camera position
@@ -78,7 +77,7 @@ bool OCamera2D::isBoxInView(const maths::vec2& position, const maths::vec2& dime
     // Center position of the parameters
     maths::vec2 centerPos = position + dimensions / 2.0f;
     // Center position of the camera
-    maths::vec2 centerCameraPos = m_Position;
+    maths::vec2 centerCameraPos = m_Position + maths::vec2(m_ScreenWidth / 2, m_ScreenHeight / 2);
     // Vector from the input to the camera
     maths::vec2 distVec = centerPos - centerCameraPos;
 

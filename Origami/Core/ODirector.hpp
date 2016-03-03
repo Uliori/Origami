@@ -79,6 +79,9 @@ private:
     void updateDesignResolutionSize();
     
     bool shouldShowFPS = false;
+    
+    void releaseMouseLeftClick();
+    void handleMouseLeftClick();
 public:
 
     ODirector();
@@ -86,6 +89,7 @@ public:
 
     //that method will load the game file configuration in the future
     virtual void loadGame();
+    
     virtual void update(float deltaTime);
     virtual void render(float interpolation);
 
@@ -96,6 +100,7 @@ public:
 
     void updateScene(OScene* scene, float deltaTime);
     void renderScene(OScene* scene, float interpolation);
+    
     inline OScene* getCurrentScene() {return m_CurrentScene;}
     inline std::string getCurrentSceneID(){ return m_CurrentSceneID; }
 
@@ -105,15 +110,17 @@ public:
     void addScene(const std::string& scene_name, OScene *scene, bool setCurrent = false);
     void deleteScene(const std::string& scene_name);
 
-    // load the scene and call it's create method
+    // load the scene and call its create method
     void loadScene(const std::string& scene_name);
 
     void init();
     void pause();
     void resume();
+    void refreshInput();
 
     const OSize& getFrameSize() const {return m_FrameSize;}
     const OSize& getDesignResolutionSize() const {return m_DesignResolutionSize;}
+    
     /**
      * @desc return the screen calculated size based on the DesignResolutionSize 
      *       and the ResolutionPolicy.
@@ -131,6 +138,9 @@ public:
     bool isFPSShown() { return shouldShowFPS; }
     
     void setFPSValue(const std::string& fpsv);
+    
+    //
+    void handleTouch(int hashID, TouchPoint::TouchEvent event, const maths::vec2& position, const maths::vec2& oldPosition);
 };
 
 NS_O_END

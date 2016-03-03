@@ -14,11 +14,15 @@ void window_resize(GLFWwindow* window, int width, int height)
     OSize designResolutionSize = ODirector::director()->getDesignResolutionSize();
 
     if (width > height) { //Landscape
-        ODirector::director()->setDesignResolutionSize(MAX(designResolutionSize.width, designResolutionSize.height), MIN(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_HEIGHT);
+        ODirector::director()->setDesignResolutionSize(MAX(designResolutionSize.width, designResolutionSize.height),
+                                                       MIN(designResolutionSize.width, designResolutionSize.height),
+                                                       ResolutionPolicy::FIXED_HEIGHT);
     }
     else //portrait
     {
-        ODirector::director()->setDesignResolutionSize(MIN(designResolutionSize.width, designResolutionSize.height), MAX(designResolutionSize.width, designResolutionSize.height), ResolutionPolicy::FIXED_WIDTH);
+        ODirector::director()->setDesignResolutionSize(MIN(designResolutionSize.width, designResolutionSize.height),
+                                                       MAX(designResolutionSize.width, designResolutionSize.height),
+                                                       ResolutionPolicy::FIXED_WIDTH);
     }
 
     glViewport(0, 0, width, height);
@@ -41,14 +45,17 @@ void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
     }
     else if (action == GLFW_RELEASE) {
         OInputsManager::manager()->releaseKey(button);
+        //TODO : This is ugly, you should implement a better way to handle mouse event, and then
+        //       if the button clicked is the left one, handle it as a touch event.
+        if (button == GLFW_MOUSE_BUTTON_LEFT) {
+            ODirector::director()->refreshInput();
+        }
     }
 }
 
 void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
 {
-//			OWindow *win = (OWindow*)glfwGetWindowUserPointer(window);
-//			win->mx = xpos;
-//			win->my = ypos;
+    OInputsManager::manager()->setMousePosition(maths::vec2(xpos, ypos));
 }
 
 void window_focus_callback(GLFWwindow* window, int focused)
@@ -112,6 +119,11 @@ bool OWindow::platformInit()
     }
 #endif
 
+//    double x, y;
+//    glfwGetCursorPos(m_Window, &x, &y);
+//    OInputsManager::manager()->setMousePosition(maths::vec2(x, y));
+
+    
     OGLUtils::printGLInfo();
 
     return true;

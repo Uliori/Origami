@@ -58,7 +58,7 @@ void CloudsScene::onCreate()
 
     OResourceManager::textureCache()->releaseTexture("cloud.png");
     
-    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
+    
 }
 
 void CloudsScene::onClear()
@@ -87,7 +87,7 @@ void CloudsScene::onResize()
 {
 
     OSize frameSize = ODirector::director()->getVirtualSize();
-    getMainLayer2D()->getCamera()->setPosition(maths::vec2(frameSize.width / 2, frameSize.height / 2));
+    
     
     sky->setSize(vec2(frameSize.width, frameSize.height));
 
