@@ -33,6 +33,20 @@ void OInputsManager::update(){
     }
 }
 
+TouchPoint& OInputsManager::getTouchPoint(int hashID)
+{
+    auto touchPoint = touchPoints.find(hashID);
+    if(touchPoint != touchPoints.end())
+    {
+        return touchPoint->second;
+    }
+    
+    TouchPoint newPoint;
+    newPoint.hashId = hashID;
+    touchPoints.insert(std::make_pair(hashID, newPoint));
+    return touchPoints.find(hashID)->second;
+}
+
 void OInputsManager::pressKey(unsigned int keyID)
 {
     m_KeyMap[keyID] = true;

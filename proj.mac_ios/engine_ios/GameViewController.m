@@ -203,29 +203,18 @@
     for(UITouch* touch in touches)
     {
         CGPoint touchPoint = [touch locationInView:self.view];
+        maths::vec2 pos = vec2(touchPoint.x, touchPoint.y);
         if(self.view.multipleTouchEnabled == YES)
         {
             touchID = [touch hash];
         }
+
+        TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);
+        point.position = pos;
+        point.lastPosition = pos;
+        point.down = true;
         
-        // Nested loop efficiency shouldn't be a concern since both loop sizes are small (<= 10)
-        int i = 0;
-        while (i < TOUCH_POINTS_MAX && OInputsManager::manager()->touchPoints[i].down)
-        {
-            i++;
-        }
-        
-        if (i < TOUCH_POINTS_MAX)
-        {
-            maths::vec2 pos = vec2(touchPoint.x, touchPoint.y);
-            OInputsManager::manager()->touchPoints[i].hashId = touchID;
-            OInputsManager::manager()->touchPoints[i].position = pos;
-            OInputsManager::manager()->touchPoints[i].lastPosition = pos;
-            OInputsManager::manager()->touchPoints[i].down = true;
-            
-            ODirector::director()->handleTouch(OInputsManager::manager()->touchPoints[i].hashId, TouchPoint::TOUCH_PRESS, pos, pos);
-        }
-        
+        ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_PRESS, pos, pos);
     }
 }
 
@@ -238,18 +227,13 @@
         vec2 pos = vec2(touchPoint.x, touchPoint.y);
         if(self.view.multipleTouchEnabled == YES)
             touchID = [touch hash];
-
-        // Nested loop efficiency shouldn't be a concern since both loop sizes are small (<= 10)
-        bool found = false;
-        for (int i = 0; !found && i < TOUCH_POINTS_MAX; i++)
-        {
-            if (OInputsManager::manager()->touchPoints[i].down && OInputsManager::manager()->touchPoints[i].hashId == touchID)
-            {
-                OInputsManager::manager()->touchPoints[i].down = false;
-                ODirector::director()->handleTouch(OInputsManager::manager()->touchPoints[i].hashId, TouchPoint::TOUCH_RELEASE, pos, pos);
-                found = true;
-            }
-        }
+        
+        TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);
+        point.position = pos;
+        point.lastPosition = pos;
+        point.down = false;
+        
+        ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_RELEASE, pos, pos);
     }
 }
 
@@ -264,22 +248,15 @@
     for(UITouch* touch in touches)
     {
         CGPoint touchPoint = [touch locationInView:self.view];
-        
         vec2 pos = vec2(touchPoint.x, touchPoint.y);
         if(self.view.multipleTouchEnabled == YES)
             touchID = [touch hash];
 
-        // Nested loop efficiency shouldn't be a concern since both loop sizes are small (<= 10)
-        for (int i = 0; i < TOUCH_POINTS_MAX; i++)
-        {
-            if (OInputsManager::manager()->touchPoints[i].down && OInputsManager::manager()->touchPoints[i].hashId == touchID)
-            {
-                OInputsManager::manager()->touchPoints[i].position = pos;
-                ODirector::director()->handleTouch(OInputsManager::manager()->touchPoints[i].hashId, TouchPoint::TOUCH_MOVE, pos, OInputsManager::manager()->touchPoints[i].lastPosition);
-                OInputsManager::manager()->touchPoints[i].lastPosition = pos;
-                break;
-            }
-        }
+
+        TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);
+        point.position = pos;
+        ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_MOVE, pos, point.lastPosition);
+        point.lastPosition = pos;
     }
 }
 

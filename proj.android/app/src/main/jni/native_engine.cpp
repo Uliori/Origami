@@ -223,8 +223,90 @@ static bool _cooked_event_callback(struct CookedEvent *event) {
     return false;
 }
 
+void NativeEngine::touchBegan(unsigned int hashID, const Origami::maths::vec2& position)
+{
+    TouchPoint& point = OInputsManager::manager()->getTouchPoint(hashID);
+    point.position = position;
+    point.lastPosition = position;
+    point.down = true;
+
+    ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_PRESS, position, position);
+}
+
+void NativeEngine::touchMoved(unsigned int hashID, const Origami::maths::vec2& position)
+{
+    TouchPoint& point = OInputsManager::manager()->getTouchPoint(hashID);
+    point.position = position;
+    ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_MOVE, position, point.lastPosition);
+    point.lastPosition = position;
+}
+
+void NativeEngine::touchended(unsigned int hashID, const Origami::maths::vec2& position)
+{
+    TouchPoint& point = OInputsManager::manager()->getTouchPoint(hashID);
+    point.position = position;
+    point.lastPosition = position;
+    point.down = false;
+
+    ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_RELEASE, position, position);
+}
+
 bool NativeEngine::HandleInput(AInputEvent *event) {
-//    return CookEvent(event, _cooked_event_callback) ? 1 : 0;
+
+    if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION)
+    {
+        int32_t action = AMotionEvent_getAction(event);
+        size_t pointerIndex;
+        size_t pointerId;
+        size_t pointerCount;
+        int x;
+        int y;
+
+        switch (action & AMOTION_EVENT_ACTION_MASK)
+        {
+            case AMOTION_EVENT_ACTION_DOWN:
+                pointerId = AMotionEvent_getPointerId(event, 0);
+                x = AMotionEvent_getX(event, 0);
+                y = AMotionEvent_getY(event, 0);
+
+                touchBegan(pointerId, Origami::maths::vec2(x, y));
+
+                break;
+            case AMOTION_EVENT_ACTION_UP:
+                pointerId = AMotionEvent_getPointerId(event, 0);
+                x = AMotionEvent_getX(event, 0);
+                y = AMotionEvent_getY(event, 0);
+
+                touchended(pointerId, Origami::maths::vec2(x, y));
+                break;
+            case AMOTION_EVENT_ACTION_POINTER_DOWN:
+                pointerIndex = (action & AMOTION_EVENT_ACTION_POINTER_INDEX_MASK) >> AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT;
+                pointerId = AMotionEvent_getPointerId(event, pointerIndex);
+                x = AMotionEvent_getX(event, pointerIndex);
+                y = AMotionEvent_getY(event, pointerIndex);
+
+                touchBegan(pointerId, Origami::maths::vec2(x, y));
+                break;
+            case AMOTION_EVENT_ACTION_POINTER_UP:
+                pointerIndex = (action & AMOTION_EVENT_ACTION_POINTER_INDEX_MASK) >> AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT;
+                pointerId = AMotionEvent_getPointerId(event, pointerIndex);
+                x = AMotionEvent_getX(event, pointerIndex);
+                y = AMotionEvent_getY(event, pointerIndex);
+
+                touchended(pointerId, Origami::maths::vec2(x, y));
+                break;
+            case AMOTION_EVENT_ACTION_MOVE:
+                pointerCount = AMotionEvent_getPointerCount(event);
+                for (size_t i = 0; i < pointerCount; ++i) {
+                    pointerId = AMotionEvent_getPointerId(event, i);
+                    x = AMotionEvent_getX(event, i);
+                    y = AMotionEvent_getY(event, i);
+
+                    touchMoved(pointerId, Origami::maths::vec2(x, y));
+                }
+                break;
+        }
+    }
     return 0;
 }
 

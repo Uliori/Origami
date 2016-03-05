@@ -589,6 +589,7 @@
 		91B0FF281BC71F820051529B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91B0FF2D1BC71FC60051529B /* glew.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = glew.a; path = ../../Origami/Dependencies/GLEW/lib/osx/glew.a; sourceTree = "<group>"; };
 		91B0FF2F1BC728280051529B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Origami/Dependencies/GLFW/lib/osx/libglfw3.a; sourceTree = "<group>"; };
+		91CB85851C88E23000F1F3EF /* OTouchInputs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OTouchInputs.hpp; sourceTree = "<group>"; };
 		91CC3DFE1C34947100F923C1 /* OMacros.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OMacros.hpp; sourceTree = "<group>"; };
 		91CC3DFF1C357E0700F923C1 /* ODirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ODirector.cpp; sourceTree = "<group>"; };
 		91CC3E001C357E0700F923C1 /* ODirector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ODirector.hpp; sourceTree = "<group>"; };
@@ -1113,6 +1114,7 @@
 			children = (
 				913BC5471BDD7E100013209D /* OInputsManager.cpp */,
 				913BC5481BDD7E100013209D /* OInputsManager.hpp */,
+				91CB85851C88E23000F1F3EF /* OTouchInputs.hpp */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";

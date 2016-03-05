@@ -17,6 +17,8 @@
 #define endlesstunnel_native_engine_hpp
 
 #include "common.hpp"
+#include <Core/Maths/OMaths.hpp>
+#include <Core/Inputs/OInputsManager.hpp>
 
 struct NativeEngineSavedState {};
 
@@ -87,6 +89,10 @@ class NativeEngine {
         void DoFrame();
 
         bool IsAnimating();
+
+        void touchBegan(unsigned int hashID, const Origami::maths::vec2& position);
+        void touchMoved(unsigned int hashID, const Origami::maths::vec2& position);
+        void touchended(unsigned int hashID, const Origami::maths::vec2& position);
 
     public:
         // these are public for simplicity because we have internal static callbacks

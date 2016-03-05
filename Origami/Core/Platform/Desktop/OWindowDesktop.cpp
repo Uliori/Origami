@@ -40,16 +40,22 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 
 void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
 {
+    
     if (action == GLFW_PRESS || action == GLFW_REPEAT) {
-        OInputsManager::manager()->pressKey(button);
+        TouchPoint& point = OInputsManager::manager()->getTouchPoint(button);
+        point.position = OInputsManager::manager()->getMousePosition();
+        point.lastPosition = point.position;
+        point.down = true;
+        
+        ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_PRESS, point.position, point.position);
     }
-    else if (action == GLFW_RELEASE) {
-        OInputsManager::manager()->releaseKey(button);
-        //TODO : This is ugly, you should implement a better way to handle mouse event, and then
-        //       if the button clicked is the left one, handle it as a touch event.
-        if (button == GLFW_MOUSE_BUTTON_LEFT) {
-            ODirector::director()->refreshInput();
-        }
+    else if(action == GLFW_RELEASE) {
+        TouchPoint& point = OInputsManager::manager()->getTouchPoint(button);
+        point.position = OInputsManager::manager()->getMousePosition();
+        point.lastPosition = point.position;
+        point.down = false;
+        
+        ODirector::director()->handleTouch(point.hashId, TouchPoint::TOUCH_RELEASE, point.position, point.position);
     }
 }
 

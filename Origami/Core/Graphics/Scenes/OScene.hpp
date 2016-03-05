@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Core/Inputs/OTouchInputs.hpp>
+
 #include <Core/Graphics/Layers/OLayer2D.hpp>
 #include <Core/Graphics/Layers/OLayer3D.hpp>
 
@@ -11,7 +13,7 @@
 
 NS_O_BEGIN
 
-class OScene{
+class OScene : public OTouchInputs{
 
 private:
     OLayer3D* m_MainLayer3D = nullptr;
@@ -32,7 +34,11 @@ public:
     inline OLayer3D* getMainLayer3D(){ return m_MainLayer3D; }
     inline OLayer2D* getMainLayer2D(){ return m_MainLayer2D; }
     inline OLayer2D* getGUIView()    { return m_GUIView;     }
-
+#ifdef O_MODE_DEBUG
+    inline OLayer2D* getDebugGUIView()    { return m_debugLayer;     }
+#endif
+    
+    
     /*  addSprite : will add a sprite to the MainLayer2D
      *  Sprites added to the MainLayer2D will be automatically deleted
      *  by the engine, you don;t have to delete them in the onClear method.

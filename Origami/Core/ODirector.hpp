@@ -72,6 +72,8 @@ private:
     OSize m_DesignResolutionSize;
     OSize m_VirtualSize;
 
+    void updateInput();
+    
     float m_ScaleX;
     float m_ScaleY;
     ResolutionPolicy m_ResolutionPolicy;
@@ -79,9 +81,6 @@ private:
     void updateDesignResolutionSize();
     
     bool shouldShowFPS = false;
-    
-    void releaseMouseLeftClick();
-    void handleMouseLeftClick();
 public:
 
     ODirector();
@@ -116,7 +115,6 @@ public:
     void init();
     void pause();
     void resume();
-    void refreshInput();
 
     const OSize& getFrameSize() const {return m_FrameSize;}
     const OSize& getDesignResolutionSize() const {return m_DesignResolutionSize;}

@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <map>
 #include <unordered_map>
 
 #include <Core/OMacros.hpp>
@@ -48,15 +49,16 @@ private:
 public:
     //singleton
     static OInputsManager* manager();
-
 public:
     OInputsManager();
     virtual ~OInputsManager();
 
     //Screen touch
-    TouchPoint touchPoints[TOUCH_POINTS_MAX];
+    TouchPoint& getTouchPoint(int hashID);
+    std::map<int, TouchPoint>& getTouchPoints() { return touchPoints; }
+    
     //Mouse position
-    TouchPoint mousePoint;
+    maths::vec2 mousePosition;
     
     void update();
 
@@ -70,10 +72,12 @@ public:
     bool isKeyPressed(unsigned int keyID);
 
     //Mouse position setter / getter
-    void setMousePosition(const maths::vec2& position) { mousePoint.position = position; }
-    const maths::vec2& getMousePosition() { return mousePoint.position; }
+    void setMousePosition(const maths::vec2& position) { mousePosition = position; }
+    const maths::vec2& getMousePosition() { return mousePosition; }
     
 private:
+    std::map<int, TouchPoint> touchPoints;
+    
     std::unordered_map<unsigned int, bool> m_KeyMap;
     std::unordered_map<unsigned int, bool> m_PreviouskeyMap;
     
