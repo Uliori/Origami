@@ -13,7 +13,7 @@ public:
 
     static const char* getResourcePathforFile(const char * file);
     static bool doesFileExists(const char * file);
-    static int fileLength(const char * filePath, unsigned char *& buffer, size_t &buffer_length);
+    static int openFile(const char * filePath, unsigned char *& buffer, size_t &buffer_length);
 };
 NS_O_END
 

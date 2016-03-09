@@ -76,7 +76,7 @@ bool ResourcesUtils::doesFileExists(const char * file)
 #endif
 }
 
-int ResourcesUtils::fileLength(const char * filePath, unsigned char *& buffer,
+int ResourcesUtils::openFile(const char * filePath, unsigned char *& buffer,
 		size_t &buffer_length) {
 #ifdef __ANDROID__
 		#ifndef O_TARGET_MOBILE_ANDROID_WALLPAPER

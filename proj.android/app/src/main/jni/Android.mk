@@ -73,7 +73,10 @@ LOCAL_SRC_FILES 		:= 	main.cpp \
 							$(CORE_LIST)/Graphics/2D/OParticleEngine2D.cpp \
 							$(CORE_LIST)/Graphics/GUI/OFont.cpp \
 							$(CORE_LIST)/Graphics/GUI/OFontManager.cpp \
+							$(CORE_LIST)/Graphics/GUI/OWidget.cpp \
 							$(CORE_LIST)/Graphics/GUI/OLabel.cpp \
+							$(CORE_LIST)/Graphics/GUI/OButton.cpp \
+							$(CORE_LIST)/Graphics/Layers/OLayerGUI.cpp \
 							$(CORE_LIST)/Graphics/Layers/OLayer2D.cpp \
 							$(CORE_LIST)/Graphics/Layers/OLayer3D.cpp \
 							$(CORE_LIST)/Graphics/Renderers/ORenderer2D.cpp \

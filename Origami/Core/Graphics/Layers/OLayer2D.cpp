@@ -32,13 +32,13 @@ OLayer2D::~OLayer2D()
 
 void OLayer2D::updateResolution()
 {
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     m_Camera->setProjection(frameSize.width, frameSize.height);
 }
 
 void OLayer2D::create()
 {
-  OSize frameSize = ODirector::director()->getVirtualSize();
+  const OSize& frameSize = ODirector::director()->getVirtualSize();
   m_Camera = new OCamera2D(frameSize.width, frameSize.height);
   particleEngine = new OParticleEngine2D();
 }
@@ -76,7 +76,7 @@ void OLayer2D::render(float interpolation)
         particleEngine->draw(m_CurrentRenderer);
 
         m_CurrentRenderer->end();
-        m_CurrentRenderer->flush(this);
+        m_CurrentRenderer->flush(getCamera());
     }
 
 }

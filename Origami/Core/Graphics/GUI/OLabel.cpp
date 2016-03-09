@@ -1,5 +1,7 @@
 #include "OLabel.hpp"
+
 #include <Core/Graphics/Renderers/ORendererFactory.hpp>
+#include <Core/Utils/OResourceManager.hpp>
 
 #include <sstream>
 
@@ -15,6 +17,11 @@ OLabel::OLabel(const std::string& text, OFont* font)
     : m_Text(text), m_Font(font)
 {
     init();
+}
+
+OLabel::~OLabel()
+{
+    
 }
 
 void OLabel::init()
@@ -33,7 +40,14 @@ void OLabel::submit(ORenderer2D* renderer)
     maths::vec4 textRect(m_Position.x + borders.x, m_Position.y + borders.y, m_Size.x - borders.x - borders.z, m_Size.y - borders.y - borders.w);
     
     //draw the background color
-    renderer->submitBox(ORendererFactory::OShader_Color2D, m_Position, m_Size, maths::vec4(), 0, m_Color.getColorUint(), m_zOrder);
+    if (m_Texture) {
+        const maths::vec4 uvrect(0, 0, 1, 1);
+        renderer->submitBox(ORendererFactory::OShader_Texture2D, m_Position, m_Size, uvrect, m_Texture->textureID, 0xffffffff, m_zOrder);
+    }
+    else
+    {
+        renderer->submitBox(ORendererFactory::OShader_Color2D, m_Position, m_Size, maths::vec4(), 0, m_Color.getColorUint(), m_zOrder);
+    }
 //    //draw the text rect (this is for tests only)
 //    renderer->submitBox(ORendererFactory::OShader_Color2D, maths::vec2(textRect.x, textRect.y),
 //                        maths::vec2(textRect.z, textRect.w), maths::vec4(),
@@ -44,6 +58,17 @@ void OLabel::submit(ORenderer2D* renderer)
                          Rect(textRect.x, textRect.y, textRect.z, textRect.w), textAlignment, *m_Font,
                          m_TextColor.getColorUint(), m_zOrder+0.0001);
 }
+
+void OLabel::setBackgroundImage(const std::string& texturePath)
+{
+    if (m_Texture) {
+        OResourceManager::textureCache()->releaseTexture(m_TexturePath);
+    }
+    
+    m_TexturePath = texturePath;
+    m_Texture = OResourceManager::textureCache()->loadTexture(m_TexturePath);
+}
+
 
 float OLabel::getWordWidth(const std::string& word)
 {
@@ -169,6 +194,11 @@ void OLabel::sizetoFit()
     float fontHeight = m_Font->GetSize() / m_Font->GetScale().y;
     float textHeight = m_Lines.size() * fontHeight;
     m_Size.y = textHeight + borders.y + borders.w;    
+}
+
+void OLabel::touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition)
+{
+
 }
 
 NS_O_END

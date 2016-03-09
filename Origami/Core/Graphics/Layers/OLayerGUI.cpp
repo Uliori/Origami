@@ -1,7 +1,7 @@
 /****************************************************************************
- BambooScene.cpp
+ OLayerGUI.cpp
  
- Created by El Mehdi KHALLOUKI on 1/14/16.
+ Created by El Mehdi KHALLOUKI on 3/7/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,50 +24,71 @@
  
  ****************************************************************************/
 
-#include "BambooScene.hpp"
+#include "OLayerGUI.hpp"
 
-BambooScene::BambooScene()
+#include <Core/ODirector.hpp>
+#include <Core/Graphics/GUI/OWidget.hpp>
+#include <Core/Graphics/2D/OCamera2D.hpp>
+#include <Core/Graphics/Renderers/ORendererFactory.hpp>
+
+
+NS_O_BEGIN
+
+OLayerGUI::OLayerGUI() :  m_CurrentRenderer(ORendererFactory::ORenderer_SpriteBatch)
 {
     
 }
 
-BambooScene::~BambooScene()
+OLayerGUI::~OLayerGUI()
 {
     
 }
 
-void BambooScene::onCreate()
-{
-    const OSize& frameSize = ODirector::director()->getVirtualSize();
-    
-    //sky
-    sky = new OSprite(0, 0, frameSize.width, frameSize.height, "bsky.png", 0);
-    addSprite(sky);
-    
-    particles = new OParticleBatch2D();
-    
-    particles->init(40, .9f , "cloud.png", 5,
-                    [](OParticleBatch2D* batch, float deltaTime){
-                        const OSize& frameSize = ODirector::director()->getVirtualSize();
-                        vec2 posi = vec2(fRand(0, frameSize.width), fRand(0, frameSize.height));
-                        batch->addParticle(posi, vec2(), OColorRGBA8(), 20);
-                    },
-                    [](OParticle2D& particle, float deltaTime){
-                        particle.position += particle.velocity * deltaTime;
-                        particle.color.setAlpha(particle.life);
-    });
-    getMainLayer2D()->particleEngine->addParticleBatch(particles);
-    
-}
 
-void BambooScene::onClear()
-{
-    
-}
-
-void BambooScene::onResize()
+void OLayerGUI::updateResolution()
 {
     const OSize& frameSize = ODirector::director()->getVirtualSize();
-    
-    sky->setSize(vec2(frameSize.width, frameSize.height));
+    m_Camera->setProjection(frameSize.width, frameSize.height);
 }
+
+void OLayerGUI::create()
+{
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
+    m_Camera = new OCamera2D(frameSize.width, frameSize.height);
+}
+
+void OLayerGUI::clear()
+{
+    SAFE_DELETE(m_Camera);
+    
+    for (OWidget *renderable : m_Renderables)
+    {
+        SAFE_DELETE(renderable);
+    }
+    m_Renderables.clear();
+}
+
+void OLayerGUI::update(float deltaTime)
+{
+    if(m_Camera) m_Camera->update(deltaTime);
+    for (OWidget *renderable : m_Renderables)
+    {
+        renderable->update();
+    }
+}
+
+void OLayerGUI::render(float interpolation)
+{
+    if (m_CurrentRenderer) {
+        m_CurrentRenderer->begin();
+        
+        //Send sprites
+        for (OWidget* renderable : m_Renderables)
+            renderable->submit(m_CurrentRenderer);
+        
+        m_CurrentRenderer->end();
+        m_CurrentRenderer->flush(getCamera());
+    }
+    
+}
+NS_O_END

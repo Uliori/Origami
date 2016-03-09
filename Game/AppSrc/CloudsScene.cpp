@@ -35,7 +35,7 @@ void CloudsScene::onCreate()
 {
     OTexture *cloudTexture  = OResourceManager::textureCache()->loadTexture("cloud.png");
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
 
     //sky
     sky = new OSprite(0, 0, frameSize.width, frameSize.height, "diffuse.jpg", 0);
@@ -68,7 +68,7 @@ void CloudsScene::onClear()
 
 void CloudsScene::onUpdate(float deltaTime)
 {
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     maths::vec2 position;
 
     for (OSprite *cloud : m_Clouds)
@@ -86,7 +86,7 @@ void CloudsScene::onUpdate(float deltaTime)
 void CloudsScene::onResize()
 {
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     
     sky->setSize(vec2(frameSize.width, frameSize.height));

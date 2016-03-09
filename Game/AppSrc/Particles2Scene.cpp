@@ -35,16 +35,16 @@ void Particles2Scene::onCreate()
 {
     particles = new OParticleBatch2D();
     
-//    OSize frameSize = ODirector::director()->getVirtualSize();
+//    const OSize& frameSize = ODirector::director()->getVirtualSize();
 //    back = new OSprite(0, 0, frameSize.width, frameSize.height, "psky2.png", 0);
 //    addSprite(back);
     
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     
     particles->init(150, .25f , "particle3.png", 1,
                     [](OParticleBatch2D* batch, float deltaTime){
-                        OSize frameSize = ODirector::director()->getVirtualSize();
+                        const OSize& frameSize = ODirector::director()->getVirtualSize();
                         float vrand = fRand(-100, 100);
                         vec2 velocity = (vec2(frameSize.width, frameSize.height) / fRand(2.5f, 3.f));
                         float pwidth = 50;
@@ -70,10 +70,10 @@ void Particles2Scene::onClear()
 
 void Particles2Scene::onResize()
 {
-//    OSize frameSize = ODirector::director()->getVirtualSize();
+//    const OSize& frameSize = ODirector::director()->getVirtualSize();
 //    back->setSize(maths::vec2(frameSize.width, frameSize.height));
     
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
 }
 

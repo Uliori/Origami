@@ -21,7 +21,7 @@ OFont::OFont(const std::string& name, const std::string& filename, float size)
     
     unsigned char* buffer;
     size_t buffer_length;
-    ResourcesUtils::fileLength(filename.c_str(), buffer, buffer_length);
+    ResourcesUtils::openFile(filename.c_str(), buffer, buffer_length);
     
     m_FTFont = ftgl::texture_font_new_from_memory(m_FTAtlas, size * scale, buffer, buffer_length);
     
@@ -32,7 +32,7 @@ OFont::OFont(const std::string& name, const std::string& filename, float size)
 }
 
 OFont::OFont(const std::string& name, const unsigned char* data, unsigned int datasize, float size)
-    : m_Name(name), m_Filename("NULL"), m_Scale(maths::vec2(1.0f, 1.0f))
+: m_Name(name), m_Filename("NULL"), m_Scale(maths::vec2(1.0f, 1.0f))
 {
 #ifdef O_TARGET_MOBILE
     float scale = ODirector::director()->fileExtensions.front().scale;

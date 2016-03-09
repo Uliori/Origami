@@ -124,11 +124,6 @@ bool OWindow::platformInit()
         return false;
     }
 #endif
-
-//    double x, y;
-//    glfwGetCursorPos(m_Window, &x, &y);
-//    OInputsManager::manager()->setMousePosition(maths::vec2(x, y));
-
     
     OGLUtils::printGLInfo();
 

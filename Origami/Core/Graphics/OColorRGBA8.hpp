@@ -42,10 +42,10 @@ public:
     ~OColorRGBA8() {}
     
 public:
-    const float red()     const { return m_Color[R]; };
-    const float green()   const { return m_Color[G]; };
-    const float blue()    const { return m_Color[B]; };
-    const float alpha()   const { return m_Color[A]; };
+    float red()     const { return m_Color[R]; };
+    float green()   const { return m_Color[G]; };
+    float blue()    const { return m_Color[B]; };
+    float alpha()   const { return m_Color[A]; };
     
 public:
     void setRed(float red)      { m_Color[R] = red; }
@@ -73,7 +73,7 @@ public:
     }
     
 public:  /// overloaded operators
-    inline OColorRGBA8& operator=(const OColorRGBA8& color)
+    OColorRGBA8& operator=(const OColorRGBA8& color)
     {
         m_Color[R] = color.m_Color[R];
         m_Color[G] = color.m_Color[G];
@@ -82,7 +82,7 @@ public:  /// overloaded operators
         return *this;
     }
     
-    inline OColorRGBA8& operator=(const maths::vec4& color)
+    OColorRGBA8& operator=(const maths::vec4& color)
     {
         m_Color[R] = color[R];
         m_Color[G] = color[G];
@@ -91,11 +91,10 @@ public:  /// overloaded operators
         return *this;
     }
 
-    inline float& operator[](const unsigned index)         { return m_Color[index]; }
-    inline float operator[](const unsigned index) const    { return m_Color[index]; }
-    inline float& operator()(const unsigned index)         { return m_Color[index]; }
-    inline float operator()(const unsigned index) const    { return m_Color[index]; }
-    
+    float& operator[](const unsigned index)          { return m_Color[index]; }
+    float  operator[](const unsigned index) const    { return m_Color[index]; }
+    float& operator()(const unsigned index)          { return m_Color[index]; }
+    float  operator()(const unsigned index) const    { return m_Color[index]; }
 };
 
 NS_O_END

@@ -48,7 +48,7 @@ public:
     void submitPolygon(const std::vector<Glyph>& glyphs) override;
     
     void end() override;
-    void flush(OLayer2D* layer) override;
+    void flush(OCamera2D* camera) override;
 
 private:
     // Creates all the needed RenderBatches

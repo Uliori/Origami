@@ -8,10 +8,10 @@ OScene::OScene()
 {
     m_MainLayer3D = new OLayer3D();
     m_MainLayer2D = new OLayer2D();
-    m_GUIView = new OLayer2D();
+    m_GUIView = new OLayerGUI();
 
 #ifdef O_MODE_DEBUG
-    m_debugLayer = new OLayer2D();
+    m_debugLayer = new OLayerGUI();
 #endif
 }
 
@@ -42,8 +42,8 @@ void OScene::create()
     fpsLabel->sizetoFit();
     fpsLabel->setTextColor(OColorRGBA8(1, 1, 0));
     fpsLabel->setTextAlignment(OTEXT_ALIGN_LEFT);
-    fpsLabel->setPosition(BOTTOM_LEFT(ODirector::director()->getVirtualSize(), fpsLabel->getSize()));
-    m_debugLayer->addsprite(fpsLabel);
+    fpsLabel->setPosition(P_BOTTOM_LEFT(ODirector::director()->getVirtualSize(), fpsLabel->getSize()));
+    m_debugLayer->addSubview(fpsLabel);
 #endif
     
     OLog("Scene created.");
@@ -104,7 +104,7 @@ void OScene::render(float interpolation)
 
 void OScene::addSprite(OSprite *sprite)
 {
-    m_MainLayer2D->addsprite(sprite);
+    m_MainLayer2D->addSprite(sprite);
 }
 
 NS_O_END

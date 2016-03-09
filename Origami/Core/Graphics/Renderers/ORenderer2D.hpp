@@ -11,17 +11,17 @@
 #include <string>
 #include <vector>
 
-#include <Core/Maths/OMaths.hpp>
-#include <Core/Maths/OGeometry.hpp>
-
 #include <Core/OMacros.hpp>
 #include <Core/OGL.hpp>
-#include <Core/Graphics/Shaders/OShader.hpp>
+
+#include <Core/Maths/OMaths.hpp>
+#include <Core/Maths/OGeometry.hpp>
 #include <Core/Graphics/2D/Vertex2D.hpp>
 
 NS_O_BEGIN
 
-class OLayer2D;
+class OShader;
+class OCamera2D;
 class OSprite;
 class OFont;
 
@@ -78,7 +78,7 @@ public:
     
     virtual void end() {}
     
-    virtual void flush(OLayer2D* layer) {}
+    virtual void flush(OCamera2D* camera) {}
 };
 
 NS_O_END

@@ -13,12 +13,10 @@
     #define NS_O_BEGIN                     namespace Origami {
     #define NS_O_END                       }
     #define USING_NS_O                     using namespace Origami;
-    #define NS_O                           ::Origami
 #else
     #define NS_O_BEGIN
     #define NS_O_END
     #define USING_NS_O
-    #define NS_O
 #endif
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
@@ -35,10 +33,14 @@
   #define MAX(A,B)	((A) > (B) ? (A) : (B))
 #endif
 
-#define BOTTOM_LEFT(frameSize, size)    maths::vec2(0        , 0)
-#define BOTTOM_RIGHT(frameSize, size)   maths::vec2(frameSize.width - size.x, 0)
-#define TOP_LEFT(frameSize, size)       maths::vec2(0        , frameSize.height - size.y)
-#define TOP_RIGHT(frameSize, size)      maths::vec2(frameSize.width - size.x, frameSize.height - size.y)
-
+#define P_BOTTOM_LEFT(frameSize, size)    maths::vec2(0                           , 0)
+#define P_BOTTOM_RIGHT(frameSize, size)   maths::vec2(frameSize.width - size.x    , 0)
+#define P_TOP_LEFT(frameSize, size)       maths::vec2(0                           , frameSize.height - size.y)
+#define P_TOP_RIGHT(frameSize, size)      maths::vec2(frameSize.width - size.x    , frameSize.height - size.y)
+#define P_CENTER(frameSize, size)         maths::vec2(frameSize.width/2 - size.x/2, frameSize.height/2 - size.y/2)
+#define P_BOTTOM(frameSize, size)         maths::vec2(frameSize.width/2 - size.x/2, 0)
+#define P_TOP(frameSize, size)            maths::vec2(frameSize.width/2 - size.x/2, frameSize.height - size.y)
+#define P_LEFT(frameSize, size)           maths::vec2(0                           , frameSize.height/2 - size.y/2)
+#define P_RIGHT(frameSize, size)          maths::vec2(frameSize.width - size.x    , frameSize.height/2 - size.y/2)
 
 #endif /* OMacros_h */

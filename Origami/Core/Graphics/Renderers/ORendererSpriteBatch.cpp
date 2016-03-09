@@ -197,7 +197,7 @@ void ORendererSpriteBatch::end()
     createRenderBatches();
 }
 
-void ORendererSpriteBatch::flush(OLayer2D *layer)
+void ORendererSpriteBatch::flush(OCamera2D *camera)
 {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -207,7 +207,7 @@ void ORendererSpriteBatch::flush(OLayer2D *layer)
     for (size_t i = 0; i < m_RenderBatches.size(); i++) {
         
         m_RenderBatches[i].currentShader->bind();
-        m_RenderBatches[i].currentShader->prepare(layer->getCamera());
+        m_RenderBatches[i].currentShader->prepare(camera);
         glBindTexture(GL_TEXTURE_2D, m_RenderBatches[i].texture);
         glDrawArrays(GL_TRIANGLES, m_RenderBatches[i].offset, m_RenderBatches[i].numVertices);
     }

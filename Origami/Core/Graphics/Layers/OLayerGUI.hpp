@@ -1,7 +1,7 @@
 /****************************************************************************
- SandboxScene.cpp
+ OLayerGUI.hpp
  
- Created by El Mehdi KHALLOUKI on 2/2/16.
+ Created by El Mehdi KHALLOUKI on 3/7/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,44 @@
  
  ****************************************************************************/
 
-#include "SandboxScene.hpp"
+#pragma once
 
-SandboxScene::SandboxScene()
-{
+
+
+#include <vector>
+
+#include <Core/OMacros.hpp>
+
+NS_O_BEGIN
+
+class OWidget;
+class ORenderer2D;
+class OCamera2D;
+
+class OLayerGUI {
+    friend class ODirector;
+private:
     
-}
-
-SandboxScene::~SandboxScene()
-{
+    std::vector<OWidget *> m_Renderables;
     
-}
-
-void SandboxScene::onUpdate(float deltaTime)
-{
-
-}
-
-void SandboxScene::onCreate()
-{
+    ORenderer2D* m_CurrentRenderer    = nullptr;
+    OCamera2D* m_Camera               = nullptr;
     
-}
-
-void SandboxScene::onClear()
-{
+public:
+    OLayerGUI();
     
-}
-
-void SandboxScene::onResize()
-{
-//    const OSize& frameSize = ODirector::director()->getVirtualSize();
+    virtual ~OLayerGUI();
     
-}
+    inline void addSubview(OWidget* sprite) {m_Renderables.push_back(sprite);}
+    inline void setRenderer(ORenderer2D* renderer) { m_CurrentRenderer = renderer; }
+    
+    inline OCamera2D* getCamera() const { return m_Camera; }
+    
+    virtual void create();
+    virtual void clear();
+    virtual void updateResolution();
+    virtual void update(float deltaTime);
+    virtual void render(float interpolation);
+    
+};
+NS_O_END

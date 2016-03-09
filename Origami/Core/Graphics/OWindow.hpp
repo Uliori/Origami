@@ -41,7 +41,7 @@ public:
     inline uint getHeight() const { return m_Height; }
 
     void setVsync(bool enabled);
-    inline bool isVsync() const { return m_Vsync; }
+    bool isVsync() const { return m_Vsync; }
 
     OApplication* m_Application;
 private:

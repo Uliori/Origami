@@ -34,7 +34,7 @@ ParticlesScene::ParticlesScene() : OScene()
 void ParticlesScene::onCreate()
 {
     
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     //sky
     sky = new OSprite(0, 0, frameSize.width, frameSize.height, "psky.png", 0);
@@ -45,7 +45,7 @@ void ParticlesScene::onCreate()
     
     particles->init(60, .9f , "particle.png", 1,
                     [](OParticleBatch2D* batch, float deltaTime){
-                        OSize frameSize = ODirector::director()->getVirtualSize();
+                        const OSize& frameSize = ODirector::director()->getVirtualSize();
                         vec2 posi = vec2(fRand(0, frameSize.width), fRand(-frameSize.height/2, 0));
                         batch->addParticle(posi, vec2(fRand(-10, 10), fRand(20, 40)), OColorRGBA8(0, 0, 0, 1), 5);
                     },
@@ -73,7 +73,7 @@ void ParticlesScene::onClear()
 void ParticlesScene::onResize()
 {
     
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     sky->setSize(vec2(frameSize.width, frameSize.height));
 }

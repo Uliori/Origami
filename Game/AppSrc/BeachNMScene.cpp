@@ -20,7 +20,7 @@ void BeachNMScene::onCreate()
     OTexture *boatTexture   = OResourceManager::textureCache()->loadTexture("boat.png");
     OTexture *mountsTexture = OResourceManager::textureCache()->loadTexture("mountains.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     float p = addPercent(frameSize.width, 50);
 
@@ -62,7 +62,7 @@ void BeachNMScene::onCreate()
 
     particles->init(40, .9f , "star.png", .5f,
                     [](OParticleBatch2D* batch, float deltaTime){
-                        OSize frameSize = ODirector::director()->getVirtualSize();
+                        const OSize& frameSize = ODirector::director()->getVirtualSize();
                         vec2 posi = vec2(fRand(0, frameSize.width), fRand(0, frameSize.height));
                         batch->addParticle(posi, vec2(), OColorRGBA8(), 15.0f);
                     },
@@ -87,7 +87,7 @@ void BeachNMScene::onClear()
 
 void BeachNMScene::onUpdate(float deltaTime)
 {
-      OSize frameSize = ODirector::director()->getVirtualSize();
+      const OSize& frameSize = ODirector::director()->getVirtualSize();
 
       float time = sin(ODirector::director()->getTimer()->getTime() / 1000.0);
       float p = percent(frameSize.width, 50);
@@ -112,7 +112,7 @@ void BeachNMScene::onResize()
     OTexture *waveTexture = wave1->getTexture();
     OTexture *mountsTexture = mountains1->getTexture();
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
     
     sky->setSize(vec2(frameSize.width, frameSize.height));

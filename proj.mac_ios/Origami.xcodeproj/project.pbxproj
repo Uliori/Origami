@@ -109,6 +109,10 @@
 		911B76341BD076E800D09E89 /* ORendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911B76311BD076E800D09E89 /* ORendererFactory.cpp */; };
 		911E4D391BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; };
 		911E4D3A1BDBF5F900DC0706 /* ORendererSpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */; };
+		911ECBC31C8E39DB0065EE82 /* OLayerGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ECBC11C8E39DB0065EE82 /* OLayerGUI.cpp */; };
+		911ECBC41C8E39DB0065EE82 /* OLayerGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ECBC11C8E39DB0065EE82 /* OLayerGUI.cpp */; };
+		911ECBC71C8E39FF0065EE82 /* OWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ECBC51C8E39FF0065EE82 /* OWidget.cpp */; };
+		911ECBC81C8E39FF0065EE82 /* OWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911ECBC51C8E39FF0065EE82 /* OWidget.cpp */; };
 		911EED4D1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; };
 		911EED4E1BE7CD6000A3FCB1 /* OFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED471BE7CD6000A3FCB1 /* OFont.cpp */; };
 		911EED4F1BE7CD6000A3FCB1 /* OFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */; };
@@ -298,6 +302,10 @@
 		91B0FF291BC71F820051529B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF281BC71F820051529B /* Cocoa.framework */; };
 		91B0FF2E1BC71FC60051529B /* glew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2D1BC71FC60051529B /* glew.a */; };
 		91B0FF301BC728280051529B /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0FF2F1BC728280051529B /* libglfw3.a */; };
+		91CBC7501C8F07F700FD4E5E /* OButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CBC74E1C8F07F700FD4E5E /* OButton.cpp */; };
+		91CBC7511C8F07F700FD4E5E /* OButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CBC74E1C8F07F700FD4E5E /* OButton.cpp */; };
+		91CBC7541C8F603800FD4E5E /* RGHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CBC7521C8F603800FD4E5E /* RGHomeScene.cpp */; };
+		91CBC7551C8F603800FD4E5E /* RGHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CBC7521C8F603800FD4E5E /* RGHomeScene.cpp */; };
 		91CC3E011C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
 		91CC3E021C357E0700F923C1 /* ODirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91CC3DFF1C357E0700F923C1 /* ODirector.cpp */; };
 		91D0521F1BC861DC00F4F246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D0521E1BC861DC00F4F246 /* Images.xcassets */; };
@@ -441,6 +449,10 @@
 		911E4D371BDBF5F900DC0706 /* ORendererSpriteBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ORendererSpriteBatch.cpp; sourceTree = "<group>"; };
 		911E4D381BDBF5F900DC0706 /* ORendererSpriteBatch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ORendererSpriteBatch.hpp; sourceTree = "<group>"; };
 		911E4D3B1BDBF67700DC0706 /* ORenderer2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ORenderer2D.hpp; sourceTree = "<group>"; };
+		911ECBC11C8E39DB0065EE82 /* OLayerGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OLayerGUI.cpp; sourceTree = "<group>"; };
+		911ECBC21C8E39DB0065EE82 /* OLayerGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OLayerGUI.hpp; sourceTree = "<group>"; };
+		911ECBC51C8E39FF0065EE82 /* OWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OWidget.cpp; sourceTree = "<group>"; };
+		911ECBC61C8E39FF0065EE82 /* OWidget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OWidget.hpp; sourceTree = "<group>"; };
 		911EED471BE7CD6000A3FCB1 /* OFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OFont.cpp; sourceTree = "<group>"; };
 		911EED481BE7CD6000A3FCB1 /* OFont.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OFont.hpp; sourceTree = "<group>"; };
 		911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OFontManager.cpp; sourceTree = "<group>"; };
@@ -589,7 +601,11 @@
 		91B0FF281BC71F820051529B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91B0FF2D1BC71FC60051529B /* glew.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = glew.a; path = ../../Origami/Dependencies/GLEW/lib/osx/glew.a; sourceTree = "<group>"; };
 		91B0FF2F1BC728280051529B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Origami/Dependencies/GLFW/lib/osx/libglfw3.a; sourceTree = "<group>"; };
-		91CB85851C88E23000F1F3EF /* OTouchInputs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OTouchInputs.hpp; sourceTree = "<group>"; };
+		91CB85851C88E23000F1F3EF /* OInputEvents.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OInputEvents.hpp; sourceTree = "<group>"; };
+		91CBC74E1C8F07F700FD4E5E /* OButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OButton.cpp; sourceTree = "<group>"; };
+		91CBC74F1C8F07F700FD4E5E /* OButton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OButton.hpp; sourceTree = "<group>"; };
+		91CBC7521C8F603800FD4E5E /* RGHomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RGHomeScene.cpp; sourceTree = "<group>"; };
+		91CBC7531C8F603800FD4E5E /* RGHomeScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RGHomeScene.hpp; sourceTree = "<group>"; };
 		91CC3DFE1C34947100F923C1 /* OMacros.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OMacros.hpp; sourceTree = "<group>"; };
 		91CC3DFF1C357E0700F923C1 /* ODirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ODirector.cpp; sourceTree = "<group>"; };
 		91CC3E001C357E0700F923C1 /* ODirector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ODirector.hpp; sourceTree = "<group>"; };
@@ -847,8 +863,12 @@
 				911EED481BE7CD6000A3FCB1 /* OFont.hpp */,
 				911EED491BE7CD6000A3FCB1 /* OFontManager.cpp */,
 				911EED4A1BE7CD6000A3FCB1 /* OFontManager.hpp */,
+				911ECBC51C8E39FF0065EE82 /* OWidget.cpp */,
+				911ECBC61C8E39FF0065EE82 /* OWidget.hpp */,
 				911EED4B1BE7CD6000A3FCB1 /* OLabel.cpp */,
 				911EED4C1BE7CD6000A3FCB1 /* OLabel.hpp */,
+				91CBC74E1C8F07F700FD4E5E /* OButton.cpp */,
+				91CBC74F1C8F07F700FD4E5E /* OButton.hpp */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -951,6 +971,8 @@
 				9147DF4A1BDBAE35006DBC72 /* OLayer2D.hpp */,
 				9147DF4B1BDBAE35006DBC72 /* OLayer3D.cpp */,
 				9147DF4C1BDBAE35006DBC72 /* OLayer3D.hpp */,
+				911ECBC11C8E39DB0065EE82 /* OLayerGUI.cpp */,
+				911ECBC21C8E39DB0065EE82 /* OLayerGUI.hpp */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -1034,8 +1056,8 @@
 		91AA88511C84BA9E005C1DD6 /* Embedded */ = {
 			isa = PBXGroup;
 			children = (
-				91AA88521C84BA9E005C1DD6 /* Embedded.cpp */,
 				91AA88531C84BA9E005C1DD6 /* Embedded.hpp */,
+				91AA88521C84BA9E005C1DD6 /* Embedded.cpp */,
 				91AA88541C84BA9E005C1DD6 /* files */,
 			);
 			path = Embedded;
@@ -1114,7 +1136,7 @@
 			children = (
 				913BC5471BDD7E100013209D /* OInputsManager.cpp */,
 				913BC5481BDD7E100013209D /* OInputsManager.hpp */,
-				91CB85851C88E23000F1F3EF /* OTouchInputs.hpp */,
+				91CB85851C88E23000F1F3EF /* OInputEvents.hpp */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -1235,6 +1257,8 @@
 				9179C2121C6BCC6D00F9D97A /* RGTerrain.hpp */,
 				9179C2151C6BCC9800F9D97A /* RGSandboxScene.cpp */,
 				9179C2161C6BCC9800F9D97A /* RGSandboxScene.hpp */,
+				91CBC7521C8F603800FD4E5E /* RGHomeScene.cpp */,
+				91CBC7531C8F603800FD4E5E /* RGHomeScene.hpp */,
 			);
 			path = AppSrc;
 			sourceTree = "<group>";
@@ -1473,8 +1497,10 @@
 				9116B7BD1C7F84E9003B8A69 /* b2Contact.cpp in Sources */,
 				913BC92D1BE0026D0013209D /* ftrend1.c in Sources */,
 				9116B7A71C7F84E9003B8A69 /* b2StackAllocator.cpp in Sources */,
+				91CBC7501C8F07F700FD4E5E /* OButton.cpp in Sources */,
 				913BC9411BE002C90013209D /* ftfstype.c in Sources */,
 				91F5F3901BC6F8F70030DA6A /* main.m in Sources */,
+				91CBC7541C8F603800FD4E5E /* RGHomeScene.cpp in Sources */,
 				913BC5491BDD7E100013209D /* OInputsManager.cpp in Sources */,
 				913BC7021BDF8A210013209D /* hb-unicode.cc in Sources */,
 				9116B7B91C7F84E9003B8A69 /* b2ChainAndPolygonContact.cpp in Sources */,
@@ -1499,6 +1525,7 @@
 				9116B7A31C7F84E9003B8A69 /* b2Math.cpp in Sources */,
 				9116B78F1C7F84E9003B8A69 /* b2Collision.cpp in Sources */,
 				913BC9571BE002F30013209D /* pshinter.c in Sources */,
+				911ECBC31C8E39DB0065EE82 /* OLayerGUI.cpp in Sources */,
 				9116B79F1C7F84E9003B8A69 /* b2BlockAllocator.cpp in Sources */,
 				9147DF4F1BDBAE35006DBC72 /* OLayer3D.cpp in Sources */,
 				9179C21F1C6BE0AE00F9D97A /* O2DColorShader.cpp in Sources */,
@@ -1509,6 +1536,7 @@
 				919CC6471C72033800F6CA63 /* OB2DSprite.cpp in Sources */,
 				9116B7A11C7F84E9003B8A69 /* b2Draw.cpp in Sources */,
 				91B0FEF21BC71C3C0051529B /* OMaths.cpp in Sources */,
+				911ECBC71C8E39FF0065EE82 /* OWidget.cpp in Sources */,
 				9116B7B31C7F84E9003B8A69 /* b2World.cpp in Sources */,
 				91B0FEFE1BC71C3C0051529B /* ResourcesUtils.cpp in Sources */,
 				913BC9661BE0033A0013209D /* smooth.c in Sources */,
@@ -1593,6 +1621,7 @@
 				9179C2181C6BCC9800F9D97A /* RGSandboxScene.cpp in Sources */,
 				9116B7D61C7F84E9003B8A69 /* b2PrismaticJoint.cpp in Sources */,
 				913BC6D71BDF8A210013209D /* hb-ot-shape-complex-arabic.cc in Sources */,
+				91CBC7551C8F603800FD4E5E /* RGHomeScene.cpp in Sources */,
 				913BC6EF1BDF8A210013209D /* hb-ot-shape.cc in Sources */,
 				913BC6F51BDF8A210013209D /* hb-shape-plan.cc in Sources */,
 				913BC9441BE002C90013209D /* ftgasp.c in Sources */,
@@ -1637,6 +1666,7 @@
 				91B0FEFD1BC71C3C0051529B /* OTextureCache.cpp in Sources */,
 				91B0FF011BC71C3C0051529B /* ShaderUtils.cpp in Sources */,
 				91F5F3C71BC6FCF40030DA6A /* GameViewController.m in Sources */,
+				911ECBC41C8E39DB0065EE82 /* OLayerGUI.cpp in Sources */,
 				9116B7D41C7F84E9003B8A69 /* b2MouseJoint.cpp in Sources */,
 				9116B7A61C7F84E9003B8A69 /* b2Settings.cpp in Sources */,
 				91B0FF031BC71C3C0051529B /* TextureUtils.cpp in Sources */,
@@ -1652,6 +1682,7 @@
 				9116B7981C7F84E9003B8A69 /* b2ChainShape.cpp in Sources */,
 				9116B7D81C7F84E9003B8A69 /* b2PulleyJoint.cpp in Sources */,
 				911ADE381C4985C400CCE944 /* OParticleBach2D.cpp in Sources */,
+				911ECBC81C8E39FF0065EE82 /* OWidget.cpp in Sources */,
 				913BC93E1BE002C90013209D /* ftbbox.c in Sources */,
 				9116B78A1C7F84E9003B8A69 /* b2CollideCircle.cpp in Sources */,
 				9116B7A21C7F84E9003B8A69 /* b2Draw.cpp in Sources */,
@@ -1727,6 +1758,7 @@
 				91FB901B1BCB1DD900526B2D /* OScene.cpp in Sources */,
 				9116B7DC1C7F84E9003B8A69 /* b2RopeJoint.cpp in Sources */,
 				913BC6D51BDF8A210013209D /* hb-ot-map.cc in Sources */,
+				91CBC7511C8F07F700FD4E5E /* OButton.cpp in Sources */,
 				913BC7281BDFF03B0013209D /* texture-atlas.c in Sources */,
 				913BC9521BE002C90013209D /* ftxf86.c in Sources */,
 				9197F2881C6ECA0300A0CFA3 /* B2DDebugDraw.cpp in Sources */,

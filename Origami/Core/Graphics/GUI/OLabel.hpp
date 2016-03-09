@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Core/Graphics/2D/OSprite.hpp>
+#include "OWidget.hpp"
 #include <Core/Maths/OMaths.hpp>
 #include "OFontManager.hpp"
 
@@ -19,20 +19,18 @@ enum OTextAlignment
     OTEXT_ALIGN_CENTERED_V = 16,
     OTEXT_ALIGN_BOTTOM = 32,
     
-    OTEXT_ALIGN_TOP_LEFT        = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_TOP,
-    OTEXT_ALIGN_CENTERV_LEFT    = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_CENTERED_V,
-    OTEXT_ALIGN_BOTTOM_LEFT     = OTEXT_ALIGN_LEFT | OTEXT_ALIGN_BOTTOM,
-    OTEXT_ALIGN_TOP_CENTERH     = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_TOP,
-    OTEXT_ALIGN_CENTERED        = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_CENTERED_V,
-    OTEXT_ALIGN_BOTTOM_CENTERH  = OTEXT_ALIGN_CENTERED_H | OTEXT_ALIGN_BOTTOM,
-    OTEXT_ALIGN_TOP_RIGHT       = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_TOP,
-    OTEXT_ALIGN_CENTERV_RIGHT   = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_CENTERED_V,
-    OTEXT_ALIGN_BOTTOM_RIGHT    = OTEXT_ALIGN_RIGHT | OTEXT_ALIGN_BOTTOM,
-    
-
+    OTEXT_ALIGN_TOP_LEFT        = OTEXT_ALIGN_LEFT          | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERV_LEFT    = OTEXT_ALIGN_LEFT          | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_LEFT     = OTEXT_ALIGN_LEFT          | OTEXT_ALIGN_BOTTOM,
+    OTEXT_ALIGN_TOP_CENTERH     = OTEXT_ALIGN_CENTERED_H    | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERED        = OTEXT_ALIGN_CENTERED_H    | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_CENTERH  = OTEXT_ALIGN_CENTERED_H    | OTEXT_ALIGN_BOTTOM,
+    OTEXT_ALIGN_TOP_RIGHT       = OTEXT_ALIGN_RIGHT         | OTEXT_ALIGN_TOP,
+    OTEXT_ALIGN_CENTERV_RIGHT   = OTEXT_ALIGN_RIGHT         | OTEXT_ALIGN_CENTERED_V,
+    OTEXT_ALIGN_BOTTOM_RIGHT    = OTEXT_ALIGN_RIGHT         | OTEXT_ALIGN_BOTTOM,
 };
 
-class OLabel : public OSprite
+class OLabel : public OWidget
 {
 private:
     //Text properties
@@ -42,7 +40,6 @@ private:
     maths::vec4 borders;
     std::vector<std::string> m_Lines;
     std::vector<float> m_LinesWidth;
-    
     int textAlignment = OTEXT_ALIGN_CENTERED;
     
     void getLines();
@@ -54,6 +51,7 @@ private:
 public:
     OLabel(const std::string& text);
     OLabel(const std::string& text, OFont* font);
+    virtual ~OLabel();
     
     void submit(ORenderer2D* renderer)  override;
 
@@ -63,10 +61,14 @@ public:
     inline void setFont(OFont* font) { m_Font = font; }
     inline void setTextAlignment(int alignment) { textAlignment = alignment; }
     
+    void setBackgroundImage(const std::string& texturePath);
+    
     inline void setPadding(int p) { borders = maths::vec4(p, p, p, p); }
     inline void setPadding(int left, int bottom, int right, int top) { borders = maths::vec4(left, bottom, right, top); }
     
     void sizetoFit();
+    
+    virtual void touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition) override;
 };
 
 NS_O_END

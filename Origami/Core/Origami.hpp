@@ -37,6 +37,7 @@
 #include <Core/Graphics/GUI/OFont.hpp>
 #include <Core/Graphics/GUI/OFontManager.hpp>
 #include <Core/Graphics/GUI/OLabel.hpp>
+#include <Core/Graphics/GUI/OButton.hpp>
 
 //Graphics/Layers folder
 #include <Core/Graphics/Layers/OLayer2D.hpp>

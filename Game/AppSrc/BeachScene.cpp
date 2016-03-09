@@ -22,7 +22,7 @@ void BeachScene::onCreate()
     OTexture *sunTexture    = OResourceManager::textureCache()->loadTexture("sun.png");
     OTexture *mountsTexture = OResourceManager::textureCache()->loadTexture("mountains.png", true, GL_REPEAT, GL_CLAMP_TO_EDGE);
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     
     float p = addPercent(frameSize.width, 50);
 
@@ -89,7 +89,7 @@ void BeachScene::onClear()
 
 void BeachScene::onUpdate(float deltaTime)
 {
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
 
     float time = sin(ODirector::director()->getTimer()->getTime() / 1000.0);
     float p = percent(frameSize.width, 50);
@@ -124,7 +124,7 @@ void BeachScene::onResize()
     OTexture *waveTexture = wave1->getTexture();
     OTexture *mountsTexture = mountains1->getTexture();
 
-    OSize frameSize = ODirector::director()->getVirtualSize();
+    const OSize& frameSize = ODirector::director()->getVirtualSize();
     float p = addPercent(frameSize.width, 50);
     
     sky->setSize(vec2(frameSize.width, frameSize.height));

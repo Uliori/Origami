@@ -1,7 +1,7 @@
 /****************************************************************************
- SandboxScene.cpp
+ OWidget.cpp
  
- Created by El Mehdi KHALLOUKI on 2/2/16.
+ Created by El Mehdi KHALLOUKI on 3/7/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,18 @@
  
  ****************************************************************************/
 
-#include "SandboxScene.hpp"
+#include "OWidget.hpp"
 
-SandboxScene::SandboxScene()
+NS_O_BEGIN
+
+bool OWidget::isTouchInside(const maths::vec2& position)
 {
+    float left = m_Position.x;
+    float right = m_Position.x + m_Size.x;
+    float bottom = m_Position.y;
+    float top = m_Position.y + m_Size.y;
     
+    return (position.x>=left && position.x<=right) && (position.y>=bottom && position.y<=top);
 }
 
-SandboxScene::~SandboxScene()
-{
-    
-}
-
-void SandboxScene::onUpdate(float deltaTime)
-{
-
-}
-
-void SandboxScene::onCreate()
-{
-    
-}
-
-void SandboxScene::onClear()
-{
-    
-}
-
-void SandboxScene::onResize()
-{
-//    const OSize& frameSize = ODirector::director()->getVirtualSize();
-    
-}
+NS_O_END

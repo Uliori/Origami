@@ -203,10 +203,10 @@
     for(UITouch* touch in touches)
     {
         CGPoint touchPoint = [touch locationInView:self.view];
-        maths::vec2 pos = vec2(touchPoint.x, touchPoint.y);
+        maths::vec2 pos = vec2(touchPoint.x, touchPoint.y) * [[UIScreen mainScreen] scale];
         if(self.view.multipleTouchEnabled == YES)
         {
-            touchID = [touch hash];
+            touchID = (uint)[touch hash];
         }
 
         TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);
@@ -224,9 +224,9 @@
     for(UITouch* touch in touches)
     {
         CGPoint touchPoint = [touch locationInView:self.view];
-        vec2 pos = vec2(touchPoint.x, touchPoint.y);
+        vec2 pos = vec2(touchPoint.x, touchPoint.y) * [[UIScreen mainScreen] scale];
         if(self.view.multipleTouchEnabled == YES)
-            touchID = [touch hash];
+            touchID = (uint)[touch hash];
         
         TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);
         point.position = pos;
@@ -248,9 +248,9 @@
     for(UITouch* touch in touches)
     {
         CGPoint touchPoint = [touch locationInView:self.view];
-        vec2 pos = vec2(touchPoint.x, touchPoint.y);
+        vec2 pos = vec2(touchPoint.x, touchPoint.y) * [[UIScreen mainScreen] scale];
         if(self.view.multipleTouchEnabled == YES)
-            touchID = [touch hash];
+            touchID = (uint)[touch hash];
 
 
         TouchPoint& point = OInputsManager::manager()->getTouchPoint(touchID);

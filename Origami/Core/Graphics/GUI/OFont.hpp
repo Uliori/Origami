@@ -12,8 +12,8 @@ NS_O_BEGIN
 class OFont
 {
 private:
-    ftgl::texture_atlas_t* m_FTAtlas = nullptr;
-    ftgl::texture_font_t* m_FTFont = nullptr;
+    ftgl::texture_atlas_t* m_FTAtlas    = nullptr;
+    ftgl::texture_font_t* m_FTFont      = nullptr;
     
     float m_Size;
     maths::vec2 m_Scale;

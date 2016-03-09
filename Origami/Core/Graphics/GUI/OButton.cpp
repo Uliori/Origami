@@ -1,7 +1,7 @@
 /****************************************************************************
- SandboxScene.cpp
+ OButton.cpp
  
- Created by El Mehdi KHALLOUKI on 2/2/16.
+ Created by El Mehdi KHALLOUKI on 3/8/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,44 @@
  
  ****************************************************************************/
 
-#include "SandboxScene.hpp"
+#include "OButton.hpp"
 
-SandboxScene::SandboxScene()
+#include <Core/ODirector.hpp>
+
+NS_O_BEGIN
+
+OButton::OButton(const std::string& text)
+:Origami::OLabel(text)
 {
     
 }
 
-SandboxScene::~SandboxScene()
+OButton::OButton(const std::string& text, OFont* font)
+:Origami::OLabel(text, font)
 {
     
 }
 
-void SandboxScene::onUpdate(float deltaTime)
+void OButton::update()
 {
-
+    if (touchState == TouchPoint::TOUCH_PRESS || touchState == TouchPoint::TOUCH_MOVE) {
+        m_PressFunc();
+    }
+    if (touchState == TouchPoint::TOUCH_RELEASE) {
+        endPress = ODirector::director()->getTimer()->getTime();
+        if (endPress - startPress <= maxT) {
+            m_ClickFunc();
+        }
+        touchState = TouchPoint::NONE;
+    }
 }
 
-void SandboxScene::onCreate()
+void OButton::touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition)
 {
-    
+    touchState = state;
+    if (state == TouchPoint::TOUCH_PRESS) {
+        startPress = ODirector::director()->getTimer()->getTime();
+    }
 }
 
-void SandboxScene::onClear()
-{
-    
-}
-
-void SandboxScene::onResize()
-{
-//    const OSize& frameSize = ODirector::director()->getVirtualSize();
-    
-}
+NS_O_END

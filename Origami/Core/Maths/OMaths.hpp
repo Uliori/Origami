@@ -31,8 +31,6 @@ namespace maths {
 #define EPSILON 1e-6f
 #define DEG2RAD  0.0174532925f
 #define RAD2DEG 57.29577951f
-#define MATH_RANDOM_MINUS1_1()      ((2.0f*((float)rand()/RAND_MAX))-1.0f)      // Returns a random float between -1 and 1.
-#define MATH_RANDOM_0_1()           ((float)rand()/RAND_MAX)                    // Returns a random float between 0 and 1.
 #define MATH_FLOAT_SMALL            1.0e-37f
 #define MATH_TOLERANCE              2e-37f
 #define MATH_E                      2.71828182845904523536f

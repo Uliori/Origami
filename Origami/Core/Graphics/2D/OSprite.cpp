@@ -23,8 +23,10 @@ OSprite::OSprite(float x, float y, float width, float height,const std::string& 
 
 OSprite::~OSprite()
 {
-    OResourceManager::textureCache()->releaseTexture(m_TexturePath);
-    m_Texture = nullptr;
+    if (m_Texture) {
+        OResourceManager::textureCache()->releaseTexture(m_TexturePath);
+        m_Texture = nullptr;
+    }
 }
 
 void OSprite::submit(ORenderer2D* renderer) 

@@ -53,7 +53,7 @@ inline void defaultParticleUpdate(OParticle2D& particle, float deltaTime) {
     particle.position += particle.velocity * deltaTime;
 }
 
-class OParticleBatch2D {
+class OParticleBatch2D {    
 public:
     OParticleBatch2D();
     ~OParticleBatch2D();

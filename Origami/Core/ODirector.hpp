@@ -125,6 +125,8 @@ public:
      * @return OSize - the screen rect.
      */
     const OSize& getVirtualSize() const {return m_VirtualSize;}
+    const float getScaleX() const { return m_ScaleX; }
+    const float getScaleY() const { return m_ScaleY; }
     inline ResolutionPolicy &getResolutionPolicy() {return m_ResolutionPolicy;}
 
     void setFrameSize(uint width, uint height) { m_FrameSize = OSize(width, height);}
@@ -139,6 +141,8 @@ public:
     
     //
     void handleTouch(int hashID, TouchPoint::TouchEvent event, const maths::vec2& position, const maths::vec2& oldPosition);
+private:
+    std::map<int, OInputEvents*> m_TouchMap;
 };
 
 NS_O_END

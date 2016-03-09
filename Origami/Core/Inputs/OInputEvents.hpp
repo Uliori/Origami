@@ -1,5 +1,5 @@
 //
-//  OTouchInputs.h
+//  OInputEvents.hpp
 //  Origami
 //
 //  Created by El Mehdi KHALLOUKI on 3/3/16.
@@ -13,7 +13,7 @@
 
 NS_O_BEGIN
 
-class OTouchInputs {
+class OInputEvents {
     
 public:
     virtual void touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition) {}

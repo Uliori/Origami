@@ -58,7 +58,7 @@ OTexture* TextureUtils::loadTexture(const char* texname, bool invert_y /* = true
     //Load file into buffer
     unsigned char* buffer;
     size_t buffer_length;
-    ResourcesUtils::fileLength(fileName.c_str(), buffer, buffer_length);
+    ResourcesUtils::openFile(fileName.c_str(), buffer, buffer_length);
 
     unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
 
@@ -133,7 +133,7 @@ void TextureUtils::reloadTexture(OTexture* texture, const char * imagepath, bool
   //Load file into buffer
   unsigned char* buffer;
   size_t buffer_length;
-  ResourcesUtils::fileLength(fileName.c_str(), buffer, buffer_length);
+  ResourcesUtils::openFile(fileName.c_str(), buffer, buffer_length);
 
   unsigned char *img = SOIL_load_image_from_memory(buffer,(int) buffer_length, &width, &height, &channels, SOIL_LOAD_RGBA);
 

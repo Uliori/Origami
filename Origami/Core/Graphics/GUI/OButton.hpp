@@ -1,7 +1,7 @@
 /****************************************************************************
- SandboxScene.cpp
+ OButton.hpp
  
- Created by El Mehdi KHALLOUKI on 2/2/16.
+ Created by El Mehdi KHALLOUKI on 3/8/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,43 @@
  
  ****************************************************************************/
 
-#include "SandboxScene.hpp"
+#pragma once
 
-SandboxScene::SandboxScene()
-{
+#include "OLabel.hpp"
+#include <Core/OMacros.hpp>
+
+NS_O_BEGIN
+
+inline void defaultClickEvent(){}
+
+class OButton : public OLabel {
+    //click management
+    std::function<void()> m_ClickFunc = defaultClickEvent;
+    std::function<void()> m_PressFunc = defaultClickEvent;
     
-}
-
-SandboxScene::~SandboxScene()
-{
+    const float maxT = 500;
     
-}
-
-void SandboxScene::onUpdate(float deltaTime)
-{
-
-}
-
-void SandboxScene::onCreate()
-{
+    TouchPoint::TouchEvent touchState = TouchPoint::NONE;
+    float startPress = 0;
+    float endPress   = 0;
     
-}
-
-void SandboxScene::onClear()
-{
+public:
+    OButton(const std::string& text);
+    OButton(const std::string& text, OFont* font);
     
-}
-
-void SandboxScene::onResize()
-{
-//    const OSize& frameSize = ODirector::director()->getVirtualSize();
+    void update() override;
     
-}
+    void touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition) override;
+    inline void setOnClickListener(std::function<void()> listener)
+    {
+        m_ClickFunc = listener;
+    }
+    inline void setOnPressListener(std::function<void()> listener)
+    {
+        m_PressFunc = listener;
+    }
+};
+
+NS_O_END
+
+

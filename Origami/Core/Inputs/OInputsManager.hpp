@@ -26,6 +26,7 @@ public:
     
     enum TouchEvent
     {
+        NONE,
         TOUCH_PRESS,
         TOUCH_MOVE,
         TOUCH_RELEASE
@@ -39,8 +40,6 @@ public:
         down = false;
     }
 };
-
-#define TOUCH_POINTS_MAX (10)
 
 class OInputsManager {
 private:

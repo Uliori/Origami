@@ -47,12 +47,12 @@ public:
     const uint getFPS() const { return m_FramesPerSecond; }
     const uint getUPS() const { return m_UpdatesPerSecond; }
 
-    inline void setPreferredFPS(uint fps){m_PreferredFramesPerSecond = fps;}
-    inline void setFPS(uint fps){m_FramesPerSecond = fps;}
-    inline void setUPS(uint ups){m_UpdatesPerSecond = ups;}
+    void setPreferredFPS(uint fps){m_PreferredFramesPerSecond = fps;}
+    void setFPS(uint fps){m_FramesPerSecond = fps;}
+    void setUPS(uint ups){m_UpdatesPerSecond = ups;}
 
-    inline bool isSupended() { return m_Suspended; }
-    inline void setShouldSuspendWhenFocusIsLost(bool v) { m_SuspendOnFocusLost = v; }
+    bool isSupended() { return m_Suspended; }
+    void setShouldSuspendWhenFocusIsLost(bool v) { m_SuspendOnFocusLost = v; }
 private:
     void run();
 };

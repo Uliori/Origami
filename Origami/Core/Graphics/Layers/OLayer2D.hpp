@@ -36,7 +36,7 @@ public:
 
     virtual ~OLayer2D();
 
-    inline void addsprite(OSprite* sprite) {m_Renderables.push_back(sprite);}
+    inline void addSprite(OSprite* sprite) {m_Renderables.push_back(sprite);}
 
     inline void setRenderer(ORenderer2D* renderer) { m_CurrentRenderer = renderer; }
 

@@ -1,7 +1,8 @@
 #pragma once
 
-#include <Core/Inputs/OTouchInputs.hpp>
+#include <Core/Inputs/OInputEvents.hpp>
 
+#include <Core/Graphics/Layers/OLayerGUI.hpp>
 #include <Core/Graphics/Layers/OLayer2D.hpp>
 #include <Core/Graphics/Layers/OLayer3D.hpp>
 
@@ -13,14 +14,14 @@
 
 NS_O_BEGIN
 
-class OScene : public OTouchInputs{
+class OScene : public OInputEvents {
 
 private:
     OLayer3D* m_MainLayer3D = nullptr;
     OLayer2D* m_MainLayer2D = nullptr;
-    OLayer2D* m_GUIView     = nullptr;
+    OLayerGUI* m_GUIView     = nullptr;
     
-    OLayer2D* m_debugLayer  = nullptr;
+    OLayerGUI* m_debugLayer  = nullptr;
     OLabel *fpsLabel        = nullptr;
     
     bool m_Created = false;
@@ -33,9 +34,9 @@ public:
 
     inline OLayer3D* getMainLayer3D(){ return m_MainLayer3D; }
     inline OLayer2D* getMainLayer2D(){ return m_MainLayer2D; }
-    inline OLayer2D* getGUIView()    { return m_GUIView;     }
+    inline OLayerGUI* getGUIView()    { return m_GUIView;     }
 #ifdef O_MODE_DEBUG
-    inline OLayer2D* getDebugGUIView()    { return m_debugLayer;     }
+    inline OLayerGUI* getDebugGUIView()    { return m_debugLayer;     }
 #endif
     
     

@@ -1,7 +1,7 @@
 /****************************************************************************
- SandboxScene.cpp
+ OWidget.hpp
  
- Created by El Mehdi KHALLOUKI on 2/2/16.
+ Created by El Mehdi KHALLOUKI on 3/7/16.
  Copyright (c) 2016 __MyCompanyName__.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,35 +24,24 @@
  
  ****************************************************************************/
 
-#include "SandboxScene.hpp"
+#pragma once
 
-SandboxScene::SandboxScene()
-{
+#include <Core/Graphics/2D/OSprite.hpp>
+#include <Core/Inputs/OInputEvents.hpp>
+
+#include <Core/OMacros.hpp>
+
+NS_O_BEGIN
+
+class OWidget : public OSprite, public OInputEvents {
     
-}
-
-SandboxScene::~SandboxScene()
-{
     
-}
-
-void SandboxScene::onUpdate(float deltaTime)
-{
-
-}
-
-void SandboxScene::onCreate()
-{
+public:
+    virtual void update(){}
     
-}
+    virtual void touchEvent(int touchID, TouchPoint::TouchEvent state, const maths::vec2& position, const maths::vec2& lastPosition) {}
+    virtual bool isTouchInside(const maths::vec2& position);
+};
 
-void SandboxScene::onClear()
-{
-    
-}
+NS_O_END
 
-void SandboxScene::onResize()
-{
-//    const OSize& frameSize = ODirector::director()->getVirtualSize();
-    
-}

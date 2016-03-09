@@ -277,8 +277,38 @@ void ODirector::updateInput() // for desktop only
 
 void ODirector::handleTouch(int hashID, TouchPoint::TouchEvent event, const maths::vec2& position, const maths::vec2& oldPosition)
 {
-    if (m_CurrentScene && m_CurrentScene->isCreated()) {
-        m_CurrentScene->touchEvent(hashID, event, position, oldPosition);
+    const maths::vec2 screenScale = maths::vec2(ODirector::director()->getScaleX(), ODirector::director()->getScaleY());
+    
+    maths::vec2 StFPosi     = maths::vec2(position.x / screenScale.x, position.y / screenScale.y);
+    maths::vec2 StFLastPosi = maths::vec2(oldPosition.x / screenScale.x, oldPosition.y / screenScale.y);
+    
+    auto it = m_TouchMap.find(hashID);
+    if(it != m_TouchMap.end())
+    {
+        it->second->touchEvent(hashID, event, StFPosi, StFLastPosi);
+        if (event == TouchPoint::TOUCH_RELEASE) {
+            m_TouchMap.erase(it);
+        }
+    }
+    else {
+        bool touchOnWidget = false;
+        OLayerGUI* guiLayer = m_CurrentScene->getGUIView();
+        maths::vec2 FtWPosi = guiLayer->getCamera()->convertScreenToWorld(StFPosi);
+        
+        for (OWidget* widget : guiLayer->m_Renderables) {
+            if (widget->isTouchInside(FtWPosi)) {
+                touchOnWidget = true;
+                m_TouchMap.insert(std::make_pair(hashID, widget));
+                widget->touchEvent(hashID, event, StFPosi, StFLastPosi);
+                break;
+            }
+        }
+        if (!touchOnWidget) {
+            if (m_CurrentScene && m_CurrentScene->isCreated()) {
+                m_TouchMap.insert(std::make_pair(hashID, m_CurrentScene));
+                m_CurrentScene->touchEvent(hashID, event, StFPosi, StFLastPosi);
+            }
+        }
     }
 }
 NS_O_END

@@ -19,6 +19,7 @@
 #include "SandboxScene.hpp"
 
 #include "RGSandboxScene.hpp"
+#include "RGHomeScene.hpp"
 
 OGame::OGame(const char* name, uint width, uint height) : OApplication(name, width, height)
 {
@@ -40,8 +41,10 @@ void OGame::onInit()
 //    ODirector::director()->addScene("9", new BambooScene());
 //    ODirector::director()->addScene("sandbox", new SandboxScene());
     
-    ODirector::director()->addScene("rgs", new RGSandboxScene());
-    ODirector::director()->loadScene("rgs");
+    ODirector::director()->addScene("home", new RGHomeScene());
+    ODirector::director()->addScene("game", new RGSandboxScene());
+    
+    ODirector::director()->loadScene("home");
 }
 
 void OGame::onUpdate(float deltaTime)

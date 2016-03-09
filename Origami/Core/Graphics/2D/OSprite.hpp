@@ -45,53 +45,54 @@ public:
     bool hidden = false;
 
     //setters
-    inline void setColor(const maths::vec4& color)
+    void setColor(const maths::vec4& color)
     {
         m_Color = color;
     }
     
-    inline void moveBy(float x, float y)
+    void moveBy(float x, float y)
     {
         m_Position += maths::vec2(x, y);
     }
     
-    virtual inline void setPosition(const maths::vec2& position)
+    virtual void setPosition(const maths::vec2& position)
     {
         m_Position = position;
     }
 
-    inline void setSize(const maths::vec2& size)
+    void setSize(const maths::vec2& size)
     {
         m_Size = size;
     }
 
-    inline void setTexture(OTexture* texture)
+    void setTexture(OTexture* texture)
     {
         m_Texture = texture;
     }
 
-    inline void setUV(const maths::vec4& uv)
+    void setUV(const maths::vec4& uv)
     {
         m_UV = uv;
     }
     
-    inline void setAngle(float angle)
+    void setAngle(float angle)
     {
         m_angle = angle;
     }
     
     //getters
-    virtual inline maths::vec2& getPosition() { return m_Position; }
-    virtual inline float getAngle() { return m_angle; }
+    virtual const maths::vec2& getPosition()  { return m_Position;        }
+    virtual float getAngle()                  { return m_angle;           }
     
-    inline const maths::vec2& getSize() const { return m_Size; }
-    inline const unsigned int getColor()  { return m_Color.getColorUint(); }
-    inline const maths::vec4& getUV() const { return m_UV; }
-    inline const GLuint getTID() const { return m_Texture->textureID; }
-    inline const float getZOrder() const { return m_zOrder; }
+    const maths::vec2& getSize() const        { return m_Size;            }
+    const maths::vec4& getUV() const          { return m_UV;              }
+    
+    unsigned int getColor()                   { return m_Color.getColorUint();  }
+    GLuint getTID() const                     { return m_Texture->textureID;    }
+    float getZOrder() const                   { return m_zOrder;                }
     
 
-    inline OTexture* getTexture() const { return m_Texture; }
+    OTexture* getTexture() const { return m_Texture; }
 
     virtual void submit(ORenderer2D* renderer) ;
     virtual bool shouldBeRendered(OCamera2D* camera);
